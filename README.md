@@ -18,3 +18,9 @@ Afin de construire un wiki qui soit à la fois riche, agréable à utiliser et f
 - En cas de synthèse sur un sujet, l'étudiant rédacteur indique soigneusement les ressources utilisées selon les pratiques bibliographiques habituelles.  
 
 
+
+
+
+### [-- Accès direct au Wiki --](https://github.com/EphecLLN/Wiki-TI/wiki)
+
+
