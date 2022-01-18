@@ -49,6 +49,8 @@ Afin de construire un wiki qui soit à la fois riche, agréable à utiliser et f
 
 Le wiki est destiné à être utilisé par l'ensemble de la communauté TI.  Afin d'en faire un outil agréable, il est important d'être attentif au confort de lecture et à la compréhension du contenu, via une attention particulière portée à l'orthographe, au style et à la mise en page.  
 
+Le Wiki TI est en français.  Le français sera également la langue utilisée pour les rewiews de Pull Requests et pour les commentaires des commits.  
+
 ### Référencement des sources
 
 - Le ou les auteurs d'une page regroupant des ressources se doivent d'identifier ces dernières le plus précisément possible, avec les informations suivantes : 
