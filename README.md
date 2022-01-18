@@ -1,12 +1,12 @@
 # Bienvenue sur le repository du Wiki TI
 
-1. [Pourquoi ce Wiki?]() 
-2. [Comment contribuer?]()   
-  2.1 [Rédaction de contenu]()  
-  2.2 [Commentaires et reviews de pages]()  
-3. [Règles de bon usage pour les contributeurs]()  
-  3.1 [Qualité des productions]()  
-  3.2 [Référencement des sources]()  
+1. [Pourquoi ce Wiki?](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#pourquoi-ce-wiki-) 
+2. [Comment contribuer?](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#comment-contribuer-)   
+  2.1 [Rédaction de contenu](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#rédaction-de-contenu)  
+  2.2 [Commentaires et reviews de pages](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#commentaires-et-reviews-de-pages)  
+3. [Règles de bon usage pour les contributeurs](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#règles-de-bon-usage-pour-les-contributeurs)  
+  3.1 [Qualité des productions](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#qualité-des-productions)  
+  3.2 [Référencement des sources](https://github.com/EphecLLN/Wiki-TI/blob/main/README.md#référencement-des-sources)  
 
 
 ## Pourquoi ce Wiki ? 
