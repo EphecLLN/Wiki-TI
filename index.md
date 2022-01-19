@@ -16,7 +16,7 @@ Les informations sont organisées par catégorie :
 
 ### Routage et switching
 ### Protocoles transport et applicatifs
-* [Délégation DNS](./Réseaux/Protocoles transport et applicatifs/delegation_dns.md)
+* [Délégation DNS](Réseaux/delegation_dns.md)
 
 ### Administration réseaux
 
