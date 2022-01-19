@@ -1,3 +1,9 @@
+---
+layout: default
+title: Page d'accueil
+nav_order: 1
+---
+
 # Page d'accueil
 
 Bienvenue sur le Wiki TI.  Vous y trouverez une série de ressources et de synthèses liées au cursus TI.
