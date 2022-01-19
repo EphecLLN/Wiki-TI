@@ -1,4 +1,8 @@
-[Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
+---
+layout: default
+title: Délégation DNS
+parent: Réseaux
+---
 
 # Délégation DNS
 
