@@ -55,11 +55,12 @@ Le Wiki TI est en français.  Le français sera également la langue utilisée p
 
 - Le ou les auteurs d'une page regroupant des ressources se doivent d'identifier ces dernières le plus précisément possible, avec les informations suivantes : 
    - Nom de l'auteur et/ou organisme pour lequel il travaille
+   - Identification du texte : Eléments bibliographiques classiques pour une ressource papier, nom de la page, du site + URL pour une ressource en ligne
    - Date de création de la ressource
-   - Date de consultation de la ressource
+   - Date de consultation de la ressource (si ressource Web)
    - Un petit paragraphe résumant les informations que la ressource contient
    - Un avis critique sur la qualité de la ressource
-- En cas de synthèse sur un sujet, le rédacteur indique soigneusement les ressources utilisées selon les pratiques bibliographiques habituelles.  
+- En cas de synthèse sur un sujet, le rédacteur indique soigneusement les ressources utilisées selon les pratiques bibliographiques habituelles, et référence la source de chaque information directement dans le texte (par ex : "Le DNS tourne par dessus UDP [3]" pour indiquer que cette information a été tirée de la troisième ressource de la bibliographie).  En cas de citation / extrait, le rédacteur n'oublie bien entendu pas l'utilisation des guillements pour bien indiquer qu'il n'est pas l'auteur de l'élément de texte concerné.    
 
 
 
