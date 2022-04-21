@@ -6,7 +6,7 @@ parent: Réseaux
 
 # Délégation DNS
 
-## Domaines, sous-domaines et zones
+## Domaines, sous-domaines et zones [^2]
 
 La délégation DNS est le mécanisme permettant à un domaine de ne pas devoir gérer l'ensemble des machines qui le compose.  Il peut décider de confier la gestion d'un sous-ensemble de ces machines à d'autres serveurs.  Ces sous-ensembles sont déterminés par la hiérarchie des noms DNS : il s'agit des sous-domaines.  
 
@@ -42,11 +42,11 @@ ns.sousdom.mondomaine.dom   IN  A       1.2.3.4
 ## Bibliographie
 
 * [^1]: P. Mockapetris, IETF, [RFC 1034 - DOMAIN NAMES - CONCEPTS AND FACILITIES](https://datatracker.ietf.org/doc/html/rfc1034), Internet Draft, Nov. 1987
-   - **Résumé** : Standard définissant les concepts du DNS
-   - **Avis sur la ressource** : Il s'agit du texte de standardisation d'origine du DNS. Attention, il date de 1987 et possède de nombreuses mises à jour à consulter en parallèle. 
+   **Résumé** : Standard définissant les concepts du DNS
+   **Avis sur la ressource** : Il s'agit du texte de standardisation d'origine du DNS. Attention, il date de 1987 et possède de nombreuses mises à jour à consulter en parallèle. 
 * [^2]: **Slides du cours Admin I - Chapitre DNS**, V. Van den Schrieck, 2018, consulté le 10 janvier 2022
-   - **Résumé** : Présentation de la hiérarchie DNS et des différents rôles des serveurs DNS
-   - **Avis sur la ressource** : C'est un slideshow présentant les bases du DNS, qui gagnerait à être plus détaillé (schémas, texte, ...)
+   **Résumé** : Présentation de la hiérarchie DNS et des différents rôles des serveurs DNS
+   **Avis sur la ressource** : C'est un slideshow présentant les bases du DNS, qui gagnerait à être plus détaillé (schémas, texte, ...)
 
    
    
