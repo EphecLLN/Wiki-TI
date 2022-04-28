@@ -7,11 +7,12 @@ parent: Réseaux
 # DNSSEC ( Domain Name System Security Extensions)
 
 ## **Qu'est-ce que le 'DNSSEC' et quelle est son histoire ?**  
+
+¹ Tout commence lorsque le [Docteur Steven M. Bellovin](https://en.wikipedia.org/wiki/Steven_M._Bellovin) a découvert des failles de sécurité dans le DNS en 1990. Il va alors publier ses découvertes en 1995, mais c'est seulement 2 ans après que le [IETF](https://www.ietf.org/), un groupe chargé d'élaborer et de promouvoir des standards Internet, va considerer ses failles de sécurité et publier la [RFC 2065](https://datatracker.ietf.org/doc/html/rfc2065) qui sera ensuite revu et corrigé pour donner la [RFC 2535](https://datatracker.ietf.org/doc/html/rfc2535) en 1999. Le DNSSec fut donc plannifier sur cette RFC  
 ###### https://en.wikipedia.org/wiki/Steven_M._Bellovin
 ![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Steven_M_Bellovin_2016.jpg/220px-Steven_M_Bellovin_2016.jpg)  
-¹ Tout commence lorsque le [Docteur Steven M. Bellovin](https://en.wikipedia.org/wiki/Steven_M._Bellovin) a découvert des failles de sécurité dans le DNS en 1990. Il va alors publier ses découvertes en 1995, mais c'est seulement 2 ans après que le [IETF](https://www.ietf.org/), un groupe chargé d'élaborer et de promouvoir des standards Internet, va considerer ses failles de sécurité et publier la [RFC 2065](https://datatracker.ietf.org/doc/html/rfc2065) qui sera ensuite revu et corrigé pour donner la [RFC 2535](https://datatracker.ietf.org/doc/html/rfc2535) en 1999. Le DNSSec fut donc plannifier sur cette RFC  
 Cette dernière était censée être complêtement fonctionnel et corrigé tous les problèmes et failles de sécurité que le Docteur Steven M. Bellovin avait précédement découvert, mais le DNSSec basé sur la RFC 2535 avait trop de difficulté à gérer le système de clé, il demandait beaucoup trop de ressources pour faire de simples échanges.  
-C'est en 2005, soit 10 ans après que les travaux du Docteur Steven M. Bellovin soit rendu publique, que l'IETF publie le DNSSec-bis basé sur deux nouvelles RFCs, la [4033](https://datatracker.ietf.org/doc/html/rfc4033) et la [4035](https://datatracker.ietf.org/doc/html/rfc4035). Et ça fonctionne!  
+C'est en 2005, soit 10 ans après que les travaux du Docteur Steven M. Bellovin soit rendu publique, que l'IETF publie le DNSSec-bis, DNSSEC de nos jours, basé sur deux nouvelles RFCs, la [4033](https://datatracker.ietf.org/doc/html/rfc4033) et la [4035](https://datatracker.ietf.org/doc/html/rfc4035). Et ça fonctionne!  
 
 
 ## **Petit rappel sur le fonctionnement du DNS** 
@@ -32,16 +33,24 @@ Example de sous-domaine : www, eperso, b2b...
 
 ## **Fonctionnement du DNSSEC** 
 ### _Chain of Trust_  
-Le DNSSEC fonctione grâce à un système de chaine de confiance⁵ (en Anglais 'Chain of Trust') qui valide les Name Servers sur base d'une signature numérique basées sur la cryptographie à clé publique d'un serveur parent. Le NS pourra donc obtenir un certificat de confiance signé par le parent, et ainsi de suite jusqu'à ce que l'entièreté de la chaine soit certifié.
-Le premier certificat fut approuvé par l'ICANN en 2010 pour le serveur racine.
-  
-Tout Résolveur voulant accéder aux données d'une zone n'aura qu'a récupérer la clé publique de cette même zone afin de valider l'authenticité des données , le résolveur confirme la signature numérique des données qu'il a récupéré. Si celle-ci sont valides , les données sont légitimes et sont renvoyées au client.Dans le cas contraire, il s'agit probablement d'une attaque et les données sont écartés et une erreur est renvoyé à l'utilisateur.
+Le DNSSEC fonctione à l'aide un système de chaine de confiance⁵ (en Anglais 'Chain of Trust') qui valide les Name Servers sur base d'une signature numérique basées sur la cryptographie à clé publique d'un serveur parent. Le NS pourra donc obtenir un certificat de confiance signé par le parent, et ainsi de suite jusqu'à ce que l'entièreté de la chaine soit certifié.
+Le premier certificat fut approuvé par l'ICANN en 2010 pour le Root Server.
+###### https://blog.resellerspanel.com/domain-names/dnssec-enabled-on-our-platform.html
+![](https://blog.resellerspanel.com/wp-content/uploads/2017/02/dnssec-ds-records.jpg)
+Tout Résolveur récursif voulant accéder aux données d'une zone n'aura qu'a récupérer la clé publique de cette même zone afin de valider l'authenticité des données , le résolveur confirme la signature numérique des données qu'il a récupéré à l'aide de cette même clé. Si celle-ci sont valides , les données sont légitimes et sont renvoyées au client.Dans le cas contraire, il s'agit probablement d'une attaque et les données sont écartés et une erreur est renvoyé à l'utilisateur.  
+Mais comment être sur de ne pas avoir reçu une mauvaise clé publique ?  
+C'est simple, la clé publique est elle-même signé, mais pas par la clé privé de cette même zone, par la clé privé de la zone parent.
+
+**Exemple :**  
+La zone ``ephec.be`` possède donc une clé publique signée par la zone ``be``, celle-ci est donc responsable de l'authenticité de la clé publique de la zone ``ephec.be``.
+
+Toute zone parent est donc responsable des clés publiques de ses zones enfant.Et toute clé publique d'une zone est donc signée par la zone parent, mise à part la zone ``Root``, qui ne possède pas de zone parent.
 
 
 ## **Pourquoi le DNSSEC est-il important ?**
 ⁵ Le DNSSec est très important dans la sécurisation du service DNS en général, il permet d'éviter qu'un intru se glisse dans la chaine et renvoie une autre adresse IP pour une requête, c'est ce qu'on appele du 'DNS Cache Poisoning'.  
 
-_Qu'est-ce que le DNS Cache poisoning ?_  
+**_Qu'est-ce que le DNS Cache poisoning ?_**   
 L'empoisonnement du cache DNS (ou DNS Spoofing en anglais) consiste à empoisonner le cache d'un serveur DNS pour y mettre de fausses informations, de sorte que le résolveur renvoie une adresse IP incorrecte aux clients et ainsi le rediriger au mauvais endroit .
 ###### https://bluecatnetworks.com/
 ![](https://bluecatnetworks.com/wp-content/uploads/2020/10/DNS-Poisoning.png)
@@ -87,5 +96,10 @@ La popularité de celui-ci augmente peu à peu chaque année³ et d'après moi l
        **Résumé** : Page Wikipedia du DNS
        **Avis sur la ressource** : Plus complête en Anglais, pratique pour se rappeller de petits détails. 
          
+*  7 : ResellersPanel, DNSSec Enabled On our Platform, [ DNSSec Enabled on our platform ](https://blog.resellerspanel.com/domain-names/dnssec-enabled-on-our-platform.html), consulté le 28 Avril 2022
+
+       **Résumé** : Page rassemblant plein d'informations sur le DNSSec
+       **Avis sur la ressource** : En Anglais, très complête avec beaucoup d'illustrations  
+
 Tommy Riquet  
 Dernière modification , le 26 Avril 2022
