@@ -1,0 +1,98 @@
+---
+layout: default
+title: HTTPS
+parent: Réseaux
+---
+
+[Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
+
+# HTTPS
+
+## Qu'est-ce que HTTPS ?
+
+Le HTTPS est un protocole permettant de sécuriser les échanges de données entre un serveur et un client, et de valider l’identité d’un site visité. Cette double sécurisation est essentielle : elle garantit la confidentialité des données et rassure les internautes qui se connectent à votre site web.
+
+C'est le protocole de transfert HTTP qui est encapsulé au sein d'une session SSL ou TLS.
+![image](https://user-images.githubusercontent.com/91373823/166153959-774af9a2-2344-466b-b19b-eaa308701edb.png)
+
+###
+
+## Pourquoi HTTPS ?
+
+Pour eviter l'interception du trafic, se proteger des FAI malveillants
+
+Pour bénéficier de HTTP/2.0
+La norme n'impose pas HTTPS mais les navigateurs Firefox et Chrome requiert HTTPS pour se connecter à un site en HTTP/2.0.
+
+J'espere qu'avec tous celà je vous est convaincu.
+
+## Objectifs d'HTTPS
+
+1. Confidentialité :
+
+    Les données échangées sont chiffrées à l'aide d'une clé et ne peuvent être déchiffrées par les deux parties.
+
+2. Authentification :
+
+    Le client vérifie que le serveur qu'il adresse est celui qu'il prétend être (ceci évite les attaques de l'homme du milieu). Au besoin, le client peut vérifier son identité auprès du serveur.
+
+3. Intégrité :
+
+    Les parties s'assurent que les données reçues n'ont pas fait l'objet d'une modification.
+
+4. Transparence :
+
+    Aucun changement nécessaire dans le protocole applicatif n'englobé.
+
+5. Spontanéité :
+
+    Un client peut spontanément se connecter à un serveur (pas de prérequis).
+
+### Comprendre le SSL/TLS
+
+SSL signifie Secure Sockets Layer, qui est le nom du protocole lorsqu'il appartenait à Netscape.
+Mais l'IETF (Internet engineering Task Force) a décidé d'en prendre le contrôle afin de le rendre plus ouvert et standardisé.
+Mais pour éviter tous les problèmes légaux, il est renommé TLS pour « Transport Layer Security ».
+
+Aujourd'hui il n'y a plus que TLS mais on fait référence à SSL par abus de langage.
+
+### Versions SSL/TLS
+
+-   SSL 1.0 (jamais publié) par Netscape,
+-   SSL 2.0 en 1995, déprécié en 2011 par la RFC 6176,
+-   SSL 3.0/RFC 6101 en 1996 (refonte), déprécié en 2015 par la RFC 7568,
+-   TLS 1.0 / RFC 2246 en 1999 (modifications mineures),
+-   TLS 1.1 / RFC 4346 en 2006 (protections contre les attaques sur CBC),
+-   TLS 1.2/ RFC 5246 en 2008 (chiffrement authentifié ou AEAD via GCM et CCM),
+-   Mise à jour sur TLS 1.2 en 2011/ RFC 6176 (compatibilité SSL),
+-   TLS 1.3 / RFC 8446 en 2018 (compression, renégociation, MD5, SHA1, RC4, 3DES, PFS obligatoire, optimisation réseau (0-RTT) , SHA-256, Courbe elliptique 25519 & 448).
+
+### Rappels cryptographiques
+
+Le chiffrement symétrique et asymétrique sont les deux techniques utilisées pour protéger la confidentialité de votre message sur internet. La différence fondamentale entre les deux réside dans le fait que le chiffrement symétrique permet de chiffrer et de déchiffrer le message à l'aide de la même clé. En revanche, le chiffrement asymétrique utilise la clé publique pour le chiffrement et une clé privée pour le déchiffrage.
+
+|             |                 Chiffrement symétrique                 |                   Chiffrement asymétrique                   |
+| :---------: | :----------------------------------------------------: | :---------------------------------------------------------: |
+| Définition  | Une seule clé pour le chiffrement et le déchiffrement. | Une clé différente pour le chiffrement et le déchiffrement. |
+| Performance |                  Rapide en exécution.                  | Lent à l’exécution en raison de la charge de calcul élevée. |
+| Algorithmes |                 AES, DES, 3DES et RC4.                 |                    Diffie-Hellman, RSA.                     |
+|  Objectif   |   Utilisé pour la transmission massive des données.    |      Souvent utilisé pour l'échange des clés secrètes.      |
+
+## Authentification
+
+Un certificat c'est comme la carte d'identité d'un serveur, il permet d'assurer que vos etes bien la personne qui prétender l'être. Pour cela, il faudrait passer par une autorité de certificat (autorité reconnu, validé, sure et peut délivrer des certificats). Il faudrait donc prouver que nous sommes le propriétaire du site à l'autorité de certification et, si tel est le cas, nous recevons ce certificat.
+
+Il existe 3 types de certificats.
+
+1. <b> Validation de domaine </b><br>
+   Simple vérification sur l’appartenance du domaine.
+2. <b> Validation d’organisation </b><br>
+   Vérification de l’identité du propriétaire (carte d’identité, SIRET, etc).
+3. <b> Validation étendue </b><br>
+   Enquête sur le propriétaire (vérification d’une présence physique, opérationnelle et juridique), permet l’affichage du propriétaire dans la barre d’adresse).
+
+## Bibliographie
+
+-   [Nom de la ressource](lien vers la ressource), Auteur, Date de création, consulté le (date consultation)
+    -   Résumé : ...
+    -   Avis sur la ressource : ...
