@@ -91,6 +91,12 @@ Il existe 3 types de certificats.
 3. <b> Validation étendue </b><br>
    Enquête sur le propriétaire (vérification d’une présence physique, opérationnelle et juridique), permet l’affichage du propriétaire dans la barre d’adresse).
 
+### Let's Encrypt
+
+L'idée est d'installer un programme et que notre site passe en HTTPS sans rien faire et il est GRATUIT.
+
+C'est un ensemble de choses, tous d'abord c'est une autorité de certification qui est bien connue par les navigateurs. C'est également un protocole qui s'appelle ACME et enfin c'est un agent Open Source qui va négocier avec les serveurs de Le't Encrypt pour prouver que vous êtes bien le propriétaire du site afin de nous installer un certificat de type Domaine Validation et il va le maintenir toujours à jour.
+
 ## Bibliographie
 
 -   [Nom de la ressource](lien vers la ressource), Auteur, Date de création, consulté le (date consultation)
