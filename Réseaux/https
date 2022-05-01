@@ -97,6 +97,46 @@ L'idée est d'installer un programme et que notre site passe en HTTPS sans rien 
 
 C'est un ensemble de choses, tous d'abord c'est une autorité de certification qui est bien connue par les navigateurs. C'est également un protocole qui s'appelle ACME et enfin c'est un agent Open Source qui va négocier avec les serveurs de Le't Encrypt pour prouver que vous êtes bien le propriétaire du site afin de nous installer un certificat de type Domaine Validation et il va le maintenir toujours à jour.
 
+## Pratique
+
+Si vous avez un site HTTP en production sous apache et que vous souhaiatez le mettre en HTTPS, la solution la plus simple consiste à utiliser l'outil [Certbot](https://doc.ubuntu-fr.org/apache2#activation_du_module_ssl) de [Let's Encrypt](https://letsencrypt.org/fr/).
+
+Voici les étapes à suivre :
+
+Pour que le protocole TLS fonctionne sous Apache2, vous devez activer le module ssl à l'aide de la commande :
+
+```
+sudo a2enmod ssl
+```
+
+puis recharger la configuration d'Apache 2 :
+
+```
+sudo systemctl reload apache2
+```
+
+Mise en place de HTTPS avec Certbot, pour celà il faut que votre service web Apache soit déjà configuré, fonctionnel et accessible au public.
+
+Installation de Certbot
+
+```
+sudo apt install python3-certbot-apache
+```
+
+Certbot permet ensuite de générer tous les certificats et d'adapter les configurations d'Apache pour tous les noms de domaine associés aux hôtes virtuels au moyen d'une seule commande :
+
+```
+sudo certbot --apache
+```
+
+À l'aide de l'option `–apache`, Certbot crée et active automatiquement les fichiers de configuration pour les serveurs virtuels HTTPS sur le port 443.
+
+Au cours de l'opération, le script nous demande de vérifier les domaines pour lesquels nous voulons obtenir les certificats et de choisir d'utiliser HTTPS ou non. Acceptés tous et forcer le HTTPS.
+
+Après cette opération les sites devraient être accessibles en HTTPS de manière sécurisée.
+
+Voilà, nous avons terminé ! Nous avons appris ce qu'est le HTTPS et comment le mettre en place.
+
 ## Bibliographie
 
 -   [Nom de la ressource](lien vers la ressource), Auteur, Date de création, consulté le (date consultation)
