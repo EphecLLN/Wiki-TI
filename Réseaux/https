@@ -13,18 +13,20 @@ parent: Réseaux
 Le HTTPS est un protocole permettant de sécuriser les échanges de données entre un serveur et un client, et de valider l’identité d’un site visité. Cette double sécurisation est essentielle : elle garantit la confidentialité des données et rassure les internautes qui se connectent à votre site web.
 
 C'est le protocole de transfert HTTP qui est encapsulé au sein d'une session SSL ou TLS.
-![image](https://user-images.githubusercontent.com/91373823/166153959-774af9a2-2344-466b-b19b-eaa308701edb.png)
+
+![image](https://user-images.githubusercontent.com/91373823/166163525-721fb773-5093-4672-8812-efc90ac67c41.png)
 
 ###
 
 ## Pourquoi HTTPS ?
 
-Pour eviter l'interception du trafic, se proteger des FAI malveillants
+-   Meilleur référencement et positionnement par l'algorithme de Google.
 
-Pour bénéficier de HTTP/2.0
-La norme n'impose pas HTTPS mais les navigateurs Firefox et Chrome requiert HTTPS pour se connecter à un site en HTTP/2.0.
+-   Protéger les informations des internautes et de vos clients en évitant les attaques de l'homme du milieu ( l'interception du trafic).
 
-J'espere qu'avec tous celà je vous est convaincu.
+-   Éviter d’avoir le label “Non sécurisé” à l’affichage de votre site internet.
+
+-   Pour bénéficier de HTTP/2.0 <br> La norme n'impose pas HTTPS mais les navigateurs Firefox et Chrome requiert HTTPS pour se connecter à un site en HTTP/2.0.
 
 ## Objectifs d'HTTPS
 
@@ -97,7 +99,7 @@ L'idée est d'installer un programme et que notre site passe en HTTPS sans rien 
 
 C'est un ensemble de choses, tous d'abord c'est une autorité de certification qui est bien connue par les navigateurs. C'est également un protocole qui s'appelle ACME et enfin c'est un agent Open Source qui va négocier avec les serveurs de Le't Encrypt pour prouver que vous êtes bien le propriétaire du site afin de nous installer un certificat de type Domaine Validation et il va le maintenir toujours à jour.
 
-## Pratique
+## Mise en pratique
 
 Si vous avez un site HTTP en production sous apache et que vous souhaiatez le mettre en HTTPS, la solution la plus simple consiste à utiliser l'outil [Certbot](https://doc.ubuntu-fr.org/apache2#activation_du_module_ssl) de [Let's Encrypt](https://letsencrypt.org/fr/).
 
@@ -135,10 +137,38 @@ Au cours de l'opération, le script nous demande de vérifier les domaines pour 
 
 Après cette opération les sites devraient être accessibles en HTTPS de manière sécurisée.
 
+Vous trouverez une documentation plus détaillée à ce sujet sur [cette page](https://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl) de la documentation.
+
 Voilà, nous avons terminé ! Nous avons appris ce qu'est le HTTPS et comment le mettre en place.
 
 ## Bibliographie
 
--   [Nom de la ressource](lien vers la ressource), Auteur, Date de création, consulté le (date consultation)
-    -   Résumé : ...
-    -   Avis sur la ressource : ...
+-   [Qu’est ce que SSL/TLS et HTTPS ?](https://www.hostinger.fr/tutoriels/quest-ce-que-ssl-tls-et-https), Bernadeta Kairyte, 08 mars 2022, consulté le 1er mai 2022.
+
+    -   Résumé : Présentation des protocoles de chiffrement et de sécurité.
+    -   Avis sur la ressource : Très bon résumé concernant le protocole SSL/TLS et HTTPS.
+
+-   [Différence entre le cryptage symétrique et asymétrique](https://waytolearnx.com/2018/07/difference-entre-le-cryptage-symetrique-et-asymetrique.html#comment-2889), Anonyme, 23 juillet 2022, consulté le 30 avril 2022
+
+    -   Résumé : Explication de la différence entre le cryptage symétrique et asymétrique.
+    -   Avis sur la ressource : Resumé assez court mais très pertinent.
+
+-   [Types de certificats SSL : Lequel convient le mieux à votre site ?](https://kinsta.com/fr/blog/types-de-certificats-ssl/), Salman Ravoof, 28 juillet 2021, consulté le 01 mai 2022
+
+    -   Résumé : Les différents types de certificats SSL.
+    -   Avis sur la ressource : Explication dans les grandes lignes.
+
+-   [SSL/TLS and PKI History](https://www.feistyduck.com/ssl-tls-and-pki-history/), Ivan Ristić, février 2022, consulté le 27 avril 2022
+
+    -   Résumé : L'histoire du protocole SSL/TLS et de la PKI.
+    -   Avis sur la ressource : Résume assez long mais très pertinent.
+
+-   [Utiliser HTTPS avec Apache2](https://doc.ubuntu-fr.org/tutoriel/securiser_apache2_avec_ssl), Gabriel Theuws, 16 mars 2021, consulté le 25 avril 2022
+
+    -   Résumé : Mise en place de certbot dans un ser apache.
+    -   Avis sur la ressource : Les etapes de configuration sont très bien expliquées.
+
+-   [Mettre son site en ligne (4/4) : Comprends le SSL / HTTPS](https://www.youtube.com/watch?v=_UpuZ0Y3k-c), Jonathan Boyer, 24 février 2016, consulté le 26 avril 2022
+
+    -   Résumé : Vidéo expliquant le fonctionnement des protocoles SSL/TLS et HTTPS.
+    -   Avis sur la ressource : Video de qualité et les démonstantions sont bien illustrées.
