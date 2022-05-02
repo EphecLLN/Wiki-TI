@@ -44,7 +44,7 @@ C'est le protocole de transfert HTTP qui est encapsulé au sein d'une session SS
 
 4. Transparence :
 
-    Aucun changement nécessaire dans le protocole applicatif n'englobé.
+    Aucun changement nécessaire dans le protocole applicatif englobé.
 
 5. Spontanéité :
 
@@ -82,7 +82,7 @@ Le chiffrement symétrique et asymétrique sont les deux techniques utilisées p
 
 ## Authentification
 
-Un certificat c'est comme la carte d'identité d'un serveur, il permet d'assurer que vos etes bien la personne qui prétender l'être. Pour cela, il faudrait passer par une autorité de certificat (autorité reconnu, validé, sure et peut délivrer des certificats). Il faudrait donc prouver que nous sommes le propriétaire du site à l'autorité de certification et, si tel est le cas, nous recevons ce certificat.
+Un certificat c'est comme la carte d'identité d'un serveur, il permet d'assurer que vous êtes bien la personne que vous prétendez être. Pour cela, il faudrait passer par une autorité de certification (autorité reconnue, validée, sûre, qui peut délivrer des certificats). Il faudrait donc prouver que nous sommes le propriétaire du site à l'autorité de certification et, si tel est le cas, nous recevons ce certificat.
 
 Il existe 3 types de certificats.
 
