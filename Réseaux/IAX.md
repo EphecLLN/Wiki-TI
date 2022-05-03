@@ -30,7 +30,7 @@ IAX est utilisé en téléphonie sur IP, mais qu’elles sont ses caractéristiq
 -   **Diminution de la latence** : Le faite que un seul port soit utilisé au lieux d’un seul, apporte aussi un changement au niveau de la latence. En effet, comme les deux flux traditionnels sont envoyé en même temps et sur le même ports, on a une réduction de la latence
 -   **Rapidité** :Ces trois premiers avantages apportes une vitesse pour la communication qui est plus importante qu’avec SIP.
 
-## > Défauts de IAX :
+### > Défauts de IAX :
 
 Malgré ces avantages, IAX n’est pas autant utilisé que SIP, qui est le protocole le plus utilisé pour la VoIp.
 
