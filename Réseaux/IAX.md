@@ -33,7 +33,7 @@ IAX est utilisé en téléphonie sur IP, mais qu’elles sont ses caractéristiq
 -   **Rapidité** : Ces trois premiers avantages apportent donc une vitesse pour la communication qui est plus importante qu’avec d'autres protocoles comme SIP par exemple.
 
 -   **Protocole binaire** :
-    Le fait que AIX soit un [protocole binaire]() apporte un grand plus point de vue sécurité, en effet il est plus difficile de trouver des failles. SIP est quant à lui un exemple de protocole basé sur du texte [[5](https://www.voip-info.org/iax-versus-sip/#:~:text=1)].
+    Le fait que AIX soit un [protocole binaire](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#c02---protocoles-binaires) apporte un grand plus point de vue sécurité, en effet il est plus difficile de trouver des failles. SIP est quant à lui un exemple de protocole basé sur du texte [[5](https://www.voip-info.org/iax-versus-sip/#:~:text=1)].
 
 ### > Défauts de IAX :
 
@@ -43,7 +43,7 @@ Nous allons donc voir quels sont les défauts d’IAX qui seraient la raison pou
 
 -   **Construit sur base d’un système Asterisk** : Bien qu’une portabilité soit envisageable vers d’autres systèmes que celui d’Asterisk, le fait que IAX a été créé à la base pour ce dernier apporte un problème. En fait, il est impossible d’utiliser IAX sans un router typé Asterisk . Cela pointe l’un des plus gros défauts de IAX, il n’est pas très polyvalent et adaptatif, là où des protocoles comme SIP le sont beaucoup plus. La dépendance à Asterisk est aussi ce qui rend ce protocole moins flexible que SIP ou MGCP, car le protocole n’a pas été conçu dans le même but.
 
--   **Sensible au déni de service** : L'une des forces d'IAX est aussi une de ses faiblesses. En effet, comme ce protocole n'utilise qu'un port qui est bien connu, il est sensible aux [attaques par déni de service]().
+-   **Sensible au déni de service** : L'une des forces d'IAX est aussi une de ses faiblesses. En effet, comme ce protocole n'utilise qu'un port qui est bien connu, il est sensible aux [attaques par déni de service](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#c01---attaque-par-d%C3%A9ni-de-service).
 
 -   ***
 
