@@ -26,14 +26,14 @@ IAX est utilisé en téléphonie sur IP, mais qu’elles sont ses caractéristiq
 
 -   **Ports** : En VoIp classique, on utilise deux ports, le port 4005 pour transmettre le flux de données et le port 4060 pour transmettre la signalisation relative à ce flux. Cependant l’avantage de IAX est qu’il utilise un seul port, le 4569 en UDP, à la fois pour la signalisation et le flux de données [[2](https://en.wikipedia.org/wiki/Inter-Asterisk_eXchange), [3](https://www.voip-info.org/iax-versus-sip/.)]. Le fait d’exposer un seul port présente divers avantages. En effet, la configuration du firewall est plus simple et la NAT est également rendue plus simple à configurer. Cette caractéristique apporte donc une certaine « légèreté » en matière de configuration pour ce protocole [[4](https://askanydifference.com/difference-between-sip-and-iax/)].
 
--   **Diminution de la bande passante** : Sa première caractéristique (unique port) apporte un avantage sur l’utilisation des ressources. Effectivement, cela inclut une réduction de la bande passante utilisée//////////////////////////////////////////////////////////////////
+-   **Diminution de la bande passante** : Sa première caractéristique (unique port) apporte un avantage sur l’utilisation des ressources. De fil en aiguille, cela inclut une réduction de la bande passante utilisée.
 
 -   **Diminution de la latence** : Le fait qu'un seul port soit utilisé au lieu d’un seul, apporte aussi un changement au niveau de la latence. En effet, comme les deux flux traditionnels sont envoyés en même temps et sur le même port, on a une réduction de la latence
 
 -   **Rapidité** : Ces trois premiers avantages apportent donc une vitesse pour la communication qui est plus importante qu’avec d'autres protocoles comme SIP par exemple.
 
 -   **Protocole binaire** :
-    Le fait que AIX soit un [protocole binaire](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#c02---protocoles-binaires) apporte un grand plus point de vue sécurité, en effet il est plus difficile de trouver des failles. SIP est quant à lui un exemple de protocole basé sur du texte [[5](https://www.voip-info.org/iax-versus-sip/#:~:text=1)].
+    Le fait que AIX soit un [protocole binaire](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#concepts) apporte un grand plus point de vue sécurité, en effet il est plus difficile de trouver des failles. SIP est quant à lui un exemple de protocole basé sur du texte [[5](https://www.voip-info.org/iax-versus-sip/#:~:text=1)].
 
 ### > Défauts de IAX :
 
@@ -43,9 +43,7 @@ Nous allons donc voir quels sont les défauts d’IAX qui seraient la raison pou
 
 -   **Construit sur base d’un système Asterisk** : Bien qu’une portabilité soit envisageable vers d’autres systèmes que celui d’Asterisk, le fait que IAX a été créé à la base pour ce dernier apporte un problème. En fait, il est impossible d’utiliser IAX sans un router typé Asterisk . Cela pointe l’un des plus gros défauts de IAX, il n’est pas très polyvalent et adaptatif, là où des protocoles comme SIP le sont beaucoup plus. La dépendance à Asterisk est aussi ce qui rend ce protocole moins flexible que SIP ou MGCP, car le protocole n’a pas été conçu dans le même but.
 
--   **Sensible au déni de service** : L'une des forces d'IAX est aussi une de ses faiblesses. En effet, comme ce protocole n'utilise qu'un port qui est bien connu, il est sensible aux [attaques par déni de service](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#c01---attaque-par-d%C3%A9ni-de-service).
-
--   ***
+-   **Sensible au déni de service** : L'une des forces d'IAX est aussi une de ses faiblesses. En effet, comme ce protocole n'utilise qu'un port qui est bien connu, il est sensible aux [attaques par déni de service](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#concepts).
 
 ## **Concepts**:
 
