@@ -74,6 +74,9 @@ C'est cette structure qui diminue l'utilisation de la bande passante. Cette "min
 
 Voici un exemple d'échange type lors d'une communication avec le protocole IAX:
 
+![6-Figure1-1](https://user-images.githubusercontent.com/71372371/167297870-0d01989d-a751-4145-add1-67474aea5d07.png)
+
+
 ### **Explications:**
 
 ## **Concepts**:
