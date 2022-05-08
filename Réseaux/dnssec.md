@@ -89,8 +89,11 @@ Le DNSSEC fonctionne à l'aide d'un système de chaîne de confiance⁵ (en Angl
 Lorsque une zone enfant termine sa sécurisation, elle hache son RRset DNSKEY et l'envoie à la zone parent pour qu'elle l'ajoute en tant qu'enregistrement DS(Delegation Signer) dans ses Ressources Records. Celui-ci va ensuite repasser dans le processus de sécurisation de la zone parent . Et ainsi de suite jusqu'au "Root Server", dont le certificat fut approuvé manuellement par l'ICANN en 2010.    
 <br>
 **Exemple de requête :**  
-###### RessellersPanel, [en ligne] , https://blog.resellerspanel.com/domain-names/dnssec-enabled-on-our-platform.html
+
 ![](https://blog.resellerspanel.com/wp-content/uploads/2017/02/dnssec-ds-records.jpg)  
+
+###### RessellersPanel, [en ligne] , https://blog.resellerspanel.com/domain-names/dnssec-enabled-on-our-platform.html
+
 - Un utilisateur essaie de joindre "www.DOM.com", il va alors contacter la Zone Racine
 - La Zone Racine va alors vérifier la zone ".com" avec sa KSK publique 
 - La zone ".com" va vérifier le RR de la zone "DOM.com"
@@ -154,7 +157,7 @@ Sa popularité augmente peu à peu chaque année³ et d'après moi le DNSSec dev
 ## **Bibliographie**
    
 
-*  1 : Wikipedia, [Wikipedia - Domain Name System Security Extensions ](https://en.wikipedia.org/wiki/Domain_Name_System_Security_Extensions), Apr. 2022, consulté le 26 Avril 2022
+*  1 : Wikipedia, [Wikipedia - Domain Name System Security Extensions ](https://en.wikipedia.org/w/index.php?title=Domain_Name_System_Security_Extensions&oldid=1081721838), Apr. 2022, consulté le 26 Avril 2022
 
        **Résumé** : Page Wikipedia du DNSSEC
        **Avis sur la ressource** : Il s'agit de la page Wikipedia concernant le DNSSEC.
@@ -182,7 +185,7 @@ Sa popularité augmente peu à peu chaque année³ et d'après moi le DNSSec dev
        **Résumé** : Page expliquant l'importance du DNSSec
        **Avis sur la ressource** : Il s'agit d'une page du site officiel de l'ICANN, cette ressource est donc cohérente.
 
-* 6 : Wikipedia, Domain Name System, [ Domain Name System ](https://fr.wikipedia.org/wiki/Domain_Name_System), consulté le 26 Avril 2022     
+* 6 : Wikipedia, Domain Name System, [ Domain Name System ](https://fr.wikipedia.org/w/index.php?title=Domain_Name_System&oldid=193399624), consulté le 26 Avril 2022     
  
        **Résumé** : Page Wikipedia du DNS
        **Avis sur la ressource** : Plus complête en Anglais, pratique pour se rappeler de petits détails.
@@ -197,7 +200,7 @@ Sa popularité augmente peu à peu chaque année³ et d'après moi le DNSSec dev
        **Résumé** : Explication sur l'utilisation des clés et le fonctionnement du DNSSEC
        **Avis sur la ressource** : Très complète avec plein d'illustrations
 
-*  9 : Wikipedia, [Man-in-the-Middle Attack](https://fr.wikipedia.org/wiki/Attaque_de_l%27homme_du_milieu), consulté le 7 Mai 2022
+*  9 : Wikipedia, [Man-in-the-Middle Attack](https://fr.wikipedia.org/w/index.php?title=Attaque_de_l%27homme_du_milieu&oldid=191530746), consulté le 7 Mai 2022
 
        **Résumé** : Explication Sur l'attaque de l'homme du milieu
        **Avis sur la ressource** : Très complète avec des d'exemples
