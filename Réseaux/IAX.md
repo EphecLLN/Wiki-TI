@@ -65,6 +65,12 @@ IAX envoit des paquets avec la structure suivante:
 
 C'est cette structure qui diminue l'utilisation de la bande passante. Cette "mini-entête" IAX apporte un gros plus car moins de données sont échangées et donc moins de bande passante est utilisée.
 
+### > Échange type:
+
+Voici un exemple d'échange type lors d'une communication avec le protocole IAX:
+
+### **Explications:**
+
 ## **Concepts**:
 
 ### C01 - Attaque par déni de service:
