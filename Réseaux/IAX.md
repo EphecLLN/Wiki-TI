@@ -8,6 +8,8 @@ IAX fait donc partie intégrante du système VoIP mis en place par le PBX Asteri
 
 ### > Qu’est-ce qu’Asterisk ?:
 
+![image](https://user-images.githubusercontent.com/71372371/166737739-e9360031-97ac-4d70-8657-8113ab4634f0.png)
+
 Asterisk est un logiciel PABX (Autocommutateur téléphonique privé) créé en 1999 par Mark Spencer.
 
 Ce logiciel est très utilisé dans les entreprises ou les calls-centers et est à la base de nombreux autres logiciels de communication. Dû à sa popularité, il possède une grosse communauté. Il utilise le système VoIP pour transmettre toutes sortes de médias (voix, vidéo, images, etc) [[8](https://en.wikipedia.org/wiki/Asterisk)].
