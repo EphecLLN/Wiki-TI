@@ -63,6 +63,11 @@ IAX envoit des paquets avec la structure suivante:
 -   4 octets pour le "**_mini-entête_**" de IAX ( au lieux de 12 octets pour les autres protocoles),
 -   Le payload dont la taille varie selon le [**codec**](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#concepts).
 
+![image](https://user-images.githubusercontent.com/71372371/167297794-8ca673cb-c247-4b8d-8fe3-4b2b8467bb9e.png)
+
+
+[SOURCE](https://www.semanticscholar.org/paper/A-Comparative-Study-between-Inter-Asterisk-Exchange-Aliwi-Sumari/58eb892d9574cd17312ce98adc9e7009695e3094/figure/3)
+
 C'est cette structure qui diminue l'utilisation de la bande passante. Cette "mini-entête" IAX apporte un gros plus car moins de données sont échangées et donc moins de bande passante est utilisée.
 
 ### > Échange type:
