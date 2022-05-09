@@ -126,7 +126,6 @@ Il y a toujours une contrepartie à la gratuité d'un service.
 - Logiciels espions : ils sont généralement téléchargés comme des applications libres ou transmis par des sites malveillants.
 - Sécurité des données : Dans le cas d'un serveur Proxy hacké, les informations personnelles qui transitent via le serveur risquent d'être surveillées, récoltées et modifiées à des fins malveillantes comme l'usurpation d'identité.
 #### Historique de navigation
-Un serveur Proxy connaît l'adresse IP d'origine et les informations de requêtes enregistrées dans son cache. Il faut dès lors s'assurer de la politique de conservation de ces données.
 #### Cryptage
 Il ne faut pas oublier que de base, un serveur proxy ne chiffre pas le trafic qu’il filtre. Il faut donc associer son utilisation avec un protocole de cryptage sinon les demandes seront envoyées en texte brut et à la merci de celui qui écoute .
 
@@ -141,19 +140,19 @@ Il ne faut pas oublier que de base, un serveur proxy ne chiffre pas le trafic qu
    ** Avis sur la ressource : Beaucoup plus détaillée que la page en français équivalente 
 [^3]: Vince,"_Le proxy dans tous ses états_", zestedesavoir.com, https://zestedesavoir.com/tutoriels/2789/les-reseaux-de-zero/reprenons-du-service/le-proxy-dans-tous-ses-etats/ (consulté le 06/05/2022)
    ** Résumé : Le fonctionnement du proxy plus détaillé
-   ** Avis sur la ressource : Un des seuls sites où on aborde la couche OSI
+   ** Avis sur la ressource : Un des seuls sites où l'on aborde la couche OSI
 [^4]: Jeff Petter, "_What is a Proxy server and how does it work?_", varonis.com, https://www.varonis.com/blog/what-is-a-proxy-server 27/03/2020(consulté le 06/05/2022)
    ** Résumé : Le fonctionnement du Proxy, risques et avantages
-   ** Avis sur la ressource : Très clair mais un peu simple
+   ** Avis sur la ressource : Très claire mais un peu simple dans la description
 [^5]: "_Qu'est-ce qu'un serveur proxy et comment fonctionne-t-il ?_", avast.com, https://www.avast.com/fr-fr/c-what-is-a-proxy-server (consulté le 04/05/2022)
    ** Résumé : Un récap du Proxy
    ** Avis sur la ressource : La page est claire mais Avast en profite pour faire sa publicité
 [^6]: _shivk, "_Adventure with Proxy : Intro to Proxy_", medium.com, https://medium.com/@_shivk/adventure-with-proxy-intro-to-proxy-f7e640b455e7 février 2020 (consulté le 06/05/2022)
    ** Résumé : Le Proxy et ses différents types
-   ** Avis sur la ressource : Très clair au niveau des différents Proxies
+   ** Avis sur la ressource : Très claire au niveau des différents Proxies
 [^7]: "_What is an HTTP Proxy? Types of HTTP Proxies explained_", bestproxyreviews.com, https://www.bestproxyreviews.com/http-proxy/ 21/04/2022(consulté le 06/05/2022)
    ** Résumé : Différents types de Proxies et leurs fournisseurs
-   ** Avis sur la ressource : Très clair au niveau des différents Proxies
+   ** Avis sur la ressource : Très claire au niveau des différents Proxies
 [^8]: "_Différence entre Proxy et Firewall_", waytolearnx.com, https://waytolearnx.com/2018/09/difference-entre-proxy-et-firewall.html 09/09/2018(consulté le 02/05/2022)
    ** Résumé : Un rappel sur le Proxy et sur le Firewall
    ** Avis sur la ressource : Juste ce qu'il faut sans entrer dans les détails
@@ -162,10 +161,10 @@ Il ne faut pas oublier que de base, un serveur proxy ne chiffre pas le trafic qu
    ** Avis sur la ressource : Juste ce qu'il faut sans entrer dans les détails
 [^10]: Vuk Mujovic, "_Cacher les connexions Proxy: qu'est-ce qu'un Proxy et une adresse IP?_", le-vpn.com, https://www.le-vpn.com/fr/quest-ce-quun-proxy/#:~:text=Risques%20li%C3%A9s%20%C3%A0%20l'utilisation%20d'un%20proxy&text=Le%20risque%20le%20plus%20courant,transmis%20par%20des%20sites%20malveillants. 29/10/2021(consulté le 08/05/2022)
    ** Résumé : Les fonctionnalités du Proxy, les types et les risques liés au Proxy
-   ** Avis sur la ressource : Concis avec en prime une liste des serveur Proxy les plus connus
+   ** Avis sur la ressource : Concis avec en prime une liste des serveurs Proxy les plus connus
 [^11]: Catherine Chipeta, "_Qu'est-ce qu'un serveur Proxy? Une explication claire de son fonctionnement_", upguard.com, https://www.upguard.com/blog/proxy-server#:~:text=Proxy%20servers%20work%20by%20facilitating,directly%20back%20to%20the%20user. 18/04/2022(consulté le 07/05/2022)
    ** Résumé : Le fonctionnement et les types de Proxies
-   ** Avis sur la ressource : Aussi clair que le titre
+   ** Avis sur la ressource : Aussi claire que le titre
 [^12]: "_Qu'est-ce qu'un VPN et comment fonctionne-t-il ?_", avast.com, https://www.avast.com/fr-fr/c-what-is-a-vpn (consulté le 04/05/2022)
    ** Résumé : Un récap du VPN
    ** Avis sur la ressource : La page est claire mais Avast en profite pour placer sa publicité
