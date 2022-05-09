@@ -126,6 +126,7 @@ Il y a toujours une contrepartie à la gratuité d'un service.
 - Logiciels espions : ils sont généralement téléchargés comme des applications libres ou transmis par des sites malveillants.
 - Sécurité des données : Dans le cas d'un serveur Proxy hacké, les informations personnelles qui transitent via le serveur risquent d'être surveillées, récoltées et modifiées à des fins malveillantes comme l'usurpation d'identité.
 #### Historique de navigation
+Un Proxy connaît l'IP d'origine et l'historique des requêtes de l'utilisateur. Dès lors, il s'agit de vérifier si le serveur enregistre ces données et quelle politique de conservation des données il applique car si ces données sont consignées et vendues alors que le service attendu est l'anonymisation, le dit-service est frauduleux.
 #### Cryptage
 Il ne faut pas oublier que de base, un serveur proxy ne chiffre pas le trafic qu’il filtre. Il faut donc associer son utilisation avec un protocole de cryptage sinon les demandes seront envoyées en texte brut et à la merci de celui qui écoute .
 
