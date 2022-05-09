@@ -88,7 +88,7 @@ Voici les différentes étapes:
 2. Échange/Conversation entre les 2 communiquants
 
 3. Fin de la communication:
-   Quand l'un des membres raccroche, un paquet de type `HANGUP` est envoyé à l'autre communiquant, qui, à la réception, envoie un accusé de réception.
+   Quand l'un des membres raccroche, un paquet de type `HANGUP` est envoyé à l'autre communiquant. Ce dernier envoie un accusé de réception.
 
 ### **Explications:**
 
