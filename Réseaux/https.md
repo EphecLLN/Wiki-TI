@@ -183,3 +183,8 @@ Voilà, nous avons terminé ! Nous avons appris ce qu'est le HTTPS et comment le
 
     - Résumé : Image expliquant le protocole HTTPS.
     - Avis sur la ressource : Images bien illustrées.
+
+8. [HTTPS n’aura plus de secret pour vous](https://www.youtube.com/watch?v=NCPgs4YlijU&t=2186s), Grégory Paul, 09 mai 2016, consulté le 01 mai 2022
+
+    - Résumé : Conférence Devoxx sur le protocoles HTTPS.
+    - Avis sur la ressource : La vidéoconférence est présentée par quelqu'un de très compétent en la matière.
