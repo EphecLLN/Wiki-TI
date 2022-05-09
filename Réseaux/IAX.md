@@ -28,7 +28,7 @@ IAX est utilisé en téléphonie sur IP, mais quelles sont ses caractéristiques
 
 -   **Ports** : En VoIP classique, on utilise deux ports, le port 4005 pour transmettre le flux de données et le port 4060 pour transmettre la signalisation relative à ce flux. Cependant l’avantage de IAX est qu’il utilise un seul port, le 4569 en UDP, à la fois pour la signalisation et le flux de données [[2](https://en.wikipedia.org/wiki/Inter-Asterisk_eXchange), [3](https://www.voip-info.org/iax-versus-sip/.)]. Le fait d’exposer un seul port présente divers avantages. En effet, la configuration du firewall est plus simple et la NAT est également rendue plus simple à configurer. Cette caractéristique apporte donc une certaine « légèreté » en matière de configuration pour ce protocole [[4](https://askanydifference.com/difference-between-sip-and-iax/)].
 
--   **Diminution de la bande passante** : Sa première caractéristique (unique port) apporte un avantage sur l’utilisation des ressources. De fil en aiguille, cela inclut une réduction de la bande passante utilisée.
+-   **Diminution de la bande passante** : IAX utilise une en-tête racourcie comparé aux autres protocoles (_voir carctéristiques techniques_). Comme moins de données sont envoyées, cela inclut une réduction de la bande passante utilisée.
 
 -   **Diminution de la latence** : Le fait qu'un seul port soit utilisé au lieu d’un seul, apporte aussi un changement au niveau de la latence. En effet, comme les deux flux traditionnels sont envoyés en même temps et sur le même port, on a une réduction de la latence
 
@@ -57,6 +57,7 @@ Toute la partie signalisation est gérée en couche 2 (Liaison de données).
 ### > Structure des données:
 
 IAX envoit des paquets avec la structure suivante:
+[[10](https://www.nextiva.com/blog/voip-codecs.html#:~:text=A%20VoIP%20codec%20is%20a,two%20terms%3A%20Compression%20and%20Decompression.)]
 
 -   20 octets pour l'entête IP (**=** autres protocoles),
 -   8 octets pour l'entête UDP (**=** autres protocoles),
@@ -64,7 +65,6 @@ IAX envoit des paquets avec la structure suivante:
 -   Le payload dont la taille varie selon le [**codec**](https://github.com/Pourbaix/Wiki-TI/blob/main/R%C3%A9seaux/IAX.md#concepts).
 
 ![image](https://user-images.githubusercontent.com/71372371/167297794-8ca673cb-c247-4b8d-8fe3-4b2b8467bb9e.png)
-
 
 [SOURCE](https://www.semanticscholar.org/paper/A-Comparative-Study-between-Inter-Asterisk-Exchange-Aliwi-Sumari/58eb892d9574cd17312ce98adc9e7009695e3094/figure/3)
 
@@ -76,6 +76,19 @@ Voici un exemple d'échange type lors d'une communication avec le protocole IAX:
 
 ![6-Figure1-1](https://user-images.githubusercontent.com/71372371/167297870-0d01989d-a751-4145-add1-67474aea5d07.png)
 
+[SOURCE](https://www.semanticscholar.org/paper/A-Comparative-Study-between-Inter-Asterisk-Exchange-Aliwi-Sumari/58eb892d9574cd17312ce98adc9e7009695e3094/figure/3)
+
+On distingue 2 personnes: l'appelant qui initie l'appel (A) et l'appelé qui reçoit la demande d'appel (B).
+
+Voici les différentes étapes:
+
+1. Mise en place de la connexion:
+   Lorsqu'une personne initie un appel vers une autre, il y a envoi d'un paquet `NEW` pour demander à B d'initier une communication. Si le poste de B est disponible, il envoie un paquet `ACCEPT`. A accuse réception de ce dernier et c'est à ce moment-là que l'utilisateur B reçoit la notification d'appel. Le poste B indique alors à A que la sonnerie est en cours (`RINGING`). Si l'utilisateur B décroche, il y a envoi d'un paquet `ANSWER` et si A accuse réception c'est le début de la conversation entre les deux personnes.
+
+2. Échange/Conversation entre les 2 communiquants
+
+3. Fin de la communication:
+   Quand l'un des membres raccroche, un paquet de type `HANGUP` est envoyé à l'autre communiquant, qui, à la réception, envoie un accusé de réception.
 
 ### **Explications:**
 
@@ -107,7 +120,7 @@ En VoIP il en existe plusieurs, les 3 plus connus sont:
 
 3. **G.729**, c'est l'un des codecs les plus légé en bande-passante et avec une qualité audio résonable.
 
-Source => [9](https://www.nextiva.com/blog/voip-codecs.html#:~:text=A%20VoIP%20codec%20is%20a,two%20terms%3A%20Compression%20and%20Decompression.)
+Source => [[9](https://www.nextiva.com/blog/voip-codecs.html#:~:text=A%20VoIP%20codec%20is%20a,two%20terms%3A%20Compression%20and%20Decompression.)]
 
 ## **Bibliographie:**
 
@@ -200,3 +213,13 @@ Auteur: JEREMIAH ZERBY
 Date de parution: 16 novembre 2020
 
 Date de visite: 08/05/2022
+
+### - [10](https://scialert.net/fulltext/?doi=ajsr.2017.110.115)
+
+Titre: VoIP Protocols’ Bandwidth Based-Mini/RTP Header Using Different Codecs: A Comparison
+
+Auteur: Naser K.A. Alajmi, Hadeel Saleh Haj Aliwi and Kamal Alieyan
+
+Date de parution: 15 juin 2017
+
+Date de visite: 05/05/2022
