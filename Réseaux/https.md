@@ -139,13 +139,14 @@ Vous trouverez une documentation plus détaillée à ce sujet sur [cette page](h
 <br>
 
 ## Conclusion
+
 Voilà, nous avons terminé ! Nous avons appris ce qu'est le HTTPS et comment le mettre en place.
 
--   dîtes TLS et pas SSL (déprécier) !
+-   dites TLS et pas SSL (déprécié!)
 -   HTTPS bientôt le « défaut »
 -   commencez vos nouveaux projets en HTTPS (même en dev pour s'approcher de la réalité !)
 -   Soyez à jour, testez régulièrement votre site et actualisez sa configuration
--   Utiliser les outils d'automatisation TLS (Let’s encrypt/ACME)
+-   Utilisez les outils d'automatisation TLS (Let’s encrypt/ACME)
 
 ## Bibliographie
 
