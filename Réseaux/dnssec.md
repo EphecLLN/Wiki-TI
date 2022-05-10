@@ -13,7 +13,7 @@ parent: Réseaux
 
  Tout commence en 1990, lorsque le [Docteur Steven M. Bellovin](https://en.wikipedia.org/wiki/Steven_M._Bellovin) a découvert des failles de sécurité dans le protocole DNS¹. Il a remarqué qu'il était très facile pour une personne malveillante de rediriger un utilisateur vers un autre site web. 
 
-Il faut savoir que le DNS n'avait aucun système de sécurité car Internet était très loin d'être le géant qu'il est aujourd'hui et le seul moyen pour un résolveur de vérifier les informations qu'il recevait était de comparer l'adresse IP source d'une réponse avec l'adresse IP de la requête, ce qui n'est pas du tout sécurisé de part la facilité à falsifier celles-ci.
+Il faut savoir que le DNS n'avait aucun système de sécurité car Internet était très loin d'être le géant qu'il est aujourd'hui. Le seul moyen pour un résolveur de vérifier les informations qu'il recevait était de comparer l'adresse IP source d'une réponse avec l'adresse IP de la requête, ce qui n'est pas du tout sécurisé de part la facilité à falsifier celles-ci.
  
 Les trois principales failles de sécurité découvertes par le [Docteur Steven M. Bellovin](https://en.wikipedia.org/wiki/Steven_M._Bellovin) sont le "DNS Spoofing", le "DNS Cache poisoning" et la "man-in-the-middle attack". 
   
@@ -21,19 +21,17 @@ Les trois principales failles de sécurité découvertes par le [Docteur Steven 
 Le DNS Spoofing (usurpation DNS en français) est l'action de rediriger un utilisateur vers un site web malveillant afin de lui soutirer des informations privées, telles que des mots de passe ou des numéros de carte de crédit.  
 Les attaquants se font passer pour le serveur autoritaire d'un site web afin d'empoisonner le cache d'un résolveur pour y mettre de fausses informations, de sorte que celui-ci renvoie une adresse IP incorrecte aux utilisateurs et ainsi les redirige au mauvais endroit.
 
-###### BLUECATNETWORKS, _Kyle Roblyer_ , 25 Novembre 2019, [en ligne] https://bluecatnetworks.com/blog/what-is-dns-poisoning-how-to-prevent-it/
-<img src="https://bluecatnetworks.com/wp-content/uploads/2020/10/DNS-Poisoning.png"  height="400" />
+<img src="../Assets/Images/DNSSEC-DNS_poisoning.png"  height="400" />
 
 **Qu'est-ce que l'Attaque de l'homme du milieu⁹ ?**  
 L'attaque de l'homme du milieu (man-in-the-middle attack en anglais) n'a rien à voir avec la terre du même nom, mais consiste plutôt à intercepter/relayer la communication entre deux parties.
 L'attaquant a donc le contrôle direct sur les informations et peut donc décider de les modifier à sa guise. Cette attaque est très souvent utilisée pour rediriger des utilisateurs lambda vers des sites web frauduleux.
 
-###### MALWAREBYTES, Blog, [en ligne] https://blog.malwarebytes.com/101/2018/07/when-three-isnt-a-crowd-man-in-the-middle-mitm-attacks-explained/
-<img src="https://blog.malwarebytes.com/wp-content/uploads/2018/07/shutterstock_758712814-900x506.jpg"  height="300" />
+<img src="../Assets/Images/DNSSEC-man-in-the-middle_attack.png"  height="300" />
 <br>
 
 ### **Et comment peut-on empêcher ces attaques ?**  
-Ces attaques ont tous un point en commun en terme de sécurité, c'est que le résolveur n'a aucun moyen de savoir si les informations qu'il reçoit sont correctes car il ne sait pas avec quelle machine il communique. Il nous faut donc un système pour authentifier les machines DNS afin d'empêcher quiconque de s'immiscer entre les mailles du filet .  
+Ces attaques ont toutes un point en commun en terme de sécurité, c'est que le résolveur n'a aucun moyen de savoir si les informations qu'il reçoit sont correctes car il ne sait pas avec quelle machine il communique. Il nous faut donc un système pour authentifier les machines DNS afin d'empêcher quiconque de s'immiscer entre les mailles du filet .  
 C'est ainsi que le DNSSEC fut inventé en se basant sur la cryptographie à clé publique .
   
 
@@ -46,8 +44,10 @@ Chaque domaine et sous-domaine peut ensuite créer une délégation ([voir Dél�
 Nous utilisons donc un résolveur pour faire des requêtes récursives, afin d'interroger un par un, en partant de la racine, les "Name Servers" jusqu'à trouver l'adresse IP correspondante à notre requête.  
   
 
-![](https://www.nameshield.com/wp-content/uploads/2020/03/DNS-768x419.png)
-###### NameSchield, [en ligne] https://www.nameshield.com/ressources/lexique/dns-domain-name-system/
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/DNS_iterations.svg"  height="500" />
+
+###### Wikipedia, [en ligne] https://fr.wikipedia.org/wiki/Domain_Name_System
 
  
 Prenons un exemple avec 'www.wikipedia.org';
@@ -65,20 +65,18 @@ Prenons un exemple avec 'www.wikipedia.org';
 - Chaque Serveur DNS génère une paire de clés ZSK (**Z**one **S**ignature **K**ey) et une paire de clés KSK(**K**ey **S**ignature **K**ey).
 - La ZSK privée est utilisée pour signer le RRset et stocke la signature dans un RRSIG.   
 
-<br><img src="https://www.cloudflare.com/img/products/ssl/diagram-rrsets.svg" width="300" height="200" /> 
-<br><img src="https://www.cloudflare.com/img/products/ssl/diagram-zone-signing-keys-1.svg" width="300" height="200" /> 
+<br><img src="../Assets/Images/DNSSEC-RRset.png" height="300" /> 
+<br><img src="../Assets/Images/DNSSEC-RRsig.png" height="150" /> 
 
-###### CLOUDFLARE, [en ligne] https://www.cloudflare.com/fr-fr/dns/dnssec/how-dnssec-works/
 
 - La ZSK publique est stockée dans un Ressource Record "DNSKEY" et utilisée pour vérifier la signature .  
 - La KSK publique est stockée dans un Ressource Record "DNSKEY" .  
 - Ces deux RR 'DNSKEY' sont rassemblées dans un RRset .
 - La KSK privée est utilisée pour signer le RRset "DNSKEY" et stocke la signature dans un autre RRSIG .  
 
-<br><img src="https://www.cloudflare.com/img/products/ssl/diagram-key-signing-keys-1.svg" width="300" height="200" />
+<br><img src="../Assets/Images/DNSSEC-ZSK_KSK.png" height="200" />
 
-###### CLOUDFLARE, [en ligne] https://www.cloudflare.com/fr-fr/dns/dnssec/how-dnssec-works/
-  <br>
+<br>
 
 Pour l'instant, le serveur de nom agit de manière indépendante, il faut trouver un moyen de propager la confiance entre les serveurs .  
 C'est ce qu'on appelle la _Chain of Trust_.
@@ -86,18 +84,17 @@ C'est ce qu'on appelle la _Chain of Trust_.
 
 ### **Chain of Trust⁷**   
 Le DNSSEC fonctionne à l'aide d'un système de chaîne de confiance⁵ (en Anglais 'Chain of Trust') qui valide les serveurs DNS sur base de leurs RRSIG. Le NS pourra donc obtenir un certificat de confiance signé par le parent, et ainsi de suite jusqu'à ce que l'entièreté de la chaîne soit certifiée.
-Lorsque une zone enfant termine sa sécurisation, elle hache son RRset DNSKEY et l'envoie à la zone parent pour qu'elle l'ajoute en tant qu'enregistrement DS(Delegation Signer) dans ses Ressources Records. Celui-ci va ensuite repasser dans le processus de sécurisation de la zone parent . Et ainsi de suite jusqu'au "Root Server", dont le certificat fut approuvé manuellement par l'ICANN en 2010.    
+Lorsqu'une zone enfant termine sa sécurisation, elle hache son RRset DNSKEY et l'envoie à la zone parent pour qu'elle l'ajoute en tant qu'enregistrement DS(Delegation Signer) dans ses Ressources Records. Celui-ci va ensuite repasser dans le processus de sécurisation de la zone parent . Et ainsi de suite jusqu'au "Root Server", dont le certificat fut approuvé manuellement par l'ICANN en 2010.    
 <br>
 **Exemple de requête :**  
 
-![](https://blog.resellerspanel.com/wp-content/uploads/2017/02/dnssec-ds-records.jpg)  
+<br><img src="../Assets/Images/DNSSEC-Exemple.png" height="300" />
+  
 
-###### RessellersPanel, [en ligne] , https://blog.resellerspanel.com/domain-names/dnssec-enabled-on-our-platform.html
-
-- Un utilisateur essaie de joindre "www.DOM.com", il va alors contacter la Zone Racine
+- Un utilisateur essaie de joindre "www.ephec.com", il va alors contacter la Zone Racine
 - La Zone Racine va alors vérifier la zone ".com" avec sa KSK publique 
-- La zone ".com" va vérifier le RR de la zone "DOM.com"
-- La zone "DOM.com" va finalement vérifier le RR de "www.DOM.com" 
+- La zone ".com" va vérifier le RR de la zone "ephec.com"
+- La zone "ephec.com" va finalement vérifier le RR de "www.ephec.com" 
 - Le RR est ensuite renvoyé à l'utilisateur 
 
 
@@ -204,6 +201,3 @@ Sa popularité augmente peu à peu chaque année³ et d'après moi le DNSSec dev
 
        **Résumé** : Explication Sur l'attaque de l'homme du milieu
        **Avis sur la ressource** : Très complète avec des d'exemples
-
-
-
