@@ -9,10 +9,12 @@ has_children: true
 
 Cette section regroupe tous les articles concernant le réseau : Protocoles, configuration, outils, bonnes pratiques...
 
-## Articles
+## Protocoles transport et applicatifs
 
+- [Délégation DNS](Réseaux/delegation_dns.md)
+- [HTTPS](Réseaux/https.md)
+- [DNSSec](Réseaux/dnssec.md)
 
-* [Délégation DNS](Réseaux/delegation_dns.md)  
-* [DNSSEC](Réseaux/dnssec.md)
-* [HTTPS](Réseaux/https.md)
+## Administration réseaux
 
+- [Reverse Proxy](Réseaux/reverse_proxy.md)
