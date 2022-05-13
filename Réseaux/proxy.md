@@ -1,4 +1,9 @@
-a[Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
+---
+layout: default
+title: Proxy
+parent: Réseaux
+---
+
 # Le proxy
 
 ## Qu'est-ce qu'un proxy?[^1] [^2]
