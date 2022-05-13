@@ -5,12 +5,13 @@ a[Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
 Tiré de l'anglais qui signifie "procuration", le terme proxy désigne un serveur qui permet de relayer les requêtes.
 Un serveur Proxy (également appelé serveur mandataire) est donc un serveur qui agit comme intermédiaire entre un utilisateur demandeur d'une ressource et le serveur distant, fournisseur de cette ressource. L'utilisateur ne peut plus s'adresser directement au serveur distant sans passer par le serveur Proxy, qui fonctionne au nom du client, masquant potentiellement la véritable origine de la demande.
 ###### Fig.1 Schéma d'un serveur Proxy
-<img src="https://www.proxyvpn.fr/wp-content/uploads/2019/02/1200px-CPT-Proxy.svg_.png" width="800" height="250">
+<img src="https://www.proxyvpn.fr/wp-content/uploads/2019/02/1200px-CPT-Proxy.svg_.png" width="800" height="250"> 
+
 ###### "https://www.proxyvpn.fr/wp-content/uploads/2019/02/1200px-CPT-Proxy.svg_.png"© proxyvpn.fr
 
 
 ## Que se passe-t-il au niveau du réseau ? [^3]
-Le Proxy travaille sur la couche application, au niveau 7 du modèle OSI. Le Proxy décapsule donc toutes les couches inférieures quand il reçoit une requête http et réencapsule les paquets IP pour les retransmettre vers le serveur de destination. Il y a donc deux connexions TCP ce qui signifie une rupture de flux au niveau du Proxy.
+Le Proxy travaille sur la couche application, au niveau 7 du modèle OSI. Concrètement, dans le cas d'un proxy web, il décapsule donc toutes les couches inférieures quand il reçoit une requête http et réencapsule les paquets IP pour les retransmettre vers le serveur de destination. Il y a donc deux connexions TCP ce qui signifie une rupture de flux au niveau du Proxy.
 
 ###### Fig.2 Décapsulation de la requête reçue et réencapsulation
 ![Décapsulation de la requête et réencapsulation](https://zestedesavoir.com/media/galleries/5382/2e3db985-cde5-4e61-9bf7-5af14485d872.png)
@@ -76,7 +77,9 @@ Le serveur Web ne connaît ni l'adresse IP de l'utilisateur ni celle du Proxy.
 Le Proxy SOCK est un Proxy de tunneling, technique consistant à utiliser un protocole pour transporter des données à l'intérieur d'un autre protocole. Il crée une connexion TCP vers un autre serveur derrière le Firewall au nom du client. Le serveur Proxy SOCK relaie la session TCP et UDP d'un utilisateur qui n'est pas autorisé à établir une connexion avec un serveur extérieur au-delà du Firewall.
 ###### Fig.3 Schéma d'un Proxy de tunneling
 ![](https://miro.medium.com/max/1378/1*St3AO8UxsllEnO93Pqoqcw.png)
+
 _shivk "https://miro.medium.com/max/1378/1*St3AO8UxsllEnO93Pqoqcw.png"
+
 "Le client SSH crée un proxy SOCK (tunnel). Il prend le trafic local envoyé à un port spécifique du PC et l'envoie via la connexion SSH à un emplacement distant, le serveur SSH"
 
 #### **Proxy FTP (File Transfer Protocol)**[^11]
