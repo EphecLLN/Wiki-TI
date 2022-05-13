@@ -11,9 +11,17 @@ Cette section regroupe tous les articles concernant le réseau : Protocoles, con
 
 ## Protocoles transport et applicatifs
 
+### Le DNS
 - [Délégation DNS](Réseaux/delegation_dns.md)
-- [HTTPS](Réseaux/https.md)
 - [DNSSec](Réseaux/dnssec.md)
+
+### Le Web
+
+- [HTTPS](Réseaux/https.md)
+
+### La VoIP
+
+- [IAX](Réseaux/iax.md)
 
 ## Administration réseaux
 

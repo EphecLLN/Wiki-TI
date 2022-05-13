@@ -22,14 +22,16 @@ Les informations sont organisées par catégorie :
 
 ### Routage et switching
 
-### Protocoles transport et applicatifs
+## Protocoles transport et applicatifs
 
--   [Délégation DNS](Réseaux/delegation_dns.md)
--   [HTTPS](Réseaux/https.md)
--   [DNSSec](Réseaux/dnssec.md)
+- [Délégation DNS](Réseaux/delegation_dns.md)
+- [DNSSec](Réseaux/dnssec.md)
+- [HTTPS](Réseaux/https.md)
+- [IAX](Réseaux/iax.md)
 
-### Administration réseaux
--   [Reverse Proxy](Réseaux/reverse_proxy.md)
+## Administration réseaux
+
+- [Reverse Proxy](Réseaux/reverse_proxy.md)
 
 ## Développement
 
@@ -52,3 +54,5 @@ Les informations sont organisées par catégorie :
 ### Conteneurs
 
 ## Sécurité
+
+- [PGP](Sécurité/PGP.md)

@@ -1,5 +1,10 @@
-# Artcle Wiki PGP - Maisin Edouard 2TL2
+---
+layout: default
+title: PGP
+parent: Sécurité
+---
 
+# PGP
 
 ## Introduction 
 

@@ -1,3 +1,9 @@
+---
+layout: default
+title: IAX
+parent: Réseaux
+---
+
 # Inter-Asterisk eXchange
 
 IAX est un protocole VoIP produit et créé à la base pour le logiciel PBX « Asterisk ». Il est utilisé pour transmettre des sessions VoIP entre les serveurs et les machines des clients.

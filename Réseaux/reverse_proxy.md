@@ -1,4 +1,9 @@
-[Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
+---
+layout: default
+title: Reverse Proxy
+parent: Réseaux
+---
+
 # Le Reverse Proxy
 Dans cet article, nous allons essayer de répondre à la question  
 **"Qu'est-ce qu'un reverse proxy et pourquoi en utiliser un ?"**
