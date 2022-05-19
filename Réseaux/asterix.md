@@ -108,9 +108,50 @@ La configuration du protocole RTP dans une infrastructure Asterisk passe par le 
 
 Pour chaque appel SIP bidirectionnel entre 02 terminaux, cinq ports sont généralement utilisés : 5060 pour la signalisation SIP, Un port pour le flux de données un port pour RTCP dans une direction, 2 ports supplémentaires pour le flux de données et RTCP dans la direction opposée.
 
+Exemple
 
-### Protocole RTCP
+```
+;
+; Configuration RTP
+;
+[général]
+;
+; RTP start et RTP end configurent les adresses de début et de fin
+;
+rtpstart=10000
+rtpend=20000
+```
 
-C'est un protocole de contrôle des flux RTP, permettant de récupérer des
-informations sur les participants d'une session, et sur la qualité de service en
-transmettent périodiquement des paquets de contrôles.
+Si vous avez un NAT ou un pare-feu entre Asterisk et le serveur, vous devez les configurer pour gérer le transfert des ports configurés.
+
+### Intégration de la video dans Asterisk
+
+Asterisk prend en charge une variété de support audio et vidéo et fournit des modules CODEC pour faciliter l'encodage et le décodage des flux audio. Pour l'instant le transcodage vidéo ou le transcodage d'image n'est pas pris en charge.
+
+#### Pris en charge des vidéos
+
+Non  | Valeur de configuration |  Format Module | Distribué avec Astérisk |
+:-: | :-:| :-:| :-: |
+H.261 | h261 | n/A | OUI|
+H.263 | h263 | format_h263 | OUI|
+H.263+ | h263p | format_h263 | OUI|
+H.264 | h264 | format_h264 | OUI|
+
+le fichier produit par les pilotes de format vidéo Asterisk n'est pas dans un format vidéo générique. [Gstreamer](https://gstreamer.freedesktop.org/) prend en charge la production de ces fichiers et la conversion de divers fichiers vidéo en fichiers vidéo + audio Asterisk.
+
+#### Prise en charge du pilote de canal 
+
+Pilote de canal | Module  | Remarque
+:-: | :-:| :-:| 
+siroter|chan_sip.so|Le pilote de canal SIP (chan_sip.so) prend en charge la vidéo|
+IAX2|chan_iax2.so|Prend en charge les appels vidéo (sur les troncs aussi)|
+Local|chan_local.so|Transfère les appels vidéo en tant que canal proxy|
+Agent|	chan_agent.so| Transfère les appels vidéo en tant que canal proxy |
+oss |chan_oss.so| Prend en charge l'affichage/le décodage vidéo, voir video_console.txt|
+
+Les applications de plans de numérotation qui sont connus pour gérer la vidéo sont : 
+
+- Messagerie vocole - Stockage de la messagerie vocale vidéo
+- Enregistrer - Enregistre les fichiers audio et vidéo 
+- Lecture - Lit une vidéo tout en étant invité à lire l'audio 
+- Echo - Renvoie l'audio et la vidéo à l'utilisateur 
