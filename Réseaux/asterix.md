@@ -10,7 +10,7 @@ parent: Réseaux
 
 ## **Qu'est-ce que ASTERIX ?[^1]**
 
-Astérix est une implémentation logicielle d'un autocommutateur privé (PBX) qui
+Astérix est une implémentation logicielle d'un autocommutateur privé PBX qui
 est une centrale téléphonique desservant une organisations privée et permettant
 le partage des lignes réseaux d'un bureau central entre les téléphones installés
 en interne.
@@ -18,25 +18,26 @@ en interne.
 Chaque Appareil connecté au PBX possède un numéro de téléphone d'extension
 désigné qui peut ou non être mappé au plan de numérotation du bureau central.
 
-Astérisk permet donc le l'etablissement et le contrôle de la communication entre
+Astérisk permet donc l'etablissement et le contrôle de la communication entre
 les différents terminaux tels que les postes téléphonique, les appareils ou
-services sur voix sur protocole internet (VoIP).
+services de voix sur protocole internet (VoIP).
 ###### Fig.1 Schéma d'une infrastructure asterisk
 ![flux d'appel](https://user-images.githubusercontent.com/74672498/169313118-e214baf6-f8d7-40f4-a8c8-4b757a64b2e8.png)
 ###### "https://docplayer.fr/508846-Le-support-de-la-video-par-asterisk.html" docplayer.fr
 
 Il prend en charge plusieurs fonctionnalités disponible dans les systèmes PBX
 notament la messagerie vocale, conférence téléphonique, distribution
-automatiqued'appel. Ce qui fait l'une des plus grande force d'Asterisk est que
-les utilisateurs peuvent créer de nouvelle fonctionnalités en écrivant des
+automatique d'appel. Ce qui fait l'une des plus grande force d'Asterisk est que
+les utilisateurs peuvent créer de nouvelles fonctionnalités en écrivant des
 scripts de plan de numérotation dans plusieurs des propres langages d'
-extensions d'Asterisk , en ajoutant des modules chargeables personnalisés écrits
-en PHP ou C. Mais qu'en est-il de l'intégration des flux video dans une
+extensions d'Asterisk tout simplement en ajoutant des modules chargeables personnalisés écrits
+en PHP ou C. Qu'en est-il réellement de l'intégration des flux video dans une
 infrastructure Asterisk ?
 
 ## **Flux video**
 
 ### Introduction[^2]
+
 Encore appelé streaming, c'est un processus d'envoi de contenu en direct. La
 plupart des logiciels de voix sur ip telles que facebook, skype discord intègre
 des flux multimédia : appel video. En générale le VoIp est utilisé pour décrire
@@ -59,7 +60,7 @@ audio et vidéo.
 #### **Caractéristiques[^3]**
 
 RTP étant utilisé en mode unidirectionnel (d'un emetteur à un récepteur), il
-peut être aussi utilisé en mode multicast via satellite sans garantie de qualité de service (QoS). Les données sont augmentées de l'ajout du protocole de contrôle RTCP.
+peut être aussi utilisé en mode multicast via satellite sans garantie de qualité de service ([QoS](https://fr.wikipedia.org/wiki/Qualit%C3%A9_de_service)). Les données sont augmentées de l'ajout du protocole de contrôle RTCP.
 
 Le rôle principale de RTP consiste à numéroter les paquets IP afin de
 reconstituer les flux voix ou vidéo de manière fluide et ce, même si le réseau
@@ -75,15 +76,15 @@ Exemple de communication via SIP
 
 - **Utilisation avec un canal de retour[^3]**
 
-RTP peut être utilisé conjointement avec un canal de retour via RTCP voir RTSP(Real Time Streaming Protocol destiné aux système de streaming média). Ce canal de retour peut servir à demander des changements de compression ou de débit 
+RTP peut être utilisé conjointement avec un canal de retour via RTCP voir RTSP(Real Time Streaming Protocol destiné aux système de streaming média). Ce canal de retour peut servir à demander des changements de compression ou de débit pour les applications multimedia ou encore informer l'emetteur des propriétés temps-réel du canal.
 
 Pour améliorer les performances de RTP, un protocole spécifique au streaming permet de contrôler la diffusion du contenu, il s’agit de RTSP (Real Time Streaming Protocol).
 
-RTPS est un protocole de niveau applicatif qui sert à contrôler les propriétés temps réel du contenu délivré. Il est adapté aussi bien à la diffusion de données pré-enregistrées que de données diffusées en direct. 
+RTPS est un protocole de niveau applicatif qui sert à contrôler les propriétés temps-réel du contenu délivré. Il est adapté aussi bien à la diffusion de données pré-enregistrées que de données diffusées en direct. 
 
 - **Utilisation en mode unicast[^2] [^3]**
 
- Il nécessite l'ouverture d’un flux spécifique entre le serveur et le client.Les protocoles utilisés sont RTSP pour le contrôle du flux et RTP pour l’émission du flux. RTSP utilise TCP alors que RTP utilise UDP. L’intérêt de RTSP par rapport à RTP est d’ajouter un contrôle sur le contenu et de pouvoir par exemple accéder directement à un point donné du contenu sans avoir à le télécharger dans sa globalité. Il améliore ainsi les performances.
+ Ce mode de diffusion nécessite l'ouverture d’un flux spécifique entre le serveur et le client. Les protocoles utilisés sont RTSP pour le contrôle du flux et RTP pour l’émission du flux. RTSP utilise TCP alors que RTP utilise UDP. L’intérêt de RTSP par rapport à RTP est d’ajouter un contrôle sur le contenu et de pouvoir par exemple accéder directement à un point donné du contenu sans avoir à le télécharger dans sa globalité. Il améliore ainsi les performances.
  
 Comment sa se passe :
  
@@ -103,7 +104,7 @@ La mise en œuvre de RTP en mode multicast requiert la configuration préalable 
 routage au niveau du récepteur, qui doit faire lui-même la demande de routage à
 ses routeurs hôtes, entre l'émetteur et le récepteur. L'émetteur quant à lui
 informe séparément les routeurs de diffusion auxquels il est directement
-connecté. il n'existe qu'un seul flux qui est dupliqué au niveau de chaque recepteur.
+connecté. il n'existe qu'un seul flux qui est dupliqué au niveau de chaque recepteur. on peut prendre le cas de la diffusion d'une chaine de TV où le flux est partagé entre tous les recepteurs.
 
 - Comment sa se passe :
 
@@ -116,18 +117,18 @@ Pour se connecter au multicast, le client doit télécharger un fichier type SDP
 
  #### **RTP et la NAT[^7]**
  
- Les protocoles de signalisation utilisés pour les échanges multimédia dont H.323 SIP, MGCP et bien d'autres sont dit sensible à la NAT.
+ Les protocoles de signalisation utilisés pour les échanges multimédia (H.323 SIP, MGCP etc) sont dit sensible à la NAT! Pourquoi?
  
- Lors d'une signalisation, ces protocoles ne se contentent pas de mentionner leur adresse IP dans  l'entête des paquets qu'ils envoient mais indiquent également dans le corps de leurs messages. Par exemple avec le protocole SIP un message d'invitation INVITE comporte des informations sur l'ip de la source du paquet. Le récepteur ne peut répondre correctement à la requête puisque l'ip source initiale est une adresse privée. Le récepteur envoie donc sa réponse vers l'adresse ip source spécifiée qui ne lui est pas accessible, et le paquet de réponse n'arrive jamais.
+ Lors d'une signalisation, ces protocoles ne se contentent pas de mentionner leur adresse IP dans l'entête des paquets qu'ils envoient mais l'indiquent également dans le corps de leurs messages. Par exemple avec le protocole SIP un message d'invitation INVITE comporte des informations sur l'ip de la source du paquet. Le récepteur ne peut répondre correctement à la requête puisque l'ip source initiale est une adresse privée. Le récepteur envoie donc sa réponse vers l'adresse ip source spécifiée qui ne lui est pas accessible, et le paquet de réponse n'arrive jamais.
  
  ###### Fig.4 Utilisation de la NAT 
  ![nat_rtp](https://user-images.githubusercontent.com/74672498/169309816-8f15135e-f6b8-4e7b-8c0c-acfcd0bcd053.png)
 ###### "https://docs.switzernet.com/3/public/110303-asterisk-nat/" docs.switzernet.com 
- Le protocole NAT posent donc quelques soucis au niveau d'une infrastructure décentralisée notamment lors de l'échange des paquets voix dans le protocole RTP. RTP étant décentralisé, pour résoudre le problème, tous les paquets RTP seront envoyés de l'interlocuteur au serveur avant d'être redirigés vers le bon client. Cette solution induit une forte utilisation de la bande passante du serveur, mais permet de résoudre le problème de la NAT
+ Le protocole NAT posent donc quelques soucis au niveau d'une infrastructure décentralisée notamment lors de l'échange des paquets voix et video dans le protocole RTP. RTP étant décentralisé, pour résoudre le problème, tous les paquets RTP seront envoyés de l'interlocuteur au serveur avant d'être redirigés vers le bon client. Cette solution induit une forte utilisation de la bande passante du serveur, mais permet de résoudre le problème de la NAT.
 
 #### **Intégration de RTP dans Asterisk[^4]**
 
-La configuration du protocole RTP dans une infrastructure Asterisk passe par le fichier rtp.conf qu'Asterisk utilise pour générer et recevoir le traffic RTP. Par défaut rtp.conf utilise la plage de ports RTP comprise entre 10000 à 20000
+La configuration du protocole RTP dans une infrastructure Asterisk passe par le fichier rtp.conf qu'Asterisk utilise pour générer et recevoir le traffic RTP. Par défaut rtp.conf utilise la plage de ports RTP comprise entre 10000 à 20000.
 
 Pour chaque appel SIP bidirectionnel entre 02 terminaux, cinq ports sont généralement utilisés : 5060 pour la signalisation SIP, Un port pour le flux de données un port pour RTCP dans une direction, 2 ports supplémentaires pour le flux de données et RTCP dans la direction opposée.
 
@@ -145,7 +146,7 @@ rtpstart=10000
 rtpend=20000
 ```
 
-Si vous avez un NAT ou un pare-feu entre Asterisk et le serveur, vous devez les configurer pour gérer le transfert des ports configurés.
+Si vous avez un NAT ou un pare-feu entre Asterisk et le serveur, vous devez les configurer pour gérer le transfert des ports.
 
 ### **Intégration de la video dans Asterisk[^6] [^5]**
 
@@ -160,9 +161,15 @@ H.263 | h263 | format_h263 | OUI|
 H.263+ | h263p | format_h263 | OUI|
 H.264 | h264 | format_h264 | OUI|
 
-le fichier produit par les pilotes de format vidéo Asterisk n'est pas dans un format vidéo générique. [Gstreamer](https://gstreamer.freedesktop.org/) prend en charge la production de ces fichiers et la conversion de divers fichiers vidéo en fichiers vidéo + audio Asterisk.
+le fichier produit par les pilotes de format vidéo Asterisk n'est pas dans un format vidéo habituel. [Gstreamer](https://gstreamer.freedesktop.org/) prend en charge la production de ces fichiers et la conversion de divers fichiers vidéo en fichiers vidéo + audio Asterisk.
 
-#### **Prise en charge du pilote de canal[^5]** 
+#### **Prise en charge du pilote de canal[^5] [^8]** 
+
+Dans Asterisk un canal est l'unité atomique qui transporte un appel au sein d'Asterisk. Il peut s'agir d'une connection physique à une ligne téléphonique ou à un poste téléphonique comme il peut s'agir d'une connection logique induite par un appel en provenance d'un réseau de données. Chaque canal est géré par un pilote qui en connaît les moindres détails et qui n'expose que le strict nécessaire à la couche supérieure du PBX.
+
+Généralement, un pilote de Canal lit dans un fichier de configuration les informations concernant le matériel/protocole qu'il doit gérer puis entre en attente de modification d'états sur les canaux physiques/logiques. Dès qu'un changement d'état survient, (Sonnerie par exemple), le pilote crée une structure de données de type channel et y attache tous les callbacks nécessaires à la communication.
+
+Les pilotes de canal qui prennent en charge la video dans Asterisk sont:
 
 Pilote de canal | Module  | Remarque
 :-: | :-:| :-:| 
@@ -172,9 +179,50 @@ Local|chan_local.so|Transfère les appels vidéo en tant que canal proxy|
 Agent|	chan_agent.so| Transfère les appels vidéo en tant que canal proxy |
 oss |chan_oss.so| Prend en charge l'affichage/le décodage vidéo, voir video_console.txt|
 
+Ci-dessous on peut voir un exemple de configuration de base de sip : sip.conf 
+
+```conf
+[general]
+context=Hell
+srvlookup=yes
+tos_sip=cs3
+tos_audio=ef
+tos_video=af41
+useragent=AUFSIPUA Pwrd by Asterisk PBX 
+externip = 1.2.3.4
+externhost=foo.baz.bar
+localnet=192.168.0.0/255.255.0.0
+localnet=10.0.0.0/255.0.0.0
+localnet=172.16.0.0/12
+localnet=169.254.0.0/255.255.0.0
+
+[tom]
+type=friend
+secret=s3cr3t
+qualify=10 
+disallow=all
+allow=speex
+allow=gsm
+allow=alaw
+nat=no 
+host=dynamic
+canreinvite=no
+context=hackers
+
+
+        reload chan_sip.so ou sip reload
+        sip list objects
+        sip list peers
+        sip list settings|domains|channels|subscriptions
+        sip list peers
+```
+
+
+Pour ce qui est des applications, elles rendent des services lorsqu'un appel est traité dans le système. Pour chaque appel, une suite d'applications est exécuté en série dans l'ordre dans lequel elles sont défini dans un diaplan (fichier qui reprend les instructions de traitement d'un l'appel). Certaines applications utilisent un fichier de configuration comme l'application VoiceMail (Messagerie vocale)
+
 Les applications de plans de numérotation qui sont connus pour gérer la vidéo sont : 
 
-- Messagerie vocole - Stockage de la messagerie vocale vidéo
+- Messagerie vocale - Stockage de la messagerie vocale vidéo
 - Enregistrer - Enregistre les fichiers audio et vidéo 
 - Lecture - Lit une vidéo tout en étant invité à lire l'audio 
 - Echo - Renvoie l'audio et la vidéo à l'utilisateur 
@@ -203,3 +251,9 @@ Les applications de plans de numérotation qui sont connus pour gérer la vidéo
 [^7]: "_RTP et la NAT_", fr.wikipedia.org, https://wiki.asterisk.org/wiki/display/AST/Asterisk+Audio+and+Video+Capabilities (consulté le 19/05/2022) 
    ** Résumé :  Fonctionnement d'Asterisk avec un routeur NAT et les problèmes rencontrés
    ** Avis sur la ressource : Super explication de comment résoudre le problème de la nat dans une infrastructure Asterisk
+[^8]: "_Pilote de canal_", wiki.auf.org, https://wiki.auf.org/wikiteki/Asterisk/QuelquesNotions (consulté le 19/05/2022) 
+   ** Résumé :  Détaille les différents cannaux et leurs pilote utilisés par Astérisk 
+   ** Avis sur la ressource : Super article très explicite
+[^9]: "_PABX_", fr.wikipedia.org, https://fr.wikipedia.org/wiki/Autocommutateur_t%C3%A9l%C3%A9phonique_priv%C3%A9 (consulté le 19/05/2022) 
+   ** Résumé :  Bref définition de ce que c'est qu'un PBX et de son evolution 
+   ** Avis sur la ressource : Chouette définition
