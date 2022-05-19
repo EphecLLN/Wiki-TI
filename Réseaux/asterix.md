@@ -11,21 +11,21 @@ parent: Réseaux
 ## **Qu'est-ce que ASTERIX ?[^1] [^9]**
 
 Astérix est une implémentation logicielle d'un autocommutateur privé PBX qui
-est une centrale téléphonique desservant une organisations privée et permettant
+est une centrale téléphonique desservant une organisation privée et permettant
 le partage des lignes réseaux d'un bureau central entre les téléphones installés
 en interne.
 
 Chaque Appareil connecté au PBX possède un numéro de téléphone d'extension
 désigné qui peut ou non être mappé au plan de numérotation du bureau central.
 
-Astérisk permet donc l'etablissement et le contrôle de la communication entre
-les différents terminaux tels que les postes téléphonique, les appareils ou
+Astérisk permet donc l'établissement et le contrôle de la communication entre
+les différents terminaux tels que les postes téléphoniques, les appareils ou
 services de voix sur protocole internet (VoIP).
 ###### Fig.1 Schéma d'une infrastructure asterisk
 ![flux d'appel](https://user-images.githubusercontent.com/74672498/169313118-e214baf6-f8d7-40f4-a8c8-4b757a64b2e8.png)
 ###### "https://docplayer.fr/508846-Le-support-de-la-video-par-asterisk.html" docplayer.fr
 
-Il prend en charge plusieurs fonctionnalités disponible dans les systèmes PBX
+Il prend en charge plusieurs fonctionnalités disponibles dans les systèmes PBX
 notament la messagerie vocale, conférence téléphonique, distribution
 automatique d'appel. Ce qui fait l'une des plus grande force d'Asterisk est que
 les utilisateurs peuvent créer de nouvelles fonctionnalités en écrivant des
@@ -38,9 +38,9 @@ infrastructure Asterisk ?
 
 ### Introduction[^2]
 
-Encore appelé streaming, c'est un processus d'envoi de contenu en direct. La
+Encore appelé streaming, c'est un processus d'envoie de contenu en direct. La
 plupart des logiciels de voix sur ip telles que facebook, skype discord intègre
-des flux multimédia : appel video. En générale le VoIp est utilisé pour décrire
+des flux multimédia : appel video. En générale la VoIP est utilisée pour décrire
 des communications point à point. Pour ce qui est du flux video par
 visioconférence on parle de communication multipoint qui est une diffusion d'un
 emetteur vers un groupe de récepteur.
@@ -52,7 +52,7 @@ pour permettre ce flux video sont RTP et RTCP
 
 Le principe du protocole RTP (Real-Time Transfert Protocol) consiste à envoyer
 les paquets en temps réel sur le réseau. Les paquets sont marqués temporellement
-de manière à être réordonnancés par le client afin d’afficher la vidéo de
+de manière à être réordonnancé par le client afin d’afficher la vidéo de
 manière cohérente. Il permet de founir un moyen uniforme pour le transport de
 données sur IP soumises à des contraintes de temps réel tels que les flux média,
 audio et vidéo.
@@ -62,7 +62,7 @@ audio et vidéo.
 RTP étant utilisé en mode unidirectionnel (d'un emetteur à un récepteur), il
 peut être aussi utilisé en mode multicast via satellite sans garantie de qualité de service ([QoS](https://fr.wikipedia.org/wiki/Qualit%C3%A9_de_service)). Les données sont augmentées de l'ajout du protocole de contrôle RTCP.
 
-Le rôle principale de RTP consiste à numéroter les paquets IP afin de
+Le rôle principal de RTP consiste à numéroter les paquets IP afin de
 reconstituer les flux voix ou vidéo de manière fluide et ce, même si le réseau
 sous jacent change l'ordre des paquets. Par opposition à HTTP et FTP qui fonctionnent au-dessus de TCP, RTP fonctionne au dessus de UDP 
 
@@ -76,11 +76,11 @@ Exemple de communication via SIP
 
 - **Utilisation avec un canal de retour[^3]**
 
-RTP peut être utilisé conjointement avec un canal de retour via RTCP voir RTSP(Real Time Streaming Protocol destiné aux système de streaming média). Ce canal de retour peut servir à demander des changements de compression ou de débit pour les applications multimedia ou encore informer l'emetteur des propriétés temps-réel du canal.
+RTP peut être utilisé conjointement avec un canal de retour via RTCP voir RTSP(Real Time Streaming Protocol destiné aux système de streaming média). Ce canal de retour peut servir à demander des changements de compression ou de débit pour les applications multimedias ou encore informer l'émetteur des propriétés temps-réel du canal.
 
 Pour améliorer les performances de RTP, un protocole spécifique au streaming permet de contrôler la diffusion du contenu, il s’agit de RTSP (Real Time Streaming Protocol).
 
-RTPS est un protocole de niveau applicatif qui sert à contrôler les propriétés temps-réel du contenu délivré. Il est adapté aussi bien à la diffusion de données pré-enregistrées que de données diffusées en direct. 
+RTSP est un protocole de niveau applicatif qui sert à contrôler les propriétés temps-réel du contenu délivré. Il est adapté aussi bien à la diffusion de données pré-enregistrées que de données diffusées en direct. 
 
 - **Utilisation en mode unicast[^2] [^3]**
 
@@ -100,7 +100,7 @@ Comment sa se passe :
 
 - **Utilisation en mode multicast[^2]**
 
-La mise en œuvre de RTP en mode multicast requiert la configuration préalable de
+La mise en œuvre de RTP en mode multicast requiert une configuration préalable de
 routage au niveau du récepteur, qui doit faire lui-même la demande de routage à
 ses routeurs hôtes, entre l'émetteur et le récepteur. L'émetteur quant à lui
 informe séparément les routeurs de diffusion auxquels il est directement
@@ -116,7 +116,7 @@ Pour se connecter au multicast, le client doit télécharger un fichier type SDP
 
  #### **RTP et la NAT[^7]**
  
- Les protocoles de signalisation utilisés pour les échanges multimédia (H.323 SIP, MGCP etc) sont dit sensible à la NAT! Pourquoi?
+ Les protocoles de signalisation utilisés pour les échanges multimédias (H.323 SIP, MGCP etc) sont en effet sensible à la NAT! Pourquoi?
  
  Lors d'une signalisation, ces protocoles ne se contentent pas de mentionner leur adresse IP dans l'entête des paquets qu'ils envoient mais l'indiquent également dans le corps de leurs messages. Par exemple avec le protocole SIP un message d'invitation INVITE comporte des informations sur l'ip de la source du paquet. Le récepteur ne peut répondre correctement à la requête puisque l'ip source initiale est une adresse privée. Le récepteur envoie donc sa réponse vers l'adresse ip source spécifiée qui ne lui est pas accessible, et le paquet de réponse n'arrive jamais.
  
@@ -167,7 +167,7 @@ le fichier produit par les pilotes de format vidéo Asterisk n'est pas dans un f
 
 Dans Asterisk un canal est l'unité atomique qui transporte un appel au sein d'Asterisk. Il peut s'agir d'une connection physique à une ligne téléphonique ou à un poste téléphonique comme il peut s'agir d'une connection logique induite par un appel en provenance d'un réseau de données. Chaque canal est géré par un pilote qui en connaît les moindres détails et qui n'expose que le strict nécessaire à la couche supérieure du PBX.
 
-Généralement, un pilote de Canal lit dans un fichier de configuration les informations concernant le matériel/protocole qu'il doit gérer puis entre en attente de modification d'états sur les canaux physiques/logiques. Dès qu'un changement d'état survient, (Sonnerie par exemple), le pilote crée une structure de données de type channel et y attache tous les callbacks nécessaires à la communication.
+Généralement, un pilote de Canal lit dans un fichier de configuration les informations concernant le matériel/protocole qu'il doit gérer puis entre en attente de modification d'état sur les canaux physiques/logiques. Dès qu'un changement d'état survient, (Sonnerie par exemple), le pilote crée une structure de données de type channel et y attache tous les callbacks nécessaires à la communication.
 
 Les pilotes de canal qui prennent en charge la video dans Asterisk sont:
 
