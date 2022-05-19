@@ -8,7 +8,7 @@ parent: Réseaux
 
 # ASTERIX
 
-## **Qu'est-ce que ASTERIX ?[^1]**
+## **Qu'est-ce que ASTERIX ?[^1] [^9]**
 
 Astérix est une implémentation logicielle d'un autocommutateur privé PBX qui
 est une centrale téléphonique desservant une organisations privée et permettant
@@ -71,8 +71,8 @@ Il est utilisé par SIP, H.323, MGCP et éventuellement d'autres protocoles pour
 Exemple de communication via SIP
 
 ###### Fig.2 Schéma d'une converstion via SIP
-![utilisation_avec_sip](https://user-images.githubusercontent.com/74672498/169342815-40ec54bf-c03e-4fe1-8dde-2e597c3f5e28.png)
-
+![utilisation_avec_sip](https://user-images.githubusercontent.com/74672498/169355709-eaec4f3c-978d-42bf-8bc2-6c2245cf71ea.png)
+###### "https://www.researchgate.net/figure/VoIP-call-setup-based-on-SIP-SDP-RTP-RTCP-protocols-based-on-9_fig3_1924445" researchgate.net
 
 - **Utilisation avec un canal de retour[^3]**
 
