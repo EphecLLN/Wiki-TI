@@ -8,7 +8,7 @@ parent: Réseaux
 
 # ASTERIX
 
-## Qu'est-ce que ASTERIX ?
+## **Qu'est-ce que ASTERIX ?[^1]**
 
 Astérix est une implémentation logicielle d'un autocommutateur privé (PBX) qui
 est une centrale téléphonique desservant une organisations privée et permettant
@@ -34,8 +34,9 @@ extensions d'Asterisk , en ajoutant des modules chargeables personnalisés écri
 en PHP ou C. Mais qu'en est-il de l'intégration des flux video dans une
 infrastructure Asterisk ?
 
-## Flux video
+## **Flux video**
 
+### Introduction[^2]
 Encore appelé streaming, c'est un processus d'envoi de contenu en direct. La
 plupart des logiciels de voix sur ip telles que facebook, skype discord intègre
 des flux multimédia : appel video. En générale le VoIp est utilisé pour décrire
@@ -46,7 +47,7 @@ emetteur vers un groupe de récepteur.
 Pour ce faire, les deux protocoles utilisés dans une infrastructure Astérisk
 pour permettre ce flux video sont RTP et RTCP
 
-### Protocole RTP
+### **Protocole RTP**
 
 Le principe du protocole RTP (Real-Time Transfert Protocol) consiste à envoyer
 les paquets en temps réel sur le réseau. Les paquets sont marqués temporellement
@@ -55,27 +56,48 @@ manière cohérente. Il permet de founir un moyen uniforme pour le transport de
 données sur IP soumises à des contraintes de temps réel tels que les flux média,
 audio et vidéo.
 
-#### Caractéristiques
+#### **Caractéristiques[^3]**
 
 RTP étant utilisé en mode unidirectionnel (d'un emetteur à un récepteur), il
-peut être aussi utilisé en mode multicast via satellite.
+peut être aussi utilisé en mode multicast via satellite sans garantie de qualité de service (QoS). Les données sont augmentées de l'ajout du protocole de contrôle RTCP.
 
 Le rôle principale de RTP consiste à numéroter les paquets IP afin de
 reconstituer les flux voix ou vidéo de manière fluide et ce, même si le réseau
-sous jacent change l'ordre des paquets.
+sous jacent change l'ordre des paquets. Par opposition à HTTP et FTP qui fonctionnent au-dessus de TCP, RTP fonctionne au dessus de UDP 
 
 Il est utilisé par SIP, H.323, MGCP et éventuellement d'autres protocoles pour transporter les médias entre les points d'extrémité.
 
-- Utilisation avec un canal de retour
+Exemple de communication via SIP
+
+###### Fig.2 Schéma d'une converstion via SIP
+![utilisation_avec_sip](https://user-images.githubusercontent.com/74672498/169342815-40ec54bf-c03e-4fe1-8dde-2e597c3f5e28.png)
+
+
+- **Utilisation avec un canal de retour[^3]**
 
 RTP peut être utilisé conjointement avec un canal de retour via RTCP voir RTSP(Real Time Streaming Protocol destiné aux système de streaming média). Ce canal de retour peut servir à demander des changements de compression ou de débit 
 
+Pour améliorer les performances de RTP, un protocole spécifique au streaming permet de contrôler la diffusion du contenu, il s’agit de RTSP (Real Time Streaming Protocol).
+
+RTPS est un protocole de niveau applicatif qui sert à contrôler les propriétés temps réel du contenu délivré. Il est adapté aussi bien à la diffusion de données pré-enregistrées que de données diffusées en direct. 
+
+- **Utilisation en mode unicast[^2] [^3]**
+
+ Il nécessite l'ouverture d’un flux spécifique entre le serveur et le client.Les protocoles utilisés sont RTSP pour le contrôle du flux et RTP pour l’émission du flux. RTSP utilise TCP alors que RTP utilise UDP. L’intérêt de RTSP par rapport à RTP est d’ajouter un contrôle sur le contenu et de pouvoir par exemple accéder directement à un point donné du contenu sans avoir à le télécharger dans sa globalité. Il améliore ainsi les performances.
+ 
+Comment sa se passe :
+ 
+   1. Le client contacte le serveur de streaming grâce au protocole RTSP.
+   2. le serveur retourne via RTSP une description de la session de streaming qu’il va ouvrir.
+   3. Le serveur informe le client du nombre de flux ( Une session étant composé de plusieurs flux : audio, video etc)
+   4. Le serveur donne des informations décrivant les flux comme le type du média et le codec de compression
+   5. Les flux sont diffusés séparément via le protocole RTP.
+
 ###### Fig.2 Utilisation de RTP en unicast
 ![rtp_unicast](https://user-images.githubusercontent.com/74672498/169299420-0e91d1bf-7c4f-429f-99c5-da9a9a9e5b5c.png)
-
 ###### "https://www.iifa.fr/video-ip" iifa.fr
 
-- Utilisation en mode multicast
+- **Utilisation en mode multicast[^2]**
 
 La mise en œuvre de RTP en mode multicast requiert la configuration préalable de
 routage au niveau du récepteur, qui doit faire lui-même la demande de routage à
@@ -83,13 +105,16 @@ ses routeurs hôtes, entre l'émetteur et le récepteur. L'émetteur quant à lu
 informe séparément les routeurs de diffusion auxquels il est directement
 connecté. il n'existe qu'un seul flux qui est dupliqué au niveau de chaque recepteur.
 
-Pour se connecter au multicast, le client doit télécharger un fichier type SDP(Session Description Protocol) qui contient les informations nécessaires pour recevoir le flux multicast, l'adresse IP du serveur, le numéro de port et les informations de description des flux. 
+- Comment sa se passe :
+
+Pour se connecter au multicast, le client doit télécharger un fichier type SDP(Session Description Protocol) qui contient les informations nécessaires pour recevoir le flux multicast, l'adresse IP du serveur, le numéro de port et les informations de description des flux (même informations que celle envoyées par RTSP dans le cas d'un diffusion unicast). 
+
 ######  Fig.3 Utilisation de RTP en multicast
 ![rtp_multicast](https://user-images.githubusercontent.com/74672498/169301654-924eb1f4-ccb3-4ee8-aed4-38f244f8cc9f.png)
 
 ######  "https://www.iifa.fr/video-ip" iifa.fr
 
- #### RTP et la NAT
+ #### **RTP et la NAT[^7]**
  
  Les protocoles de signalisation utilisés pour les échanges multimédia dont H.323 SIP, MGCP et bien d'autres sont dit sensible à la NAT.
  
@@ -100,9 +125,7 @@ Pour se connecter au multicast, le client doit télécharger un fichier type SDP
 ###### "https://docs.switzernet.com/3/public/110303-asterisk-nat/" docs.switzernet.com 
  Le protocole NAT posent donc quelques soucis au niveau d'une infrastructure décentralisée notamment lors de l'échange des paquets voix dans le protocole RTP. RTP étant décentralisé, pour résoudre le problème, tous les paquets RTP seront envoyés de l'interlocuteur au serveur avant d'être redirigés vers le bon client. Cette solution induit une forte utilisation de la bande passante du serveur, mais permet de résoudre le problème de la NAT
 
-
-
-#### Intégration de RTP dans Asterisk
+#### **Intégration de RTP dans Asterisk[^4]**
 
 La configuration du protocole RTP dans une infrastructure Asterisk passe par le fichier rtp.conf qu'Asterisk utilise pour générer et recevoir le traffic RTP. Par défaut rtp.conf utilise la plage de ports RTP comprise entre 10000 à 20000
 
@@ -124,11 +147,11 @@ rtpend=20000
 
 Si vous avez un NAT ou un pare-feu entre Asterisk et le serveur, vous devez les configurer pour gérer le transfert des ports configurés.
 
-### Intégration de la video dans Asterisk
+### **Intégration de la video dans Asterisk[^6] [^5]**
 
 Asterisk prend en charge une variété de support audio et vidéo et fournit des modules CODEC pour faciliter l'encodage et le décodage des flux audio. Pour l'instant le transcodage vidéo ou le transcodage d'image n'est pas pris en charge.
 
-#### Pris en charge des vidéos
+#### **Pris en charge des vidéos[^6]**
 
 Non  | Valeur de configuration |  Format Module | Distribué avec Astérisk |
 :-: | :-:| :-:| :-: |
@@ -139,11 +162,11 @@ H.264 | h264 | format_h264 | OUI|
 
 le fichier produit par les pilotes de format vidéo Asterisk n'est pas dans un format vidéo générique. [Gstreamer](https://gstreamer.freedesktop.org/) prend en charge la production de ces fichiers et la conversion de divers fichiers vidéo en fichiers vidéo + audio Asterisk.
 
-#### Prise en charge du pilote de canal 
+#### **Prise en charge du pilote de canal[^5]** 
 
 Pilote de canal | Module  | Remarque
 :-: | :-:| :-:| 
-siroter|chan_sip.so|Le pilote de canal SIP (chan_sip.so) prend en charge la vidéo|
+SIP|chan_sip.so|Le pilote de canal SIP (chan_sip.so) prend en charge la vidéo|
 IAX2|chan_iax2.so|Prend en charge les appels vidéo (sur les troncs aussi)|
 Local|chan_local.so|Transfère les appels vidéo en tant que canal proxy|
 Agent|	chan_agent.so| Transfère les appels vidéo en tant que canal proxy |
@@ -155,3 +178,28 @@ Les applications de plans de numérotation qui sont connus pour gérer la vidéo
 - Enregistrer - Enregistre les fichiers audio et vidéo 
 - Lecture - Lit une vidéo tout en étant invité à lire l'audio 
 - Echo - Renvoie l'audio et la vidéo à l'utilisateur 
+
+
+## Bibliographie
+
+[^1]: "_Qu'est-ce que ASTERIX ?_", fr.wikipedia.org, https://fr.wikipedia.org/wiki/Asterisk_(logiciel) (consulté le 18/05/2022) 
+   ** Résumé :  Bref définition d'asterisk ainsi que de ses fonctionnalités
+   ** Avis sur la ressource : Très leger et pas assez explicite dans certains point
+[^2]: "_RTP ?_", iifa.fr, https://www.iifa.fr/video-ip) (consulté le 19/05/2022) 
+   ** Résumé :  Détaille les différents mode d'utilisation de RTP 
+   ** Avis sur la ressource : Clair et schématique le meilleur pour comprendre RTP en unicast et multicast
+[^3]: "_RTP ?_", fr.wikipedia.org, https://fr.wikipedia.org/wiki/Real-time_Transport_Protocol (consulté le 19/05/2022) 
+   ** Résumé :  Définition de RTP ainsi que des protocoles associés
+   ** Avis sur la ressource : Va droit au but : Bonne base pour comprendre le protocole
+[^4]: "_Intégration de RTP dans Asterisk_", asteriskdocs.org, http://www.asteriskdocs.org/en/2nd_Edition/asterisk-book-html-chunk/asterisk-APP-D-SECT-37.html (consulté le 18/05/2022) 
+   ** Résumé :  Montre une configuration minimaliste de RTP au sein d'astérisk
+   ** Avis sur la ressource : Clair mais assez leger : insuffisant pour une configuration total
+[^5]: "_Prise en charge des pilote de canal_", wiki.asterisk.org, https://wiki.asterisk.org/wiki/display/AST/Video+Telephony (consulté le 19/05/2022) 
+   ** Résumé :  Donne les différents pilote de canal ainsi que les format video d'asterisk
+   ** Avis sur la ressource : Assez concis
+[^6]: "_Prise en charge des vidéos_", fr.wikipedia.org, https://wiki.asterisk.org/wiki/display/AST/Asterisk+Audio+and+Video+Capabilities (consulté le 19/05/2022) 
+   ** Résumé :  Document officiel d'asterisk (Prise en charge des médias)
+   ** Avis sur la ressource : Pas très détaillé concernant les flux videos
+[^7]: "_RTP et la NAT_", fr.wikipedia.org, https://wiki.asterisk.org/wiki/display/AST/Asterisk+Audio+and+Video+Capabilities (consulté le 19/05/2022) 
+   ** Résumé :  Fonctionnement d'Asterisk avec un routeur NAT et les problèmes rencontrés
+   ** Avis sur la ressource : Super explication de comment résoudre le problème de la nat dans une infrastructure Asterisk
