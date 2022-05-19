@@ -106,13 +106,12 @@ ses routeurs hôtes, entre l'émetteur et le récepteur. L'émetteur quant à lu
 informe séparément les routeurs de diffusion auxquels il est directement
 connecté. il n'existe qu'un seul flux qui est dupliqué au niveau de chaque recepteur. on peut prendre le cas de la diffusion d'une chaine de TV où le flux est partagé entre tous les recepteurs.
 
-- Comment sa se passe :
+Comment sa se passe :
 
 Pour se connecter au multicast, le client doit télécharger un fichier type SDP(Session Description Protocol) qui contient les informations nécessaires pour recevoir le flux multicast, l'adresse IP du serveur, le numéro de port et les informations de description des flux (même informations que celle envoyées par RTSP dans le cas d'un diffusion unicast). 
 
 ######  Fig.3 Utilisation de RTP en multicast
 ![rtp_multicast](https://user-images.githubusercontent.com/74672498/169301654-924eb1f4-ccb3-4ee8-aed4-38f244f8cc9f.png)
-
 ######  "https://www.iifa.fr/video-ip" iifa.fr
 
  #### **RTP et la NAT[^7]**
@@ -124,6 +123,7 @@ Pour se connecter au multicast, le client doit télécharger un fichier type SDP
  ###### Fig.4 Utilisation de la NAT 
  ![nat_rtp](https://user-images.githubusercontent.com/74672498/169309816-8f15135e-f6b8-4e7b-8c0c-acfcd0bcd053.png)
 ###### "https://docs.switzernet.com/3/public/110303-asterisk-nat/" docs.switzernet.com 
+
  Le protocole NAT posent donc quelques soucis au niveau d'une infrastructure décentralisée notamment lors de l'échange des paquets voix et video dans le protocole RTP. RTP étant décentralisé, pour résoudre le problème, tous les paquets RTP seront envoyés de l'interlocuteur au serveur avant d'être redirigés vers le bon client. Cette solution induit une forte utilisation de la bande passante du serveur, mais permet de résoudre le problème de la NAT.
 
 #### **Intégration de RTP dans Asterisk[^4]**
