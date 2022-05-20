@@ -1,3 +1,9 @@
+---
+layout: default
+title: Etude de cas : Compromission d'un VPS
+parent: Sécurité
+---
+
 # Etude de cas : Compromission d'un VPS 
 
 En mai 2022, un des VPS utilisé dans le cadre de ce cours a été compromis : nous avons reçu un email de notification de la part du fournisseur indiquant que des tentatives d'intrusion sur le port SSH ont été commises depuis cette machine.  Suite à cela, nous avons investigué la machine incriminée pour tenter d'en savoir concernant l'attaque subie, en nous inspirant de pistes proposées sur le [site Linux Hint](https://linuxhint.com/determine_if_linux_is_compromised/) [1].  
