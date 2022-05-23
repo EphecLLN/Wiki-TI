@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Etude de cas : Compromission d'un VPS
+title: Etude de cas - Compromission d'un VPS
 parent: Sécurité
 ---
 
