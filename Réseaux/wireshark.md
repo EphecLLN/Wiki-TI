@@ -27,8 +27,8 @@ Wireshark est disponible sur tous les OS et une version en ligne de commande, no
 ## Bibliographie
 
 [^1]:* [Chapter 1. Introduction](https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html), auteur inconnu, date de création inconnu, consulté le (24/05/2022)  
-Résumé : documentation officiel de Wireshark  
-Avis sur la ressource : clair et très complet malgré un design un peu rebutant  
+   Résumé : documentation officiel de Wireshark  
+   Avis sur la ressource : clair et très complet malgré un design un peu rebutant  
    
 [^2]:* [Wireshark](https://fr.wikipedia.org/wiki/Wireshark), wikipedia, consulté le (24/05/2022)
 - Résumé : page wikepedia Wireshark
