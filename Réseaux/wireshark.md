@@ -32,14 +32,15 @@ Pour recommencer une capture clicker sur l'aileron bleu, à gauche du carré rou
 Maintenant que nous avons une capture Wireshark nous permet de l'analyser. Pour ce faire nous auron l'aide de trois fenêtres:  
 1. Le packet list
 2. Le packet details
-3. Le packet bytes pane
+3. Le packet bytes pane  
+
 ![image](https://user-images.githubusercontent.com/62069633/170119431-f55549da-1adb-4bfb-8e43-2ae49e237546.png)
 
 ### 1. Le packet list
 
 Le packet list nous permets de voir tous les paquets enregistrer dans cette capture. Cette fenêtre vous donnent déjà des informations sur général classés dans différentes colonnes. Vous pouvez si vous le souhaitez suprimer, ajouter ou modifier des colonnes en faisant un clic droit sur l'entête.  
 Cependant les colonnes par défault seront généralement emplement suffisante. 
-- No. : cette colonne numérote les paquets capturés et indique à quel conversation aprtients le paquet: si en clicant sur un paquet vous voyez qu'un ligne pleines apprait sur un autr paquets c'est qu'ils sont dans une même conversation (pa exemple three handshake).
+- No. : cette colonne numérote les paquets capturés et indique à quel conversation aprtients le paquet: si en clicant sur un paquet vous voyez qu'un ligne pleines apprait sur un autr paquets c'est qu'ils sont dans une même conversation (par exemple three handshake).
 ![image](https://user-images.githubusercontent.com/62069633/170123265-fcdcf935-272d-42d4-9b04-e25624661fe5.png)
 Les paquets qui n'ont pas de lignes mes des poitillés ne font pas parti de cette conversation.
 ![image](https://user-images.githubusercontent.com/62069633/170123621-fe1cc571-e45b-43c0-bf79-532116f7d749.png)
