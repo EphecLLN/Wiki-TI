@@ -36,7 +36,7 @@ Maintenant que nous avons une capture Wireshark nous permet de l'analyser. Pour 
 
 ![image](https://user-images.githubusercontent.com/62069633/170119431-f55549da-1adb-4bfb-8e43-2ae49e237546.png)
 
-### 1. Le packet list
+#### 1. Le packet list
 
 Le packet list nous permets de voir tous les paquets enregistrer dans cette capture. Cette fenêtre vous donnent déjà des informations sur général classés dans différentes colonnes. Vous pouvez si vous le souhaitez suprimer, ajouter ou modifier des colonnes en faisant un clic droit sur l'entête.  
 Cependant les colonnes par défault seront généralement emplement suffisante. 
@@ -51,17 +51,69 @@ Les paquets qui n'ont pas de lignes mes des poitillés ne font pas parti de cett
 - Length : indique la taille du paquet (en octets).
 - Info : cette colonne donne des informations différente en fonction du protocole utilisé.
 
-### 2. Le packet details
+#### 2. Le packet details
 
 Lorsque vous sélectionner un packet dans Le packet list vous pourrez le retrouvez tous les protocoles utilisé par ce paquet dans cette fenêtre.
 Vous pouvez dévlopez un protocol en faisant un clic gauche dessus.  
 De plus vous pouvez faire ne faire appraitre dans le packet list que les paquets utilisant le même protocoles en faisant un click droit sur le protocole **Appliquer comme un filtre -> Sélectionné** ou n'afficher que les paquets de la conversation avec **Filtre de conversation -> le protocole souhaiter**.
 
-### 3. Le packet bytes pane
+#### 3. Le packet bytes pane
 
 Ici vous retrouverez le paquet brut au format hexadécimale ou binaire (click droit -> ... comme bits) avec une traduction au format ASCII. Si vous cliquez sur un bit celà sélectionnera dans le Le packet details à quoi il correspond (et vice versa).
 
+### Les filtres: [^6][^7]
 
+Il existe deux type de filtre dans Wireshark: les filtres de captures et les filtres d'affichages. Le premier se met avant une capture et permettent de ne capturer que ce qui nous intéresse et de réduire la taille du fichier de capture. Le second lui s'applique après une capture et ne fait que caher les paquets qui ne nous intéressent pas.  
+
+#### Filtres de captures:
+Pour appliquer un filtre de capture entrer avant la capture le filtre ici:
+![image](https://user-images.githubusercontent.com/62069633/170136920-c9313d66-dd70-4da5-9b51-57b10902a2ca.png)
+
+Si vous souhaiter entrer deux filtre utiliser le mot clé: `and`  
+Si vous shouaiter appliquer un filtre inverser (donc: capturer tous sauf) utiliser le mot clé: `not`  
+
+Wireshark utilise des filtres par défaults si il est utilisé à distance pour ne pas enregistrer se qui est lié à cette connexion (comme ssh).
+
+##### Exemples utiles (trouver ici [^6])
+
+Pour capturer tous se qui vient et sort d'une adresse IP:  
+`host 172.18.5.4`  
+Pour capturer tous se qui conserne un range d'ip:  
+`net 192.168.0.0/24`  
+Pour capturer tous se qui conserne un port:  
+`port 53`  
+Pour ne capturer que du trafic IPv4:  
+`ip`  
+Pour ne capturer que du trafic unicast:  
+`not broadcast and not multicast`  
+
+#### Filtres d'affichages:
+Pour appliquer un filtre d'affichage et ainsi cacher se dont vous ne voulez pas entrer ce que vous voulez ici:
+![image](https://user-images.githubusercontent.com/62069633/170139504-3bd37f17-fa69-4376-b305-01c3f09a3876.png)
+
+
+Si vous souhaiter afficher que les paquets qui correspondent à deux filtre utiliser le mot clé: `and` ou `&&`  
+Si vous souhaiter afficher que les paquets qui correspondent à deux filtre utiliser le mot clé: `or` ou `||`  
+
+##### Exemples utiles (trouver ici [^7])
+
+Pour n'afficher que les paquets possédant un protocole:  
+`TCP`
+Pour n'afficher que se qui correspond à une adresse IP:  
+`ip.addr==172.18.5.4`  
+Pour capturer tous se qui conserne un range d'ip:  
+`ip.addr==192.168.0.0/24`  
+Pour capturer tous se qui conserne un port:  
+`tcp.port==53`  
+Pour ne capturer que le trafic entre deux machine (par exemple client et serveur):  
+`ip.src==192.168.18.5 and ip.dst==192.168.2.45`  
+
+### La colorisation: [^8]
+
+La colorisation permet de mettre en évidence des paquets qui répondent à certains filtres sans pour autant cacher les autres. Wireshark proposent de bases 20 filtres. Pour ajouter ou suprimer des filtres aller dans **vue -> coloring rules**.
+![image](https://user-images.githubusercontent.com/62069633/170142753-0138ffd1-61dd-4164-a87f-9ad87fc1daee.png)
+
+Vous pouvez ainsi remarquer qu'il est possible d'importer ou d'exporter des règles de colorisation. Anisi vous pouvez avoir plusieurs sets de règles que vous utiliserez dans différentes utilisation et vous pourrez aller chercher des règles préffet sur internet pour des cas spécifiques. 
 
 ## Bibliographie
 
@@ -84,3 +136,15 @@ Avis sur la ressource : présente bien les alternatives
 [^5]:* [How to Use Wireshark: A Complete Tutorial](https://www.lifewire.com/wireshark-tutorial-4143298),  Scott Orgera, 8 juillet 2020, consulté le (24/05/2022)  
 Résumé : autre guide sur wireshark  
 Avis sur la ressource : très clair mais trop court
+
+[^6]:* [CaptureFilters](https://wiki.wireshark.org/CaptureFilters),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)  
+Résumé : guide sur les filtres de captures
+Avis sur la ressource : concis et donne des exemples utiles
+
+[^7]:* [DisplayFilters](https://wiki.wireshark.org/DisplayFilters),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)  
+Résumé : guide sur les filtres d'affichage
+Avis sur la ressource : concis et donne des exemples utiles
+
+[^7]:* [ColoringRules](https://wiki.wireshark.org/ColoringRules),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)  
+Résumé : guide sur les la coloration
+Avis sur la ressource : concis et donne des exemples utiles
