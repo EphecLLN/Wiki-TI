@@ -21,7 +21,7 @@ Voici une liste de fonctionnalités non exhaustif de Wireshark mais suffisante p
 ### La capture de paquets :
 
 La Fonctionnalité principal et de base de Wireshark est la capture de paquets. Pour commencer une capture ouvrez Wireshark et sélectionner un réseau que vous voulez observer en double cliquant dessus.  
-![image](https://user-images.githubusercontent.com/62069633/170109781-124844a2-4c1d-4583-8e6c-85e1d788fb4e.png)
+![image](https://user-images.githubusercontent.com/62069633/170109781-124844a2-4c1d-4583-8e6c-85e1d788fb4e.png)  
 Lorsque vous souhaiter arrêter la capture appuyer sur le petit carré rouge en haut à gauche.  
 Vous pouvez ensuite travailler dessus ou enregistrer la capture pour revenir dessus plus tard en allant dans **fichier -> enregistrer sous**.  
 Pour recommencer une capture cliquer sur l'aileron bleu, à gauche du carré rouge.
@@ -40,10 +40,10 @@ Maintenant que nous avons une capture Wireshark nous permet de l'analyser. Pour 
 
 Le packet list nous permets de voir tous les paquets enregistrer dans cette capture. Cette fenêtre vous communique déjà des informations sur général classés dans différentes colonnes. Vous pouvez si vous le souhaitez supprimer, ajouter ou modifier des colonnes en faisant un clic droit sur l'entête.  
 Cependant les colonnes par défaut seront généralement amplement suffisantes. 
-- No. : cette colonne numérote les paquets capturés et indique à quel conversation appartient le paquet : si en cliquant sur un paquet vous voyez qu'un ligne pleines apparait sur un autre paquets c'est qu'ils sont dans une même conversation (par exemple three handshake).
-![image](https://user-images.githubusercontent.com/62069633/170123265-fcdcf935-272d-42d4-9b04-e25624661fe5.png)
-Les paquets qui n'ont pas de lignes mes des pointillés ne font pas parti de cette conversation.
-![image](https://user-images.githubusercontent.com/62069633/170123621-fe1cc571-e45b-43c0-bf79-532116f7d749.png)
+- No. : cette colonne numérote les paquets capturés et indique à quel conversation appartient le paquet : si en cliquant sur un paquet vous voyez qu'un ligne pleines apparait sur un autre paquets c'est qu'ils sont dans une même conversation (par exemple three handshake).  
+![image](https://user-images.githubusercontent.com/62069633/170123265-fcdcf935-272d-42d4-9b04-e25624661fe5.png)  
+Les paquets qui n'ont pas de lignes mes des pointillés ne font pas parti de cette conversation.  
+![image](https://user-images.githubusercontent.com/62069633/170123621-fe1cc571-e45b-43c0-bf79-532116f7d749.png)  
 - Time : cette colonne indique quand sont arrivé les paquets après le début de la capture.
 - Source : indique l'adresse IP qui à envoyer le paquet.
 - Destination : indique l'adresse IP qui à resus le paquet.
