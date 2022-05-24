@@ -27,18 +27,18 @@ Wireshark est disponible sur tous les OS et une version en ligne de commande, no
 ## Bibliographie
 
 [^1]:* [Chapter 1. Introduction](https://www.wireshark.org/docs/wsug_html_chunked/ChapterIntroduction.html), auteur inconnu, date de création inconnu, consulté le (24/05/2022)
-   - Résumé : documentation officiel de Wireshark
-   - Avis sur la ressource : clair et très complet malgré un design un peu rebutant
+- Résumé : documentation officiel de Wireshark
+- Avis sur la ressource : clair et très complet malgré un design un peu rebutant
    
 [^2]:* [Wireshark](https://fr.wikipedia.org/wiki/Wireshark), wikipedia, consulté le (24/05/2022)
-   - Résumé : page wikepedia Wireshark
-   - Avis sur la ressource : très peu complète mais donnes quelques information de bases
+- Résumé : page wikepedia Wireshark
+- Avis sur la ressource : très peu complète mais donnes quelques information de bases
    
 [^3]:* [Comment utiliser Wireshark: tutoriel complet + astuces](https://www.varonis.com/fr/blog/comment-utiliser-wireshark), Jeff Petters, 12 mai 2021, consulté le (24/05/2022)
-   - Résumé : petit guide concis sur wireshark
-   - Avis sur la ressource : petit guide concis mais clair et agréable à lire
+- Résumé : petit guide concis sur wireshark
+- Avis sur la ressource : petit guide concis mais clair et agréable à lire
 
 [^4]:* [Network traffic analysis for IR: Alternatives to Wireshark](https://resources.infosecinstitute.com/topic/network-traffic-analysis-for-ir-alternatives-to-wireshark/), Patrick Mallory, 12 novembre 2019, consulté le (24/05/2022)
-   - Résumé : petit guide concis sur wireshark
-   - Avis sur la ressource : petit guide concis mais clair et agréable à lire
+- Résumé : petit guide concis sur wireshark
+- Avis sur la ressource : petit guide concis mais clair et agréable à lire
    
