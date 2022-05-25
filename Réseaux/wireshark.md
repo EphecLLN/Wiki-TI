@@ -1,9 +1,9 @@
 [Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
 # Wireshark
 
-## Wireshark ? c'est quoi ? [^1] [^2] [^3] [^4]
+## Wireshark ? C'est quoi ? [^1] [^2] [^3] [^4]
 
-Wireshark est un analyseur de paquets réseau créer en 1998 par Gerald Combs. C'est un logiciel qui permet d'analyser un réseau et de récupérer tous les paquets (un "paquet" est un message d’un des nombreux protocoles réseau) y passant pour ensuite le décomposer et le traduire en données interprétable par des humains. 
+Wireshark est un analyseur de paquets réseau créé en 1998 par Gerald Combs. C'est un logiciel qui permet d'analyser un réseau et de récupérer tous les paquets (un "paquet" est un message d’un des nombreux protocoles réseau) y passant pour ensuite le décomposer et le traduire en données interprétables par des humains. 
 Wireshark est utilisé notamment pour :  
 - L'analyse et le troubleshooting réseau.
 - La sécurité réseau.
@@ -11,25 +11,25 @@ Wireshark est utilisé notamment pour :
 - Le développement et le début de protocoles.
 - L’éducation.  
 
-Aujourd’hui que ce soient des agences gouvernementales, de grandes entreprises ou bien des écoles, tout le monde utilise Wireshark. Car bien qu’il existe des alternatives sur le marché (comme tcpdump ou cloudShark qui sont les principaux concurrents) c’est bien Wireshark qui est le plus populaire et ce grâce à ces filtre très nombreux, ces fonctionnalités variés et le nombres de protocoles que ce dernier peut interpréter (actuellement 1515 selon Wikipédia [^2]).
+Aujourd’hui que ce soient des agences gouvernementales, de grandes entreprises ou bien des écoles, tout le monde utilise Wireshark. Car bien qu’il existe des alternatives sur le marché (comme tcpdump ou cloudShark qui sont les principaux concurrents) c’est bien Wireshark qui est le plus populaire et ce grâce à ses très nombreux filtres , ses fonctionnalités variées et le nombres de protocoles que ce dernier peut interpréter (actuellement 1515 selon Wikipédia [^2]).
 Wireshark est disponible sur tous les OS et une version en ligne de commande, nommé Tshark, existe aussi.
 
 ## Fonctionnalités : [^1] [^2] [^3] [^5]
 
-Voici une liste de fonctionnalités non exhaustif de Wireshark mais suffisante pour commencer.
+Voici une liste de fonctionnalités non exhaustive de Wireshark mais suffisante pour commencer.
 
 ### La capture de paquets :
 
-La Fonctionnalité principal et de base de Wireshark est la capture de paquets. Pour commencer une capture ouvrez Wireshark et sélectionner un réseau que vous voulez observer en double cliquant dessus.  
+La fonctionnalité principale et de base de Wireshark est la capture de paquets. Pour commencer une capture, ouvrez Wireshark et sélectionnez un réseau que vous voulez observer en double cliquant dessus.  
 ![image](https://user-images.githubusercontent.com/62069633/170109781-124844a2-4c1d-4583-8e6c-85e1d788fb4e.png)  
-Lorsque vous souhaiter arrêter la capture appuyer sur le petit carré rouge en haut à gauche.  
+Lorsque vous souhaitez arrêter la capture, appuyez sur le petit carré rouge en haut à gauche.  
 Vous pouvez ensuite travailler dessus ou enregistrer la capture pour revenir dessus plus tard en allant dans **fichier -> enregistrer sous**.  
-Pour recommencer une capture cliquer sur l'aileron bleu, à gauche du carré rouge.
+Pour recommencer une capture, cliquez sur l'aileron bleu, à gauche du carré rouge.
 ![image](https://user-images.githubusercontent.com/62069633/170111507-3912c10a-ce96-4149-b715-db2f774c736e.png)
 
 ### L'analyse de paquets
 
-Maintenant que nous avons une capture Wireshark nous permet de l'analyser. Pour ce faire nous aurons l'aide de trois fenêtres :  
+Maintenant que nous avons une capture Wireshark, cela nous permet de l'analyser. Pour ce faire nous aurons l'aide de trois fenêtres :  
 1. Le packet list
 2. Le packet details
 3. Le packet bytes pane  
@@ -38,62 +38,62 @@ Maintenant que nous avons une capture Wireshark nous permet de l'analyser. Pour 
 
 #### 1. Le packet list
 
-Le packet list nous permets de voir tous les paquets enregistrer dans cette capture. Cette fenêtre vous communique déjà des informations sur général classés dans différentes colonnes. Vous pouvez si vous le souhaitez supprimer, ajouter ou modifier des colonnes en faisant un clic droit sur l'entête.  
+Le packet list nous permet de voir tous les paquets enregistrés dans cette capture. Cette fenêtre vous communique déjà des informations générales classées dans différentes colonnes. Vous pouvez si vous le souhaitez supprimer, ajouter ou modifier des colonnes en faisant un clic droit sur l'entête.  
 Cependant les colonnes par défaut seront généralement amplement suffisantes. 
-- No. : cette colonne numérote les paquets capturés et indique à quel conversation appartient le paquet : si en cliquant sur un paquet vous voyez qu'un ligne pleines apparait sur un autre paquets c'est qu'ils sont dans une même conversation (par exemple three handshake).  
+- No. : cette colonne numérote les paquets capturés et indique à quelle conversation appartient le paquet : si en cliquant sur un paquet vous voyez qu'une ligne pleine apparait sur un autre paquet, c'est qu'ils sont dans une même conversation (par exemple three handshake).  
 ![image](https://user-images.githubusercontent.com/62069633/170123265-fcdcf935-272d-42d4-9b04-e25624661fe5.png)  
-Les paquets qui n'ont pas de lignes mes des pointillés ne font pas parti de cette conversation.  
+Les paquets qui n'ont pas de lignes mais des pointillés ne font pas partie de cette conversation.  
 ![image](https://user-images.githubusercontent.com/62069633/170123621-fe1cc571-e45b-43c0-bf79-532116f7d749.png)  
-- Time : cette colonne indique quand sont arrivé les paquets après le début de la capture.
-- Source : indique l'adresse IP qui à envoyer le paquet.
-- Destination : indique l'adresse IP qui à resus le paquet.
+- Time : cette colonne indique quand sont arrivés les paquets après le début de la capture.
+- Source : indique l'adresse IP qui a envoyé le paquet.
+- Destination : indique l'adresse IP qui a reçu le paquet.
 - Protocole : indique le protocole utilisé.
 - Length : indique la taille du paquet (en octets).
 - Info : cette colonne donne des informations différentes en fonction du protocole utilisé.
 
 #### 2. Le packet details
 
-Lorsque vous sélectionner un packet dans Le packet list vous pourrez le retrouvez tous les protocoles utilisés par ce paquet dans cette fenêtre.
-Vous pouvez dévlopez un protocol en faisant un clic gauche dessus.  
-De plus vous pouvez faire ne faire appraitre dans le packet list que les paquets utilisant le même protocole en faisant un clic droit sur le protocole **Appliquer comme un filtre -> Sélectionné** ou n'afficher que les paquets de la conversation avec **Filtre de conversation -> le protocole souhaiter**.
+Lorsque vous sélectionnez un packet dans le packet list, vous pourrez retrouver tous les protocoles utilisés par ce paquet dans cette fenêtre.
+Vous pouvez développer un protocole en faisant un clic gauche dessus.  
+De plus, vous pouvez, dans le packet list, ne faire apparaitre que les paquets utilisant le même protocole en faisant un clic droit sur le protocole **Appliquer comme un filtre -> Sélectionné** ou n'afficher que les paquets de la conversation avec **Filtre de conversation -> le protocole souhaité**.
 
 #### 3. Le packet bytes pane
 
-Ici vous retrouverez le paquet brut au format hexadécimale ou binaire (click droit -> ... comme bits) avec une traduction au format ASCII. Si vous cliquez sur un bit cela sélectionnera dans le Le packet détails à quoi il correspond (et vice versa).
+Ici, vous retrouverez le paquet brut au format hexadécimal ou binaire (click droit -> ... comme bits) avec une traduction au format ASCII. Si vous cliquez sur un bit cela sélectionnera dans le packet détails ce à quoi il correspond (et vice versa).
 
 ### Les filtres : [^6] [^7]
 
-Il existe deux type de filtre dans Wireshark : les filtres de captures et les filtres d'affichages. Le premier se met avant une capture et permettent de ne capturer que ce qui nous intéresse et de réduire la taille du fichier de capture. Le second lui s'applique après une capture et ne fait que cacher les paquets qui ne nous intéressent pas.  
+Il existe deux types de filtre dans Wireshark : les filtres de capture et les filtres d'affichage. Le premier se met avant une capture et permet de ne capturer que ce qui nous intéresse et de réduire la taille du fichier de capture. Le second lui s'applique après une capture et ne fait que cacher les paquets qui ne nous intéressent pas.  
 
-#### Filtres de captures :
-Pour appliquer un filtre de capture entrer avant la capture le filtre ici :
+#### Filtres de capture :
+Pour appliquer un filtre de capture, entrez, avant la capture, le filtre ici :
 ![image](https://user-images.githubusercontent.com/62069633/170136920-c9313d66-dd70-4da5-9b51-57b10902a2ca.png)
 
-Si vous souhaiter entrer deux filtres utiliser le mot clé : `and`  
-Si vous souhaiter appliquer un filtre inverser (donc : capturer tous sauf) utiliser le mot clé: `not`  
+Si vous souhaitez entrer deux filtres, utilisez le mot clé : `and`  
+Si vous souhaitez appliquer un filtre inversé (donc : capturer tous sauf), utilisez le mot clé: `not`  
 
-Wireshark utilise des filtres par défauts s’il est utilisé à distance pour ne pas enregistrer ce qui est lié à cette connexion (comme ssh).
+Wireshark utilise des filtres par défaut s’il est utilisé à distance pour ne pas enregistrer ce qui est lié à cette connexion (comme ssh).
 
 ##### Exemples utiles (trouver ici [^6])
 
-Pour capturer tous se qui vient et sort d'une adresse IP :  
+Pour capturer tout se qui vient et sort d'une adresse IP :  
 `host 172.18.5.4`  
-Pour capturer tous se qui concerne un range d’IP :  
+Pour capturer tout ce qui concerne un range d’IP :  
 `net 192.168.0.0/24`  
-Pour capturer tous se qui concerne un port :  
+Pour capturer tout ce qui concerne un port :  
 `port 53`  
 Pour ne capturer que du trafic IPv4 :  
 `ip`  
 Pour ne capturer que du trafic unicast :  
 `not broadcast and not multicast`  
 
-#### Filtres d’affichages :
-Pour appliquer un filtre d'affichage et ainsi cacher se dont vous ne voulez pas entrer ce que vous voulez ici :
+#### Filtres d’affichage :
+Pour appliquer un filtre de capture, entrez, le filtre ici :
 ![image](https://user-images.githubusercontent.com/62069633/170139504-3bd37f17-fa69-4376-b305-01c3f09a3876.png)
 
 
-Si vous souhaiter afficher que les paquets qui correspondent à deux filtres utiliser le mot clé : `and` ou `&&`  
-Si vous souhaiter afficher que les paquets qui correspondent à deux filtres utiliser le mot clé : `or` ou `||`  
+Si vous souhaitez n'afficher que les paquets qui correspondent à deux filtres, utiliser le mot clé : `and` ou `&&`  
+Si vous souhaitez n'afficher que les paquets qui correspondent à deux filtres, utiliser le mot clé : `or` ou `||`  
 
 ##### Exemples utiles (trouver ici [^7])
 
@@ -101,19 +101,19 @@ Pour n'afficher que les paquets possédant un protocole :
 `TCP`
 Pour n'afficher que ce qui correspond à une adresse IP :  
 `ip.addr==172.18.5.4`  
-Pour capturer tous se qui concerne un range d’IP :  
+Pour capturer tout ce qui concerne un range d’IP :  
 `ip.addr==192.168.0.0/24`  
-Pour capturer tous se qui concerne un port :  
+Pour capturer tout ce qui concerne un port :  
 `tcp.port==53`  
-Pour ne capturer que le trafic entre deux machine (par exemple client et serveur):  
+Pour ne capturer que le trafic entre deux machines (par exemple client et serveur):  
 `ip.src==192.168.18.5 and ip.dst==192.168.2.45`  
 
 ### La colorisation : [^8]
 
-La colorisation permet de mettre en évidence des paquets qui répondent à certains filtres sans pour autant cacher les autres. Wireshark propose de bases 20 filtres. Pour ajouter ou supprimer des filtres aller dans **vue -> coloring rules**.
+La colorisation permet de mettre en évidence des paquets qui répondent à certains filtres sans pour autant cacher les autres. Wireshark propose, de base, 20 filtres. Pour ajouter ou supprimer des filtres aller dans **vue -> coloring rules**.
 ![image](https://user-images.githubusercontent.com/62069633/170142753-0138ffd1-61dd-4164-a87f-9ad87fc1daee.png)
 
-Vous pouvez ainsi remarquer qu'il est possible d'importer ou d'exporter des règles de colorisation. Ainsi vous pouvez avoir plusieurs sets de règles que vous utiliserez dans différentes utilisations et vous pourrez aller chercher des règles préfet sur internet pour des cas spécifiques. 
+Vous pouvez ainsi remarquer qu'il est possible d'importer ou d'exporter des règles de colorisation. Ainsi vous pouvez avoir plusieurs sets de règles que vous utiliserez dans différentes utilisations et vous pourrez aller chercher des règles préfaites sur internet pour des cas spécifiques. 
 
 ## Bibliographie
 
@@ -148,4 +148,3 @@ Avis sur la ressource : concis et donne des exemples utiles
 [^7]:* [ColoringRules](https://wiki.wireshark.org/ColoringRules),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)  
 Résumé : guide sur les la coloration
 Avis sur la ressource : concis et donne des exemples utiles 
-
