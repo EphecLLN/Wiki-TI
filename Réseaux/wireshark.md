@@ -24,7 +24,7 @@ La fonctionnalité principale et de base de Wireshark est la capture de paquets.
 ![image](https://user-images.githubusercontent.com/62069633/170109781-124844a2-4c1d-4583-8e6c-85e1d788fb4e.png)  
 Lorsque vous souhaitez arrêter la capture, appuyez sur le petit carré rouge en haut à gauche.  
 Vous pouvez ensuite travailler dessus ou enregistrer la capture pour revenir dessus plus tard en allant dans **fichier -> enregistrer sous**.  
-Pour recommencer une capture, cliquez sur l'aileron bleu, à gauche du carré rouge.
+Pour recommencer une capture, cliquez sur l'aileron bleu, à gauche du carré rouge.  
 ![image](https://user-images.githubusercontent.com/62069633/170111507-3912c10a-ce96-4149-b715-db2f774c736e.png)
 
 ### L'analyse de paquets
@@ -66,8 +66,8 @@ Ici, vous retrouverez le paquet brut au format hexadécimal ou binaire (click dr
 Il existe deux types de filtre dans Wireshark : les filtres de capture et les filtres d'affichage. Le premier se met avant une capture et permet de ne capturer que ce qui nous intéresse et de réduire la taille du fichier de capture. Le second lui s'applique après une capture et ne fait que cacher les paquets qui ne nous intéressent pas.  
 
 #### Filtres de capture :
-Pour appliquer un filtre de capture, entrez, avant la capture, le filtre ici :
-![image](https://user-images.githubusercontent.com/62069633/170136920-c9313d66-dd70-4da5-9b51-57b10902a2ca.png)
+Pour appliquer un filtre de capture, entrez, avant la capture, le filtre ici :  
+![image](https://user-images.githubusercontent.com/62069633/170136920-c9313d66-dd70-4da5-9b51-57b10902a2ca.png)  
 
 Si vous souhaitez entrer deux filtres, utilisez le mot clé : `and`  
 Si vous souhaitez appliquer un filtre inversé (donc : capturer tous sauf), utilisez le mot clé: `not`  
@@ -88,8 +88,8 @@ Pour ne capturer que du trafic unicast :
 `not broadcast and not multicast`  
 
 #### Filtres d’affichage :
-Pour appliquer un filtre de capture, entrez, le filtre ici :
-![image](https://user-images.githubusercontent.com/62069633/170139504-3bd37f17-fa69-4376-b305-01c3f09a3876.png)
+Pour appliquer un filtre de capture, entrez, le filtre ici :  
+![image](https://user-images.githubusercontent.com/62069633/170139504-3bd37f17-fa69-4376-b305-01c3f09a3876.png)  
 
 
 Si vous souhaitez n'afficher que les paquets qui correspondent à deux filtres, utiliser le mot clé : `and` ou `&&`  
@@ -110,8 +110,8 @@ Pour ne capturer que le trafic entre deux machines (par exemple client et serveu
 
 ### La colorisation : [^8]
 
-La colorisation permet de mettre en évidence des paquets qui répondent à certains filtres sans pour autant cacher les autres. Wireshark propose, de base, 20 filtres. Pour ajouter ou supprimer des filtres aller dans **vue -> coloring rules**.
-![image](https://user-images.githubusercontent.com/62069633/170142753-0138ffd1-61dd-4164-a87f-9ad87fc1daee.png)
+La colorisation permet de mettre en évidence des paquets qui répondent à certains filtres sans pour autant cacher les autres. Wireshark propose, de base, 20 filtres. Pour ajouter ou supprimer des filtres aller dans **vue -> coloring rules**.  
+![image](https://user-images.githubusercontent.com/62069633/170142753-0138ffd1-61dd-4164-a87f-9ad87fc1daee.png)  
 
 Vous pouvez ainsi remarquer qu'il est possible d'importer ou d'exporter des règles de colorisation. Ainsi vous pouvez avoir plusieurs sets de règles que vous utiliserez dans différentes utilisations et vous pourrez aller chercher des règles préfaites sur internet pour des cas spécifiques. 
 
