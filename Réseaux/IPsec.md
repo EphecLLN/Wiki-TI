@@ -94,7 +94,7 @@ Les avantages d’IPSec sont indéniables en matière de performance et de fiabi
 Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
 
 IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
-IPsec complique la traversée des NAT et Pare-Feu.
+Deplus IPSec complique la traversée des NAT et Pare-Feu.
 
 ## Sources :
 [1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
