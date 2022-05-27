@@ -71,3 +71,6 @@ l’expéditeur et le destinataire.
 ### IKE
 
 IKE ou Internet Key Exchange est un procédé de gestion de clé utilisé pour gérer la connexion entre deux routeurs.
+
+- On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
+- Une fois les routeurs d’accord sur le type de sécurité, IKE ouvre un tunnel sécurisé
