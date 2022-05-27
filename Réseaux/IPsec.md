@@ -41,11 +41,11 @@ On peut répartir suite des protocles IPSec en 3 groupes :
 
 ESP ou Encapsulating Security Payload est utilisé pour la sécurité et l’intégrité des données. Il assure l’intégrité des données et l'authentification de la source mais aussi crypte les données. ESP possède deux mode de fonctionnnemnt, le mode `Transport` où machines sont connectées directement et le mode `Tunel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
 
-![Untitled-Page-2](https://user-images.githubusercontent.com/43784062/170521567-bba84658-9275-4fcb-b2ed-45c1b68d3029.jpg)
-
 - Fonctionnement en mode Transport :
 
 Ce mode ne peut être utiliser qu’entre deux machines. 
+![Mode transport-1](https://user-images.githubusercontent.com/43784062/170652551-5507034c-ea74-4219-bbcf-73dcdcd0af5f.jpg)
+
 
   - Il commence par crypter les données
   - Ensuite il rajoute un entête intermédiaire sans modifier l’entête du paquet
@@ -54,6 +54,11 @@ Ce mode ne peut être utiliser qu’entre deux machines.
 
 
 - Fonctionnement en mode Tunnel :
+ 
+ Ce mode permet de connectées d"uc réseaux entre eux.
+ 
+ ![Mode tunel-1](https://user-images.githubusercontent.com/43784062/170652643-d34f760a-1580-47cc-bca2-3de177f9d8bf.jpg)
+
 
   - Il commence par crypter le paquet contenant les données
   - Ensuite il forme un nouveau paquet avec une nouvelle entête IP pour assurer l’intégrité de celui-ci et donc empêcher un pirate de connaitre
