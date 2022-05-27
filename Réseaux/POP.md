@@ -19,8 +19,8 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 [[https://www.kalanda.net/images/faq/imap/pop-ou-imap.png]]
 
 * LIST : donne le nombre de courriers présents sur le serveur avec leur numéro
-* RETR numéro : récupère le courrier numéro en attente sur votre serveur
-* DELE numéro : détruit le courrier numéro
+* RETR [numéro] : récupère le courrier numéro en attente sur votre serveur
+* DELE [numéro] : détruit le courrier numéro
 * NOOP : vérifie la connexion
 * LAST : récupère le dernier message arrivé sur le serveur
 * QUIT : quitte la session et en autorise une autre
@@ -29,8 +29,14 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 
 ## Qu'elle est le futur du protocole POP
 
+## Quand utilisé POP
+
 ## Source
 
 * Fonctionnement du protocole POP et IMAP - Base de connaissances - KALANDA. (2019). Kalanda.Net. Consulté le 27 mai 2022, à l’adresse https://www.kalanda.net/apps/index.php/knowledgebase/27/Fonctionnement-du-protocole-POP-et-IMAP.html#:%7E:text=Le%20protocole%20POP%20permet%20de,les%20voir%20sur%20mon%20smartphone).
 
 * Arobase.org. (2018, 25 septembre). Le protocole POP. Consulté le 25 mai 2022, à l’adresse https://www.arobase.org/fonctionnement/pop.htm#:%7E:text=Le%20protocole%20POP%20g%C3%A8re%20l,m%C3%AAme%20temps%20%C3%A0%20votre%20courrier.
+
+* Questiaux, J. (2021, 18 juin). Mon compte email : choisir POP ou IMAP ? Better Web. Consulté le 20 mai 2022, à l’adresse https://www.betterweb.fr/blog/mon-compte-email-choisir-pop-ou-imap
+
+* A. (2020, 31 décembre). POP3, Post Office Protocol : de quoi s’agit-il, à quoi sert-il et en quoi est-il différent d’IMAP? Informatique Mania. https://www.informatique-mania.com/en/courriers-electroniques/bureau-de-protocole-de-messagerie-pop3/
