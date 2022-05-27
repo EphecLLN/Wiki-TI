@@ -37,25 +37,30 @@ On peut répartir suite des protocles IPSec en 3 groupes :
     - SAD ( Security Association Database )
     - SPD ( Security Policy Database )
 
-### Protocoles de transfert ESP
+### Protocoles de transfert AH et ESP
 
-ESP ou Encapsulating Security Payload est utilisé pour la sécurité et l’intégrité des données. Il assure l’intégrité des données et l'authentification de la source mais aussi crypte les données. ESP possède deux mode de fonctionnnemnt, le mode `Transport` où machines sont connectées directement et le mode `Tunel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
+Le protocole d'en-tête d'authentification (AH) fournit l'authentification de l'origine des données ainsi que l'intégrité de celles-ci[3] .Néanmoins, AH n'assure pas la confidentialité des données, celle-ci sont transmissent en claire !
+c'est pourquoi AH est utilisé en combinaison avec ESP.
+Le protocoles ESP ou Encapsulating Security Payload est utilisé pour la confidentialité des données en les chiffrants.
+
+La combinaison de ces protocoles possède deux mode de fonctionnnemnt, le mode `Transport` où machines sont connectées directement et le mode `Tunel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
 
 - Fonctionnement en mode Transport :
 
-Ce mode ne peut être utiliser qu’entre deux machines. 
+Le mode transport a possède un temps de traitement rapide, mais ne sécurise que les données de l'utilisateur, les adresses source et cible restent non protégées c'est pourquoi ce mode ce mode ne peut être utilisé qu’entre deux machines, par exemple routeur à routeur.
 
 ![mode transport](https://user-images.githubusercontent.com/43784062/170671693-7d0c304d-b17b-475f-8b17-69aee9f934fc.jpeg)
 
   - Il commence par crypter les données
-  - Ensuite il rajoute un entête intermédiaire sans modifier l’entête du paquet
+  - Ensuite il rajoute un entête intermédiaire entre l’entête du paquet et les données.
 
 ![mode transport-1 (1)](https://user-images.githubusercontent.com/43784062/170671717-796d871d-dcfe-45f1-a1ec-e915cb5f8160.jpg)
 
 
 - Fonctionnement en mode Tunnel :
  
- Ce mode permet de connectées d"uc réseaux entre eux.
+ Le paquet recoit une nouvelle en-tête IP contenant les adresse source et cible ainsi que les données.
+ Ce mode permet de connectées deux réseaux entre eux.
  
 ![mode tunnel](https://user-images.githubusercontent.com/43784062/170671822-316aeaa2-8785-4c66-943a-b0c8b0f8742d.jpg)
 
@@ -67,19 +72,32 @@ l’expéditeur et le destinataire.
 ![mode tunnel -1](https://user-images.githubusercontent.com/43784062/170671863-06d7e744-6ceb-4831-9136-4cb51cbb58c2.jpg)
 
 
-### IKE
+### Gestion des clés IKE & ISAKMP
 
-IKE ou Internet Key Exchange est un procédé de gestion de clé utilisé pour gérer la connexion entre deux routeurs.
+IKE ou Internet Key Exchange est un procédé de gestion de clé utilisé pour gérer la connexion entre deux routeurs. Ce dernier utilise l'algorithme Diffie-Hellaman pour l'échange des clés tout en combinaison avec ISAKMP .
+ISAKMP ou Internet Security Association and Key Management Protocol  est un protocole défini par RFC 2408 pour établir une association de sécurité (SA) et des clés cryptographiques dans un environnement Internet.[4]
 
 - 1. On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
 - 2. Une fois les routeurs d’accord sur le type de sécurité, IKE ouvre un tunnel sécurisé
 
 ![IKE](https://user-images.githubusercontent.com/43784062/170671902-771c40ec-7197-4f2e-8774-54dab0226f26.jpeg)
 
-## Les forces et faiblesses d'IPSec
+### Base de données SAD & SDP
+
+Les informations nécessaires au transfert des paquets sont stockées dans deux bases de données en local, SPD et SAD.
+Dans la base de donnée SDP on va retrouver les information permettant de déterminer le ou les protocoles à utiliser à savoir AH, ESP ou la combinaison des deux.
+Tant dit que dans la base de donnée SAD, on va retrouver les informations essentiels pour le protocole IKE à savoir les différentes clés de chiffrement.
+
+## Les points positifs et négatif d'IPSec
 
 Les avantages d’IPSec sont indéniables en matière de performance et de fiabilité. 
 Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
 
 IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
 IPsec complique la traversée des NAT et Pare-Feu.
+
+## Sources :
+[1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
+[2] https://www.frameip.com/vpn/, consulté le 26/05/2022, date article : /, auteur : /, Affiliation : frameip.com, titre artcile : RÉSEAU PRIVÉ VIRTUEL VPN
+[3] https://www.ibm.com/docs/en/i/7.1?topic=protocols-authentication-header, consulté le 28/05/2022, date article : 31/08/2021, auteur : / , Affiliation : ibm.com , titre article : Authentication Header
+[4] https://en.wikipedia.org/wiki/Internet_Security_Association_and_Key_Management_Protocol, consulté le 28/05/2022, date article : 25/05/2022, auteur : /, Affiliation : wikipedia.org, titre article : Association de sécurité Internet et protocole de gestion de clés
