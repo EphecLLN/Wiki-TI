@@ -1,10 +1,10 @@
 ---
 layout: default
-title: LDAP
+title: IPSec
 parent : Réseaux
 ---
 
-# IPsec ( Internet Protocol Security )
+# IPSec ( Internet Protocol Security )
 
 ## Un peu d'histoire
 
