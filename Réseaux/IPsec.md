@@ -98,6 +98,9 @@ IPsec complique la traversée des NAT et Pare-Feu.
 
 ## Sources :
 [1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
+
 [2] https://www.frameip.com/vpn/, consulté le 26/05/2022, date article : /, auteur : /, Affiliation : frameip.com, titre artcile : RÉSEAU PRIVÉ VIRTUEL VPN
+
 [3] https://www.ibm.com/docs/en/i/7.1?topic=protocols-authentication-header, consulté le 28/05/2022, date article : 31/08/2021, auteur : / , Affiliation : ibm.com , titre article : Authentication Header
+
 [4] https://en.wikipedia.org/wiki/Internet_Security_Association_and_Key_Management_Protocol, consulté le 28/05/2022, date article : 25/05/2022, auteur : /, Affiliation : wikipedia.org, titre article : Association de sécurité Internet et protocole de gestion de clés
