@@ -12,11 +12,15 @@ Le protocole POP (Post Office Protocol) est un protole beaucoup utiliser dans le
 
 Le gros point négatif de POP vient de la. Après avoir consulter ses mails sur une machine il est alors impossible pour l'utilisateur de consulter ce même mail sur une autre machine
 
+Il est est possible de conserver ses mails sur le serveur POP mais pendant une durée limité qui doit être configurer sur le client mail de l'utilisateur.
+
 Le protocole Imap, sont concurent, quand à lui permet de télécharger ses mail à  partir d'un serveur mail mais le mail en question reste sur le serveur. Cela permet au utilisateur de consulter leurs emails sur n'importe quelle autre machine. 
 
 Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc de la vérification de notre identifiant et de notre mot de passe. Il bloque également l'accès à notre boite au lettres lorsque nous y accèdons et empêche alors toutes autre connexion
 
 [[https://www.kalanda.net/images/faq/imap/pop-ou-imap.png]]
+
+### Le protocole POP gère les commandes suivantes :
 
 * LIST : donne le nombre de courriers présents sur le serveur avec leur numéro
 * RETR [numéro] : récupère le courrier numéro en attente sur votre serveur
@@ -27,9 +31,25 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 
 ## Ou est-il utilisé ?
 
+Tous les clients mail peuvent être parametrés afin d'utiliser POP
+
 ## Qu'elle est le futur du protocole POP
 
-## Quand utilisé POP
+POP4 n'existe qu'en tant que proposition informelle ajoutant la gestion de base des dossiers, la prise en charge des messages en plusieurs parties, ainsi que la gestion des indicateurs de message pour concurrencer IMAP. 
+Cependant, son développement n'a pas progressé depuis 2003.
+
+De l'autre coté, son concurent IMAP publie sa dernière version, la version 4, en 1994 et aucune version 5 n'a été annoncer jusqu'à aujourdhui
+
+## L'avantage du protocole POP
+
+* POP est plus simple à utilisé, plus simple à configurer et éfficace
+* Permet la gestion de ses emails en local ce qui facilite et augmente la vitesse de recherche et de tri.
+* Il néssecite un quantité minimale de ressources afin de fonctionner.
+
+## Ld"saventage du protocole POP
+
+* Nécessite une connexion constante a internet.
+* Oblige l'utilisateur à sauvegarder ses mails afin de ne pas les perdre en cas de problème.
 
 ## Source
 
@@ -40,3 +60,7 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 * Questiaux, J. (2021, 18 juin). Mon compte email : choisir POP ou IMAP ? Better Web. Consulté le 20 mai 2022, à l’adresse https://www.betterweb.fr/blog/mon-compte-email-choisir-pop-ou-imap
 
 * A. (2020, 31 décembre). POP3, Post Office Protocol : de quoi s’agit-il, à quoi sert-il et en quoi est-il différent d’IMAP? Informatique Mania. https://www.informatique-mania.com/en/courriers-electroniques/bureau-de-protocole-de-messagerie-pop3/
+
+* Wikipedia contributors. (2022c, mai 16). Post Office Protocol. Wikipedia. https://en.wikipedia.org/wiki/Post_Office_Protocol
+
+* POP et IMAP : différences, avantages et inconvénients. (2010, 17 mars). L’Orient-Le Jour. https://www.lorientlejour.com/article/650498/POP_et_IMAP%2B%253A_differences%252C__avantages_et_inconvenients.html#:%7E:text=Parmi%20les%20avantages%20du%20compte,enfin%20une%20utilisation%20minimale%20des
