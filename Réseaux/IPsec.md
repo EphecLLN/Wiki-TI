@@ -16,7 +16,7 @@ C’est un gros problème vu que lors de cet échange de données, les paquets p
 
 Pour faire face à cette situation et ainsi permettre un transfert de paquets de données sécurisés sur des réseaux publics, l’Internet Protocol Security ou IPsec a été développé.
 
-## IPsec 
+## IPSec 
 
 « Internet Protocol Security » (IPSec) est une suite de protocoles conçue pour le protocole Internet TCP-IP standardisé par l’IETF (Internet Engineering Task Force) pour l’IPv4 mais aussi l’IPv6. Permettant une communication sécurisée avec des réseaux IP qui ne sont pas dignes de confiance. La confidentialité, l’authenticité et l’intégrité de la circulation des données sont assurées par un système d'authentification et de cryptage . 
 
@@ -44,33 +44,42 @@ ESP ou Encapsulating Security Payload est utilisé pour la sécurité et l’int
 - Fonctionnement en mode Transport :
 
 Ce mode ne peut être utiliser qu’entre deux machines. 
-![Mode transport-1](https://user-images.githubusercontent.com/43784062/170652551-5507034c-ea74-4219-bbcf-73dcdcd0af5f.jpg)
 
+![mode transport](https://user-images.githubusercontent.com/43784062/170671693-7d0c304d-b17b-475f-8b17-69aee9f934fc.jpeg)
 
   - Il commence par crypter les données
   - Ensuite il rajoute un entête intermédiaire sans modifier l’entête du paquet
 
-![mode transport](https://user-images.githubusercontent.com/43784062/170522344-5ca1b9d9-67f9-483d-a710-d765e58d9b34.jpg)
+![mode transport-1 (1)](https://user-images.githubusercontent.com/43784062/170671717-796d871d-dcfe-45f1-a1ec-e915cb5f8160.jpg)
 
 
 - Fonctionnement en mode Tunnel :
  
  Ce mode permet de connectées d"uc réseaux entre eux.
  
- ![Mode tunel-1](https://user-images.githubusercontent.com/43784062/170652643-d34f760a-1580-47cc-bca2-3de177f9d8bf.jpg)
+![mode tunnel](https://user-images.githubusercontent.com/43784062/170671822-316aeaa2-8785-4c66-943a-b0c8b0f8742d.jpg)
 
 
   - Il commence par crypter le paquet contenant les données
   - Ensuite il forme un nouveau paquet avec une nouvelle entête IP pour assurer l’intégrité de celui-ci et donc empêcher un pirate de connaitre
 l’expéditeur et le destinataire.
 
-
-![mode tunel](https://user-images.githubusercontent.com/43784062/170522375-ec2addef-bcf3-47ca-8e9e-dbe29e728458.jpg)
+![mode tunnel -1](https://user-images.githubusercontent.com/43784062/170671863-06d7e744-6ceb-4831-9136-4cb51cbb58c2.jpg)
 
 
 ### IKE
 
 IKE ou Internet Key Exchange est un procédé de gestion de clé utilisé pour gérer la connexion entre deux routeurs.
 
-- On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
-- Une fois les routeurs d’accord sur le type de sécurité, IKE ouvre un tunnel sécurisé
+- 1. On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
+- 2. Une fois les routeurs d’accord sur le type de sécurité, IKE ouvre un tunnel sécurisé
+
+![IKE](https://user-images.githubusercontent.com/43784062/170671902-771c40ec-7197-4f2e-8774-54dab0226f26.jpeg)
+
+## Les forces et faiblesses d'IPSec
+
+Les avantages d’IPSec sont indéniables en matière de performance et de fiabilité. 
+Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
+
+IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
+IPsec complique la traversée des NAT et Pare-Feu.
