@@ -49,11 +49,11 @@ Grâce à sa longévité de plus de 20 ans et à chaque ajout et amélioration q
 
 
 ## Sources
-*Zabbix. (n.d.). Download million images for free. https://stringfixer.com/fr/Zabbix [1]
+* Zabbix. (n.d.). Download million images for free. https://stringfixer.com/fr/Zabbix [1]
 * Supervision et métrologie Zabbix : principes et fonctionnement - Syloe. (n.d.). Syloe. https://www.syloe.com/supervision-et-metrologie-zabbix [2]
 * Elément trapper. (n.d.). Zabbix :: The Enterprise-Class Open Source Network Monitoring Solution. https://www.zabbix.com/documentation/4.0/fr/manual/config/items/itemtypes/trapper [3]
 *  Paramètres utilisateur. (n.d.). Zabbix :: The Enterprise-Class Open Source Network Monitoring Solution https://www.zabbix.com/documentation/4.0/fr/manual/config/items/userparameters  [4]
-* Kalsin, V. (2020, July 30). Comment installer et configurer Zabbix et configurer des serveurs Ã  distance sur Ubuntu 20.04. DigitalOcean â The developer cloud. https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-zabbix-to-securely-monitor-remote-servers-on-ubuntu-20-04-fr [5]
+* Kalsin, V. (2020, July 30). Comment installer et configurer Zabbix et configurer des serveurs à  distance sur Ubuntu 20.04. DigitalOcean  The developer cloud. https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-zabbix-to-securely-monitor-remote-servers-on-ubuntu-20-04-fr [5]
 * Logiciel zabbix open source | Glossaire Syloé Experts Devops & Cloud. (n.d.). Syloe. https://www.syloe.com/glossaire/logiciel-zabbix/ [6]
 * Notes de publication. (n.d.). Zabbix :: The Enterprise-Class Open Source Network Monitoring Solution. https://www.zabbix.com/fr/release_notes [7]
 * Solution ultime de Supervision d'Entreprise - Zabbix. (n.d.). AxelIt. https://www.axelit.fr/technologies/zabbix/ [8]
