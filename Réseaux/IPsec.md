@@ -18,9 +18,9 @@ Pour faire face à cette situation et ainsi permettre un transfert de paquets de
 
 ## IPSec 
 
-« Internet Protocol Security » (IPSec) est une suite de protocoles conçue pour le protocole Internet TCP-IP standardisé par l’IETF (Internet Engineering Task Force) pour l’IPv4 mais aussi l’IPv6. Permettant une communication sécurisée avec des réseaux IP qui ne sont pas dignes de confiance. La confidentialité, l’authenticité et l’intégrité de la circulation des données sont assurées par un système d'authentification et de cryptage . 
+« Internet Protocol Security » (IPSec) est une suite de protocoles conçue pour la suite de protocoles Internet TCP-IP standardisé par l’IETF (Internet Engineering Task Force) pour l’IPv4 mais aussi l’IPv6 permettant une communication sécurisée avec des réseaux IP qui ne sont pas dignes de confiance. La confidentialité, l’authenticité et l’intégrité de la circulation des données sont assurées par un système d'authentification et de cryptage . 
 
-On peut répartir suite des protocles IPSec en 3 groupes : 
+On peut répartir la suite des protocles IPSec en 3 groupes : 
 
   - Protocoles de transfert : 
   
@@ -39,7 +39,7 @@ On peut répartir suite des protocles IPSec en 3 groupes :
 
 ### Protocoles de transfert AH et ESP
 
-Le protocole d'en-tête d'authentification (AH) fournit l'authentification de l'origine des données ainsi que l'intégrité de celles-ci[3] .Néanmoins, AH n'assure pas la confidentialité des données, celle-ci sont transmissent en claire !
+Le protocole d'en-tête d'authentification (AH) fournit l'authentification de l'origine des données ainsi que l'intégrité de celles-ci[3] . Néanmoins, AH n'assure pas la confidentialité des données, celle-ci sont transmisses en claire !
 c'est pourquoi AH est utilisé en combinaison avec ESP.
 Le protocoles ESP ou Encapsulating Security Payload est utilisé pour la confidentialité des données en les chiffrants.
 
@@ -84,9 +84,8 @@ ISAKMP ou Internet Security Association and Key Management Protocol  est un prot
 
 ### Base de données SAD & SDP
 
-Les informations nécessaires au transfert des paquets sont stockées dans deux bases de données en local, SPD et SAD.
-Dans la base de donnée SDP on va retrouver les information permettant de déterminer le ou les protocoles à utiliser à savoir AH, ESP ou la combinaison des deux.
-Tant dit que dans la base de donnée SAD, on va retrouver les informations essentiels pour le protocole IKE à savoir les différentes clés de chiffrement.
+Les informations nécessaires au transfert des paquets sont stockées dans deux bases de données en local à savoir SPD ( Security Policy Database ) et SAD ( Security Association Database ).
+Dans la base de donnée SDP on va retrouver les information permettant de déterminer le ou les protocoles à utiliser à savoir AH, ESP ou la combinaison des deux tant dit que dans la base de donnée SAD, on va retrouver les informations essentielles pour le protocole IKE à savoir les différentes clés de chiffrement.
 
 ## Les points positifs et négatif d'IPSec
 
@@ -94,7 +93,7 @@ Les avantages d’IPSec sont indéniables en matière de performance et de fiabi
 Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
 
 IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
-Deplus IPSec complique la traversée des NAT et Pare-Feu.
+Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5]
 
 ## Sources :
 [1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
@@ -104,3 +103,5 @@ Deplus IPSec complique la traversée des NAT et Pare-Feu.
 [3] https://www.ibm.com/docs/en/i/7.1?topic=protocols-authentication-header, consulté le 28/05/2022, date article : 31/08/2021, auteur : / , Affiliation : ibm.com , titre article : Authentication Header
 
 [4] https://en.wikipedia.org/wiki/Internet_Security_Association_and_Key_Management_Protocol, consulté le 28/05/2022, date article : 25/05/2022, auteur : /, Affiliation : wikipedia.org, titre article : Association de sécurité Internet et protocole de gestion de clés
+
+[5] https://www.sstic.org/media/SSTIC2006/SSTIC-actes/Faiblesses_d_IPSec_en_deploiements_reels/SSTIC2006-Article-Faiblesses_d_IPSec_en_deploiements_reels-vanhullebus.pdf, consulté le 31/05/2022, auteur :Yvan Vanhullebus , Affiliation : Netasq, titre article : Faiblesses d’IPSec en déploiements réels
