@@ -75,7 +75,7 @@ l’expéditeur et le destinataire.
 ### Gestion des clés IKE & ISAKMP
 
 IKE ou Internet Key Exchange est un procédé de gestion de clé utilisé pour gérer la connexion entre deux routeurs. Ce dernier utilise l'algorithme Diffie-Hellaman pour l'échange des clés tout en combinaison avec ISAKMP .
-ISAKMP ou Internet Security Association and Key Management Protocol  est un protocole défini par RFC 2408 pour établir une association de sécurité (SA) et des clés cryptographiques dans un environnement Internet.[4]
+ISAKMP ou Internet Security Association and Key Management Protocol  est un protocole défini par RFC 2408 pour établir une association de sécurité (SA) et des clés cryptographiques dans un environnement Internet.[6]
 
 - 1. On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
 - 2. Une fois les routeurs d’accord sur le type de sécurité, IKE ouvre un tunnel sécurisé
@@ -93,7 +93,7 @@ Les avantages d’IPSec sont indéniables en matière de performance et de fiabi
 Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
 
 IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
-Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5]
+Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5 - 7 - 8]
 
 ## Sources :
 [1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
@@ -105,3 +105,9 @@ Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence
 [4] https://en.wikipedia.org/wiki/Internet_Security_Association_and_Key_Management_Protocol, consulté le 28/05/2022, date article : 25/05/2022, auteur : /, Affiliation : wikipedia.org, titre article : Association de sécurité Internet et protocole de gestion de clés
 
 [5] https://www.sstic.org/media/SSTIC2006/SSTIC-actes/Faiblesses_d_IPSec_en_deploiements_reels/SSTIC2006-Article-Faiblesses_d_IPSec_en_deploiements_reels-vanhullebus.pdf, consulté le 31/05/2022, auteur :Yvan Vanhullebus , Affiliation : Netasq, titre article : Faiblesses d’IPSec en déploiements réels
+
+[6] https://www.rfc-editor.org/rfc/rfc2408.html
+
+[7] https://www.rfc-editor.org/rfc/rfc3947.html
+
+[8] https://www.rfc-editor.org/rfc/rfc3948.html
