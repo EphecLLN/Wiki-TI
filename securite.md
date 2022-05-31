@@ -8,6 +8,7 @@ has_children: true
 # Sécurité
 
 - [PGP](Sécurité/PGP.md)
+- [Etude de cas : Compromission d'un serveur Ubuntu](etude_de_cas_hacking.md)
 
 
 # Concepts liés à la sécurité dans d'autres sections : 
