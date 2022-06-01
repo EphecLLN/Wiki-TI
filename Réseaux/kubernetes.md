@@ -52,7 +52,7 @@ Un Ingress permet d'exposer des applications au travers de règles de routage. C
 
 Une entreprise possède 2 serveurs pour héberger des applications Web. Ces applications nécessitant une très haute disponibilité, une faible latence et pouvoir supporter beaucoup de requêtes, l'entreprise à décidé de mettre en ligne ces applications à l'aide de Kubernetes. Le schéma ci-dessous représente l'infrastructure Kubernetes de l'entreprise. 
 Les 2 serveurs de l'entreprise font office de Master Node, ce qui permet d'assurer une haute disponibilité des services de gestion du Cluster Kubernetes.
-Chaque application est mise en ligne à l'aide d'un Deployment. Chaque déploiement assure que 4 répliques de l'application soient en ligne dans toutes les circonstances. Les outils des Master Nodes permettent d'équilibrer la charge sur les différentes machines du Cluster. 
+Chaque application est mise en ligne à l'aide d'un Deployment. Chaque Déploiement assure que 2 répliques de l'application soient en ligne dans toutes les circonstances. Ces 2 répliques sont donc des Pods gérés par le Déploiement. Les outils des Master Nodes permettent d'équilibrer la charge sur les différentes machines du Cluster. 
 
 L'application App 2 nécessite une base de données à laquelle toutes les répliques doivent avoir accès. La base de données doit être déployée dans l'environnement Kubernetes à l'aide d'un Persistant Volume (PV). Chaque réplique d'App 2 y accède à l'aide du label indiqué lors de la création du PV, ou de son adresse IP interne au Cluster. Etant donné que c'est un persistant volume, les données ne disparaitrons si un Pod cesse de fonctionner. 
 
@@ -60,7 +60,8 @@ Pour permettre aux utilisateurs (User 1 et User 2) d'accéder à l'application A
 Acccèder à l'application au travers de l'adresse IP des Nodes n'est pas une bonne pratique. Cela réduit l'efficacité de l'équilibrage de charge et expose les adresses IP de tous les Nodes du Cluster. 
 Pour pallier à cela, un Ingress est créé. L'Ingress récupère les Services des 2 applications et leur attribue une route. Lorsqu'un utilisateur désire accèder à l'application, celui-ci doit indiquer l'adresse IP (ou le nom de domaine si un [DNS est mis en place](https://kubernetes.io/fr/docs/concepts/services-networking/dns-pod-service/)) qui lui est attribué par le Ingress Controller et la route définie pour l'accès à l'application. 
 
-![Infrastructure Kubernetes](https://user-images.githubusercontent.com/56077782/168284673-0240a527-f302-4835-8311-9c6a074cc591.png)
+![Infrastructure Kubernetes](https://user-images.githubusercontent.com/56077782/171189387-2a83fdad-00d5-44b8-bd10-0d934cab1eb0.png)
+
 
 User 1 et User 2 désirent accéder à l'application App 2 en utilisant l'URL suivante: <adresse_IP>/app2. 
 Les requêtes sont alors renvoyées par l'Ingress vers le Service de l'App 2. Celui-ci accède ensuite à l'un des Pods lié au Service de l'App 2. 
