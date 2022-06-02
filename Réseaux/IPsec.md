@@ -11,9 +11,10 @@ parent : Réseaux
 En informatique et plus particulièrement en réseau, les paquets sont les éléments principaux pour communiquer des données entre deux machines. 
 Dans ces paquets on y distingue deux grands types d'éléments à savoir, ceux pour les données et ceux contenant l’adresse de l’expéditeur et du destinataire.
 
+<img width="408" alt="Screenshot 2022-06-02 at 14 59 04" src="https://user-images.githubusercontent.com/43784062/171634672-39e7557e-e713-429f-997d-805fc5f0283e.png">
 
 
-Le point négatif de cette communication est l’absence de sécurité en effet les données ne sont pas cryptées de plus il n’est pas possible de vérifier l’authenticité de celles-ci également.
+Le point négatif de cette communication est l’absence de sécurité en effet les données des paquets ne sont pas cryptées de plus il n’est pas possible de vérifier l’authenticité de celles-ci également.
 
 C’est un gros problème vu que lors de cet échange de données, les paquets passe par différents routeurs. Elles peuvent donc être interceptées, lues, manipulées, modifiées à tout moment par une personne mal intentionnée.
 
