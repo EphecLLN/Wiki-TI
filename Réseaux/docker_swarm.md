@@ -15,7 +15,7 @@ On initialise sur un docker host le swarm. Ce docker host deviendra un manager.
 ``` 
 docker swarm init --advertise-addr=<IP-MANAGER> 
 ```
-\<IP-MANAGER> est  ...
+\<IP-MANAGER> est l'adresse IP de la machine abritant le manager.
 
 La commande renvoie un message indiquant la commande à taper pour qu'un autre docker host puisse rejoindre le swarm en tant que worker ou manager. Elle ressemblera à :
 ```
@@ -41,6 +41,32 @@ Les tasks, en opposition aux "standalone containers", sont des containers faisan
 
 - Replicated service : le manager distribue un nombre précis de tasks à travers les workers. 
 - Global service : le manager distribue une task à chaque node disponible dans le cluster.
+
+### Création de services
+La parmétrisation d'un service peut être très complète. Voyons les points basiques. Pour plus d'informations, n'hésitez pas à consulter la documentation [Docker](https://docs.docker.com/engine/swarm/services/#create-a-service).
+
+La commande de base pour créer un service swarm est la suivante. \<IMAGE> est l'image qu'utiliserons les containers (tasks) et \<COMMAND> est la commande qui sera exécutée dans le container après sa création.
+```
+docker service create <IMAGE> <COMMAND>
+```
+
+On peut bien sûr compléter cette commande avec une multitude de flags :
+
+-   ```--name <NAME>``` permets de donner un nom au service.
+-   ```--p <PORT> / --publish <PORT>``` permets de choisir un Published Port, un port externe sur lequel on accède au service.
+-   ```--env <VAR>=<VALUE>``` permets de définir des variables d'environnement.
+-   ```--workdir <PATH>``` permets de définir un working directory.
+-   ```--user <USER>``` permets de définir un utilisateur.
+-   ```--mode <MODE>``` permets d'indiquer le mode de service (replicated, global, ...). Si on n'utilise pas ce flan un service sera replicated par défaut.
+-   ```--replicas <NUMBER-REPLICAS>``` permets d'indiquer le nombre de répliques qu'on veut avoir.
+- etc.
+
+On peut également définir le comportement de mise à jour du service (délai avant mise à jour automatique, que faire lors d'une erreur de mise à jour, ...), définir une façon de revenir à une version antérieure du service en cas de problème avec la version actuelle du service.
+
+++ named volumes, bind mounts 
+
+++ réseaux overlays
+
 
 ### Tolérance aux pannes et Load balancing 
 Les workers communiquent l'état de leurs tasks qui leur ont été assigné. De cette manière le manager peut maintenir l'état désiré. Par exemple, dans le cas où un worker tombe en panne et n'est plus disponible le manager redistribue une nouvelle Task à un autre worker pour respecter le nombre de répliques qu'on doit avoir.
