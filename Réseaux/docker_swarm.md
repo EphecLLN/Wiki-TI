@@ -57,7 +57,7 @@ On peut bien sûr compléter cette commande avec une multitude de flags :
 -   ```--env <VAR>=<VALUE>``` permets de définir des variables d'environnement.
 -   ```--workdir <PATH>``` permets de définir un working directory.
 -   ```--user <USER>``` permets de définir un utilisateur.
--   ```--mode <MODE>``` permets d'indiquer le mode de service (replicated, global, ...). Si on n'utilise pas ce flan un service sera replicated par défaut.
+-   ```--mode <MODE>``` permets d'indiquer le mode de service (replicated, global, ...). Si on n'utilise pas ce flag un service sera replicated par défaut.
 -   ```--replicas <NUMBER-REPLICAS>``` permets d'indiquer le nombre de répliques qu'on veut avoir.
 - etc.
 
@@ -65,7 +65,6 @@ On peut également définir le comportement de mise à jour du service (délai a
 
 ++ named volumes, bind mounts 
 
-++ réseaux overlays
 
 
 ### Tolérance aux pannes et Load balancing 
@@ -74,3 +73,41 @@ Les workers communiquent l'état de leurs tasks qui leur ont été assigné. De 
 Le mode swarm possède un DNS interne qui assigne automatiquement une entrée DNS pour chaque service dans le swarm. Le manager fait du load balancing pour distribuer les requêtes entre les service disponibles en fonction du nom DNS du service. Il utilise le load balancing également pour rendre les services accessibles à l'extérieur du swarm si on le souhaite. Il peut assigner automatiquement un "Published Port", un port extérieur, à un service (entre 30 000 et 32 767). On peut aussi choisir nous même un port non utilisé.
 
 ## Réseaux overlay
+On peut aussi préciser à la création d'un service un réseau overlay. Le but d'un réseau overlay est de permettre la communication entre des containers sur des docker hosts/machines différentes. Tous les containers peuvent participer à un réseau overlay, peu importe si ce sont des tasks définis par un service ou des standalone containers. Dès qu'un container rejoindra le réseau une adresse ip du réseau lui sera attribué. 
+
+### Création d'un réseau overlay
+On doit créer le réseau overlay sur un manager. Ce dernier fera savoir aux autres nodes que le réseau existe. 
+```
+docker network create -d overlay <NETWORK-NAME>
+```
+
+Quelques flags à utiliser : 
+
+-  ```--attachable```permets d'attacher manuellement des containers au réseau et donc à des standalone containers d'utiliser le réseau overlay.
+- ``` -d / --driver``` indique le driver qui gèrera le réseau (bridge, overlay, ...). Bridge est mis par défaut, il faut donc préciser que c'est un réseau overlay dans notre cas avec ``` --d overlay```.
+- ``` --gateway ``` définit une Gateway pour le réseau.
+- ```--internal ```empêche l'accès au réseau depuis l'exterieur.
+- ```--ipv6 ```active l'IPv6.
+- ``` --subnet ``` définit le sous-réseau dans lequel Docker va piocher les adresses à attribuer. Docker attribue par défaut des subnets aux différents réseaux et fait en sorte qu'il ne se superposent pas. Ce flag nous permets de choisir le subnet d'adresses.
+- ``` --ip-range ``` permets de définir un sous-ensemble d'adresses ip dans le subnet que Docker utilisera pour l'attributaion des ip.
+- etc.
+
+Exemple :
+```
+ docker network create 
+  --d overlay \
+  --attachable \
+  --subnet=172.28.0.0/16 \
+  --ip-range=172.28.5.0/24 \
+  --gateway=172.28.5.254 \
+  my_overlay
+```
+
+
+Pour plus d'infos ou exemples consultez la documentation [Docker](https://docs.docker.com/engine/reference/commandline/network_create/) ou la commande ``` docker network create --help```.
+
+### Attribuer un réseau overlay à un service
+
+### Attribuer un réseau overlay à un standalone container
+
+### Ports utilisés
