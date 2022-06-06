@@ -152,3 +152,25 @@ Un réseau overlay utilise plusieurs ports pour communiquer :
 - 4789/udp : traffic du réseau overlay
 
 Il faut donc veiller à ouvrir ces ports sur chaque Docker host participant à un réseau overlay.
+
+
+# Bibliographie 
+| N°  | Auteur | Date de rédaction | Date de consultation |     Titre    | Lien | 
+|---|---|---|---|---|---|
+| 1 |Docker| - | 1 Juin 2022 | Swarm mode key concepts | https://docs.docker.com/engine/swarm/key-concepts/ |
+|2|Docker| - |1 Juin 2022| Getting started with swarm mode |https://docs.docker.com/engine/swarm/swarm-tutorial/|
+|3|Docker| - |1 Juin 2022| How nodes work |https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/|
+|4|Docker| - |1 Juin 2022| Create a swarm |https://docs.docker.com/engine/swarm/swarm-tutorial/create-swarm/|
+|5|Docker| - |3 Juin 2022|Deploy services to a swarm|https://docs.docker.com/engine/swarm/services/|
+|6|Docker| - |3 Juin 2022|Use overlay networks|https://docs.docker.com/network/overlay/|
+|7|Docker| - |3 Juin 2022|Networking with overlay networks|https://docs.docker.com/network/network-tutorial-overlay/|
+|8|Docker| - |3 Juin 2022|Networking with standalone containers|https://docs.docker.com/network/network-tutorial-standalone/|
+|9|Docker| - |1 Juin 2022|docker node promote|https://docs.docker.com/engine/reference/commandline/node_promote/|
+|10|Docker| - |1 Juin 2022|docker node demote|https://docs.docker.com/engine/reference/commandline/node_demote/ |
+|11|Docker| - |3 Juin 2022|docker network create|https://docs.docker.com/engine/reference/commandline/network_create/|
+|12|Docker| - |6 Juin 2022|Use volumes|https://docs.docker.com/storage/volumes/|
+|13|Docker| - |6 Juin 2022|Use bind mounts|https://docs.docker.com/storage/bind-mounts/|
+|14|Sandip Bhowmik|15 Novembre 2018|1 Juin 2022|How to Configure Docker Swarm with multiple Docker Nodes on Ubuntu 18.04|https://linuxconfig.org/how-to-configure-docker-swarm-with-multiple-docker-nodes-on-ubuntu-18-04|
+|15|BMitch|19 Février 2018|1 Juin 2022|What is the difference between docker host and node?|https://stackoverflow.com/questions/48801206/what-is-the-difference-between-docker-host-and-node|
+|16|Simplilearn - Matthew|26 Octobre 2018|1 Juin 2022|Docker Swarm | Docker Swarm Tutorial | What Is Docker Swarm? | Docker Swarm Example | Simplilearn|https://www.youtube.com/watch?v=Tm0Q5zr3FL4|
+
