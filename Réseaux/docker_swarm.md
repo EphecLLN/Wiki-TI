@@ -52,20 +52,41 @@ docker service create <IMAGE> <COMMAND>
 
 On peut bien sûr compléter cette commande avec une multitude de flags :
 
--   ```--name <NAME>``` permets de donner un nom au service.
--   ```--p <PORT> / --publish <PORT>``` permets de choisir un Published Port, un port externe sur lequel on accède au service.
--   ```--env <VAR>=<VALUE>``` permets de définir des variables d'environnement.
--   ```--workdir <PATH>``` permets de définir un working directory.
--   ```--user <USER>``` permets de définir un utilisateur.
--   ```--mode <MODE>``` permets d'indiquer le mode de service (replicated, global, ...). Si on n'utilise pas ce flag un service sera replicated par défaut.
--   ```--replicas <NUMBER-REPLICAS>``` permets d'indiquer le nombre de répliques qu'on veut avoir.
+-   ```--name ``` permets de donner un nom au service.
+-   ```--p/--publish ``` permets de choisir un Published Port, un port externe sur lequel on accède au service.
+-   ```--env ``` permets de définir des variables d'environnement.
+-   ```--workdir``` permets de définir un working directory.
+-   ```--user``` permets de définir un utilisateur.
+-   ```--mode``` permets d'indiquer le mode de service (replicated, global, ...). Si on n'utilise pas ce flag un service sera replicated par défaut.
+-   ```--replicas``` permets d'indiquer le nombre de répliques qu'on veut avoir.
 - etc.
 
 On peut également définir le comportement de mise à jour du service (délai avant mise à jour automatique, que faire lors d'une erreur de mise à jour, ...), définir une façon de revenir à une version antérieure du service en cas de problème avec la version actuelle du service.
 
-++ named volumes, bind mounts 
+Pour avoir des données persistantes on peut utiliser le flag ``` --mount ``` pour définir des data volumes ou bind mounts [(documentation docker)](https://docs.docker.com/engine/swarm/services/#give-a-service-access-to-volumes-or-bind-mounts). Le principe est similaire aux [bind mounts](https://docs.docker.com/storage/bind-mounts/) et [named volumes](https://docs.docker.com/storage/volumes/) utilisés pour avoir des données persistantes sur des standalone containers.
 
+Quelques exemples issus de la documentation Docker :
 
+```
+docker service create --name helloworld \
+					  --env MYVAR=myvalue \
+					  --workdir /tmp \
+					  --user my_user \
+					  alpine ping docker.com
+```
+```
+ docker service create --name my_web \
+                        --replicas 3 \
+                        --publish published=8080,target=80 \
+                        nginx
+```
+```
+docker service create \
+					  --mode global \
+					  --publish mode=host,target=80,published=8080 \
+					  --name=nginx \
+					  nginx:latest
+```
 
 ### Tolérance aux pannes et Load balancing 
 Les workers communiquent l'état de leurs tasks qui leur ont été assigné. De cette manière le manager peut maintenir l'état désiré. Par exemple, dans le cas où un worker tombe en panne et n'est plus disponible le manager redistribue une nouvelle Task à un autre worker pour respecter le nombre de répliques qu'on doit avoir.
