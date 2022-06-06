@@ -11,10 +11,11 @@ Le principe d'un docker swarm est de déployer les services sur un seule node, l
 ![swarm-diagram](https://user-images.githubusercontent.com/94830560/172141105-e2b8a7b0-d8eb-4889-9fd9-a0f2d0ece97a.png)
 
 <p align="center">
-  Docker swarm contenant plusieurs nodes manager et worker. [7]
+  Docker swarm contenant plusieurs nodes manager et worker. [3]
 </p>
+[1][2][3]
 
-## Créer un docker swarm et le rejoindre
+## Créer un docker swarm et le rejoindre [4][14]
 On initialise sur un docker host le swarm. Ce docker host deviendra un manager.
 ``` 
 docker swarm init --advertise-addr=<IP-MANAGER> 
@@ -36,9 +37,9 @@ On peut également changer changer le mode d'un node avec les commandes
 docker node promote <NODE-NAME> 
 docker node demote <NODE-NAME> 
 ```
- La première transforme un worker en manager et la seconde fait l'inverse.
+ La première transforme un worker en manager et la seconde fait l'inverse. [9][10]
 
-## Services et tasks
+## Services et tasks [1][2][3]
 Un services est la définition des tasks à exécuter sur les nodes worker ou manager. En définissant un service on indique quelle image utiliser et les commandes à exécuter dans les tasks. On définit pour ce service un état optimal que Docker essaiera de maintenir. On peut définir le nombre de répliques, ressources de stockage, ressources de réseau, ports exposés vers l'extérieur, etc. Le manager distribuera les tasks en fonction de l'état optimal.
 
 Les tasks, en opposition aux "standalone containers", sont des containers faisant partie d'un service swarm et étant gérés par un swarm manager. Le type de service qu'on définit dans l'état optimal permets de déterminer le nombre de tasks qui seront distribuées par le manager entre les workers.
@@ -46,7 +47,7 @@ Les tasks, en opposition aux "standalone containers", sont des containers faisan
 - Replicated service : le manager distribue un nombre précis de tasks à travers les workers. 
 - Global service : le manager distribue une task à chaque node disponible dans le cluster.
 
-## Création de services
+## Création de services [5]
 La parmétrisation d'un service peut être très complète. Voyons les points basiques. Pour plus d'informations, n'hésitez pas à consulter la documentation [Docker](https://docs.docker.com/engine/swarm/services/#create-a-service).
 
 La commande de base pour créer un service swarm est la suivante. \<IMAGE> est l'image qu'utiliserons les containers (tasks) et \<COMMAND> est la commande qui sera exécutée dans le container après sa création.
@@ -67,9 +68,9 @@ On peut bien sûr compléter cette commande avec une multitude de flags :
 
 On peut également définir le comportement de mise à jour du service (délai avant mise à jour automatique, que faire lors d'une erreur de mise à jour, ...), définir une façon de revenir à une version antérieure du service en cas de problème avec la version actuelle du service.
 
-Pour avoir des données persistantes on peut utiliser le flag ``` --mount ``` pour définir des data volumes ou bind mounts [(documentation docker)](https://docs.docker.com/engine/swarm/services/#give-a-service-access-to-volumes-or-bind-mounts). Le principe est similaire aux [bind mounts](https://docs.docker.com/storage/bind-mounts/) et [named volumes](https://docs.docker.com/storage/volumes/) utilisés pour avoir des données persistantes sur des standalone containers.
+Pour avoir des données persistantes on peut utiliser le flag ``` --mount ``` pour définir des data volumes ou bind mounts [[5]](https://docs.docker.com/engine/swarm/services/#give-a-service-access-to-volumes-or-bind-mounts). Le principe est similaire aux [bind mounts [12]](https://docs.docker.com/storage/bind-mounts/) et [named volumes [13]](https://docs.docker.com/storage/volumes/) utilisés pour avoir des données persistantes sur des standalone containers.
 
-Quelques exemples issus de la documentation Docker :
+Quelques exemples issus de la documentation Docker [5] :
 
 ```
 docker service create --name helloworld \
@@ -92,18 +93,22 @@ docker service create \
 		nginx:latest
 ```
 
-## Tolérance aux pannes et Load balancing 
+Il est facile de modifier un service avec la commande ``` docker service update ... ```. Elle vient, tout comme la commande de création, avec beaucoup de flags. [5]
+
+## Tolérance aux pannes et Load balancing [1]
 Les workers communiquent l'état de leurs tasks qui leur ont été assigné. De cette manière le manager peut maintenir l'état désiré. Par exemple, dans le cas où un worker tombe en panne et n'est plus disponible le manager redistribue une nouvelle Task à un autre worker pour respecter le nombre de répliques qu'on doit avoir.
 
 Le mode swarm possède un DNS interne qui assigne automatiquement une entrée DNS pour chaque service dans le swarm. Le manager fait du load balancing pour distribuer les requêtes entre les service disponibles en fonction du nom DNS du service. Il utilise le load balancing également pour rendre les services accessibles à l'extérieur du swarm si on le souhaite. Il peut assigner automatiquement un "Published Port", un port extérieur, à un service (entre 30 000 et 32 767). On peut aussi choisir nous même un port non utilisé.
 
 
+&nbsp;
+&nbsp;
 
 
 # Réseaux overlay
-On peut aussi préciser à la création d'un service un réseau overlay. Le but d'un réseau overlay est de permettre la communication entre des containers sur des docker hosts/machines différentes. Tous les containers peuvent participer à un réseau overlay, peu importe si ce sont des tasks définis par un service ou des standalone containers. Dès qu'un container rejoindra le réseau une adresse ip du réseau lui sera attribué. 
+On peut aussi préciser à la création d'un service un réseau overlay. Le but d'un réseau overlay est de permettre la communication entre des containers sur des docker hosts/machines différentes. Tous les containers peuvent participer à un réseau overlay, peu importe si ce sont des tasks définis par un service ou des standalone containers. Dès qu'un container rejoindra le réseau une adresse ip du réseau lui sera attribué. [6]
 
-## Création d'un réseau overlay
+## Création d'un réseau overlay [7][11]
 On doit créer le réseau overlay sur un manager. Ce dernier fera savoir aux autres nodes que le réseau existe. 
 ```
 docker network create -d overlay <NETWORK-NAME>
@@ -120,7 +125,7 @@ Quelques flags à utiliser :
 - ``` --ip-range ``` permets de définir un sous-ensemble d'adresses ip dans le subnet que Docker utilisera pour l'attributaion des ip.
 - etc.
 
-Exemple :
+Exemple de la documentation Docker [11] :
 ```
  docker network create 
   --d overlay \
@@ -132,9 +137,9 @@ Exemple :
 ```
 
 
-Pour plus d'infos ou exemples consultez la documentation [Docker](https://docs.docker.com/engine/reference/commandline/network_create/) ou la commande ``` docker network create --help```.
+Pour plus d'infos ou exemples consultez la documentation [Docker [11]](https://docs.docker.com/engine/reference/commandline/network_create/) ou la commande ``` docker network create --help```.
 
-## Attribuer un réseau overlay à un service ou un standalone container
+## Attribuer un réseau overlay à un service ou un standalone container [7][8]
 Attribuer un réseau overlay à un service ou standalone container ce fait à sa création avec le flag ``` --network ``` .
 ```
 docker service create ... --network <NETWORK-NAME> ...
@@ -144,7 +149,7 @@ Dans le cas du standalone container il faut veiller à ce que le réseau ai ét�
 docker run ... --network <NETWORK-NAME> ...
 ```
 
-## Ports utilisés
+## Ports utilisés [6][7]
 Un réseau overlay utilise plusieurs ports pour communiquer :
 
 - 2377/tcp : communications pour la gestion du cluster
@@ -153,6 +158,8 @@ Un réseau overlay utilise plusieurs ports pour communiquer :
 
 Il faut donc veiller à ouvrir ces ports sur chaque Docker host participant à un réseau overlay.
 
+&nbsp;
+&nbsp;
 
 # Bibliographie 
 | N°  | Auteur | Date de rédaction | Date de consultation |     Titre    | Lien | 
@@ -172,5 +179,5 @@ Il faut donc veiller à ouvrir ces ports sur chaque Docker host participant à u
 |13|Docker| - |6 Juin 2022|Use bind mounts|https://docs.docker.com/storage/bind-mounts/|
 |14|Sandip Bhowmik|15 Novembre 2018|1 Juin 2022|How to Configure Docker Swarm with multiple Docker Nodes on Ubuntu 18.04|https://linuxconfig.org/how-to-configure-docker-swarm-with-multiple-docker-nodes-on-ubuntu-18-04|
 |15|BMitch|19 Février 2018|1 Juin 2022|What is the difference between docker host and node?|https://stackoverflow.com/questions/48801206/what-is-the-difference-between-docker-host-and-node|
-|16|Simplilearn - Matthew|26 Octobre 2018|1 Juin 2022|Docker Swarm | Docker Swarm Tutorial | What Is Docker Swarm? | Docker Swarm Example | Simplilearn|https://www.youtube.com/watch?v=Tm0Q5zr3FL4|
+|16|Simplilearn - Matthew|26 Octobre 2018|1 Juin 2022|Docker Swarm - Docker Swarm Tutorial - What Is Docker Swarm? - Docker Swarm Example - Simplilearn|https://www.youtube.com/watch?v=Tm0Q5zr3FL4|
 
