@@ -1,6 +1,4 @@
-# Docker swarm et réseaux overlay
-
-## Docker swarm
+# Docker swarm
 Un docker swarm est un ensemble ("cluster") d'hôtes Docker ("Docker hosts"). Un docker host est une instance Docker Engine. Il est possible d'en avoir plusieurs sur une même machine hôte. On appelles "nodes" les docker hosts faisant partie d'un swarm. Ces nodes peuvent avoir deux rôles : 
 
 - manager : gère l'adhésion des hôtes et la délégation des taches.
@@ -10,7 +8,7 @@ Par défaut les nodes manager font aussi tourner des services comme des nodes wo
 
 Le principe d'un docker swarm est de déployer les services sur un seule node, le manager. On fournit une définition de service au node manager et celui-ci s'occupera de départager les unités de travail, les taches ("tasks"), entre les différents worker nodes. 
 
-### Créer un docker swarm et le rejoindre
+## Créer un docker swarm et le rejoindre
 On initialise sur un docker host le swarm. Ce docker host deviendra un manager.
 ``` 
 docker swarm init --advertise-addr=<IP-MANAGER> 
@@ -34,7 +32,7 @@ docker node demote <NODE-NAME>
 ```
  La première transforme un worker en manager et la seconde fait l'inverse.
 
-### Services et tasks
+## Services et tasks
 Un services est la définition des tasks à exécuter sur les nodes worker ou manager. En définissant un service on indique quelle image utiliser et les commandes à exécuter dans les tasks. On définit pour ce service un état optimal que Docker essaiera de maintenir. On peut définir le nombre de répliques, ressources de stockage, ressources de réseau, ports exposés vers l'extérieur, etc. Le manager distribuera les tasks en fonction de l'état optimal.
 
 Les tasks, en opposition aux "standalone containers", sont des containers faisant partie d'un service swarm et étant gérés par un swarm manager. Le type de service qu'on définit dans l'état optimal permets de déterminer le nombre de tasks qui seront distribuées par le manager entre les workers.
@@ -42,7 +40,7 @@ Les tasks, en opposition aux "standalone containers", sont des containers faisan
 - Replicated service : le manager distribue un nombre précis de tasks à travers les workers. 
 - Global service : le manager distribue une task à chaque node disponible dans le cluster.
 
-### Création de services
+## Création de services
 La parmétrisation d'un service peut être très complète. Voyons les points basiques. Pour plus d'informations, n'hésitez pas à consulter la documentation [Docker](https://docs.docker.com/engine/swarm/services/#create-a-service).
 
 La commande de base pour créer un service swarm est la suivante. \<IMAGE> est l'image qu'utiliserons les containers (tasks) et \<COMMAND> est la commande qui sera exécutée dans le container après sa création.
@@ -88,15 +86,18 @@ docker service create \
 		nginx:latest
 ```
 
-### Tolérance aux pannes et Load balancing 
+## Tolérance aux pannes et Load balancing 
 Les workers communiquent l'état de leurs tasks qui leur ont été assigné. De cette manière le manager peut maintenir l'état désiré. Par exemple, dans le cas où un worker tombe en panne et n'est plus disponible le manager redistribue une nouvelle Task à un autre worker pour respecter le nombre de répliques qu'on doit avoir.
 
 Le mode swarm possède un DNS interne qui assigne automatiquement une entrée DNS pour chaque service dans le swarm. Le manager fait du load balancing pour distribuer les requêtes entre les service disponibles en fonction du nom DNS du service. Il utilise le load balancing également pour rendre les services accessibles à l'extérieur du swarm si on le souhaite. Il peut assigner automatiquement un "Published Port", un port extérieur, à un service (entre 30 000 et 32 767). On peut aussi choisir nous même un port non utilisé.
 
-## Réseaux overlay
+
+
+
+# Réseaux overlay
 On peut aussi préciser à la création d'un service un réseau overlay. Le but d'un réseau overlay est de permettre la communication entre des containers sur des docker hosts/machines différentes. Tous les containers peuvent participer à un réseau overlay, peu importe si ce sont des tasks définis par un service ou des standalone containers. Dès qu'un container rejoindra le réseau une adresse ip du réseau lui sera attribué. 
 
-### Création d'un réseau overlay
+## Création d'un réseau overlay
 On doit créer le réseau overlay sur un manager. Ce dernier fera savoir aux autres nodes que le réseau existe. 
 ```
 docker network create -d overlay <NETWORK-NAME>
@@ -127,8 +128,21 @@ Exemple :
 
 Pour plus d'infos ou exemples consultez la documentation [Docker](https://docs.docker.com/engine/reference/commandline/network_create/) ou la commande ``` docker network create --help```.
 
-### Attribuer un réseau overlay à un service
+## Attribuer un réseau overlay à un service ou un standalone container
+Attribuer un réseau overlay à un service ou standalone container ce fait à sa création avec le flag ``` --network ``` .
+```
+docker service create ... --network <NETWORK-NAME> ...
+```
+Dans le cas du standalone container il faut veiller à ce que le réseau ai été créé avec le flag ```--attachable ```. Sans ça on ne pourra tout simplement pas attribuer le réseau overlay.
+```
+docker run ... --network <NETWORK-NAME> ...
+```
 
-### Attribuer un réseau overlay à un standalone container
+## Ports utilisés
+Un réseau overlay utilise plusieurs ports pour communiquer :
 
-### Ports utilisés
+- 2377/tcp : communications pour la gestion du cluster
+- 7946/tcp, 7946/udp : communications entre nodes
+- 4789/udp : traffic du réseau overlay
+
+Il faut donc veiller à ouvrir ces ports sur chaque Docker host participant à un réseau overlay.
