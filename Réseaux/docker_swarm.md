@@ -69,10 +69,10 @@ Quelques exemples issus de la documentation Docker :
 
 ```
 docker service create --name helloworld \
-					  --env MYVAR=myvalue \
-					  --workdir /tmp \
-					  --user my_user \
-					  alpine ping docker.com
+			--env MYVAR=myvalue \
+			--workdir /tmp \
+			--user my_user \
+			alpine ping docker.com
 ```
 ```
  docker service create --name my_web \
@@ -82,10 +82,10 @@ docker service create --name helloworld \
 ```
 ```
 docker service create \
-					  --mode global \
-					  --publish mode=host,target=80,published=8080 \
-					  --name=nginx \
-					  nginx:latest
+		--mode global \
+		--publish mode=host,target=80,published=8080 \
+		--name=nginx \
+		nginx:latest
 ```
 
 ### Tolérance aux pannes et Load balancing 
