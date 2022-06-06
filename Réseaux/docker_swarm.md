@@ -47,6 +47,9 @@ Les tasks, en opposition aux "standalone containers", sont des containers faisan
 - Replicated service : le manager distribue un nombre précis de tasks à travers les workers. 
 - Global service : le manager distribue une task à chaque node disponible dans le cluster.
 
+![docker_swarm](https://user-images.githubusercontent.com/94830560/172188028-a8e5dc46-8b43-4404-bc66-99b7c880394c.png)
+
+
 ## Création de services [5]
 La parmétrisation d'un service peut être très complète. Voyons les points basiques. Pour plus d'informations, n'hésitez pas à consulter la documentation [Docker](https://docs.docker.com/engine/swarm/services/#create-a-service).
 
@@ -100,6 +103,7 @@ Les workers communiquent l'état de leurs tasks qui leur ont été assigné. De 
 
 Le mode swarm possède un DNS interne qui assigne automatiquement une entrée DNS pour chaque service dans le swarm. Le manager fait du load balancing pour distribuer les requêtes entre les service disponibles en fonction du nom DNS du service. Il utilise le load balancing également pour rendre les services accessibles à l'extérieur du swarm si on le souhaite. Il peut assigner automatiquement un "Published Port", un port extérieur, à un service (entre 30 000 et 32 767). On peut aussi choisir nous même un port non utilisé.
 
+![docker_swarm load_balancing](https://user-images.githubusercontent.com/94830560/172187969-31d75f97-e232-4a06-a702-186753e36e9d.png)
 
 &nbsp;
 &nbsp;
