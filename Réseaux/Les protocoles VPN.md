@@ -5,7 +5,12 @@
 
 ## Introduction :
 
-Les connexions VPN (Virutal Private Network) permettent de créer un lien sécurisé entre deux points, il existe deux types de connexions VPN : 
+Les connexions VPN (Virutal Private Network) permettent de créer un lien sécurisé entre deux points, elles sont utilisées par les entreprises pour fournir à leurs employés un moyen d'accéder au réseau interne ou à des ressources internes depuis un ordinateur ou un réseau distant. Les connexions VPN sont chiffrées ce qui rend le trafic opaque pour les personnes non autorisées. Il existe aussi des connexions VPN commerciaux destinés aux internautes pour chiffrer leurs trafic et garantir leurs anonymat ainsi que contourner la censure. 
+
+La première connexion VPN a été développé par un employé de Microsoft en 1996. Il a développé le “point-to-point tunneling protocol” (PPTP).
+
+Il existe trois types de connexions VPN : 
+ 
 
 1-	Site to Site VPN => entre deux réseaux d’entreprise
 
@@ -19,11 +24,12 @@ Les connexions VPN (Virutal Private Network) permettent de créer un lien sécur
 
 ![image](https://user-images.githubusercontent.com/71373221/170224768-f54321ea-6297-4615-ac02-bba596431bf8.png)
 
- 
+ 3-	SSL-VPN: Les entreprises utilisent des VPN SSL pour permettre aux utilisateurs distants d'accéder en toute sécurité aux services offert , ainsi que pour sécuriser les sessions Internet des utilisateurs qui accèdent à Internet depuis l'extérieur du réseau de l'entreprise.
+
+![image](https://user-images.githubusercontent.com/71373221/172167250-c4a129a1-8677-4987-a332-770f594a8b81.png)
 
 
 
-Le lien créé est appelé un Tunnel VPN, les données qui sont envoyés à travers ce lien sont chiffrés.
 Le choix du protocole VPN à utiliser se base sur trois facteurs:
 
 1-	Les algorithmes de chiffrement utilisés donc le niveau de sécurité et de cryptage offert
@@ -31,10 +37,6 @@ Le choix du protocole VPN à utiliser se base sur trois facteurs:
 2-	La vitesse de navigation
 
 3-	La facilité de mise en place
-
-
-
-
 
 
 ## Les protocoles VPN
@@ -54,6 +56,10 @@ C’est le protocole VPN le plus ancien, ses plus gros avantages sont la vitesse
 
 •	Utilise le chiffrement MPPE (Microsoft Point-to-Point Encryption).
 
+PPTP est un protocole de niveau 2, le principe de ce protocole est de crypter et compresser des trames PPP et de les encapsuler dans un datagramme IP. Les données du réseau local sont encapsulées dans un message PPP, qui est lui-même encapsulé dans un message IP.
+Le schéma suivant montre comment un paquet PPTP est assemblé.
+
+![image](https://user-images.githubusercontent.com/71373221/172167318-0a443f0d-833c-4158-bf44-e4ae609382c6.png)
 
 
 
@@ -74,7 +80,30 @@ Il encapsule les données deux fois, ce qui peut ralentir la connexion. Cependan
 
 •	Très facile à configurer
 
+L2TP est un protocole de niveau 2, le principe de ce protocole est de crypter des trames PPP et de les encapsuler dans un datagramme IP qui est crypté avec IPsec. 
+IPsec permet de sécuriser les échanges au niveau de la couche réseau. 
+Le schéma suivant montre comment un paquet L2TP/IPsec est assemblé.
 
+![image](https://user-images.githubusercontent.com/71373221/172167379-f74de74f-d68d-41e8-a7b7-a07404487c39.png)
+
+### SSTP (Secure Socket Tunneling Protocol):
+  
+SSTP est un  protocole VPN développé par Microsoft pour remplacer PPTP et L2TP/IPSec. Il a été introduit pour améliorer la sécurité des transferts de données et éviter les blocages des pare-feu. Il utilise SSL/TLS, des négociations de clés sécurisées et des transferts cryptés.
+Lorsqu'un client établit une connexion VPN basée sur SSTP, il établit d'abord une connexion TCP au serveur SSTP via le port TCP 443. L'établissement de liaison SSL/TLS se produit via cette connexion TCP.
+
+•	Disponible sur Linux et Mac OS X mais il est utilisé principalement sur Windows.
+
+•	SSTP utilise le chiffrement AES-256 (Advanced Encryption Standard) 
+
+•	Facile à installer et à configurer
+
+•	Utilise TCP sur le port 443 ce qui le rend difficile à bloquer 
+
+SSTP est un protocole de niveau transport ,  les paquets IP sont chiffrés, encapsulés puis transportés dans un canal SSL. 
+Le schéma suivant montre comment un paquet SSTP est assemblé.
+
+
+![image](https://user-images.githubusercontent.com/71373221/172168007-9ef2bcdf-a25c-4acf-98d2-f666cbda1b03.png)
 
 
 ### IKEv2/IPsec : Internet Key Exchange version 2 with IPsec 
@@ -89,6 +118,15 @@ IKEv2 est un protocole de tunnellisation. Il est associé à IPsec pour assurer 
 
 •	Connexion stable et cohérente
 
+IKEv2 est un protocole de niveau application, il permet l’échange de clés secrètes de façon sécurisée. Le principe de ce protocole est de chiffrer des messages en utilisant des clés pré-partagées. IPsec permet de sécuriser les échanges au niveau de la couche réseau. 
+IKE combine des éléments issus de protocoles différents :
+-	ISAKMP : Internet Security Association and Key Management Protocol (RFC 2408) 
+-	OAKLEY : Oakley Key Determination Protocol (RFC 2412) 
+-	DOI : IPSec Domain of Interpretation (RFC 2407) 
+
+Le schéma suivant montre l’emplacement de IKE et IPsec dans les couches TCP/IP.
+
+![image](https://user-images.githubusercontent.com/71373221/172167414-8ffaa2f6-dc8e-4c1b-b80c-b58e895b7f19.png)
 
 
 ### OpenVPN
@@ -111,6 +149,10 @@ C’est le protocole VPN le plus utilisé, il est compatible avec plusieurs équ
 
 •	La configuration est complexe. 
 
+Le transfert de données démarre après l'échange de la clé symétrique en utilisant la connexion TLS déjà établie. OpenVPN utilise un tunnel UDP sans connexion où il n'y a pas de mécanisme de retransmission et ACK. La structure de paquet ainsi que l'encapsulation de la couche réseau peuvent être vues dans l’image ci-dessous.
+L'en-tête de paquet se compose uniquement d'opcode et d'ID de clé. L'opcode est utilisé pour identifier le type de paquet, l'ID de clé est utilisé pour identifier l'état TLS local associé. 
+
+![image](https://user-images.githubusercontent.com/71373221/172167457-f08c2733-d506-41a2-b0d6-cdaff62bb6be.png)
 
 
 
@@ -128,12 +170,13 @@ C’est un protocole récent, développé en 2017 pour Linux, son principal avan
 
 •	Utilise ChaCha20 pour le chiffrement et Poly1305 pour l'authentification. Il utilise aussi Curve25519 pour l'échange de clé Diffie-Hellman à courbe elliptique (ECDH) ; BLAKE2s pour le hachage; et un handshake 1.5 Round Trip Time (1.5-RTT) 
 
-
+Le protocole WireGuard fournit un tunnel réseau sécurisé entre deux terminaux en utilisant le protocole UDP (User Datagram Protocol) comme protocole de transport. Il utilise un protocole cryptographique de handshake appelé Noise pour fournir une authentification mutuelle et l’accord sur la clé. Les données de transport telles que les paquets IP encapsulés dans les tunnels WireGuard sont protégées à l'aide du chiffrement authentifié avec données supplémentaires (AEAD).
 
 
 ## Conclusion
 
-![image](https://user-images.githubusercontent.com/71373221/170264587-6f1faf76-f84a-4282-a497-f8bf6d074df9.png)
+![image](https://user-images.githubusercontent.com/71373221/172167603-14fd30d6-0057-47b3-8cc6-dc9a989246bc.png)
+
 
 Le PPTP est un ancien protocole vulnérable actuellement, il est conseillé de ne plus l’utiliser. 
 
@@ -143,6 +186,7 @@ WireGuard peut être bloqué par les pare-feux car il utilise UDP, comme IKEv2. 
 
 OpenVPN est cependant moins susceptible d'être bloqué par les pare-feux lorsque vous vous connectez via TCP. Il est le protocole le plus fiable vue qu’il est opensource.
 
+SSTP est un protocole propriétaire de Microsoft, s’il faut choisir entre PPTP, L2TP et SSTP, pour un ordinateur Windows, il vaut mieux utiliser SSTP car il peut contourner les pares-feux et il est plus sécurisé que PPTP.
 
 
 
@@ -154,6 +198,9 @@ OpenVPN est cependant moins susceptible d'être bloqué par les pare-feux lorsqu
 https://www.ciscopress.com/articles/article.asp?p=25474&seqNum=7
 
 Consulté le 21 mai 2022
+Date de publication : Feb 22, 2002.
+L'article est écrit par Cisco Press .
+
 
 Résumé : Article écrit par Cisco et décrit les protocoles IPSec et IKE1&2. 
 Avis sur la resource : Excellent article, il donne des détails technique approfondis sur les protocoles IPSec et IKE1&2.
@@ -176,6 +223,28 @@ Consulté le 13 mai 2022
 Résumé : Cet article explique les protocoles VPN, il compare aussi les différents protocoles utilisés. 
 
 Avis sur la resource : ce document décrit bien les protocoles VPN et fait une comparaison détaillée. 
+
+* Secure Socket Tunneling Protocol (SSTP).: https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-sstp/70adc1df-c4fe-4b02-8872-f1d8b9ad806a
+
+Consulté le 5 Juin 2022
+
+Date de publication: 06/24/2021.
+
+L'article est écrit par Microsoft.
+
+Résumé : Article écrit par Microsoft et décrit le protocole SSTP. 
+Avis sur la ressource : Excellent article, il donne des détails technique approfondis sur le protocole SSTP.
+
+* Les VPNs et les protocoles SLIP, PPP, PPTP, L2F, L2TP, LCP, IPSec, MPLS, NAT: http://wapiti.enic.fr/commun/ens/peda/options/ST/RIO/pub/exposes/exposesrio2001ttv02/Roudel_Maroc/index.htm
+
+Consulté le 6 Juin 2022
+
+Date de publication: Janvier 2002.
+
+L'article est écrit par  Philippe Roudel et Alain Maroc ENIC.
+
+Résumé : Cet article décrit les protocoles suivants: SLIP, PPP, PPTP, L2F, L2TP, LCP, IPSec, MPLS, NAT. 
+Avis sur la ressource : Excellent article, il donne des détails technique approfondis sur tous les protocoles abordés.
 
 
    
