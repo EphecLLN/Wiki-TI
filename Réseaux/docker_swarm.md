@@ -6,7 +6,13 @@ Un docker swarm est un ensemble ("cluster") d'hôtes Docker ("Docker hosts"). Un
 
 Par défaut les nodes manager font aussi tourner des services comme des nodes worker. On peut les configurer pour qu'elles gèrent uniquement des taches de manager.
 
-Le principe d'un docker swarm est de déployer les services sur un seule node, le manager. On fournit une définition de service au node manager et celui-ci s'occupera de départager les unités de travail, les taches ("tasks"), entre les différents worker nodes. 
+Le principe d'un docker swarm est de déployer les services sur un seule node, le manager. On fournit une définition de service au node manager et celui-ci s'occupera de départager les unités de travail, les taches ("tasks"), entre les différents worker nodes. Il est tout a fait possible d'avoir plusieurs manager dans un même swarm.
+
+![swarm-diagram](https://user-images.githubusercontent.com/94830560/172141105-e2b8a7b0-d8eb-4889-9fd9-a0f2d0ece97a.png)
+
+<p align="center">
+  Docker swarm contenant plusieurs nodes manager et worker. [7]
+</p>
 
 ## Créer un docker swarm et le rejoindre
 On initialise sur un docker host le swarm. Ce docker host deviendra un manager.
