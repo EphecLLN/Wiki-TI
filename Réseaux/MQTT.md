@@ -207,7 +207,7 @@ Dernière date de modification: 19/01/2015
 <br>
 
 
-8) - Lien: https://www.hivemq.com/blog/mqtt-essentials-part-4-mqtt-publish-subscribe-unsubscribe/
+8) - Lien: https://www.hivemq.com/blog/mqtt-essentials-part-4-mqtt-publish-subscribe-unsubscribe/  
 Nom du site: hivemq.com,  
 Nom de l'auteur: The HiveMQ Team,  
 Date de consultation: 06/06/2015,  
