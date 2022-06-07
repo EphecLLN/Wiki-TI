@@ -151,7 +151,7 @@ Pour confirmer le désabonnemnt de l'abonné, le courtier envoie à nouveau un a
 Les possibilités sont vaste et variées allant de sondes de température au controle de volets mécaniques. L'intérêt de celui-ci est qu'il soit rapide et peu énergivore. Il n'a également besoin que de très peu de ressources et peut être utilisé sur de petits microcontroleurs peu puissants.
 Au niveau de la sécurité, MQTT est également très interressant permettant une facilité de chiffrement via SSL/TLS et la gestion de l'authentification des clients
 
-
+<br>
 
 ## Bibliographie :
 
