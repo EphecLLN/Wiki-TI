@@ -36,7 +36,7 @@ Mais comment recevoir les données dans ces circonstances vous demandez-vous ? E
 
 Bien entendu, un diffuseur ne peut donc pas savoir si ses messages envoyés au brokers seront lus ou non par un destinataire quelconque. Idem pour les destinataires qui pourront s'abonner aux catégories souhaitées mais n'aurons pas connaissance de l'existance d'un diffuseur lié à cette catégorie. Seul le broker est connu des différents diffuseurs et  destinataires.
 
-<img src="../Assets/MQTT_publish-subrcribe_shéma.png"  height="400" />
+[](https://github.com/M-Momin/Wiki-TI/blob/main/Assets/Images/MQTT_publish-subscribe_sh%C3%A9ma.png)
 
 *Shéma réalisé via draw.io*
 
