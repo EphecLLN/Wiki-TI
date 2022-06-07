@@ -118,47 +118,47 @@ Il existe trois types différents de qualités de services pour le protocole MQT
 Nom du site: goffinet,  
 Nom de l'auteur: /,  
 Date de consultation: 25/05/2022,   
-Dernière date de modification: / 
-
+Dernière date de modification: /  
 <br>
+
 2) - Lien: https://fr.wikipedia.org/wiki/MQTT,  
 Nom du site: wikipedia,  
 Nom de l'auteur: /,  
-Date de consultation: 25/05/2022,   
+Date de consultation: 25/05/2022,  
 Dernière date de modification: 28/01/2022  
 <br>
 
 3) - Lien: https://fr.wikipedia.org/wiki/Publish-subscribe  
 Nom du site: wikipedia,  
 Nom de l'auteur: /,  
-Date de consultation: 25/05/2022,   
-Dernière date de modification: 31/03/2021 
+Date de consultation: 25/05/2022,  
+Dernière date de modification: 31/03/2021  
 <br>
 
-4) - Lien: https://ably.com/topic/pub-sub
+4) - Lien: https://ably.com/topic/pub-sub  
 Nom du site: ably,  
-Nom de l'auteur: Matthew O’Riordan,  
-Date de consultation: 25/05/2022,   
+Nom de l'auteur: Matthew O’Riordan,   
+Date de consultation: 25/05/2022,    
 Dernière date de modification: 17/07/2020  
 <br>
 
-5) - Lien: https://stringfixer.com/fr/Publish/subscribe
+5) - Lien: https://stringfixer.com/fr/Publish/subscribe  
 Nom du site: stringfixer.com,  
 Nom de l'auteur: /,  
-Date de consultation: 03/06/2022,   
-Dernière date de modification: / 
+Date de consultation: 03/06/2022,  
+Dernière date de modification: /  
 <br>
 
-6) - Lien: https://www.ibm.com/docs/fr/ibm-mq/7.5?topic=ssfksj-7-5-0-com-ibm-mm-tc-doc-tc60340--htm
+6) - Lien: https://www.ibm.com/docs/fr/ibm-mq/7.5?topic=ssfksj-7-5-0-com-ibm-mm-tc-doc-tc60340--htm  
 Nom du site: ibm.com,  
 Nom de l'auteur: /,  
-Date de consultation: 03/06/2022,   
-Dernière date de modification: 20/04/2021
+Date de consultation: 03/06/2022,  
+Dernière date de modification: 20/04/2021  
 <br>
 
-7) - Lien: https://www.hivemq.com/blog/mqtt-essentials-part-6-mqtt-quality-of-service-levels/
+7) - Lien: https://www.hivemq.com/blog/mqtt-essentials-part-6-mqtt-quality-of-service-levels/  
 Nom du site: hivemq.com,  
 Nom de l'auteur: The HiveMQ Team,  
-Date de consultation: 04/06/2022,   
-Dernière date de modification: 16/02/2015
+Date de consultation: 04/06/2022,  
+Dernière date de modification: 16/02/2015  
 <br>
