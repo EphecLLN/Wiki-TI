@@ -118,7 +118,7 @@ Généralement un client MQTT, éditeur ou abonné, est placé derrière un rout
 
 <br>
 
-## Messages MQTT
+## Messages MQTT [9]
 
 #### CONNECT (Se connecter)
 Si le message d'initiation de connexion CONNECT envoyé au courtier ne respecte pas les spécifications MQTT ou génère un temps trop important entre l'ouverture du socket réseau et l'envoi du message CONNECT, le courtier se charge de mettre fin à la connexion. Ce procéder permet d'éviter toutes tentatives de ralentissement du courtier.
@@ -144,7 +144,13 @@ Bien entendu, qui dit abonnement dit désabonnement. Ce message a pour but de su
 
 Pour confirmer le désabonnemnt de l'abonné, le courtier envoie à nouveau un accusé de réception mais UNSUBACK cette fois-ci.
 
-## Conclusion
+<br>
+
+## Ses usages pour l'IoT [10]
+
+Les possibilités sont vaste et variées allant de sondes de température au controle de volets mécaniques. L'intérêt de celui-ci est qu'il soit rapide et peu énergivore. Il n'a également besoin que de très peu de ressources et peut être utiliser sur de petits microcontroleurs.
+Au niveau de la sécurité, MQTT est également très interressant permettant une faciliter de chiffrement via SSL/TLS. Il permet également la gestion de l'authentification des clients
+
 
 
 ## Bibliographie :
@@ -207,10 +213,17 @@ Dernière date de modification: 19/01/2015
 <br>
 
 
-8) - Lien: https://www.hivemq.com/blog/mqtt-essentials-part-4-mqtt-publish-subscribe-unsubscribe/  
+9) - Lien: https://www.hivemq.com/blog/mqtt-essentials-part-4-mqtt-publish-subscribe-unsubscribe/  
 Nom du site: hivemq.com,  
 Nom de l'auteur: The HiveMQ Team,  
 Date de consultation: 06/06/2015,  
 Dernière date de modification: 02/02/2015 
+<br>
+
+10) - Lien: https://www.planete-domotique.com/blog/2021/03/17/protocole-mqtt-iot-domotique/
+Nom du site: planete-domotique.com,  
+Nom de l'auteur: Lucas,  
+Date de consultation: 06/06/2015,  
+Dernière date de modification: /   
 <br>
 
