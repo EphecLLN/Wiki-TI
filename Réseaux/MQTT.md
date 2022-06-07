@@ -17,6 +17,7 @@ Il n'est pas rare de voir MQTT qualifié de protocole de file d'attente. Cette q
 *Eurotech²: Société italienne dans le secteur de l'informatique*  
 *HTTP³: Protocole de communication client-serveur*  
 
+<br>
 
 ## Qu'est-ce qu'un protocole "publish-subscribe"? [1][3][4]
 
@@ -71,6 +72,7 @@ Dans certaines situations, la combinaison du filtrage par sujet et de celui bas�
 Dans le modèle pub/sub, il est important de connaitre, au préalable, les différents détails et aspects qui définissent la structuration des données établies (Différents contenus, attributs, sujets ...). Comme nous avons pu le constater dans le cas du filtrage basé sur le contenu, les 2 acteurs doivent connaitre les différents sujets avant quoi que ce soit.
 Ensuite, il faut bien comprendre que les messages envoyés par un éditeur ne seront peut-être jamais reçus/lus par un abonné.
 
+<br>
 
 ## MQTT dans tout ça ?
 
@@ -114,25 +116,32 @@ MQTT est bien différent d'un simple protocole de messagerie par file d'attente.
 
 Généralement un client MQTT, éditeur ou abonné, est placé derrière un routeur qui s'occupera de transformer son ip privée en une ip publique. Le client va tout d'abord initié la connexion en envoyant, au courtier, un message de type CONNECT. Le courtier, possédant une ip publique, maintient la connexion active après le premier CONNECT si aucun problème ne survient. Ceci permet l'envoi et la réception de messages.
 
+<br>
+
 ## Messages MQTT
 
-### CONNECT (Se connecter)
+#### CONNECT (Se connecter)
 Si le message d'initiation de connexion CONNECT envoyé au courtier ne respecte pas les spécifications MQTT ou génère un temps trop important entre l'ouverture du socket réseau et l'envoi du message CONNECT, le courtier se charge de mettre fin à la connexion. Ce procéder permet d'éviter toutes tentatives de ralentissement du courtier.
 
-### PUBLISH (Publier)
+#### PUBLISH (Publier)
+
 Dés que le client a établi la connexion avec le courtier, celui-ci peut publier des messages. Comme dit précédemment, le protocole MQTT utilise un filtrage basé sur les sujets des différents messages. Il est impératif que chaque messages contienne une rubrique que le courtier pourra utiliser pour envoyer les messages aux clients abonnés à celles-ci. Dans MQTT, c'est l'éditeur qui choisit le type de structure de donnée a envoyer. Par exemple, celui-ci peut décider d'expédier des données textes, binaires ou encore JSON.
 
-### SUBSCRIBE (S'abonner)
+#### SUBSCRIBE (S'abonner)
+
 Comme dit plus haut, si aucune personne n'est abonné à un sujet, aucune donnée ne sera jamais transmise. Il est donc indispensable de pouvoir s'abonner. Pour cela, le client voulant s'abonné doit envoyé un SUBSCRIBE au courtier.  
 
-### SUBACK (Accusé d'abonnement)
+#### SUBACK (Accusé d'abonnement)
+
 Pour confirmer à l'abonné qu'il s'est bien abonné à un sujet, le courtier (après avoir bien reçu un message SUBSCRIBE par l'abonné) lui envoie un message d'accusé de réception SUBACK.  
 Quand l'envoi du SUBSCRIBE et la réception d'un message SUBACK est réalisé avec succès par l'abonné, celui-ci obtient et obtiendra chaque messages publiés qui correspond aux rubriques liées à ses abonnements qui étaient contenus dans son précédent message SUBSCRIBE.
 
-### UNSUBSRIBE (Se désabonner)
+#### UNSUBSRIBE (Se désabonner)
+
 Bien entendu, qui dit abonnement dit désabonnement. Ce message a pour but de supprimer les abonnements qu'à client abonné a chez un courtier.
 
-### UNSUBACK (Accusé de désabonnement)
+#### UNSUBACK (Accusé de désabonnement)
+
 Pour confirmer le désabonnemnt de l'abonné, le courtier envoie à nouveau un accusé de réception mais UNSUBACK cette fois-ci.
 
 ## Conclusion
