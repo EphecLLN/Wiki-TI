@@ -22,7 +22,7 @@ Il n'est pas rare de voir MQTT qualifié de protocole de file d'attente. Cette q
 
 Pour comprendre MQTT, il est impératif de comprendre ce qu'est un protocole que l'on qualifie de "publish-subscribe". 
 
-Tout d'abord, il faut savoir que ce protocole utilise un mécanisme particulier pour transférer les données et est composé de deux types "d'acteurs" et d'un domaine de donnée:
+Tout d'abord, il faut savoir que ce protocole utilise un mécanisme particulier pour transférer les données et est composé de deux types d'acteurs et d'un domaine de donnée:
 
 - Le domaine de donnée est appelé le **broker**.
 - Le premier type d'acteur est le **diffuseur** ou plus communément qualifié le **publisher**.  
@@ -48,9 +48,9 @@ Un des élément fondamentale spécifique à ce modèle est la dissociation comp
 - La **dissociation temporelle**: Le diffuseur ainsi que le destinataire ne doivent pas nécessairement fonctionner au même instant pour communiquer. 
 - La **dissociation de synchronisation**: Se traduit par le fait que l'envoie ou la réception d'un élèment n'interrompt pas les opérations s'exécutant sur les deux acteurs.
 
-### Filtrage ? [1][5]
+### Le filtrage [1][5]
 
-Il est également interressant de savoir, qu'avec l'aide d'un filtrage, les messages peuvent être reçu seulement par certains destanataires bien spécifiques.
+Il est également interressant de savoir, qu'avec l'aide d'un filtrage bien défini, les messages peuvent être reçus seulement par certains destanataires bien spécifiques.
 
 Il existe 4 types de filtrage différents dans le cas du modèle "pub-sub":
 
@@ -72,7 +72,7 @@ Dans le modèle pub/sub, il est important de connaitre, au préalable, les diff�
 Ensuite, il faut bien comprendre que les messages envoyés par un diffuseur ne seront peut-être jamais reçus/lus par un destinataire.
 
 
-## Et MQTT dans tout ça ?
+## MQTT dans tout ça ?
 
 ### MQTT - Modèle pub/sub [1][2]
 
@@ -90,7 +90,7 @@ MQTT fonctionne avec un filtrage par sujet. Chaque message émis par un diffuseu
 
 ### MQTT - Qualités de services [6][7]
 
-Il existe trois différents qualités de services différents pour le protocole MQTT. A savoir que chaque connexion au broker est spécifiée par une valeur allant de 0 à 2. 
+Il existe trois types différents de qualités de services pour le protocole MQTT. A savoir que chaque connexion au broker est spécifiée par une valeur allant de 0 à 2. 
 
 1. QoS = 0  
 **Au plus une fois** qui signifie que le message sera envoyé uniquement envoyé une fois au destinataire sans accusé de réception. Si le destinataire n'est pas en ligne ou que le message se perd, il ne sera jamais renvoyé et sera donc perdu. A savoir que le message ne requiert donc pas d'être stocké dans le broker. Ce mode de transfert est le plus rapide des 3.
