@@ -13,9 +13,9 @@ Ce protocole, possédant une moindre surcharge en therme d'en-têtes que d'autre
 Il n'est pas rare de voir MQTT qualifié de protocole de file d'attente. Cette qualification est trompeuse étant donnée que MQTT ne présente pas de file d'attente comparable aux différentes solutions plus traditionnelles de communication. 
 
  
-*IBM¹: Société multinationale américaine présent dans le domaine informatique*
-*Eurotech²: Société italienne dans le secteur de l'informatique*
-*HTTP³: Protocole de communication client-serveur*
+*IBM¹: Société multinationale américaine présent dans le domaine informatique*  
+*Eurotech²: Société italienne dans le secteur de l'informatique*  
+*HTTP³: Protocole de communication client-serveur*  
 
 
 ## Qu'est-ce qu'un protocole "publish-subscribe"? [1][3][4]
