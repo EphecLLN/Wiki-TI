@@ -115,3 +115,7 @@ Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence
 [7] https://www.rfc-editor.org/rfc/rfc3947.html
 
 [8] https://www.rfc-editor.org/rfc/rfc3948.html
+
+[9] https://www.rfc-editor.org/rfc/rfc2402.html
+
+[10] https://www.rfc-editor.org/rfc/rfc2406.html
