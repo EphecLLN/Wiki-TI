@@ -73,7 +73,8 @@ l’expéditeur et le destinataire.
 
 ### Gestion des clés IKE & ISAKMP
 
-IKE ou Internet Key Exchange est un procédé de gestion de clés utilisé pour gérer la connexion entre deux routeurs. Ce dernier utilise l'algorithme Diffie-Hellaman pour l'échange des clés tout en combinaison avec ISAKMP .
+IKE ou Internet Key Exchange est un procédé de gestion de clés permettant d'assurer la négociation entre deux entités afin de mettre en place un canal de communication sécurisé entre celles-ci. Ce dernier utilise l'algorithme Diffie-Hellaman pour l'échange des clés tout en combinaison avec ISAKMP .
+
 ISAKMP ou Internet Security Association and Key Management Protocol est un protocole défini par RFC 2408 pour établir une association de sécurité (SA) et des clés cryptographiques dans un environnement Internet.[6]
 
 - 1. On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
