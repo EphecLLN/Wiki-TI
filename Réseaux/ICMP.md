@@ -73,6 +73,37 @@ Le format en IPv4 contient :
 
 Le format en IPv6 est semblable à celui en IPv4 mais son en-tête IP est adapté à la version 6.
 
+## Ping et ICMP [[9]](https://linux.die.net/man/8/ping)
+---
+
+Ping est une commande très connue qui utilise des paquets ICMP (plus précisément des _ECHO_REQUEST ICMP_ et des _ECHO_RESPONSE ICMP_) afin d'obtenir plusieurs informations sur le réseau. 
+
+Pour effectuer une requête ping, il faut saisir, au minimum, ceci : `ping  adresseIP/nomHôte`
+
+Par exemple : 
+
+Taper `ping canopus` donnera ceci :
+```
+PING canopus.austin.century.com: (128.116.1.5): 56 data bytes
+64 bytes from 128.116.1.5: icmp_seq=0 ttl=255 time=2 ms
+64 bytes from 128.116.1.5: icmp_seq=1 ttl=255 time=2 ms
+64 bytes from 128.116.1.5: icmp_seq=2 ttl=255 time=3 ms
+64 bytes from 128.116.1.5: icmp_seq=3 ttl=255 time=2 ms
+
+----canopus.austin.century.com PING Statistics----
+4 packets transmitted, 4 packets received, 0% packet loss
+round-trip min/avg/max = 2/2/3 ms
+```
+Une réponse standard contient différentes informations : le nombre de bytes envoyé par paquet, la destination, le numéro du paquet, le TTL nécessaire pour atteindre la destination, le temps que cela a nécessité et le nombre de paquets perdus et réceptionnés . D'autres informations peuvent être obtenues en fonction des paramètres que l'on choisit. Plus de détails [ici](https://linux.die.net/man/8/ping). 
+
+## Alternative à ICMP et à PING [[10]](https://linux.die.net/man/1/echoping) [[11]](https://linux.die.net/man/8/arping) [[12]](https://curl.se/)
+---
+
+Le problème avec la commande ping et ICMP en général, est qu'une grande partie du trafic ICMP est bloquée par les pare-feu des réseaux pour diverses raisons de sécurité. Dans ce cas, voici plusieurs alternatives :
+- echoping [[10]](https://linux.die.net/man/1/echoping) : fonctionne de manière similaire à ping. Sa grande différence est qu'il utilise TCP au lieu d'ICMP. 
+- arping [[11]](https://linux.die.net/man/8/arping) :  fonctionne de manière similaire à ping. Il utilise des paquets ARP pour vérifier l'état de la destination. On peut également utiliser des adresses MAC avec cette commande.
+- curl  [[12]](https://curl.se/) : alternative majoritairement utilisée pour tester la connectivité d'un site.
+
 ## Bibliographie 
 
 1. [Qu'est-ce que le protocole ICMP ?](https://www.ionos.fr/digitalguide/serveur/know-how/quest-ce-que-le-protocole-icmp/), Digital Guide IONOS, le 05/03/2019, consulté le 31/05/2022
@@ -106,5 +137,19 @@ Le format en IPv6 est semblable à celui en IPv4 mais son en-tête IP est adapt�
 8. [Internet Control Message Protocol (ICMP) Parameters](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml), Iana, 25/09/2020, consulté le 31/05/2022
     - _Résumé : Document de l'Iana regroupant tous les codes et types d'ICMPv4_
     - _Avis sur la ressource : Fiable et permet d'avoir la liste complète et expliquée de tous les paramètres d'ICMPv4_
+9. [ping(8) - Linux man page](https://linux.die.net/man/8/ping), Linux.die.net, consulté le 08/06/22
+    - _Résumé : Page MAN de la commande ping_
+    - _Avis sur la ressource : Fiable car il s'agit de la documentation provenant des pages MAN_
 
+10. [echoping(1) - Linux man page](https://linux.die.net/man/1/echoping),Linux.die.net, consulté le 08/06/22
+    - _Résumé : Page MAN de la commande echoping_
+    - _Avis sur la ressource : Fiable car il s'agit de la documentation provenant des pages MAN_
+
+11. [arping(8) - Linux man page](https://linux.die.net/man/8/arping),Linux.die.net, consulté le 08/06/22
+    - _Résumé : Page MAN de la commande arping_
+    - _Avis sur la ressource : Fiable car il s'agit de la documentation provenant des pages MAN_
+
+12. [CURL://](https://curl.se/), curl, consulté le 08/06/22
+    - _Résumé : Site web de CURL et sa documentation_
+    - _Avis sur la ressource : Fiable car il s'agit du site officiel de curl_
 
