@@ -1,17 +1,17 @@
 [Accueil Wiki](https://epheclln.github.io/Wiki-TI/)
 # L’avenir de HTTP
 
-## Définition
+## Définition [^1]**
 
 L’Hypertext Transfer Protocol, généralement abrégé HTTP, littéralement « protocole de transfert hypertexte », est un protocole de communication client-serveur développé pour le web.
 Le protocole HTTP est devenu un standard de l’IETF en 1997.
 
-## Evolution des versions du protocole HTTP
+## Evolution des versions du protocole HTTP [^2]
 
 Plusieurs versions de ce protocole se sont succédées depuis l’origine : HTTP/0.9, HTTP/1.0, HTTP/1.1 et HTTP/2.
 Les versions successives du protocole vont progressivement corriger les problèmes des versions précédentes
 
-## HTTP/2
+## HTTP/2 [^3]**
 
 La version HTTP/2 est toujours la version majoritaire actuellement.
 Par rapport à ses prédécesseurs, elle a introduit le concept de  multiplexage de plusieurs transactions HTTP dans une seule connexion TCP.
@@ -23,7 +23,7 @@ De plus, les pages web reprennent des contenus de plus en plus lourds (vidéos 4
 C’est dans ce contexte que HTTP/3 a été démarré pour aider à améliorer les performances du web.
 
 
-## Vers l’avenir de HTTP
+## Vers l’avenir de HTTP [^4]**
 Sans disposer de boule de cristal, on peut raisonnablement penser que l’avenir de HTTP va se baser sur plusieurs normes qui correspondent à des avancées 
 majeures depuis la première version de HTTP.
 Il s’agit des normes suivantes :
@@ -36,7 +36,7 @@ Il s’agit des normes suivantes :
 
 Ces différentes normes seront détaillées ci-dessus 
 
-## HTTP/3
+## HTTP/3 [^3] [^5] [^6] [^7] [^8] [^9]**
 
 Un certain nombre de différences importantes existent entre HTTP/2 et HTTP/3.
 
@@ -89,7 +89,7 @@ QUIC offre un support au multiplexage, de sorte que différents flux HTTP peuven
 Ainsi, l’état de congestion est partagé.
 Les flux QUIC sont transmis indépendamment et, dans la plupart des cas, la perte de paquets affectant un flux n’affecte pas les autres.
 
-### Quels problèmes HTTP/3 pourrait-il poser ?
+### Quels problèmes HTTP/3 pourrait-il poser ? [^7]
 
 De nombreux critiques indiquent que HTTP/3 arrive trop tôt après le protocole HTTP/2. Les problèmes suivants sont souvent cités.
 
@@ -119,7 +119,7 @@ TCP est le protocole courant depuis des années, alors que UDP ne l’est pas, d
 Par conséquent, il y a beaucoup plus de charge/besoins CPU avec QUIC : selon certaines estimations, deux fois plus qu’avec HTTP/2.
 
 
-### Usage de HTTP/3
+### Usage de HTTP/3 [^10] [^11]**
 
 Les motivations pour introduire le nouveau protocole sont donc nombreux :
 -	Amélioration de performances 
@@ -140,7 +140,7 @@ Et de nombreux sites l’utilisent déjà comme google (évidement) mais aussi Y
 
 
 
-## HTTPS  
+## HTTPS  [^12]**
 
 L'HyperText Transfer Protocol Secure HTTPS signifie  « protocole de transfert hypertextuel sécurisé ») est la combinaison du HTTP avec une couche de chiffrement comme SSL ou TLS.
 
@@ -161,7 +161,7 @@ En bref : serveur et client se sont reconnus, ont choisi une manière de chiffre
 HTTP/3 n'existe pas dans une version non sécurisée ou non chiffrée.
 
 
-## HSTS 
+## HSTS [^13] [^14]**
 
 Une autre avancée pour sécuriser un site web est d’utiliser le HSTS « HTTP Strict Transport Security ». 
 
@@ -173,7 +173,7 @@ Le HSTS force les navigateurs et les applications à utiliser — si cela est po
 Facebook, Google, Gmail, Twitter et PayPal ne sont que quelques-uns des grands réseaux sociaux et portails de paiement à déployer une politique de sécurité HSTS aujourd’hui.
 
 
-## HTTPA
+## HTTPA [^15] [^16] [^17]**
 
 Cette nouvelle avancée est beaucoup moins aboutie. Elle permet d’ajouter à HTTPS qui sécurise le transport des données un protocole pour garantir également leur protection lors du traitement en protégeant le calcul en cours d'exécution.
 
@@ -197,66 +197,50 @@ ils ont répondu : « Nous avons des discussions en cours qui doivent être exam
 
 ## Bibliographie
 
-[^1] [Nom de la ressource](lien vers la ressource), Auteur, Date de création, consulté le (date consultation)
-   - Résumé : ...
-   - Avis sur la ressource : ... 
-
-### HTTP/3 
-[^1]	https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP/3
-   -
-[^1]	https://en.wikipedia.org/wiki/HTTP/3
-   -
-[^1]	https://blog.cloudflare.com/fr-fr/http-3-from-root-to-tip-fr-fr/
-   -
-[^1]	https://www.silicon.fr/http3-protocole-262163.html
-   -
-[^1]	https://kinsta.com/fr/blog/http3/#http3-coming
-   -
-[^1]	https://www.kadiska.com/fr/blog-protocole-http-3-lavenir-pour-une-meilleure-performance-web/
-   -
-[^1]	https://www.phonandroid.com/http-3-tout-savoir-sur-le-nouveau-protocole-qui-va-accelerer-le-web.html
-   -
-[^1]	https://www.csoonline.com/article/3564253/6-ways-http-3-benefits-security-and-7-serious-concerns.html
-   -
-[^1]	https://www.ionos.com/digitalguide/hosting/technical-matters/http3-explained/
-   -
-[^1]	https://www.f5.com/company/blog/http3-will-bring-significant-changes-and-challenges
-   -
-[^1]	https://azurplus.fr/comment-http-3-et-quic-accelereront-votre-navigation-web/
-   -
-[^1]	https://www.fasterize.com/fr/blog/protocole-http3/
-   -
-[^1]	https://blog.ilearned.eu/http3.html
-   -
-[^1]	https://blog.cloudflare.com/fr-fr/http3-the-past-present-and-future-fr-fr/
-   -
-[^1]	https://stringfixer.com/fr/HTTP_3
-   -
-[^1]	https://w3techs.com/technologies/details/ce-http3
-   -
-[^1]	https://caniuse.com/http3
-   -
-
-### HTTPS
-[^1]	https://fr.wikipedia.org/wiki/HyperText_Transfer_Protocol_Secure
-   -
-[^1]	https://fr.wikipedia.org/wiki/HyperText_Transfer_Protocol_Secure#HTTPS
-   -
-
-### HSTS
-[^1]	https://www.globalsign.com/fr/blog/qu-est-ce-que-le-hsts-comment-le-mettre-en-uvre
-   -
-[^1]	https://fr.wikipedia.org/wiki/HTTP_Strict_Transport_Security
-   -
-
-### HTTPA
-[^1]	https://www.silicon.fr/httpa-attestation-integrite-tls-418933.html
-   - test
-[^1]	https://blog.desdelinux.net/en/Http-a-protocol-for-web-services-in-trusted-environments/
-   -
-*	https://arxiv-org.translate.goog/abs/2205.01052?_x_tr_sl=en&_x_tr_tl=fr&_x_tr_hl=fr&_x_tr_pto=sc
-   -
-*	https://securite.developpez.com/actu/328186/Vous-avez-entendu-parler-de-HTTPS-Decouvrez-maintenant-HTTPA-des-services-Web-dans-des-environnements-de-confiance-avec-Intel-SGX-un-outil-qui-fournit-le-chiffrement-en-memoire/
-   -
+[^1]: "Hypertext Transfer Protocol", fr.wikipedia.org,  https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol#HTTP/3  (consulté le 01/06/2022) 
+   ** Avis de la source : fiable pour la définition  
    
+[^2]: "HTTP/3" : le passé, le présent et l'avenir, https://blog.cloudflare.com/fr-fr/http3-the-past-present-and-future-fr-fr/ (consulté le 01/06/2022)
+   ** Avis de la source : document ancien mais qui explique la l’évolution du protocole
+   
+[^3]: "Qu’est-ce que HTTP/3 – Informations sur le nouveau protocole UDP rapide ?", kinsta.com,
+https://kinsta.com/fr/blog/http3/#http3-coming, (consulté le 04/06/2022)
+   ** Avis de la source : résumé  de la différence UDP-TCP
+   
+[^4]: "HTTP/3 : Des origines à nos jours", blog.cloudflare.com, https://blog.cloudflare.com/fr-fr/http-3-from-root-to-tip-fr-fr/ (consulté le 01/06/2022) 
+   ** Avis de la source : présentation de l’importance des normes
+   
+[^5]: "HTTP/3", en.wikipedia.org, https://en.wikipedia.org/wiki/HTTP/3 (consulté le 01/06/2022) 
+   ** Avis de la source : Bon résumé
+   
+[^6]: "HTTP/3 : le protocole origine Google est dans les starting-blocks", silicon.fr, https://www.silicon.fr/http3-protocole-262163.html, (consulté le 02/05/2022) 
+   ** Avis de la source : comparaison HTTP/2 vs HTTP3
+
+[^7]: "HTTP/3: the next Hypertext Transfer Protocol explained simply", ionos.com ,https://www.ionos.com/digitalguide/hosting/technical-matters/http3-explained/ (consulté le 04/06/2022) 
+   ** Avis de la source : document qui date de 2 ans mais qui résume bien HTTP/3
+
+[^8]: "HTTP/3", http3-explained.haxx.se, https://http3-explained.haxx.se/fr/h3, (consulté le 31/05/2022) 
+   ** Avis de la source : très complet et très clair source principale de la partie HTTP/3
+[^9]: "Qu’est-ce que le protocole HTTP/3, et ce qu’il change par rapport à HTTP/1 et HTTP/2", fasterize.com, https://www.fasterize.com/fr/blog/protocole-http3/ (consulté le 31/05/2022) 
+   ** Avis de la source : information sur QUIC
+   
+[^10]: Can I use , caniuse.com, https://caniuse.com/http3, (consulté le 02/06/2022) 
+   ** Avis de la source : très bonne source d’information pour les compatibilités browser protocole
+[^11]: Usage statistics of HTTP/3 for websites, w3techs.com,  https://w3techs.com/technologies/details/ce-http3 (consulté le 02/06/2022) 
+   ** Avis de la source : très bonne source d’information actualisé
+[^12]: "HyperText Transfer Protocol Secure", fr.wikipedia.org,  https://fr.wikipedia.org/wiki/HyperText_Transfer_Protocol_Secure, (consulté le 1/06/2022) 
+   ** Avis de la source : très complet et source la plus importante pour la partie HTTPS
+[^13]: "Qu’est-ce que le HSTS et comment le met-on en œuvre ?", globalsign.com, https://www.globalsign.com/fr/blog/qu-est-ce-que-le-hsts-comment-le-mettre-en-uvre
+[^14]: "HTTP Strict Transport Security", wikipedia.org , https://fr.wikipedia.org/wiki/HTTP_Strict_Transport_Security, (consulté le 2/06/2022) 
+   ** Avis de la source : résumé vulgarisé
+   
+[^15]: "HTTPA : vers une attestation d’intégrité sur TLS ?", silicon.fr,https://www.silicon.fr/httpa-attestation-integrite-tls-418933.html, (consulté le 2/06/2022) 
+   ** Avis de la source : description technique de HTTPA
+   
+[^16]: HTTPA, a protocol for web services in trusted environments, blog.desdelinux.net/, https://blog.desdelinux.net/en/Http-a-protocol-for-web-services-in-trusted-environments/ (consulté le 2/06/2022) 
+   ** Avis de la source : bonne entrée en matière
+   
+[^17]: "Vous avez entendu parler de HTTPS. Découvrez maintenant HTTPA : des services Web dans des environnements de confiance", securite.developpez.com, https://securite.developpez.com/actu/328186/Vous-avez-entendu-parler-de-HTTPS-Decouvrez-maintenant-HTTPA-des-services-Web-dans-des-environnements-de-confiance-avec-Intel-SGX-un-outil-qui-fournit-le-chiffrement-en-memoire/ (consulté le 2/06/2022) 
+   ** Avis de la source : très bonne source 
+
    
