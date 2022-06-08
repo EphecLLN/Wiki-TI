@@ -12,37 +12,40 @@ parent: Réseaux
 
 ## Qu'est ce que c'est?
 
-SPF, acronyme de Sender Policy Framework, permet d'empêcher les envois de message par des spammeurs au nom de votre domaine au moyen d'un système de validation. Spf permet a une organisation de publier des servers de messagerie autorisée. ce framework fonctionne de pair avec DMARK. Il donne à ceux qui recoivent l'information les différentes informations par rapport à la fiabilité de l'origine du mail. [1]
+SPF, acronyme de Sender Policy Framework, permet d'empêcher les envois de message par des spammeurs au nom de votre domaine au moyen d'un système de validation. Spf permet a une organisation de publier des servers de messagerie autorisée. Ce framework fonctionne de pair avec DMARK. Il donne à ceux qui recoivent l'information les différentes informations par rapport à la fiabilité de l'origine du mail. [1]
 
-Il s'agit donc d'un moyen d'autentification par nom de domaine pour éviter l'usurpation d'identité. Pour cela, il a besoin du DNS. Ainsi tout expéditeurs peux spécifier quels serveurs peuvent envoyer des e-mails au nom de leur domaine.
+Il s'agit donc d'un moyen d'autentification par nom de domaine pour éviter l'usurpation d'identité. Pour cela, il a besoin du DNS. Ainsi, tout expéditeurs peux spécifier quels serveurs peuvent envoyer des e-mails au nom de leur domaine.
 
 ## Histoire
 
-Les premières mentions de SPF remontent au environ de 2000. La spécification de ce dernier se sont fait dans les années suivantes au moyen de plusieurs versions. Le nom original de SPF était tout d'abord "Sender Permitted Form". Ce dernier a donc évolué durant les premières versions. [1]
+Les premières mentions de SPF remontent au environ de 2000. La spécification de ce dernier s'est faite dans les années suivantes au moyen de plusieurs versions. Le nom original de SPF était tout d'abord "Sender Permitted Form". Ce dernier a donc évolué durant les premières versions. [1]
 
-En 2006, une tentative de combinaison de SPF avec la proposition CallerId de Microsoft a été réalisée par un groupe de travail de l'IETF. Cette expérience aura porté ses fruits en 2014 et est maintenant connue sous le nom de RFC 7208.[1]
+En 2006, une tentative de combinaison de SPF avec la proposition CallerId de Microsoft a été réalisée par un groupe de travail de l'[IETF](https://www.ietf.org/). Cette expérience aura porté ses fruits en 2014 et est maintenant connue sous le nom de RFC 7208.[1]
 
 Actuellement, les techniques d'autentification privilègient DKIM et DMARC par rapport à SPF. Cependant, il détermine toujours si un mail est conforme au DMARC.[1]
 
 ## Dans la pratique
 
-Pour configurer SPF, il faut au préalable ajouter un SPF record dans la zone DNA du domaine. Celui-ci permet la spécification des différentes adresses ips qui sont authorisées a envoyer des mails au nom du domain.[1]
+Pour configurer SPF, il faut au préalable ajouter un SPF record dans la zone DNA du domaine. Celui-ci permet la spécification des différentes adresses ips qui sont authorisées à envoyer des mails au nom du domaine.[1]
 
-SPF vérifie qu'un expéditeur peux envoyé des message avec ce nom de domaine. si pas, (la vérification a échouée) le serveur récepteur détermine ce qu'il faut faire du message en fonction de la stratégie configurée.[4]
+SPF vérifie qu'un expéditeur peux envoyé des message avec ce nom de domaine. Si pas (la vérification a échouée), le serveur récepteur détermine ce qu'il faut faire du message en fonction de la stratégie configurée.[4]
 
 Voyons 3 cas de figures
 ![mail authorisé](./\domaineauthorise.jpg)
-dans ce premier cas, l'adresse ip se trouve dans l'enregistrement.[4]
+
+* Dans ce premier cas, l'adresse ip se trouve dans l'enregistrement.[4] Le mail est donc valide.
 
 ![mail non authorisé](./domainusurpe.jpg)
-dans ce cas présent, le domaine expéditeur a été usurpé car l'adresse ip dne se trouve pas dans l'enregitrement.[4]
+
+* Dans ce cas présent, le domaine expéditeur a été usurpé car l'adresse ip dne se trouve pas dans l'enregitrement.[4] Le mail sera donc traité selon la stratégie configurée.
 
 ![mail tranféré](./mailtransf%C3%A9r%C3%A9.jpg)
-Dans ce dernier cas, le mail a été transféré la vérification SPF lors de la première réception est valide mais pas lors de la 2 ème car, l'adresse ip de domaine2.com ne se trouve pas dans l'enregistrement[4]
+
+* Dans ce dernier cas, le mail a été transféré. La vérification SPF lors de la première réception est valide mais pas lors de la 2 ème car, l'adresse ip de domaine2.com ne se trouve pas dans l'enregistrement SPF de domaine1.[4]
 
 ## SPF record
 
-le SPF record est composé de plusieurs parties. il commence par un numéro de version, suivi par les différents mécanismes qui permettent de de définir les expéditeurs valides.[3]
+le SPF record est composé de plusieurs parties. Il commence par un numéro de version, suivi par les différents mécanismes qui permettent de de définir les expéditeurs valides.[3]
 
 * numéro de version : `v=spf1`
 
