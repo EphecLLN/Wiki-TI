@@ -12,7 +12,7 @@ parent: Réseaux
 
 ## Qu'est ce que c'est?
 
-SPF, acronyme de Sender Policy Framework, permet d'empêcher les envois de message par des spammeurs au nom de votre domaine au moyen d'un système de validation. Spf permet a une organisation de publier des servers de messagerie autorisée. Ce framework fonctionne de pair avec DMARK. Il donne à ceux qui recoivent l'information les différentes informations par rapport à la fiabilité de l'origine du mail. [1]
+SPF, acronyme de Sender Policy Framework, permet d'empêcher les envois de message par des spammeurs au nom de votre domaine au moyen d'un système de validation. Spf permet a une organisation de publier des servers de messagerie autorisés. Ce framework fonctionne de pair avec DMARK. Il donne à ceux qui recoivent l'information les différentes informations par rapport à la fiabilité de l'origine du mail. [1]
 
 Il s'agit donc d'un moyen d'autentification par nom de domaine pour éviter l'usurpation d'identité. Pour cela, il a besoin du DNS. Ainsi, tout expéditeurs peux spécifier quels serveurs peuvent envoyer des e-mails au nom de leur domaine.
 
