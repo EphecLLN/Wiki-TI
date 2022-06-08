@@ -8,7 +8,7 @@ parent : Réseaux
 
 ## Un peu d'histoire
 
-En informatique et plus particulièrement en réseau, les paquets sont les éléments principaux pour communiquer des données entre deux machines. 
+En informatique et plus particulièrement en réseau, les paquets IP sont les éléments principaux pour communiquer des données entre deux machines. 
 Dans ces paquets on y distingue deux grands types d'éléments à savoir, ceux pour les données et ceux contenant l’adresse de l’expéditeur et du destinataire.
 
 <img width="408" alt="Screenshot 2022-06-02 at 14 59 04" src="https://user-images.githubusercontent.com/43784062/171634672-39e7557e-e713-429f-997d-805fc5f0283e.png">
@@ -16,7 +16,7 @@ Dans ces paquets on y distingue deux grands types d'éléments à savoir, ceux p
 
 Le point négatif de cette communication est l’absence de sécurité en effet les données des paquets ne sont pas cryptées de plus il n’est pas possible de vérifier l’authenticité de celles-ci également.
 
-C’est un gros problème vu que lors de cet échange de données, les paquets passe par différents routeurs. Elles peuvent donc être interceptées, lues, manipulées, modifiées à tout moment par une personne mal intentionnée.
+C’est un gros problème vu que lors de cet échange de données, les paquets passent par différents routeurs. Elles peuvent donc être interceptées, lues, manipulées, modifiées à tout moment par une personne mal intentionnée.
 
 Pour faire face à cette situation et ainsi permettre un transfert de paquets de données sécurisés sur des réseaux publics, l’Internet Protocol Security ou IPsec a été développé.
 
@@ -43,11 +43,11 @@ On peut répartir la suite des protocles IPSec en 3 groupes :
 
 ### Protocoles de transfert AH et ESP
 
-Le protocole d'en-tête d'authentification (AH) fournit l'authentification de l'origine des données ainsi que l'intégrité de celles-ci[3] . Néanmoins, AH n'assure pas la confidentialité des données, celle-ci sont transmisses en claire !
+Le protocole d'en-tête d'authentification (AH) fournit l'authentification de l'origine des données ainsi que l'intégrité de celles-ci[3] . Néanmoins, AH n'assure pas la confidentialité des données, celles-ci sont transmisses en claire !
 c'est pourquoi AH est utilisé en combinaison avec ESP.
 Le protocoles ESP ou Encapsulating Security Payload est utilisé pour la confidentialité des données en les chiffrants.
 
-La combinaison de ces protocoles possède deux mode de fonctionnnemnt, le mode `Transport` où machines sont connectées directement et le mode `Tunel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
+La combinaison de ces protocoles possède deux mode de fonctionnnemnt, le mode `Transport` où les machines sont connectées directement et le mode `Tunel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
 
 - Fonctionnement en mode Transport :
 
@@ -78,8 +78,8 @@ l’expéditeur et le destinataire.
 
 ### Gestion des clés IKE & ISAKMP
 
-IKE ou Internet Key Exchange est un procédé de gestion de clé utilisé pour gérer la connexion entre deux routeurs. Ce dernier utilise l'algorithme Diffie-Hellaman pour l'échange des clés tout en combinaison avec ISAKMP .
-ISAKMP ou Internet Security Association and Key Management Protocol  est un protocole défini par RFC 2408 pour établir une association de sécurité (SA) et des clés cryptographiques dans un environnement Internet.[6]
+IKE ou Internet Key Exchange est un procédé de gestion de clés utilisé pour gérer la connexion entre deux routeurs. Ce dernier utilise l'algorithme Diffie-Hellaman pour l'échange des clés tout en combinaison avec ISAKMP .
+ISAKMP ou Internet Security Association and Key Management Protocol est un protocole défini par RFC 2408 pour établir une association de sécurité (SA) et des clés cryptographiques dans un environnement Internet.[6]
 
 - 1. On établit une connexion sécurisée en utilisant, soit les certificats de chaque partie, soit un mot de passe commun
 - 2. Une fois les routeurs d’accord sur le type de sécurité, IKE ouvre un tunnel sécurisé
@@ -89,7 +89,8 @@ ISAKMP ou Internet Security Association and Key Management Protocol  est un prot
 ### Base de données SAD & SDP
 
 Les informations nécessaires au transfert des paquets sont stockées dans deux bases de données en local à savoir SPD ( Security Policy Database ) et SAD ( Security Association Database ).
-Dans la base de donnée SDP on va retrouver les information permettant de déterminer le ou les protocoles à utiliser à savoir AH, ESP ou la combinaison des deux tant dit que dans la base de donnée SAD, on va retrouver les informations essentielles pour le protocole IKE à savoir les différentes clés de chiffrement.
+
+Dans la base de données SDP on va retrouver les information permettant de déterminer le ou les protocoles à utiliser à savoir AH, ESP ou la combinaison des deux tant dit que dans la base de donnée SAD, on va retrouver les informations essentielles pour le protocole IKE à savoir les différentes clés de chiffrement.
 
 ## Les points positifs et négatif d'IPSec
 
@@ -103,14 +104,14 @@ Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence
 
 Voici un exemple d'utilisation IPSec en mode tunnel : 
 
-Prennons par exemple une entreprise qui possède deux sites, celles-ci aimerait que ses deux sites puissent communiquer sur le même réseau de mainère sécurisée. Pour répondre à ce besoin elle va mettre en place un VPN pour relier les deux sites et utiliser la suite de protocoles IPSec afin de créer un tunnel sécursié entre les deux sites. 
+Prennons par exemple une entreprise qui possède deux sites, celle-ci aimerait que ses deux sites puissent communiquer sur le même réseau de mainère sécurisée. Pour répondre à ce besoin elle va mettre en place un VPN pour relier les deux sites et utiliser la suite de protocoles IPSec afin de créer un tunnel sécursié entre les deux sites. 
 
 ![Screenshot 2022-06-08 at 15 47 43](https://user-images.githubusercontent.com/43784062/172632849-84ae322a-aad7-4681-88c0-fdca4b8bc8fc.png)
 
 
 Voici un exemple d'utilisation IPSec en mode transport : 
 
-Prennons par exemple, une connexion bureau à distance sécurisée où une personne sur une machine A se connecte sur une seconde machine B ( ex : Teamviwer ). Pour établir une communication sécurisé entre sa machine et la seconde elle va devoir utiliser le mode Transport d'IPSec.
+Prennons par exemple, une connexion bureau à distance sécurisée où une personne sur une machine A se connecte sur une seconde machine B ( ex : Teamviewer ). Pour établir une communication sécurisé entre sa machine et la seconde elle va devoir utiliser le mode Transport d'IPSec.
 
 ![Screenshot 2022-06-08 at 16 19 19](https://user-images.githubusercontent.com/43784062/172640127-7c37ab62-fd3b-436b-b80e-e88c07368373.png)
 
