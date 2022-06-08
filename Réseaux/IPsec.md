@@ -97,7 +97,23 @@ Les avantages d’IPSec sont indéniables en matière de performance et de fiabi
 Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
 
 IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
-Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5 - 7 - 8 - 9]
+Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" [10 - 11] cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5 - 7 - 8 - 9]
+
+## Exemple utilisation d'IPSec
+
+Voici un exemple d'utilisation IPSec en mode tunnel : 
+
+Prennons par exemple une entreprise qui possède deux sites, celles-ci aimerait que ses deux sites puissent communiquer sur le même réseau de mainère sécurisée. Pour répondre à ce besoin elle va mettre en place un VPN pour relier les deux sites et utiliser la suite de protocoles IPSec afin de créer un tunnel sécursié entre les deux sites. 
+
+![Screenshot 2022-06-08 at 15 47 43](https://user-images.githubusercontent.com/43784062/172632849-84ae322a-aad7-4681-88c0-fdca4b8bc8fc.png)
+
+
+Voici un exemple d'utilisation IPSec en mode transport : 
+
+Prennons par exemple, une connexion bureau à distance sécurisée où une personne sur une machine A se connecte sur une seconde machine B ( ex : Teamviwer ). Pour établir une communication sécurisé entre sa machine et la seconde elle va devoir utiliser le mode Transport d'IPSec.
+
+![Screenshot 2022-06-08 at 16 05 18](https://user-images.githubusercontent.com/43784062/172637123-97c61f83-8cf4-43bc-b970-0802fd97307b.png)
+
 
 ## Sources :
 [1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
@@ -118,3 +134,6 @@ Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence
 
 [9] https://www.rfc-editor.org/rfc/rfc2402.html
 
+[10] https://www.rfc-editor.org/rfc/rfc3947.html
+
+[11] https://www.rfc-editor.org/rfc/rfc3948.html
