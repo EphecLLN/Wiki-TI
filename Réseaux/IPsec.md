@@ -97,7 +97,7 @@ Les avantages d’IPSec sont indéniables en matière de performance et de fiabi
 Une fois le tunnel ouvert, les différentes formes de paquets de données (mail, ftp, voip,... ) peuvent être communiquées sans que des outils/applications n’aient à être installés.
 
 IPSec fourni également une grande sécurité pour le trafic de données interne des entreprises mais cela peut aussi réduire la vitesse de communication.
-Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5 - 7 - 8]
+Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence de notion de ports source/destination pou résoudre ceci, IPSec utilise une extension "Nat-Traversal, RFC 3947 et RFC 3948" cette dernière propose d'encapsuler le protocoles ESP ou AH dans un paquet UDP afin de pouvoir plus facilement traverser NAT et Par-Feu.[5 - 7 - 8 - 9]
 
 ## Sources :
 [1] https://www.ionos.com/digitalguide/server/know-how/ipsec-security-architecture-for-ipv4-and-ipv6/, consulté le 26/05/2022, date article : 03/08/2016, auteur : /, Affiliation : ionos.com, titre artcile : Secure network connections with IPsec
@@ -114,8 +114,7 @@ Deplus IPSec complique la traversée des NAT et Pare-Feu à cause de l’absence
 
 [7] https://www.rfc-editor.org/rfc/rfc3947.html
 
-[8] https://www.rfc-editor.org/rfc/rfc3948.html
+[8] https://www.rfc-editor.org/rfc/rfc2406.html
 
 [9] https://www.rfc-editor.org/rfc/rfc2402.html
 
-[10] https://www.rfc-editor.org/rfc/rfc2406.html
