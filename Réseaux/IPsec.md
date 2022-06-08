@@ -124,16 +124,18 @@ Prennons par exemple, une connexion bureau à distance sécurisée où une perso
 
 [4] https://en.wikipedia.org/wiki/Internet_Security_Association_and_Key_Management_Protocol, consulté le 28/05/2022, date article : 25/05/2022, auteur : /, Affiliation : wikipedia.org, titre article : Association de sécurité Internet et protocole de gestion de clés
 
-[5] https://www.sstic.org/media/SSTIC2006/SSTIC-actes/Faiblesses_d_IPSec_en_deploiements_reels/SSTIC2006-Article-Faiblesses_d_IPSec_en_deploiements_reels-vanhullebus.pdf, consulté le 31/05/2022, auteur :Yvan Vanhullebus , Affiliation : Netasq, titre article : Faiblesses d’IPSec en déploiements réels
+[5] https://www.sstic.org/media/SSTIC2006/SSTIC-actes/Faiblesses_d_IPSec_en_deploiements_reels/SSTIC2006-Article-Faiblesses_d_IPSec_en_deploiements_reels-vanhullebus.pdf, consulté le 31/05/2022, auteusr :Yvan Vanhullebus , Affiliation : Netasq, titre article : Faiblesses d’IPSec en déploiements réels
 
-[6] https://www.rfc-editor.org/rfc/rfc2408.html
 
-[7] https://www.rfc-editor.org/rfc/rfc3947.html
 
-[8] https://www.rfc-editor.org/rfc/rfc2406.html
+[6] https://www.rfc-editor.org/rfc/rfc2408.html, consulté le 31/05/2022 , date article : Novembre 1998 ,auteurs : D. Maughan &  M. Schertler &  M. Schneider & J. Turner , Affiliation : RFC, titre article :  Internet Security Association and Key Management Protocol (ISAKMP)
 
-[9] https://www.rfc-editor.org/rfc/rfc2402.html
+[7] https://www.rfc-editor.org/rfc/rfc3947.html, consulté le 31/05/2022, date article :  Janvier 2005, auteurs :T. Kivinen &  B. Swander & A. Huttunen &  V. Volpe , Affiliation : RFC, titre article :  Negotiation of NAT-Traversal in the IKE
 
-[10] https://www.rfc-editor.org/rfc/rfc3947.html
+[8] https://www.rfc-editor.org/rfc/rfc2406.html, consulté le 31/05/2022, date article : Novembre 1998 , auteurs :S. Kent &  R. Atkinson , Affiliation : RFC, titre article :  IP Encapsulating Security Payload (ESP)
 
-[11] https://www.rfc-editor.org/rfc/rfc3948.html
+[9] https://www.rfc-editor.org/rfc/rfc2402.html, consulté le 31/05/2022, date article : Novembre 1998 , auteurs :S. Kent &  R. Atkinson, Affiliation : RFC, titre article : IP Authentication Header
+
+[10] https://www.rfc-editor.org/rfc/rfc3947.html, consulté le 31/05/2022, date article : Janvier 2005 , auteurs : T. Kivinen & B. Swander &   A. Huttunen & V. Volpe , Affiliation : RFC, titre article : Negotiation of NAT-Traversal in the IKE
+
+[11] https://www.rfc-editor.org/rfc/rfc3948.html, consulté le 31/05/2022, date article : Janvier 2005 , auteurs :A. Huttunen &  B. Swander &  V. Volpe & L. DiBurro & M. Stenberg, Affiliation : RFC, titre article : UDP Encapsulation of IPsec ESP Packets
