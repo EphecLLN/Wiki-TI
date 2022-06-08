@@ -20,7 +20,7 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 
 ## conversation POP [9]
 
-![](https://github.com/EphecLLN/Wiki-TI/blob/main/Assets/Images/conversation-POP3.png)
+![](https://github.com/WassimBouhdid/Wiki-TI/blob/main/Assets/Images/conversation%20POP3.PNG)
 
 ### Le protocole POP gère les commandes suivantes [5] : 
 
