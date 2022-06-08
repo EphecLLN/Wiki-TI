@@ -112,7 +112,7 @@ Voici un exemple d'utilisation IPSec en mode transport :
 
 Prennons par exemple, une connexion bureau à distance sécurisée où une personne sur une machine A se connecte sur une seconde machine B ( ex : Teamviwer ). Pour établir une communication sécurisé entre sa machine et la seconde elle va devoir utiliser le mode Transport d'IPSec.
 
-![Screenshot 2022-06-08 at 16 05 18](https://user-images.githubusercontent.com/43784062/172637123-97c61f83-8cf4-43bc-b970-0802fd97307b.png)
+![Screenshot 2022-06-08 at 16 19 19](https://user-images.githubusercontent.com/43784062/172640127-7c37ab62-fd3b-436b-b80e-e88c07368373.png)
 
 
 ## Sources :
