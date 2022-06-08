@@ -5,7 +5,7 @@
 
 ## Introduction :
 
-Les connexions VPN (Virutal Private Network) permettent de créer un lien sécurisé entre deux points, elles sont utilisées par les entreprises pour fournir à leurs employés un moyen d'accéder au réseau interne ou à des ressources internes depuis un ordinateur ou un réseau distant. Les connexions VPN sont chiffrées ce qui rend le trafic opaque pour les personnes non autorisées. Il existe aussi des connexions VPN commerciaux destinés aux internautes pour chiffrer leurs trafic et garantir leurs anonymat ainsi que contourner la censure. 
+Les connexions VPN (Virutal Private Network) permettent de créer un lien sécurisé entre deux points, elles sont utilisées par les entreprises pour fournir à leurs employés un moyen d'accéder au réseau interne ou à des ressources internes depuis un ordinateur ou un réseau distant. Les connexions VPN sont chiffrées ce qui rend le trafic opaque pour les personnes non autorisées. Il existe aussi des connexions VPN commerciaux destinés aux internautes pour chiffrer leurs trafic et garantir leurs anonymat ainsi que contourner la censure. Cet article est consacré aux VPN qui passent à travers internet, donc n'abordera pas les VPN privés tel que les VPN MPLS.
 
 La première connexion VPN a été développé par un employé de Microsoft en 1996. Il a développé le “point-to-point tunneling protocol” (PPTP).
 
@@ -14,7 +14,7 @@ Il existe trois types de connexions VPN :
 
 1-	Site to Site VPN => entre deux réseaux d’entreprise
 
-![image](https://user-images.githubusercontent.com/71373221/170224719-ced5e30a-1cfd-4f00-965d-46d7571269c3.png)
+![image](https://user-images.githubusercontent.com/71373221/172702429-810763b1-7064-47d3-82c4-985e9d6fa493.png)
 
 
 
@@ -22,7 +22,7 @@ Il existe trois types de connexions VPN :
 
 2-	Client to Site VPN => entre un équipement client et un réseau d’entreprise.
 
-![image](https://user-images.githubusercontent.com/71373221/170224768-f54321ea-6297-4615-ac02-bba596431bf8.png)
+![image](https://user-images.githubusercontent.com/71373221/172702490-6885a770-2e6d-4a71-a2a5-700b60072871.png)
 
  3-	SSL-VPN: Les entreprises utilisent des VPN SSL pour permettre aux utilisateurs distants d'accéder en toute sécurité aux services offert , ainsi que pour sécuriser les sessions Internet des utilisateurs qui accèdent à Internet depuis l'extérieur du réseau de l'entreprise.
 
