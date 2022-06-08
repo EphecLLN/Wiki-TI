@@ -51,9 +51,7 @@ La combinaison de ces protocoles possède deux mode de fonctionnnemnt, le mode `
 
 - Fonctionnement en mode Transport :
 
-Le mode transport a possède un temps de traitement rapide, mais ne sécurise que les données de l'utilisateur, les adresses source et cible restent non protégées c'est pourquoi ce mode ce mode ne peut être utilisé qu’entre deux machines, par exemple routeur à routeur.
-
-![mode transport](https://user-images.githubusercontent.com/43784062/170671693-7d0c304d-b17b-475f-8b17-69aee9f934fc.jpeg)
+Le mode transport a possède un temps de traitement rapide, mais ne sécurise que les données de l'utilisateur, les adresses source et cible restent non protégées c'est pourquoi ce mode ce mode ne peut être utilisé qu’entre deux machines, par exemple routeur à routeur ou ordinateur à ordinateur.
 
   - Il commence par crypter les données
   - Ensuite il rajoute un entête intermédiaire entre l’entête du paquet et les données.
@@ -65,9 +63,6 @@ Le mode transport a possède un temps de traitement rapide, mais ne sécurise qu
  
  Le paquet recoit une nouvelle en-tête IP contenant les adresse source et cible ainsi que les données.
  Ce mode permet de connectées deux réseaux entre eux.
- 
-![mode tunnel](https://user-images.githubusercontent.com/43784062/170671822-316aeaa2-8785-4c66-943a-b0c8b0f8742d.jpg)
-
 
   - Il commence par crypter le paquet contenant les données
   - Ensuite il forme un nouveau paquet avec une nouvelle entête IP pour assurer l’intégrité de celui-ci et donc empêcher un pirate de connaitre
