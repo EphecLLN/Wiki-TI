@@ -47,7 +47,7 @@ Le protocole d'en-tête d'authentification (AH) fournit l'authentification de l'
 c'est pourquoi AH est utilisé en combinaison avec ESP.
 Le protocoles ESP ou Encapsulating Security Payload est utilisé pour la confidentialité des données en les chiffrants.
 
-La combinaison de ces protocoles possède deux mode de fonctionnnemnt, le mode `Transport` où les machines sont connectées directement et le mode `Tunel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
+La combinaison de ces protocoles possède deux mode de fonctionnnemnt, le mode `Transport` où les machines sont connectées directement et le mode `Tunnel` qui permet de crée une connexion sécurisée entre deux réseaux IP.
 
 - Fonctionnement en mode Transport :
 
