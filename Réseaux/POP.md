@@ -8,15 +8,15 @@ parent: Réseaux
 
 ## qu'est ce que POP [1] [2]
 
-Le protocole POP (Post Office Protocol) est un protocole beaucoup utiliser dans le monde du mail. Il permet de télécharger nos mails se situant sur un serveurs vers notre ordinateur sur lequelles on pourra les lires via un client de messagerie telle qu'Outlook, Thunderbird, Gmail, etc. Après avoir téléchargé un mail avec POP, celui-ci ne se trouvera plus dans le serveur.
+Le protocol POP (Post Office Protocol) est un protocole frotement utilisé dans le monde du mail. Il permet de télécharger nos mails se situant sur un serveur vers notre ordinateur sur lequels on pourra les lire via un client de messagerie tel qu'Outlook, Thunderbird, Gmail, etc. Après avoir téléchargé un mail avec POP, celui-ci ne se trouvera plus sur le serveur.
 
 Le gros point négatif de POP vient de là. Après avoir consulté ses mails sur une machine, il est alors impossible pour l'utilisateur de consulter ce même mail sur une autre machine.
 
-Il est est possible de conserver ses mails sur le serveur POP, mais pendant une durée limitée qui doit être configuré sur le client mail de l'utilisateur.
+Il est possible de conserver ses mails sur le serveur POP, mais pendant une durée limitée qui doit être configuré sur le client mail de l'utilisateur.
 
-Le protocole Imap, son concurrent, quant à lui permet de télécharger ses mails à partir d'un serveur mail, mais le mail en question reste sur le serveur. Cela permet au utilisateur de consulter leurs emails sur n'importe quelle autre machine. 
+Le protocole Imap, son concurrent, quant à lui permet de télécharger ses mails à partir d'un serveur mail, mais le mail en question reste sur le serveur. Cela permet à l'utilisateur de consulter leurs emails sur n'importe quelle autre machine. 
 
-Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc de la vérification de notre identifiant et de notre mot de passe. Il bloque également l'accès à notre boite aux lettres lorsque nous y accédons et empêche alors toute autre connexion.
+Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc de la vérification de notre identifiant et de notre mot de passe. Il bloque également l'accès à notre boite aux lettres lorsque nous y accédons et empêche alors toutes autres connexions.
 
 ## Conversation POP [9]
 
