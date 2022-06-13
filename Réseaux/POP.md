@@ -6,7 +6,7 @@ parent: Réseaux
 
 # POP
 
-## qu'est ce que POP [1] [2]
+## Qu'est ce que POP [1] [2]
 
 Le protocol POP (Post Office Protocol) est un protocole frotement utilisé dans le monde du mail. Il permet de télécharger nos mails se situant sur un serveur vers notre ordinateur sur lequels on pourra les lire via un client de messagerie tel qu'Outlook, Thunderbird, Gmail, etc. Après avoir téléchargé un mail avec POP, celui-ci ne se trouvera plus sur le serveur.
 
