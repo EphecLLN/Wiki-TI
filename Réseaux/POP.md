@@ -8,17 +8,17 @@ parent: Réseaux
 
 ## qu'est ce que POP [1] [2]
 
-Le protocole POP (Post Office Protocol) est un protocole beaucoup utiliser dans le monde du mail. Il permet de télécharger nos mails se situant sur un serveurs vers notre ordinateur sur lequelles on ne pourra les lires via un client de messagerie telle qu'Outlook, Thunderbird, Gmail, etc. Après avoir téléchargé un mail avec POP, celui-ci ne se trouvera plus sur le serveur.
+Le protocole POP (Post Office Protocol) est un protocole beaucoup utiliser dans le monde du mail. Il permet de télécharger nos mails se situant sur un serveurs vers notre ordinateur sur lequelles on pourra les lires via un client de messagerie telle qu'Outlook, Thunderbird, Gmail, etc. Après avoir téléchargé un mail avec POP, celui-ci ne se trouvera plus dans le serveur.
 
 Le gros point négatif de POP vient de là. Après avoir consulté ses mails sur une machine, il est alors impossible pour l'utilisateur de consulter ce même mail sur une autre machine.
 
 Il est est possible de conserver ses mails sur le serveur POP, mais pendant une durée limitée qui doit être configuré sur le client mail de l'utilisateur.
 
-Le protocole Imap, son concurrant, quant à lui permet de télécharger ses mails à partir d'un serveur mail, mais le mail en question reste sur le serveur. Cela permet au utilisateur de consulter leurs emails sur n'importe quelle autre machine. 
+Le protocole Imap, son concurrent, quant à lui permet de télécharger ses mails à partir d'un serveur mail, mais le mail en question reste sur le serveur. Cela permet au utilisateur de consulter leurs emails sur n'importe quelle autre machine. 
 
 Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc de la vérification de notre identifiant et de notre mot de passe. Il bloque également l'accès à notre boite aux lettres lorsque nous y accédons et empêche alors toute autre connexion.
 
-## conversation POP [9]
+## Conversation POP [9]
 
 ![](https://github.com/WassimBouhdid/Wiki-TI/blob/main/Assets/Images/conversation%20POP3.PNG)
 
@@ -33,14 +33,14 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 
 ## Ou est-il utilisé ?
 
-Tous les clients mails peuvent être paramètrés afin d'utiliser POP
+Tous les clients mails peuvent être paramétrés afin d'utiliser POP
 
 ## Qu'elle est le futur du protocole POP [5]
 
 POP4 n'existe qu'en tant que proposition informelle ajoutant la gestion de base des dossiers, la prise en charge des messages en plusieurs parties, ainsi que la gestion des indicateurs de message pour concurrencer IMAP. 
 Cependant, son développement n'a pas progressé depuis 2003.
 
-De l'autre côté, son concurent IMAP publie sa dernière version, la version 4, en 1994 et aucune version 5 n'a été annoncer jusqu'à aujourd'hui.
+De l'autre côté, son concurrent IMAP publie sa dernière version, la version 4, en 1994 et aucune version 5 n'a été annoncer jusqu'à aujourd'hui.
 
 ## L'avantage du protocole POP [3][4]
 
@@ -55,7 +55,7 @@ De l'autre côté, son concurent IMAP publie sa dernière version, la version 4,
 
 ## sécurisation du protocole POP [10]
 
-La sécurisation du protocole POP, peut-être fais de deux manière 
+La sécurisation du protocole POP, peut-être faites de deux manière 
 différente. 
 
 Premièrement, on peut sécuriser les échanges au niveau du protocole grâce 
