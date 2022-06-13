@@ -25,49 +25,49 @@ Le protocole POP peut s'occuper de l'authentification de l'utilisateur et donc d
 ### Le protocole POP gère les commandes suivantes [5] : 
 
 * LIST : donne le nombre de courriers présents sur le serveur avec leur numéro.
-* RETR [numéro] : récupère le courrier numéro en attente sur votre serveur.
-* DELE [numéro] : détruit le courrier numéro.
+* RETR [x] : récupère le courrier numéro en attente sur votre serveur.
+* DELE [x] : détruit le courrier numéro.
 * NOOP : vérifie la connexion.
 * LAST : récupère le dernier message arrivé sur le serveur.
 * QUIT : quitte la session et en autorise une autre.
 
-## Ou est-il utilisé ?
+## Oú est-il utilisé ?
 
-Tous les clients mails peuvent être paramétrés afin d'utiliser POP
+Tout les clients mails peuvent être paramétrés afin d'utiliser POP.
 
-## Qu'elle est le futur du protocole POP [5]
+## Quel est le futur du protocole POP [5]
 
 POP4 n'existe qu'en tant que proposition informelle ajoutant la gestion de base des dossiers, la prise en charge des messages en plusieurs parties, ainsi que la gestion des indicateurs de message pour concurrencer IMAP. 
 Cependant, son développement n'a pas progressé depuis 2003.
 
-De l'autre côté, son concurrent IMAP publie sa dernière version, la version 4, en 1994 et aucune version 5 n'a été annoncer jusqu'à aujourd'hui.
+De l'autre côté, son concurrent IMAP a publié sa dernière version, la version 4, en 1994 et aucune version 5 n'a été annoncée jusqu'à aujourd'hui.
 
-## L'avantage du protocole POP [3][4]
+## L'avantages du protocole POP [3][4]
 
-* POP est plus simple à utilisé, plus simple à configurer et efficace
+* POP est plus simple à utiliser, plus simple à configurer et efficace
 * Permet la gestion de ses emails en local ce qui facilite et augmente la vitesse de recherche et de tri.
 * Il nécessite une quantité minimale de ressources afin de fonctionner.
 
-## Désaventage du protocole POP [3][4]
+## Désavantages du protocole POP [3][4]
 
 * Nécessite une connexion constante à internet.
 * Oblige l'utilisateur à sauvegarder ses mails afin de ne pas les perdre en cas de problème.
 
-## sécurisation du protocole POP [10]
+## Sécurisation du protocole POP [10]
 
-La sécurisation du protocole POP, peut-être faites de deux manière 
-différente. 
+La sécurisation du protocole POP, peut-être faites de deux manière s
+différentes. 
 
 Premièrement, on peut sécuriser les échanges au niveau du protocole grâce 
 à un certificat SSL ou TLS. Cette technique permet aux serveurs et aux 
 clients de s'authentifier mutuellement. Les échanges de messages peuvent 
-alors être chiffré.
+alors être chiffrés.
 
 Ensuite, il est possible d'ajouter une couche de sécurité PGP et S/MIME. 
 Ces 2 outils sécurisent le dialogue entre les utilisateurs de la 
 messagerie électronique et sur des échanges de bout en bout.
 Pour garder l'intégrité et la confidentialité des échanges PGP et S/MIME 
-fonctionne à l'aide d'un mécanisme de signature numérique et de 
+fonctionnent à l'aide d'un mécanisme de signature numérique et de 
 chiffrement.
 
 ## Source
