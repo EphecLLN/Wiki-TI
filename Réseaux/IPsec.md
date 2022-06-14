@@ -55,8 +55,8 @@ Le mode transport a possède un temps de traitement rapide, mais ne sécurise qu
 
   - Il commence par crypter les données
   - Ensuite il rajoute un entête intermédiaire entre l’entête du paquet et les données.
+<img width="392" alt="Screenshot 2022-06-14 at 10 32 06" src="https://user-images.githubusercontent.com/43784062/173571711-bfeb34d1-9654-4438-9ab8-ecad25ffd460.png">
 
-![mode transport-1 (1)](https://user-images.githubusercontent.com/43784062/170671717-796d871d-dcfe-45f1-a1ec-e915cb5f8160.jpg)
 
 
 - Fonctionnement en mode Tunnel :
@@ -68,7 +68,7 @@ Le mode transport a possède un temps de traitement rapide, mais ne sécurise qu
   - Ensuite il forme un nouveau paquet avec une nouvelle entête IP pour assurer l’intégrité de celui-ci et donc empêcher un pirate de connaitre
 l’expéditeur et le destinataire.
 
-![mode tunnel -1](https://user-images.githubusercontent.com/43784062/170671863-06d7e744-6ceb-4831-9136-4cb51cbb58c2.jpg)
+<img width="405" alt="Screenshot 2022-06-14 at 10 31 58" src="https://user-images.githubusercontent.com/43784062/173571730-041d101b-faf3-4bef-9820-7c5e0a042f79.png">
 
 
 ### Gestion des clés IKE & ISAKMP
