@@ -4,7 +4,7 @@
 
 ## Introduction [1][2]
 
-MQTT est un protocole basé sur TCP-IP au niveau de la couche applicative. Celui-ci appartient aux protocoles de messagerie dit de type **publish-subscribe**.
+MQTT, pour "Message Queuing Telemetry Transport", est un protocole basé sur TCP-IP au niveau de la couche applicative. Celui-ci appartient aux protocoles de messagerie dit de type **publish-subscribe**.
 Il a vu le jour avec une première version en 1999 et est né de la collaboration de Andy Stanford-Clark (IBM¹) et Arlen Nipper (Eurotech²). 
 MQTT a été conçu dans le but d'étre utilisé dans les zones où la bande passante est tout d'abord limitée. Ensuite, ces principaux objectifs étaient d'être efficace en therme de bande passante, d'être léger et également de posséder un faible dépense en énergie.
 
