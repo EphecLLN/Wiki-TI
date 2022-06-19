@@ -6,7 +6,6 @@
 TCP est l'abréviation de Transmission Control Protocol. Il s'agit de l'un des protocoles principale de la famille de protocoles TCP/IP et l'une des normes les plus importantes d'Internet. Il s'agit d'un protocole orienté connexion qui utilise les services du protocole Internet au niveau de la commutation.
 
 
-
 ## C’est quoi Quic? [1]
 C’est rare qu’un protocolle basant sur IP apparait. Depuis le 27 mai 2021 la version 1.0 à été publié officielment. QUIC ("Quick UDP Internet Connections") est un protocole de transport expérimental de Google, qui a été mis à la disposition du public pour la première fois en 2013. Afin d'envoyer rapidement et facilement des paquets de données simples via le protocole UDP (User Datagram Protocol) sans connexion. Le travail de QUIC a été motivé par le désir de développer des alternatives aux solutions de sécurité établies pour TCP, HTTP/2 et TLS/SSL. Cela offre la même protection tout en réduisant les retards de connexion et de transport et en permettant plusieurs connexions.
 
@@ -19,7 +18,6 @@ Quic est également très évolutif et peut être facilement adapté aux besoins
 
 
 ## Quic avec HTTP/3 [3]
-
 
 Les deux protocoles HTTP3 et QUIC sont les dernières avancées dans le domaine des technologies Internet. 
 
