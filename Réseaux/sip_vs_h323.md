@@ -3,11 +3,10 @@ layout: default
 title: Comparatif SIP - H323
 parent: Réseaux
 ---
-# Comparatif entre SIP et h323
 
 ## 1. Introduction
 
-### 1.1 `<ins>`Qu’est-ce que le protocole SIP`</ins>` [^1][^2] :
+### 1.1 Qu’est-ce que le protocole SIP?  [^1] [^2] 
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;La « Session Initiation Protocol » (SIP) est un protocole TCP/IP de le couche applicative normalisée et standardisé par l’IETF*. Il s’agit d’un protocole de communication standard couramment utilisé dans les télécommunications multimédias. Ce dernier est le plus répandu dans la téléphonie par internet (la VoIP*).
 
@@ -25,7 +24,7 @@ parent: Réseaux
 * Établissement d’une session
 * Gestion d’une session
 
-### 1.2 `<ins>`Qu’est-ce que le protocole H.323`</ins>` [^4][^5][^7]:
+### 1.2 Qu’est-ce que le protocole H.323? [^4] [^5] [^7]
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comme le SIP, le H.323 est un protocole conçu pour initier, gérer et terminer des sessions médias. Cependant celui-ci est standarisé par L'IEEE*.
 
@@ -41,13 +40,17 @@ parent: Réseaux
 
 ### 1.3 Schéma illustrant une communication VoIP (session + multimédia)
 
-`<ins>`SIP`</ins>` [^1]
+#### SIP [^1]
 
-![SIP]("../Assets/Images/SchemaSIP.png")
+<p align="center">
+    <img width="380" alt="Conversation SIP" src="../Assets/Images/SchemaSIP.png">
+</p>
 
-`<ins>`H.323`</ins>` [^8]
+#### H.323 [^8]
 
-![H323]("../Assets/Images/SchemaH323.png")
+<p align="center">
+    <img width="380" alt="Conversation SIP" src="../Assets/Images/SchemaH323.png">
+</p>
 
 Documentation du schéma car ce dernier est plus complexe qu'une communication SIP :
 
@@ -64,9 +67,9 @@ Documentation du schéma car ce dernier est plus complexe qu'une communication S
 * DRQ = Disengage Request, mettre fin à l'appel
 * DCF = Disengage Confirm, réponse pour mettre fin à l'appel
 
-## 2. Comparaison entre ces deux protocoles [^1][^2][^3][^4][^5]
+## 2. Comparaison entre ces deux protocoles [^1] [^2] [^3] [^4] [^5]
 
-### 2.1 `<ins>`Codage des messages`</ins>` :
+### 2.1 Codage des messages :
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Les messages H323 sont encodés dans un format binaire compact. Les messages sont efficacement codés et décodés par des machines (codec). Alors que ceux du protocole SIP, sont plus faciles à lire par l’homme, ils sont encodés au format ASCII. L’avantage du SIP est qu’il ressemble aux protocoles http/SMTP et est beaucoup plus simple que le H323. Cela rend le H323 moins convivial pour les techniciens dans un environnement de dépannage.
 
@@ -74,11 +77,11 @@ Documentation du schéma car ce dernier est plus complexe qu'une communication S
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le SIP est plus léger car il est basé sur une approche similaire au protocole http.
 
-### 2.2 `<ins>`En terme de temps`</ins>` :
+### 2.2 En terme de temps :
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le protocole H323 a été introduit quelques années avant le SIP. L’internet Engineering Task Force (IETF) a développé le protocole SIP basé sur le H323. Comparé au H323, SIP est plus simple, plus évolutif et plus étroitement lié aux applications Internet existantes.
 
-### 2.3 `<ins>`Utilisation`</ins>` :
+### 2.3 Utilisation :
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIP et H323 sont des protocoles de communication utilisés pour les appels multimédia et la téléconférence sur des réseaux basés sur le protocole Internet.
 
@@ -86,9 +89,9 @@ Documentation du schéma car ce dernier est plus complexe qu'une communication S
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cependant, H323 se concentre uniquement sur la conférence multimédia, c'est à dire la possibilité d'interagir à distance à travers une variété de canaux de communication. Par exemple : audio, vidéo et partage à distance d'écrans
 
-### 2.4 `<ins>`Utilisation technique`</ins>` :
+### 2.4 Utilisation technique :
 
-| `<ins>`Comparatif`</ins>`                | `<ins>`SIP`</ins>`                              | `<ins>`H323`</ins>`                                                                          |
+| Comparatif `                |  SIP                               |  H323                                                                           |
 | :------------------------------------------- | :-------------------------------------------------- | :----------------------------------------------------------------------------------------------- |
 | Nombre d'échange pour établir la connexion | 1,5 aller-retour (voir schéma ci-dessus)           | 6 à 7 aller-retour (voir schéma ci-dessus)                                                     |
 | Maintenance du code protocolaire             | Simple par sa nature textuelle à l'exemple de Http | Complexe et nécessitant un compilateur                                                          |
@@ -96,7 +99,7 @@ Documentation du schéma car ce dernier est plus complexe qu'une communication S
 | Détection d'un appel en boucle              | Oui                                                 | Inexistante sur la version 1, un appel routé sur l'appelant provoque une infinité de requêtes |
 | Signalisation multicast                      | Oui, par défaut                                    | Non                                                                                              |
 
-### 2.5 `<ins>`Fiabilité`</ins>` :
+### 2.5 Fiabilité
 
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Le fait que H323 ait une portée limitée le rend moins complexe que SIP.
 
@@ -114,7 +117,7 @@ Documentation du schéma car ce dernier est plus complexe qu'une communication S
 
 ### Définition en large permettant de comprendre certains concepts : [^6][^7]
 
-| `<ins>`Sujet`</ins>` | `<ins>`Définition`</ins>`                                                                                                                                                 |
+| Sujet | Définition                                                                                                                                               |
 | :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | *VoIP                    | « Voice Over Internet Protocol », permet la transmission de la voix par internet.                                                                                            |
 | *IETF                    | Ils produisent la plupart des nouveaux standards d’Internet.                                                                                                                  |

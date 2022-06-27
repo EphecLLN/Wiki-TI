@@ -3,13 +3,10 @@ layout: default
 title: Wireshark
 parent: Réseaux
 ---
-[*]: ColoringRules](https://wiki.wireshark.org/ColoringRules),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)
-      Résumé : guide sur les la coloration
-      Avis sur la ressource : concis et donne des exemples utiles
 
 # Wireshark
 
-## Wireshark ? C'est quoi ? [^1][^2][^3][^4]
+## Wireshark ? C'est quoi ? [^2] [^4]
 
 Wireshark est un analyseur de paquets réseau créé en 1998 par Gerald Combs. C'est un logiciel qui permet d'analyser un réseau et de récupérer tous les paquets (un "paquet" est un message d’un des nombreux protocoles réseau) y passant pour ensuite le décomposer et le traduire en données interprétables par des humains.
 Wireshark est utilisé notamment pour :
@@ -23,7 +20,7 @@ Wireshark est utilisé notamment pour :
 Aujourd’hui que ce soient des agences gouvernementales, de grandes entreprises ou bien des écoles, tout le monde utilise Wireshark. Car bien qu’il existe des alternatives sur le marché (comme tcpdump ou cloudShark qui sont les principaux concurrents) c’est bien Wireshark qui est le plus populaire et ce grâce à ses très nombreux filtres , ses fonctionnalités variées et le nombres de protocoles que ce dernier peut interpréter (actuellement 1515 selon Wikipédia [^2]).
 Wireshark est disponible sur tous les OS et une version en ligne de commande, nommé Tshark, existe aussi.
 
-## Fonctionnalités : [^1][^2][^3][^5]
+## Fonctionnalités : [^2] [^5]
 
 Voici une liste de fonctionnalités non exhaustive de Wireshark mais suffisante pour commencer.
 
@@ -68,7 +65,7 @@ De plus, vous pouvez, dans le packet list, ne faire apparaitre que les paquets u
 
 Ici, vous retrouverez le paquet brut au format hexadécimal ou binaire (click droit -> ... comme bits) avec une traduction au format ASCII. Si vous cliquez sur un bit cela sélectionnera dans le packet détails ce à quoi il correspond (et vice versa).
 
-### Les filtres : [^6][^7]
+### Les filtres : [^7]
 
 Il existe deux types de filtre dans Wireshark : les filtres de capture et les filtres d'affichage. Le premier se met avant une capture et permet de ne capturer que ce qui nous intéresse et de réduire la taille du fichier de capture. Le second lui s'applique après une capture et ne fait que cacher les paquets qui ne nous intéressent pas.
 
@@ -103,7 +100,7 @@ Pour appliquer un filtre de capture, entrez, le filtre ici :
 Si vous souhaitez n'afficher que les paquets qui correspondent à deux filtres, utiliser le mot clé : `and` ou `&&`
 Si vous souhaitez n'afficher que les paquets qui correspondent à deux filtres, utiliser le mot clé : `or` ou `||`
 
-##### Exemples utiles (trouver ici [^7])
+##### Exemples utiles (trouvés ici [^7])
 
 Pour n'afficher que les paquets possédant un protocole :
 `TCP`
@@ -125,30 +122,33 @@ Vous pouvez ainsi remarquer qu'il est possible d'importer ou d'exporter des règ
 
 ## Bibliographie
 
-[^1]: * [Wireshark User’s Guide](https://www.wireshark.org/docs/wsug_html_chunked/), auteur inconnu, date de création inconnu, consulté le (24/05/2022)
+[^1]: [Wireshark User’s Guide](https://www.wireshark.org/docs/wsug_html_chunked/), auteur inconnu, date de création inconnu, consulté le (24/05/2022)
          Résumé : documentation officielle de Wireshark
          Avis sur la ressource : clair et très complet malgré un design un peu rebutant
     
-[^2]: * [Wireshark](https://fr.wikipedia.org/wiki/Wireshark), wikipedia, consulté le (24/05/2022)
+[^2]: [Wireshark](https://fr.wikipedia.org/wiki/Wireshark), wikipedia, consulté le (24/05/2022)
          Résumé : page Wikipédia Wireshark
          Avis sur la ressource : très peu complète mais donnes quelques informations de bases
     
-[^3]: * [Comment utiliser Wireshark: tutoriel complet + astuces](https://www.varonis.com/fr/blog/comment-utiliser-wireshark), Jeff Petters, 12 mai 2021, consulté le (24/05/2022)
+[^3]: [Comment utiliser Wireshark: tutoriel complet + astuces](https://www.varonis.com/fr/blog/comment-utiliser-wireshark), Jeff Petters, 12 mai 2021, consulté le (24/05/2022)
          Résumé : petit guide concis sur wireshark
          Avis sur la ressource : petit guide concis mais clair et agréable à lire
     
-[^4]: * [Network traffic analysis for IR: Alternatives to Wireshark](https://resources.infosecinstitute.com/topic/network-traffic-analysis-for-ir-alternatives-to-wireshark/), Patrick Mallory, 12 novembre 2019, consulté le (24/05/2022)
+[^4]: [Network traffic analysis for IR: Alternatives to Wireshark](https://resources.infosecinstitute.com/topic/network-traffic-analysis-for-ir-alternatives-to-wireshark/), Patrick Mallory, 12 novembre 2019, consulté le (24/05/2022)
          Résumé : alternatives à Wireshark
          Avis sur la ressource : présente bien les alternatives
     
-[^5]: * [How to Use Wireshark: A Complete Tutorial](https://www.lifewire.com/wireshark-tutorial-4143298),  Scott Orgera, 8 juillet 2020, consulté le (24/05/2022)
+[^5]: [How to Use Wireshark: A Complete Tutorial](https://www.lifewire.com/wireshark-tutorial-4143298),  Scott Orgera, 8 juillet 2020, consulté le (24/05/2022)
          Résumé : autre guide sur wireshark
          Avis sur la ressource : très clair mais trop court
     
-[^6]: * [CaptureFilters](https://wiki.wireshark.org/CaptureFilters),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)
+[^6]: [CaptureFilters](https://wiki.wireshark.org/CaptureFilters),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)
          Résumé : guide sur les filtres de captures
          Avis sur la ressource : concis et donne des exemples utiles
     
-[^7]: * [DisplayFilters](https://wiki.wireshark.org/DisplayFilters),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)
+[^7]: [DisplayFilters](https://wiki.wireshark.org/DisplayFilters),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)
          Résumé : guide sur les filtres d'affichage
          Avis sur la ressource : concis et donne des exemples utiles
+[^8]: [ColoringRules](https://wiki.wireshark.org/ColoringRules),  auteur inconnu, date de création inconnu, consulté le (24/05/2022)
+      Résumé : guide sur les la coloration
+      Avis sur la ressource : concis et donne des exemples utiles
