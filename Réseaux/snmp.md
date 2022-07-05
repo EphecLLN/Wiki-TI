@@ -8,6 +8,9 @@ parent: Réseaux
 
 SNMP est un protocole de monitoring. Il permet de gérer et voir l'état des appareils d'un réseau comme des imprimantes, routers, modems, switchs et ordinateurs de bureau. SNMP est donc très utile pour détecter les pannes, réduire le temps d'intervention et analyser l'utilisation des ressources.
 
+SNMP est apparu en 1988 et a été développé par un groupe de collaborateur avec le soutien de OSI/IETF/NSF. C'est un protocol de couche OSI Application et passe par les port 161 et 162 ou 10161 et 10162 en sécurisé.
+
+
 ## Fonctionnement
 
 SNMP organise le monitoring du réseau par l'intermédiaire d'un serveur de supervision (monitoring server) appelé sobrement le superviseur. Pour que le superviseur puisse collecter des informations sur l'état des appareils du réseau il faut faire tourner un processus en arrière plan sur les machines à superviser. Ce processus deamon est appelé un agent.
@@ -22,11 +25,11 @@ C'est ce qui permet une supervision active du réseau. Le superviseur envoi rég
 
 * Les Traps
 
-C'est ce qui permet une supervision passive du réseau. Lorsqu'un évènement prédéfini ce passe, l'agent envoi des informations au superviseur. Par exemple on peut définir une règle tel que si un port ethernet d'un switch est débranché, l'agent envoi une alerte au superviseur.
+C'est ce qui permet une supervision passive du réseau. Lorsqu'un évènement prédéfini ce passe, l'agent envoi des informations au superviseur. Par exemple on peut définir une règle tel que si un port ethernet d'un switch est débranché, l'agent envoi une alerte au superviseur. Les Traps passent par le port 162.
 
-Pour savoir quelles données sont accéssibles par le superviseur, les agents stockent des variables (appelées OID) dans une base de données (appelée MIB).
 
 ### L'agent stocke sur son hôte différentes informations :
+Pour savoir quelles données sont accéssibles par le superviseur, les agents stockent des variables (appelées OID) dans une base de données (appelée MIB).
 
 * MIB (Management Information Base) Base de donnée des info de supervision
 
@@ -60,12 +63,9 @@ La version SNMPv3 ajoute enfin de la sécurité au protocol grâce à plusieurs 
 
 
 ## Bibliographie
-* [Nom de la ressource](lien vers la ressource), Auteur, Date de création, consulté le (date consultation)
-   - Résumé : ...
-   - Avis sur la ressource : ... 
 
-* https://www.youtube.com/watch?v=mqzb_4lz_gs
-* https://www.frameip.com/snmp/
-* https://www.paessler.com/fr/it-explained/snmp
+* https://www.youtube.com/watch?v=mqzb_4lz_gs, Auteur: formip, Date de création: 18 septembre 2019, consulté le 5 juillet 2022
+* https://www.frameip.com/snmp/, Auteur: frameip, Date de création: avant le 23 juin 2018, consulté le 5 juillet 2022
+* https://www.paessler.com/fr/it-explained/snmp, Auteur: paessler, Date de création: Inconnue, consulté le 5 juillet 2022
 * Slides du cours d'Administration des réseaux(Théorie) 2021, Maxime Vanlerberghe
 * Slides du cours d'Administration des réseaux(Pratique) 2021, Ioura Batugowski
