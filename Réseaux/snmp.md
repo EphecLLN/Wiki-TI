@@ -59,13 +59,37 @@ La deuxième version ajoute la prise en charge des compteurs à 64 bits et l'ajo
 ### Version 3
 La version SNMPv3 ajoute enfin de la sécurité au protocol grâce à plusieurs mécanismes: l'authentification, le chiffrement, l'estampillage du temps et la gestion des permissions permettant de restreindre l'accès en lecture ou écriture du MIB.
 
+## Exemple de trame
+![Trame de requête SNMP](../Assets/Images/SNMP_trame_request.png "Trame de requête SNMP")
+On peut voir ci-dessus une requête SNMP qui se fait sous UDP. Les données envoyées sont :
+* La version SNMP utilisée : SNMPv1.
+* La communauté qui permet de faire des domaines d'administrations : public (valeur de base).
+* Le PDU (Packet Data Unit) qui contient toutes les données de la requête :
+  * Le type de la requête : get-request.
+  * L'id de la requête : 37.
+  * Le status d'erreur : noError
+  * L'index d'erreur: 0
+  * Les OIDs avec leur valeur
+
+Voici la réponse à la requête :
+![Trame de requête SNMP](../Assets/Images/SNMP_trame_response.png "Trame de requête SNMP")
 
 
 
 ## Bibliographie
 
 * https://www.youtube.com/watch?v=mqzb_4lz_gs, Auteur: formip, Date de création: 18 septembre 2019, consulté le 5 juillet 2022
+  * Résumé : Page Wikipedia de SNMP
+  * Avis : Article complet.
 * https://www.frameip.com/snmp/, Auteur: frameip, Date de création: avant le 23 juin 2018, consulté le 5 juillet 2022
+  * Résumé : Article sur le protocole SNMP
+  * Avis : Article très complet et vérifié par des pairs (grâce à la partie commentaire). Je le considère donc fiable au vu des différentes améliorations qu'il a eu depuis son écriture.
 * https://www.paessler.com/fr/it-explained/snmp, Auteur: paessler, Date de création: Inconnue, consulté le 5 juillet 2022
+  * Résumé : Article sur le protocole SNMP
+  * Avis : Article complet mais aucune indication des sources, ni de la date de rédaction.
 * Slides du cours d'Administration des réseaux(Théorie) 2021, Maxime Vanlerberghe
+  * Résumé : Cours sur l'administration de réseaux
+  * Avis : Cours qui passe le protocole SNMP de manière claire et concise. Permet de comprendre SNMP dans les grandes lignes. Fiable car cours donné en Bac 3 d'informatique.
 * Slides du cours d'Administration des réseaux(Pratique) 2021, Ioura Batugowski
+  * Résumé : Cours sur l'administration de réseaux
+  * Avis : Cours qui passe le protocole SNMP de manière claire et concise. Permet de comprendre SNMP dans les grandes lignes. Fiable car cours donné en Bac 3 d'informatique.
