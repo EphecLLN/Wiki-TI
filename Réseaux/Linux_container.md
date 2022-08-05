@@ -1,6 +1,6 @@
 ---
 layout: default
-title:Conteneurs Linux
+title: Conteneurs Linux
 parent: Réseaux
 ---
 # Conteneurs Linux
@@ -40,7 +40,7 @@ Ce dernier peut donc être exécuté sans erreurs peu importe l'environnement
 
 ## Les technologies de conteneurs Linux [^3]
 
-Les conteneurs Linux utilise une API du kernel linux cette dernière utilise les "cgroups" et d'autreS technologieS de 
+Les conteneurs Linux utilise une API du kernel linux cette dernière utilise les "cgroups" et d'autres technologies de 
 cloisonnement de "name space" pour séparer le système hôte du conteneur.  
 
 Plusieurs outils sont développés et maintenus par Canonical affin de faciliter l'utilisation des conteneurs Linux. 
@@ -53,6 +53,21 @@ Canonical mais est obsolete)
 LXD est l'interface de nouvelle génération celle-ci permet de gérer les conteneurs Linux et les machines virtuelles; de plus
 elle utilise le format d'image Linux. 
 
+## Cgroups
+cgroups ou control-groups est une fonctionalité du kernel de Linux permetant d'isoler les prossesus l'un de l'autre.
+Les cgroups permetent de controler l'acces a la RAM, les prossesseurs, le Disque et les O/I pour chaque prossecus.
+Il permetent aussi de prioriser un prosses par rapport à un autre, de monitorer l'utilisation de ressources des prossessus et 
+peuvent aussi limiter l'acces à certaines ressources comme la memoire ou le disque.
+
+
+## Docker:
+Docker est l'outil responsable de la popularisation des conteneurs, avant Docker seuls les informaticiens très experimentés 
+utilisaient les conteneurs Linux, la complexité de configaration les rendait en effet inaccessibles à la majorité. 
+Docker a revolutionner le monde de la virtualisation en apportant des outils permetant de créer et gérer facilement des conteurs Linux.
+Pour cela Docker étend les conteneurs linux en leurs ajoutant une API de haut niveau. Cette API utilise les cgroups et le noyaux Linux.
+
+
+ 
 ## Bibliographie
 
 * [^1]: "[LXC — Wikipédia](https://fr.wikipedia.org/w/index.php?title=LXC&oldid=184410394)". Fr.Wikipedia.Org, 2008, Accessed 3 June 2022.
@@ -68,4 +83,8 @@ elle utilise le format d'image Linux.
 * [^3]: "[Linux Containers](https://linuxcontainers.org/)". Linuxcontainers.Org, 2022. Accessed 3 June 2022.
 
        **Résumé** : Presente les differents technologie de conteur linux
-       **Avis sur la ressource** : Site des developeur des technologie LXC, LXD, LXFS, DistroBuilder. 
+       **Avis sur la ressource** : Site des developeur des technologie LXC, LXD, LXFS, DistroBuilder donc probalement fiable au vu de la nature open source de ces projet. 
+* [^4]: "[Cgroups — Wikipédia](https://fr.wikipedia.org/w/index.php?title=Cgroups&oldid=189395385)". Retrieved 4 August 2022.
+
+       **Résumé** : Explique le fonctionement des CGroups
+       **Avis sur la ressource** : Page Wikipedia tres complete. 
