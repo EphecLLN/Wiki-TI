@@ -16,9 +16,10 @@ Visioconférence est aussi la combinaison de 2 techniques :
 
 - <b>La conférence multipoints ou conférence à plusieurs :</b> permettant d'effectuer une réunion avec plus de 2 terminaux
 
-##### Figure 1. certains protocoles
+##### Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
 
+##### Figure 2. certains protocoles
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659871794-protocoles.png" width="800" height="350"> 
 
 - H.320:
