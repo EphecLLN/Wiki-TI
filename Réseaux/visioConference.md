@@ -30,5 +30,8 @@ C'est un protocole pour réseau à commutation de circuits qui inclut ses mécan
 - ### Protocole SIP
 C'est un protocole réseau permettant de connecter des applications clientes de différents fournisseurs. SIP a remplacé H.323 et est utilisé dans la visioconférence et la téléphonie IP.
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659879761-session-initiation-protocol.png" width="800" height="350">
+<<<<<<< HEAD
 
 ## Bibliographie
+=======
+>>>>>>> 5c46f46f1d63f790bfd30b33352ee71395632bae
