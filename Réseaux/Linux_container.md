@@ -1,23 +1,23 @@
 ---
-layout: default
-title: Conteneurs Linux
-parent: Réseaux
+layout : default
+title : Conteneurs Linux
+parent : Réseaux
 ---
 # Conteneurs Linux
 
 ## Un Conteneur qu'est-ce que c'est ? [^1]
 Le mot conteneur (container en anglais) désigne plusieurs objets différents en informatique, dans notre cas ce dernier désigne un 
 environnement d'exécution virtualisé. Un conteneur Linux (LXC) permet de faire tourner un programme sous Linux sans devoir
-tenir compte de l'environnement
+tenir compte de l'environnement.
 
 ## Quelle est la différence entre un conteneur Linux et une machine virtuel ? [^2]
 Lorsque l'on virtualise un environment, on crée généralement une machine virtuelle. Pour cela le système d'exploitation
 exécute un programme qui est chargé de virtualiser tous les composants de la machine virtuelle (VM). Ce dernier alloue des 
 ressources à chaque composant de la VM, Il réserve une partie des cœurs du processeur de l'hôte, une partie de la ram,
-du disque dur ...  
+du disque dur, ect ...  
 
-La VM dés son démarrage aura accès à toutes ces ressources et elles lui seront entièrement réservées. De plus chaque VM 
-possède son systeme d'exploitation complet.
+La VM dès son démarrage aura accès à toutes ces ressources et elles lui seront entièrement réservées. De plus chaque VM 
+possède son système d'exploitation complet.
 Contrairement à une machine virtuelle un conteneur Linux lui n'a pas de système d'exploitation complet. Il partage son 
 noyau (kernel) avec son hôte et les autres conteneurs. Cette différence majeure permet au conteneur d'allouer et de libérer 
 des ressources à chaud. En effet vu qu'il n'y a qu'un seul kernel en charge des ressources ces dernières peuvent simplement 
@@ -30,13 +30,15 @@ d'accéder au "file system" de l'hôte (Il est cependant possible de créer des 
 Contrairement à une VM qui permet d'installer n'importe quel système d'exploitation (du moment que ce dernier est compatible
 avec les composants virtuels), dans un conteneur Linux seul un système d'exploitation Linux peu être installé. 
 Cela est dû au partage de kernel (Linux désigne le kernel, il existe beaucoup de systèmes d'exploitation qui l'utilisent).
+Cependant, un conteneur peu utiliser une distribution Linux different de l'hôte les packages étant. 
 
 ## Pourquoi utiliser un conteneur Linux ? 
-Grâce à leur absence de noyaux dédié un conteneur Linux sera beaucoup plus léger qu'une machine virtuelle.
-Tout l'intérêt des conteneurs est revelé lorsque l'on désire exécuter un programme (conçu pour Linux) de manière fiable sur plusieurs 
+Grâce à leur absence de noyaux dédiée un conteneur Linux sera beaucoup plus léger qu'une machine virtuelle.
+Tout l'intérêt des conteneurs est révélé lorsque l'on désire exécuter un programme (conçu pour Linux) de manière fiable sur plusieurs 
 machines différentes.
 Le conteneur agira comme une capsule enfermant toutes les configurations nécessaires au programme. 
-Ce dernier peut donc être exécuté sans erreurs peu importe l'environnement
+Ce dernier peut donc être exécuté sans erreurs peu importe l'environnement.
+Un autre avantage est de permettre l'exécution en parallel de plusieurs instances d'un meme programme avec une même configuration.
 
 ## Les technologies de conteneurs Linux [^3]
 
@@ -50,24 +52,32 @@ LXC est une interface permettant aux utilisateurs de gérer simplement des conte
 Canonical mais est obsolete)
 
 ### LXD
-LXD est l'interface de nouvelle génération celle-ci permet de gérer les conteneurs Linux et les machines virtuelles; de plus
+LXD est l'interface de nouvelle génération celle-ci permet de gérer les conteneurs Linux et les machines virtuelles ; de plus
 elle utilise le format d'image Linux. 
 
 ## Cgroups
-cgroups ou control-groups est une fonctionalité du kernel de Linux permetant d'isoler les prossesus l'un de l'autre.
-Les cgroups permetent de controler l'acces a la RAM, les prossesseurs, le Disque et les O/I pour chaque prossecus.
-Il permetent aussi de prioriser un prosses par rapport à un autre, de monitorer l'utilisation de ressources des prossessus et 
-peuvent aussi limiter l'acces à certaines ressources comme la memoire ou le disque.
+Cgroups ou control-groups est une fonctionnalité du kernel de Linux permettant d'isoler les processus l'un de l'autre.
+Les cgroups permettent de controler l'accès à la RAM, les processeurs, le Disque et les O/I pour chaque processus.
+Ils permettent aussi de prioriser un processus par rapport à un autre, de monitorer l'utilisation de ressources des processus et 
+peuvent aussi limiter l'accès à certaines ressources comme la memoire ou le disque.
 
 
 ## Docker:
-Docker est l'outil responsable de la popularisation des conteneurs, avant Docker seuls les informaticiens très experimentés 
-utilisaient les conteneurs Linux, la complexité de configaration les rendait en effet inaccessibles à la majorité. 
-Docker a revolutionner le monde de la virtualisation en apportant des outils permetant de créer et gérer facilement des conteurs Linux.
-Pour cela Docker étend les conteneurs linux en leurs ajoutant une API de haut niveau. Cette API utilise les cgroups et le noyaux Linux.
+Docker est l'outil responsable de la popularisation des conteneurs, avant Docker seuls les informaticiens très expérimentés 
+utilisaient les conteneurs Linux, la complexité de configuration les rendait en effet inaccessibles à la majorité.  
+Docker à révolutionner le monde de la virtualisation en apportant des outils permettant de créer et gérer facilement des conteurs Linux.
+Pour cela Docker étend les conteneurs linux en leurs ajoutant une API de haut niveau. Cette API utilise les Cgroups et les noyaux Linux.
 
+## Kubernetes, Docker Compose, Swarm.
+Une fois les LXC démocratisée grâce à docker des outils ont été créés afin de permettre la gestion automatique d'ensemble 
+de conteneurs. Les plus connus étant Kubernetes, Swarm et Docker compose.  
 
- 
+Swarm et Kubernetes sont tres similaire, ils permettent de gere automatiquement le deployment et l'arrêt de conteneur sur 
+plusieurs hôtes et de repartir la charge entre plusieurs conteneurs d'un meme service.
+Swarm faisant partie du docker engine et est donc plus intégré que kubernetes.  
+
+Docker Compose quant à lui est un outil permettant de gere un groupe de conteneur sur un meme hôte. 
+Docker compose fait aussi partie du docker engine.
 ## Bibliographie
 
 * [^1]: "[LXC — Wikipédia](https://fr.wikipedia.org/w/index.php?title=LXC&oldid=184410394)". Fr.Wikipedia.Org, 2008, Accessed 3 June 2022.
