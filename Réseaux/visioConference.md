@@ -50,7 +50,7 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Il est fonctionnel avec le IPv4 et IPv6
 
 ## Bibliographie:
-https://trueconf.com/video-conferencing-architecture.html
-https://fr.wikipedia.org/wiki/Visioconférence
-https://www.zdnet.fr/lexique-it/visioconference-une-definition-39928673.htm#:~:text=La%20visioconférence%2C%20ou%20vidéoconférence%20(synonyme,selon%20les%20options%20et%20licences.
-https://fr.acervolima.com/protocoles-de-visioconference/
+1. https://trueconf.com/video-conferencing-architecture.html
+2. https://fr.wikipedia.org/wiki/Visioconférence
+3. https://www.zdnet.fr/lexique-it/visioconference-une-definition-39928673.htm#:~:text=La%20visioconférence%2C%20ou%20vidéoconférence%20(synonyme,selon%20les%20options%20et%20licences.
+4. https://fr.acervolima.com/protocoles-de-visioconference/
