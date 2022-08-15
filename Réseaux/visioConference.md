@@ -7,9 +7,8 @@ parent: Réseaux
 # Les Protocoles de visioconférence
 
 ## Que signifie visioconférence  [[1]](https://fr.wikipedia.org/wiki/Visioconférence)
-##### Figure 1. Ex: visioconférence
-<img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
 
+La visioconférence est une solution de communication à distance sécurisée, via Internet, dans des points multiples, permettant l'échange visuel entre deux individus, ou plusieurs dizaines ou même des centaines ou des milliers de personnes, selon les options et les licences.
 Il est aussi appelé vidéoconférence, c'est la technique qui permer de voir et dialoguer avec son interlocuteur à travers un moyen numérique.
 
 Visioconférence est aussi la combinaison de 2 techniques :
@@ -17,6 +16,10 @@ Visioconférence est aussi la combinaison de 2 techniques :
 - <b>La visiophonie ou vidéotéléphonie :</b> qui est l'association de la téléphonie et de la télévision permettant aux utilisateurs de se voir pendant leur conversation téléphonique.
 
 - <b>La conférence multipoints ou conférence à plusieurs :</b> permettant d'effectuer une réunion avec plus de 2 terminaux
+
+##### Figure 1. Ex: visioconférence
+<img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
+
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659871794-protocoles.png" width="800" height="350"> 
 
