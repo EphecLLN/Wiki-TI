@@ -49,8 +49,6 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
 
- 
-
 ## Bibliographie:
 https://trueconf.com/video-conferencing-architecture.html
 https://fr.wikipedia.org/wiki/Visioconférence
