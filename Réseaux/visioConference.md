@@ -17,9 +17,10 @@ Visioconférence est aussi la combinaison de 2 techniques :
 
 - <b>La conférence multipoints ou conférence à plusieurs :</b> permettant d'effectuer une réunion avec plus de 2 terminaux
 
-##### Figure 1. Ex: visioconférence
+Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
-
+## Les différents types de prorocoles
+ 
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659871794-protocoles.png" width="800" height="350"> 
 
@@ -28,13 +29,27 @@ C'est un protocole pour réseau à commutation de circuits qui inclut ses mécan
 
 - ### Protocole H.323
  C'est un protocole de transfert de données avec une bande passante non garantie appliquée aux vidéoconférences personnelles et de groupe.
+ - Il a été conçu pa r l'UIT(Union internationale des télécommunication)
+ - Il utilise le langage informatique du binaire
+ - Assure des communications multimédias sur différents réseaux.
+ - il est très complexe, il est possible qu'il y ait des retards.
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659878808-h323.png" width="800" height="350">
+
+- ### Protocole H.239
 
 - ### Protocole SIP
 C'est un protocole réseau permettant de connecter des applications clientes de différents fournisseurs. SIP a remplacé H.323 et est utilisé dans la visioconférence et la téléphonie IP.
-<img src="http://image.noelshack.com/fichiers/2022/31/7/1659879761-session-initiation-protocol.png" width="800" height="350">
-<<<<<<< HEAD
+- Il a été conçu par l'IETF(Internet Engineering Task Force)
+- Il utilise le langage informatique ASCII
+- Il est très flexible et simple 
+- L'agent utilisateur et le serveur réseau constituent deux composantes fonctionnelles principales.
+- Permet de configurer, d'éditer et de mettre fin aux sessions multimédia ou aux appels.
+- Ressemble au protocole HTTP.
+- Il est fonctionnel avec le IPv4 et IPv6
+ 
 
-## Bibliographie
-=======
->>>>>>> 5c46f46f1d63f790bfd30b33352ee71395632bae
+## Bibliographie:
+https://trueconf.com/video-conferencing-architecture.html
+https://fr.wikipedia.org/wiki/Visioconférence
+https://www.zdnet.fr/lexique-it/visioconference-une-definition-39928673.htm#:~:text=La%20visioconférence%2C%20ou%20vidéoconférence%20(synonyme,selon%20les%20options%20et%20licences.
+https://fr.acervolima.com/protocoles-de-visioconference/
