@@ -19,8 +19,6 @@ Visioconférence est aussi la combinaison de 2 techniques :
 
 Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
-## Difference entre la visioConférence et le streaming video 
-
 ### Les différents types de prorocoles
  
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
@@ -48,9 +46,13 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Permet de configurer, d'éditer et de mettre fin aux sessions multimédia ou aux appels.
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
+## Streaming video
 
+### Difference entre la visioConférence et le streaming video 
 ## Bibliographie:
 1. https://trueconf.com/video-conferencing-architecture.html
 2. https://fr.wikipedia.org/wiki/Visioconférence
 3. https://www.zdnet.fr/lexique-it/visioconference-une-definition-39928673.htm#:~:text=La%20visioconférence%2C%20ou%20vidéoconférence%20(synonyme,selon%20les%20options%20et%20licences.
 4. https://fr.acervolima.com/protocoles-de-visioconference/
+5. https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html
+6. https://docplayer.fr/508783-Deploiement-de-la-visioconference-ip-dans-un-etablissement-etat-de-l-art-et-evolution-des-protocoles.html
