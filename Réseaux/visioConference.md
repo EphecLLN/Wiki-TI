@@ -130,7 +130,7 @@ Grâce à la vidéoconférence, les communications s'améliorent, la prise de d�
  - Avis : Bien detailler et bien complet avec les explications
  - Résume : Differentes protocole du streaming video
  
-7.[Autre liens](https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html)
+7. [Autre liens](https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html)
  - Auteur et date d'expédition : Inconnu , 15 février 2008
  - Date de consultation : 11 Aôut 2022
  - Avis : Bien detailler et moyennement complet mais avec une tres bonne explication
