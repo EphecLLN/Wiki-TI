@@ -77,8 +77,8 @@ est mieux défini comme un événement où plusieurs utilisateurs d'ordinateurs 
 ### 3.2 Streaming Video
 est un type de technologie multimédia qui offre du contenu vidéo et audio à un dispositif connecté à Internet. C’est un flux vidéo organiser par l’organisateur comme video sur youtube, Netflix etc.<bt>
 #### 3.2.1 Types de streaming video
- - Streaming en direct 
- - streaming video
+ - <b>Streaming en direct</b> : Le streaming en direct vous donne accès aux événements au moment où ils se produisent
+ - <b>streaming video</b> :
 #### 3.2.2 Les protocoles de streaming vidéo:
 -	HLS (HTTP Live Streaming): Ce protocole est compatible avec un large éventail d'appareils, navigateurs de bureau, téléviseurs intelligents, boîtes de décodage, appareils mobiles Android et iOS et même les lecteurs vidéo HTML5. Cela permet aux streamers d'atteindre une audience aussi large que possible.
 -	SRT (Secure Reliable Transport): est un autre protocole open source développé par le fournisseur de technologie de streaming Haivision, les principaux avantages pour lesquels SRT est connu sont la sécurité, la fiabilité, la compatibilité et le streaming à faible latence.
