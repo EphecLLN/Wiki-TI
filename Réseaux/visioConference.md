@@ -73,6 +73,7 @@ RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contr�
 
 ## 3 Difference entre la visioConférence et le streaming video 
 ### 3.1 VisioConférence
+est mieux défini comme un événement où plusieurs utilisateurs d'ordinateurs peuvent communiquer entre eux simultanément à l'aide de caméras sur Internet.
 ### 3.2 Streaming Video
 est un type de technologie multimédia qui offre du contenu vidéo et audio à un dispositif connecté à Internet. C’est un flux vidéo organiser par l’organisateur comme video sur youtube, Netflix etc.<bt>
 #### 3.2.1 Types de streaming video
