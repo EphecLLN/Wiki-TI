@@ -93,38 +93,38 @@ est un type de technologie multimédia qui offre du contenu vidéo et audio à u
 2. [Pourquoi la visioconférence ?](https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
  
  - Auteur et date d'expédition
- - Date de consultation
+ - Date de consultation : 27 juillet
  - Avis
  - Résume
  
 3. [Principaux protocoles](https://fr.acervolima.com/protocoles-de-visioconference/)
  
  - Auteur et date d'expédition
- - Date de consultation
+ - Date de consultation : 27 juillet
  - Avis
  - Résume
  
 4. [Differentes normes de visioConférence](https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
  
  - Auteur et date d'expédition
- - Date de consultation
+ - Date de consultation : 27 juillet
  - Avis
  - Résume
 5. [Difference entre la visioConférence et le streaming video](https://www.avast.com/fr-fr/c-what-is-streaming)
  
-  - Auteur et date d'expédition
- - Date de consultation
- - Avis
- - Résume
+ - Auteur et date d'expédition
+ - Date de consultation : 2 Aout 
+ - Avis : Les types de streaming sont bien expliqué
+ - Résume : 
  
 6. [Protocoles streaming video](https://www.cdnetworks.com/media-delivery-blog/video-streaming-protocols/)
  
-  - Auteur et date d'expédition
- - Date de consultation
- - Avis
- - Résume
+ - Auteur et date d'expédition : Inconnu , December 19, 2021
+ - Date de consultation : 8 Aôut 2022
+ - Avis : Bien detailler et bien complet avec les explications
+ - Résume : Differentes protocole du streaming video
  
- https://www.zdnet.fr/lexique-it/visioconference-une-definition-39928673.htm#:~:text=La%20visioconférence%2C%20ou%20vidéoconférence%20(synonyme,selon%20les%20options%20et%20licences.
-6. https://fr.acervolima.com/protocoles-de-visioconference/
-7. https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html
-8. https://docplayer.fr/508783-Deploiement-de-la-visioconference-ip-dans-un-etablissement-etat-de-l-art-et-evolution-des-protocoles.html
+7.Autre liens:
+ - https://fr.acervolima.com/protocoles-de-visioconference/
+ - https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html
+ - https://docplayer.fr/508783-Deploiement-de-la-visioconference-ip-dans-un-etablissement-etat-de-l-art-et-evolution-des-protocoles.html
