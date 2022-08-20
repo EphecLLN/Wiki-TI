@@ -95,7 +95,7 @@ est un type de technologie multimédia qui offre du contenu vidéo et audio à u
  - Auteur et date d'expédition
  - Date de consultation
  - Avis
- - Résum
+ - Résume
  
 3. [Principaux protocoles](https://fr.acervolima.com/protocoles-de-visioconference/)
  
@@ -111,7 +111,19 @@ est un type de technologie multimédia qui offre du contenu vidéo et audio à u
  - Avis
  - Résume
 5. [Difference entre la visioConférence et le streaming video](https://www.avast.com/fr-fr/c-what-is-streaming)
+ 
+  - Auteur et date d'expédition
+ - Date de consultation
+ - Avis
+ - Résume
+ 
 6. [Protocoles streaming video](https://www.cdnetworks.com/media-delivery-blog/video-streaming-protocols/)
+ 
+  - Auteur et date d'expédition
+ - Date de consultation
+ - Avis
+ - Résume
+ 
  https://www.zdnet.fr/lexique-it/visioconference-une-definition-39928673.htm#:~:text=La%20visioconférence%2C%20ou%20vidéoconférence%20(synonyme,selon%20les%20options%20et%20licences.
 6. https://fr.acervolima.com/protocoles-de-visioconference/
 7. https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html
