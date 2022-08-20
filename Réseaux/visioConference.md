@@ -19,15 +19,16 @@ Visioconférence est aussi la combinaison de 2 techniques :
 
 Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
-### Les différents types de prorocoles
+
+## Pourquoi la visioconférence ? [3]( https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
+La visioconférence est un vrai levier d’efficacité professionnel qui facilite les échanges entre les collaborateurs dans les entreprise multi sites.
+
+### Les principaux prorocoles de visioConférence
  
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
-<img src="http://image.noelshack.com/fichiers/2022/31/7/1659871794-protocoles.png" width="800" height="350"> 
+<img src="http://image.noelshack.com/fichiers/2022/33/6/1660971322-princproo.png" width="800" height="350"> 
 
-- #### Protocole H.320
-C'est un protocole pour réseau à commutation de circuits qui inclut ses mécanismes de signalisation et comment la voix, la vidéo et d'autres charges de lecture sont transmises sur ISDN(Integrated Service Digital)
-
-- ### Protocole H.323
+### Protocole H.323
  C'est un protocole de transfert de données avec une bande passante non garantie appliquée aux vidéoconférences personnelles et de groupe.
  - Il a été conçu pa r l'UIT(Union internationale des télécommunication)
  - Il utilise le langage informatique du binaire
@@ -35,9 +36,7 @@ C'est un protocole pour réseau à commutation de circuits qui inclut ses mécan
  - il est très complexe, il est possible qu'il y ait des retards.
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659878808-h323.png" width="800" height="350">
 
-- #### Protocole H.239
-
-- #### Protocole SIP
+#### Protocole SIP
 C'est un protocole réseau permettant de connecter des applications clientes de différents fournisseurs. SIP a remplacé H.323 et est utilisé dans la visioconférence et la téléphonie IP.
 - Il a été conçu par l'IETF(Internet Engineering Task Force)
 - Il utilise le langage informatique ASCII
@@ -46,8 +45,7 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Permet de configurer, d'éditer et de mettre fin aux sessions multimédia ou aux appels.
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
-## Streaming video
-
+ 
 ### Difference entre la visioConférence et le streaming video 
 ## Bibliographie:
 1. https://trueconf.com/video-conferencing-architecture.html
