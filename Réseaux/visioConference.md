@@ -84,8 +84,9 @@ est un type de technologie multimédia qui offre du contenu vidéo et audio à u
 -	SRT (Secure Reliable Transport): est un autre protocole open source développé par le fournisseur de technologie de streaming Haivision, les principaux avantages pour lesquels SRT est connu sont la sécurité, la fiabilité, la compatibilité et le streaming à faible latence.
 -	MPEG-PASH: est l'un des derniers protocoles de streaming, mis au point par le Moving Pictures Expert Group (MPEG), en alternative à la norme HLS.
 -	WebRTC : est un open source qui vise à offrir la diffusion en continu avec une latence en temps réel. Développé à l'origine pour les applications basées sur le chat et l'utilisation VoIP
-## Conclusion
-
+## Conclusion [[C]](https://cefre-uahb.fr.gd/LA-VISIOCONFERENCE.htm#:~:text=Une%20seule%20séance%20de%20visioconférence,la%20perte%20de%20temps%20supprimée.)
+Une seule séance de visioconférence permet d'éviter les appels téléphoniques, les courriels, les télécopies, les envois de courrier ou les pires déplacements.
+Grâce à la vidéoconférence, les communications s'améliorent, la prise de décisions est facilitée, la productivité augmente, les coûts diminuent et le temps perdu est éliminé.
 ## Bibliographie:
 1. [Que signifie visioconférence](https://trueconf.com/video-conferencing-architecture.html)
  
