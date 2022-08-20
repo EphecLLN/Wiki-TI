@@ -28,7 +28,7 @@ La visioconférence est un vrai levier d’efficacité professionnel qui facilit
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
 <img src="http://image.noelshack.com/fichiers/2022/33/6/1660971322-princproo.png" width="800" height="350"> 
 
-### Protocole H.323
+#### Protocole H.323
  C'est un protocole de transfert de données avec une bande passante non garantie appliquée aux vidéoconférences personnelles et de groupe.
  - Il a été conçu pa r l'UIT(Union internationale des télécommunication)
  - Il utilise le langage informatique du binaire
@@ -45,7 +45,7 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Permet de configurer, d'éditer et de mettre fin aux sessions multimédia ou aux appels.
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
- 
+### Différentes normes pour la visioconférence [4]( https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
 ### Difference entre la visioConférence et le streaming video 
 ## Bibliographie:
 1. https://trueconf.com/video-conferencing-architecture.html
