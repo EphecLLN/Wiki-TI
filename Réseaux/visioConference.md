@@ -20,10 +20,10 @@ Visioconférence est aussi la combinaison de 2 techniques :
 Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
 
-## 2. Pourquoi la visioconférence ? [3]( https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
+## 2. Pourquoi la visioconférence ? [2]( https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
 La visioconférence est un vrai levier d’efficacité professionnel qui facilite les échanges entre les collaborateurs dans les entreprise multi sites.
 
-### 2.1 Les principaux prorocoles de visioConférence
+### 2.1 Les principaux prorocoles de visioConférence [3](https://fr.acervolima.com/protocoles-de-visioconference/)
  
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
 <img src="http://image.noelshack.com/fichiers/2022/33/6/1660971322-princproo.png" width="800" height="350"> 
@@ -67,11 +67,11 @@ RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contr�
 - H.263 : Ce standard est devenu obsolète, sa succession a été assurée par le standard H.263 de meilleure qualité pour VoIP ; pour le codage vidéo pur, nous préférons le standard H.264.
 - H.265 : H265 ou encore HEVC (High Efficiency Video Coding) un nouveau standard dont l'objectif est d'améliorer de manière significative la compression vidéo, il est en mesure de transmettre la même vidéo que son prédécesseur (H264) pour une vitesse deux fois moins. Il supporte toutes les définitions d’images usuelles et des cadences d’images plus élevées.
 #### Données :
-- T.123 : Audiovisual Protocol Stacks
-- T.124 : Generic Conference Control
-- T.125 : Multipoint Communication Service
+- T.123 : Audiovisual Protocol Stacks, piles de protocoles de données spécifiques au réseau pour les conférences multimédias
+- T.124 : Contrôle de conférence générique
+- T.125 : Service de communication multipoint
 
-## 3 Difference entre la visioConférence et le streaming video 
+## 3 Difference entre la visioConférence et le streaming video [5](https://www.avast.com/fr-fr/c-what-is-streaming)
 ### 3.1 VisioConférence
 est mieux défini comme un événement où plusieurs utilisateurs d'ordinateurs peuvent communiquer entre eux simultanément à l'aide de caméras sur Internet.
 ### 3.2 Streaming Video
@@ -130,7 +130,9 @@ Grâce à la vidéoconférence, les communications s'améliorent, la prise de d�
  - Avis : Bien detailler et bien complet avec les explications
  - Résume : Differentes protocole du streaming video
  
-7.Autre liens:
- - https://fr.acervolima.com/protocoles-de-visioconference/
- - https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html
+7.[Autre liens](https://www.cisco.com/c/fr_ca/support/docs/quality-of-service-qos/qos-packet-marking/21662-video-qos.html)
+ - Auteur et date d'expédition : Inconnu , 15 février 2008
+ - Date de consultation : 11 Aôut 2022
+ - Avis : Bien detailler et moyennement complet mais avec une tres bonne explication
+ - Résume : Explication sur l'implémentation H.323
  - https://docplayer.fr/508783-Deploiement-de-la-visioconference-ip-dans-un-etablissement-etat-de-l-art-et-evolution-des-protocoles.html
