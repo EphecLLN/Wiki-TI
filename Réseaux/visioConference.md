@@ -46,7 +46,40 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
 ### Différentes normes pour la visioconférence [4]( https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
+
+#### Contrôle et la signalisation :
+H.225 : il est en en système de communications, est une sous-norme de H.323 [I]( https://fr.wikipedia.org/wiki/H.225).
+Ses objectifs :
+- Gestion d’un appel : Ce système s'appuie sur le processus de préparation des appels ISDN (Intergrated Services Digital Network)
+- Enregistrement, admission et status : RAS qui est le premier canal de signalisation et utilise le UDP comme couche de transport 
+H.245 : il a été mise en place pour les canaux des médias par H.323, il est ouvert dès le départ à la négociation de codecs communs, veiller à toutes les fonctions de gestion des flux de médias.
+RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contrôle des flux RTP, permettant de transmettre des informations de base sur les participants d'une session, ainsi que sur la qualité de service.[II]( https://fr.wikipedia.org/wiki/Real-time_Transport_Control_Protocol )
+#### Voix : 
+- G.726 : 
+- G.728 : 
+- G.729 : 
+#### Video :
+- H.261 : 
+- H.263 :
+- H.265 : H265 ou encore HEVC (High Efficiency Video Coding) un nouveau standard dont l'objectif est d'améliorer de manière significative la compression vidéo, il est en mesure de transmettre la même vidéo que son prédécesseur (H264) pour une vitesse deux fois moins. Il supporte toutes les définitions d’images usuelles et des cadences d’images plus élevées.
+#### Données :
+- T.123 : 
+- T.124 : 
+- T.125 :
+
 ### Difference entre la visioConférence et le streaming video 
+#### VisioConférence
+#### Streaming Video
+est un type de technologie multimédia qui offre du contenu vidéo et audio à un dispositif connecté à Internet. C’est un flux vidéo organiser par l’organisateur comme video sur youtube, Netflix etc.<bt>
+#### Types de streaming video
+ - Streaming en direct 
+ - streaming video
+#### Les protocoles de streaming vidéo:
+-	HLS
+-	SRT
+-	MPEG
+-	WebRTC
+
 ## Bibliographie:
 1. https://trueconf.com/video-conferencing-architecture.html
 2. https://fr.wikipedia.org/wiki/Visioconférence
