@@ -48,20 +48,23 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - 
 ### 2.2 Différentes normes pour la visioconférence [4]( https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
 
+<img src="http://image.noelshack.com/fichiers/2022/33/6/1660987249-couchepro.png" width="800" height="350">
+
+
 #### Contrôle et la signalisation :
-H.225 : il est en en système de communications, est une sous-norme de H.323 [I]( https://fr.wikipedia.org/wiki/H.225).
+H.225 : il est en système de communications, est une sous-norme de H.323 [I]( https://fr.wikipedia.org/wiki/H.225).<br>
 Ses objectifs :
 - Gestion d’un appel : Ce système s'appuie sur le processus de préparation des appels ISDN (Intergrated Services Digital Network)
 - Enregistrement, admission et status : RAS qui est le premier canal de signalisation et utilise le UDP comme couche de transport 
 H.245 : il a été mise en place pour les canaux des médias par H.323, il est ouvert dès le départ à la négociation de codecs communs, veiller à toutes les fonctions de gestion des flux de médias.
 RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contrôle des flux RTP, permettant de transmettre des informations de base sur les participants d'une session, ainsi que sur la qualité de service.[II]( https://fr.wikipedia.org/wiki/Real-time_Transport_Control_Protocol )
 #### Voix : 
-- G.726 : 
-- G.728 : 
-- G.729 : 
+- G.726 : C'est une norme de compression audio de l'UIT-T, il est utilisée en telephonie fixe, Il utilise une "modulation impulsive et l'encodage différentiel adaptatif" (MICDA) à 40, 32, 24 ou 16 kbit/s
+- G.728 : Ancienne norme decompression audio, Recommandation relative aux protocoles H.320 et H.323 sur l'encodage sonore pour la téléphonie et la vidéoconférence.
+- G.729 : Norme qui est sous recommandation, définit l'encodage vocal 8 kbit/s par prédiction linéaire avec excitation par séquences encodées avec structure algébrique conjuguée.
 #### Video :
-- H.261 : 
-- H.263 :
+- H.261 : C'est une évolution de la norme,Elle fut notamment popularisée par la console de jeu PlayStation de Sony, qui l'intégra entièrement dans son moteur de décompression de données
+- H.263 : Ce standard est devenu obsolète, sa succession a été assurée par le standard H.263 de meilleure qualité pour VoIP ; pour le codage vidéo pur, nous préférons le standard H.264.
 - H.265 : H265 ou encore HEVC (High Efficiency Video Coding) un nouveau standard dont l'objectif est d'améliorer de manière significative la compression vidéo, il est en mesure de transmettre la même vidéo que son prédécesseur (H264) pour une vitesse deux fois moins. Il supporte toutes les définitions d’images usuelles et des cadences d’images plus élevées.
 #### Données :
 - T.123 : 
@@ -85,37 +88,38 @@ est un type de technologie multimédia qui offre du contenu vidéo et audio à u
 ## Bibliographie:
 1. [Que signifie visioconférence](https://trueconf.com/video-conferencing-architecture.html)
  
- - Auteur et date d'expédition
- - Date de consultation
- - Avis
- - Résume
+ - Auteur et date d'expédition : Inconnu
+ - Date de consultation : 20 Juillet 2022
+ - Avis : l'explicaion est un peu court
+ - Résume : Explication sur visioConférence et ses protocoles
  
 2. [Pourquoi la visioconférence ?](https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
  
- - Auteur et date d'expédition
- - Date de consultation : 27 juillet
- - Avis
- - Résume
+ - Auteur et date d'expédition : Inconnue, 2021
+ - Date de consultation : 27 juillet 2O22
+ - Avis : Le Résumer trés courte
+ - Résume: Explication des avantages de la visioConférence 
  
 3. [Principaux protocoles](https://fr.acervolima.com/protocoles-de-visioconference/)
  
- - Auteur et date d'expédition
- - Date de consultation : 27 juillet
- - Avis
- - Résume
+ - Auteur et date d'expédition : Jack Sparrow, 5 juillet de 2022
+ - Date de consultation : 27 juillet 2022
+ - Avis : très court explication
+ - Résume : explication des principaux protocoles de la visioconférence
  
 4. [Differentes normes de visioConférence](https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
  
  - Auteur et date d'expédition
- - Date de consultation : 27 juillet
- - Avis
- - Résume
+ - Date de consultation : 27 juillet 2022
+ - Avis : Explications sont bien détailler mais peu de contenu
+ - Résume : Explication sur les normes de visioConférence
+ 
 5. [Difference entre la visioConférence et le streaming video](https://www.avast.com/fr-fr/c-what-is-streaming)
  
- - Auteur et date d'expédition
- - Date de consultation : 2 Aout 
+ - Auteur et date d'expédition : Alfred Poor, le 28 septembre 2019
+ - Date de consultation : 2 Aout 2022
  - Avis : Les types de streaming sont bien expliqué
- - Résume : 
+ - Résume : Explication et comparaison de visioconférence et streaming vidéo
  
 6. [Protocoles streaming video](https://www.cdnetworks.com/media-delivery-blog/video-streaming-protocols/)
  
