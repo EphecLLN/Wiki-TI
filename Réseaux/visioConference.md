@@ -6,7 +6,7 @@ parent: Réseaux
 
 # Les Protocoles de visioconférence
 
-## Que signifie visioconférence  [[1]](https://fr.wikipedia.org/wiki/Visioconférence)
+## 1. Que signifie visioconférence  [[1]](https://fr.wikipedia.org/wiki/Visioconférence)
 
 La visioconférence est une solution de communication à distance sécurisée, via Internet, dans des points multiples, permettant l'échange visuel entre deux individus, ou plusieurs dizaines ou même des centaines ou des milliers de personnes, selon les options et les licences.
 Il est aussi appelé vidéoconférence, c'est la technique qui permer de voir et dialoguer avec son interlocuteur à travers un moyen numérique.
@@ -20,10 +20,10 @@ Visioconférence est aussi la combinaison de 2 techniques :
 Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
 
-## Pourquoi la visioconférence ? [3]( https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
+## 2. Pourquoi la visioconférence ? [3]( https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
 La visioconférence est un vrai levier d’efficacité professionnel qui facilite les échanges entre les collaborateurs dans les entreprise multi sites.
 
-### Les principaux prorocoles de visioConférence
+### 2.1 Les principaux prorocoles de visioConférence
  
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
 <img src="http://image.noelshack.com/fichiers/2022/33/6/1660971322-princproo.png" width="800" height="350"> 
@@ -45,7 +45,8 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Permet de configurer, d'éditer et de mettre fin aux sessions multimédia ou aux appels.
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
-### Différentes normes pour la visioconférence [4]( https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
+- 
+### 2.2 Différentes normes pour la visioconférence [4]( https://www.dwpro.fr/blog/visioconference/normes-visioconference#:~:text=De%20plus%2C%20la%20norme%20H,les%20systèmes%20de%20visioconférence%204K.)
 
 #### Contrôle et la signalisation :
 H.225 : il est en en système de communications, est une sous-norme de H.323 [I]( https://fr.wikipedia.org/wiki/H.225).
@@ -67,18 +68,19 @@ RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contr�
 - T.124 : 
 - T.125 :
 
-### Difference entre la visioConférence et le streaming video 
-#### VisioConférence
-#### Streaming Video
+## 3 Difference entre la visioConférence et le streaming video 
+### 3.1 VisioConférence
+### 3.2 Streaming Video
 est un type de technologie multimédia qui offre du contenu vidéo et audio à un dispositif connecté à Internet. C’est un flux vidéo organiser par l’organisateur comme video sur youtube, Netflix etc.<bt>
-#### Types de streaming video
+#### 3.2.1 Types de streaming video
  - Streaming en direct 
  - streaming video
-#### Les protocoles de streaming vidéo:
+#### 3.2.2 Les protocoles de streaming vidéo:
 -	HLS
 -	SRT
 -	MPEG
 -	WebRTC
+## Conclusion
 
 ## Bibliographie:
 1. https://trueconf.com/video-conferencing-architecture.html
