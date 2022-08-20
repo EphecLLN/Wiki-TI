@@ -67,9 +67,9 @@ RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contr�
 - H.263 : Ce standard est devenu obsolète, sa succession a été assurée par le standard H.263 de meilleure qualité pour VoIP ; pour le codage vidéo pur, nous préférons le standard H.264.
 - H.265 : H265 ou encore HEVC (High Efficiency Video Coding) un nouveau standard dont l'objectif est d'améliorer de manière significative la compression vidéo, il est en mesure de transmettre la même vidéo que son prédécesseur (H264) pour une vitesse deux fois moins. Il supporte toutes les définitions d’images usuelles et des cadences d’images plus élevées.
 #### Données :
-- T.123 : 
-- T.124 : 
-- T.125 :
+- T.123 : Audiovisual Protocol Stacks
+- T.124 : Generic Conference Control
+- T.125 : Multipoint Communication Service
 
 ## 3 Difference entre la visioConférence et le streaming video 
 ### 3.1 VisioConférence
@@ -79,10 +79,10 @@ est un type de technologie multimédia qui offre du contenu vidéo et audio à u
  - Streaming en direct 
  - streaming video
 #### 3.2.2 Les protocoles de streaming vidéo:
--	HLS
--	SRT
--	MPEG
--	WebRTC
+-	HLS (HTTP Live Streaming): Ce protocole est compatible avec un large éventail d'appareils, navigateurs de bureau, téléviseurs intelligents, boîtes de décodage, appareils mobiles Android et iOS et même les lecteurs vidéo HTML5. Cela permet aux streamers d'atteindre une audience aussi large que possible.
+-	SRT (Secure Reliable Transport): est un autre protocole open source développé par le fournisseur de technologie de streaming Haivision, les principaux avantages pour lesquels SRT est connu sont la sécurité, la fiabilité, la compatibilité et le streaming à faible latence.
+-	MPEG-PASH: est l'un des derniers protocoles de streaming, mis au point par le Moving Pictures Expert Group (MPEG), en alternative à la norme HLS.
+-	WebRTC : est un open source qui vise à offrir la diffusion en continu avec une latence en temps réel. Développé à l'origine pour les applications basées sur le chat et l'utilisation VoIP
 ## Conclusion
 
 ## Bibliographie:
