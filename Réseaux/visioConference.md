@@ -9,7 +9,7 @@ parent: Réseaux
 ## 1. Que signifie visioconférence  [[1]](https://fr.wikipedia.org/wiki/Visioconférence)
 
 La visioconférence est une solution de communication à distance sécurisée, via Internet, dans des points multiples, permettant l'échange visuel entre deux individus, ou plusieurs dizaines ou même des centaines ou des milliers de personnes, selon les options et les licences.
-Il est aussi appelé vidéoconférence, c'est la technique qui permer de voir et dialoguer avec son interlocuteur à travers un moyen numérique.
+Elle est aussi appelée vidéoconférence, c'est la technique qui permet de voir et dialoguer avec son interlocuteur à travers un moyen numérique.
 
 Visioconférence est aussi la combinaison de 2 techniques :
 
@@ -21,16 +21,16 @@ Figure 1. Ex: visioconférence
 <img src="http://image.noelshack.com/fichiers/2022/31/7/1659872888-visioconference-au-bureau.jpg" width="800" height="350"> 
 
 ## 2. Pourquoi la visioconférence ? [2]( https://www.a2com.fr/blog/6-bonnes-raisons-dutiliser-la-visioconference-en-entreprise/#:~:text=Le%20collaboratif%20est%20au%20cœur,dans%20une%20entreprise%20multi%20sites.)
-La visioconférence est un vrai levier d’efficacité professionnel qui facilite les échanges entre les collaborateurs dans les entreprise multi sites.
+La visioconférence est un vrai levier d’efficacité professionnel qui facilite les échanges entre les collaborateurs dans les entreprises multi sites.
 
-### 2.1 Les principaux prorocoles de visioConférence [3](https://fr.acervolima.com/protocoles-de-visioconference/)
+### 2.1 Les principaux protocoles de visioConférence [3](https://fr.acervolima.com/protocoles-de-visioconference/)
  
 ##### Figure 2. certains protocoles [[2]](https://trueconf.com/video-conferencing-architecture.html)
 <img src="http://image.noelshack.com/fichiers/2022/33/6/1660971322-princproo.png" width="800" height="350"> 
 
 #### Protocole H.323
  C'est un protocole de transfert de données avec une bande passante non garantie appliquée aux vidéoconférences personnelles et de groupe.
- - Il a été conçu pa r l'UIT(Union internationale des télécommunication)
+ - Il a été conçu par l'UIT(Union internationale des télécommunication)
  - Il utilise le langage informatique du binaire
  - Assure des communications multimédias sur différents réseaux.
  - il est très complexe, il est possible qu'il y ait des retards.
@@ -42,7 +42,7 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 - Il utilise le langage informatique ASCII
 - Il est très flexible et simple 
 - L'agent utilisateur et le serveur réseau constituent deux composantes fonctionnelles principales.
-- Permet de configurer, d'éditer et de mettre fin aux sessions multimédia ou aux appels.
+- Permet de configurer, d'éditer et de mettre fin aux sessions multimédias ou aux appels.
 - Ressemble au protocole HTTP.
 - Il est fonctionnel avec le IPv4 et IPv6
 - 
@@ -52,18 +52,18 @@ C'est un protocole réseau permettant de connecter des applications clientes de 
 
 
 #### Contrôle et la signalisation :
-H.225 : il est en système de communications, est une sous-norme de H.323 [I]( https://fr.wikipedia.org/wiki/H.225).<br>
+H.225 : il est en système de communications et c'est une sous-norme de H.323 [I]( https://fr.wikipedia.org/wiki/H.225).<br>
 Ses objectifs :
 - Gestion d’un appel : Ce système s'appuie sur le processus de préparation des appels ISDN (Intergrated Services Digital Network)
-- Enregistrement, admission et status : RAS qui est le premier canal de signalisation et utilise le UDP comme couche de transport 
-H.245 : il a été mise en place pour les canaux des médias par H.323, il est ouvert dès le départ à la négociation de codecs communs, veiller à toutes les fonctions de gestion des flux de médias.
+- Enregistrement, admission et status : RAS qui est le premier canal de signalisation et utilise le protocole UDP comme couche de transport 
+H.245 : il a été mis en place pour les canaux des médias par H.323, il a été ouvert dès le départ à la négociation de codecs communs, veiller à toutes les fonctions de gestion des flux de médias.
 RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contrôle des flux RTP, permettant de transmettre des informations de base sur les participants d'une session, ainsi que sur la qualité de service.[II]( https://fr.wikipedia.org/wiki/Real-time_Transport_Control_Protocol )
 #### Voix : 
-- G.726 : C'est une norme de compression audio de l'UIT-T, il est utilisée en telephonie fixe, Il utilise une "modulation impulsive et l'encodage différentiel adaptatif" (MICDA) à 40, 32, 24 ou 16 kbit/s
-- G.728 : Ancienne norme decompression audio, Recommandation relative aux protocoles H.320 et H.323 sur l'encodage sonore pour la téléphonie et la vidéoconférence.
+- G.726 : C'est une norme de compression audio de l'UIT-T qui est utilisée en telephonie fixe, elle utilise une "modulation impulsive et l'encodage différentiel adaptatif" (MICDA) à 40, 32, 24 ou 16 kbit/s
+- G.728 : Ancienne norme de compression audio, elle est recommandée aux protocoles H.320 et H.323 sur l'encodage sonore pour la téléphonie et la vidéoconférence.
 - G.729 : Norme qui est sous recommandation, définit l'encodage vocal 8 kbit/s par prédiction linéaire avec excitation par séquences encodées avec structure algébrique conjuguée.
 #### Video :
-- H.261 : C'est une évolution de la norme,Elle fut notamment popularisée par la console de jeu PlayStation de Sony, qui l'intégra entièrement dans son moteur de décompression de données
+- H.261 : C'est une évolution de la norme, elle fut notamment popularisée par la console de jeu PlayStation de Sony, qui l'intégra entièrement dans son moteur de décompression de données
 - H.263 : Ce standard est devenu obsolète, sa succession a été assurée par le standard H.263 de meilleure qualité pour VoIP ; pour le codage vidéo pur, nous préférons le standard H.264.
 - H.265 : H265 ou encore HEVC (High Efficiency Video Coding) un nouveau standard dont l'objectif est d'améliorer de manière significative la compression vidéo, il est en mesure de transmettre la même vidéo que son prédécesseur (H264) pour une vitesse deux fois moins. Il supporte toutes les définitions d’images usuelles et des cadences d’images plus élevées.
 #### Données :
@@ -73,9 +73,9 @@ RTCP (Real-time Transport Control Protocol) : Il s'agit d'un protocole de contr�
 
 ## 3 Difference entre la visioConférence et le streaming video [5](https://www.avast.com/fr-fr/c-what-is-streaming)
 ### 3.1 VisioConférence
-est mieux défini comme un événement où plusieurs utilisateurs d'ordinateurs peuvent communiquer entre eux simultanément à l'aide de caméras sur Internet.
+Elle est mieux définie comme un événement où plusieurs utilisateurs d'ordinateurs peuvent communiquer entre eux simultanément à l'aide de caméras sur Internet.
 ### 3.2 Streaming Video
-est un type de technologie multimédia qui offre du contenu vidéo et audio à un dispositif connecté à Internet. C’est un flux vidéo organiser par l’organisateur comme video sur youtube, Netflix etc.<bt>
+C'est un type de technologie multimédia qui offre du contenu vidéo et audio à un dispositif connecté à Internet. C’est un flux vidéo organisé par l’organisateur comme video sur youtube, Netflix etc.<bt>
 #### 3.2.1 Types de streaming video
  - <b>Streaming en direct</b> : Le streaming en direct vous donne accès aux événements au moment où ils se produisent
  - <b>streaming video</b> :
