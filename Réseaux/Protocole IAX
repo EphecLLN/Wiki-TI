@@ -1,1 +1,6 @@
+#Protocole IAX
 
+##Définition :  
+
+IAX (Inter-Asterisk eXchange) : c’est un protocole VOIP créé pour le besoin du PABX Asterisk e le protocole IAX est développé par la société Digium. 
+Ce protocole de communication arbore l’objectif de transféré des données sur plusieurs serveurs en même temps.
