@@ -1,6 +1,36 @@
-#Protocole IAX
+---
+layout: default
+title: IAX
+parent: Réseaux
+---
 
-##Définition :  
+# Protocole IAX
+
+## Définition :  
 
 IAX (Inter-Asterisk eXchange) : c’est un protocole VOIP créé pour le besoin du PABX Asterisk e le protocole IAX est développé par la société Digium. 
 Ce protocole de communication arbore l’objectif de transféré des données sur plusieurs serveurs en même temps.
+
+![image]()
+
+## Spécificité :  
+
+IAX dans sa 2éme version est une bonne solution de remplacement au protocole SIP (Session Initiation Protocol).
+Il est plus efficace que SIP dans l’utilisation de la capacité, lui permettant ainsi de gérer un plus grand nombre d’appels en simultanés.
+SIP utilise 2 paires de flux (une pour la signalisation et une pour la voix), là où IAX n’en utilise qu’une. 
+IAX permet donc à plusieurs appels d'être rassemblés dans un seul ensemble de paquets IP, puisque qu'un seul paquet peut transporter des informations concernant plusieurs appels en cours.  
+Les communications client-serveur et serveur-serveur sont possibles avec IAX. 
+
+ 
+
+## Echange IAX :  
+
+L’enregistrement permet à un client IAX de s’enregistrer et de fournir son adresse IP et ses informations d’authentification à l’appelé. 
+Le protocole IAX permet l’authentification via différentes méthodes : 
+
+• MD 5 (Message Digest Authentication) (RFC 1321) utilise la somme d’arrangement md5.  
+
+• RSA (Rivest, Shamin Adleman) est un algorithme qui utilise la clé publique/privée (RFC 3477). 
+
+L’enregistrement consiste à envoyer les informations d’authentification au serveur d’enregistrement (Registrar) via un message (REGREQ).
+Si les informations d’authentifications sont valides, le serveur envoie un message (REGACK) en demandant d’indiquer l’adresse qui sera utilisée. 
