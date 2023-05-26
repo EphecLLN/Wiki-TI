@@ -100,5 +100,6 @@ Enfin on démarre le démon SpamAssassin sur le port 10026
 ```
 sudo spamd -d -c -m5 -H -s spamd -u spamd -x -r /var/run/spamd.pid
 ```
-
+## Conclusion
+ SpamAssassin est une solution efficace et largement utilisée pour filtrer le courrier indésirable dans les services de messagerie. Avec son intégration transparente avec les protocoles POP, IMAP et SMTP, SpamAssassin offre une protection complète contre les spams, les e-mails malveillants et les menaces en ligne
 
