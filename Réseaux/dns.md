@@ -15,29 +15,29 @@ Avant le DNS, la résolution de nom  sur internet se faisait grâce à un fichie
 
 Ce fichier portait le nom de: HOSTS.TXT(5).
 
-En 1982, ce système montre ses premières limites, et plusieurs propositions de remplacements voient le jour. Les premières idées ne sont pas gardées. Un certain Paul Mockapetris(6) fut désigné responsable quand au développement d'un autre système de résolution de nom.
+En 1982, ce système montre ses premières limites, et plusieurs propositions de remplacement voient le jour. Les premières idées ne sont pas gardées. Un certain Paul Mockapetris(6) fut désigné responsable quant au développement d'un autre système de résolution de nom.
 Il est responsable du DNS, une architecture qu'il proposera en 1983 dans les RFC 882 et RFC 883.
 
-Ce dernier est également l'inventeur du premier serveur de courrier électionnique basé sur le protocole SMTP.
+Ce dernier est également l'inventeur du premier serveur de courrier électronique basé sur le protocole SMTP.
 
 ## Explications des root-servers
 
-Afin de nous rendre sur nos sites web préférés, nous utilisons la résolution de noms DNS, qui passe par les serveurs racines (roots-servers).
+Afin de nous rendre sur nos sites web préférés, nous utilisons la résolution de nom DNS, qui passe par les serveurs racines (roots-servers).
 
-Un serveur racine est un élément primordiale pour la résolution de nom. Il répond aux requêtes ou demandes des clients dans la zone racine du DNS (Cette zone marque le niveau le plus élevé, au premier niveau de l'espace de nom DNS).
-Ces derniers n'exécutent pas eux même la résolution de nom, mais informent à la place le client des autres serveurs DNS à consulter de manière plus précis afin d'obtenir une meilleure réponse. (1)
+Un serveur racine est un élément primordial pour la résolution de nom. Il répond aux requêtes ou demandes des clients dans la zone racine du DNS (Cette zone marque le niveau le plus élevé, au premier niveau de l'espace de nom DNS).
+Ces derniers n'exécutent pas eux-même la résolution de nom, mais informent à la place le client des autres serveurs DNS à consulter de manière plus précise afin d'obtenir une meilleure réponse. (1)
 
-Cependant, afin de pouvoir aller interroger un serveur racine, il faut également posséder des informations à son propos. Quels est l'adresse IP du serveur racine responsable de la zone que je cherche à joindre?
-Pour ce faire, il existe un fichier, appelé "fichier de zone racine", qui contient tout les noms et toutes les adresses IP des domaines de premier niveau.
+Cependant, afin de pouvoir interroger un serveur racine, il faut également posséder des informations à son propos. Quel est l'adresse IP du serveur racine responsable de la zone que je cherche à joindre?
+Pour ce faire, il existe un fichier, appelé "fichier de zone racine", qui contient tous les noms et toutes les adresses IP des domaines de premier niveau.
 Ce fichier est téléchargé lors de l'installation d'un client DNS, comme Bind9 par exemple. 
 Ce dernier se trouve dans le repertoire /etc/bind, sous le nom de db.root. (2)
 
 La gestion de base du serveur racine est à la responsabilité de l'ICANN (Internet Corporation for Assigned Names and Numbers).
 
-Il n'y a plus, contrairement à la croyance populaire, uniquement 13 serveurs racine uniques du DNS .
-En effet, nous devons plutôt parler de 13 "identitées de serveur". Ces "identitées", ayant chacunes une adresse IP, sont souvent considérées comme des serveurs racines.
+Il n'y a plus, contrairement à la croyance populaire, uniquement 13 serveurs racines uniques du DNS .
+En effet, nous devons plutôt parler de 13 "identités de serveur". Ces "identités", ayant chacune une adresse IP, sont souvent considérées comme des serveurs racines.
 
-Lettre des serveurs racine du DNS | Adresse IPv4 | Adresse IPv6 | Opérateurs 
+Lettre des serveurs racines du DNS | Adresse IPv4 | Adresse IPv6 | Opérateurs 
 --- | ------------- | ---------- | -------------- 
 A | 198.41.0.4 | 2001:503:ba3e::2:30 | VeriSign | 
 B | 192.228.79.201 | 2001:478:65::53 | USC-ISI |
@@ -63,11 +63,11 @@ C'est de cette manière que nous parvenons à accéder aux contenus de certains 
 
 ## Attaques sur les serveurs racines :
 
-Il y a déja eu, durant son histoire, de nombreuses attaques sur les serveurs racines. Etant la base de la résolution de nom, si le service tombe en panne, c'est tout internet qui tombe en panne. (4)
+Il y a déjà eu, durant son histoire, de nombreuses attaques sur les serveurs racines. Étant la base de la résolution de nom, si le service tombe en panne, c'est tout internet qui tombe en panne. (4)
 
 ### Attaque de 2002 :
 
-Lors de cette attaque, 7 serveurs sur les 13 ont été touchés, et on vu leurs performances dégradées à cause de cette dernière. Les auteurs de cette attaque l'ont effectués à l'aide d'un DDoS. Ils ont réussis à générer un volume de requêtes 40x supérieurs à la normal.
+Lors de cette attaque, 7 serveurs sur les 13 ont été touchés, et on vu leurs performances dégradées à cause de cette dernière. Les auteurs de cette attaque l'ont effectué à l'aide d'un DDoS. Ils ont réussi à générer un volume de requêtes 40x supérieurs à la normale.
 Suite à cette attaque, le systeme anycast a été mis en place :
 
 "Anycast est une technique d'adressage et de routage permettant de rediriger les données vers le serveur informatique le « plus proche » ou le « plus efficace » selon la politique de routage."
@@ -83,12 +83,12 @@ Lors de cette attaque, l'impact sur M a été moindre grâce à anycast.
 
 ### Attaque de 2015 : 
 
-5 millions de requêtes par seconde prennant la route vers les 13 serveurs racines. L'attaque était destinée à chaques serveurs racine de chaque lettre. La durée totale de cette attaque n'a pas dépassée 4 heures, mais les serveurs DNS racines ont été confrontés à environ 1 trillion de requêtes erronnées. (3)
+5 millions de requêtes par seconde prennant la route vers les 13 serveurs racines. L'attaque était destinée à chaque serveur racine de chaque lettre. La durée totale de cette attaque n'a pas dépassé 4 heures, mais les serveurs DNS racines ont été confrontés à environ 1 trillion de requêtes erronées. (3)
 
 ## Conclusion :
 
-Les root-servers / serveurs racines sont un élément essentiel à la résolution de nom sur internet. Ils représentent le fondement du fonctionnement du service DNS. Sans eux, nous ne pourrions plus aller sur un site sur base de son url. Ce service a, de nombreuses fois, été attaqué pour essayer de le faire tomber, mais ils n'y sont jamais arrivé.
-Le service est super robuste, pas étonnant vu son importance dans la société à l'heure actuel.
+Les root-servers / serveurs racines sont un élément essentiel à la résolution de nom sur internet. Ils représentent le fondement du fonctionnement du service DNS. Sans eux, nous ne pourrions plus aller sur un site sur base de son url. Ce service a, de nombreuses fois, été attaqué pour essayer de le faire tomber, mais ils n'y sont jamais arrivés.
+Le service est super robuste, pas étonnant vu son importance dans la société à l'heure actuelle.
 
 
 ## Bibliographie:
