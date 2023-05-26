@@ -9,7 +9,7 @@ parent: Réseau
 ![spam-assasin-logo-transparent](https://github.com/HaAymar/Wiki-TI/assets/71372488/1942bfb7-2f7b-4608-86ca-b60ff8112e35)
 
 ## Définission SpamAssassin
-SpamAssassin est un logiciel de filtrage du courrier indésirable (spam) largement utilisé, il analyse les en-têtes et le contenu des e-mails pour détecter les signes de spam.
+SpamAssassin est un logiciel de filtrage du courrier indésirable (spams) qui est trés utilisé, il analyse les en-têtes et le contenu des e-mails pour détecter les signes de spam.
 - Il utilise des listes noires pour identifier les expéditeurs et les serveurs de messagerie non fiables associés au spam
 - SpamAssassin peut également analyser les pièces jointes et les URL dans les e-mails pour détecter les contenus suspects
 - Il attribue des scores aux messages en fonction des règles et des analyses effectuées.
@@ -101,5 +101,12 @@ Enfin on démarre le démon SpamAssassin sur le port 10026
 sudo spamd -d -c -m5 -H -s spamd -u spamd -x -r /var/run/spamd.pid
 ```
 ## Conclusion
- SpamAssassin est une solution efficace et largement utilisée pour filtrer le courrier indésirable dans les services de messagerie. Avec son intégration transparente avec les protocoles POP, IMAP et SMTP, SpamAssassin offre une protection complète contre les spams, les e-mails malveillants et les menaces en ligne
+SpamAssassin est une solution efficace et largement utilisée pour filtrer le courrier indésirable dans les services de messagerie. Avec son intégration transparente avec les protocoles POP, IMAP et SMTP, SpamAssassin offre une protection complète contre les spams, les e-mails malveillants et les menaces en ligne
 
+## Bibliographie
+- [1] [C'est quoi spamAssassin](https://en.wikipedia.org/w/index.php?title=Apache_SpamAssassin&action=history) consulté le 25/05/2023
+- [2] [Installation et configuration de SpamAssassin](https://www.hostnextra.com/kb/install-spamassassin-with-postfix-on-ubuntu/)consulté le 25/05/2023
+- [3] [Comment integrer SpamAssassin dans les protocoles POP/IMAP et SMTP](https://siguillaume.developpez.com/tutoriels/linux/mise-place-systeme-messagerie-electronique-sous-linux/?page=page-1)consulté le 25/05/2023
+- [4] [Configuration smtp avec SpamAssassin](https://www.malekal.com/installer-configurer-spamassassin-debian/)consulté le 25/05/2023
+- [5] [Protocole SMTP ET POP/IMAP](https://www.cleanfox.io/blog/divers/les-protocoles-de-messagerie/#:~:text=Les%20protocoles%20sortants%20(SMTP)%20servent,et%20de%20distribution%20des%20messages) consulté le 26/05/2023
+- [6] [Pourquoi utilisé SpamAssassin](https://www.hostpapa.com/knowledgebase/fr/knowledge-base/comment-utiliser-spamassassin/) consulté le 26/05/2023
