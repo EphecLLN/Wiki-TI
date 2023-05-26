@@ -79,8 +79,8 @@ Enfin il faut copier cette clé publique dans le serveur distant.
 - [1] [Definition ssh](https://fr.wikipedia.org/wiki/Secure_Shell) Consulté le 24/05/2023
 - [2] [Fonctions principales](https://www.paessler.com/fr/it-explained/ssh) Consulté le 24/05/2023
 - [3] [Difference entre SSH1 et SSH2](https://waytolearnx.com/2017/12/difference-entre-ssh1-et-ssh2.html#:~:text=SSH2%20n'est%20plus%20un,chiffrer%20les%20flux%20de%20donn%C3%A9es) Consulté le 24/05/2023
-- [4] [Se connecter avec PuTTy](https://www.putty.org/](https://kinsta.com/fr/blog/se-connecter-via-ssh/) Consulté le 25/05/2023
-- [5] [Comment se connecter avec la clé SSH](https://lecrabeinfo.net/se-connecter-en-ssh-par-echange-de-cles-ssh.html)Consulté le 25/05/2023)
-- [6] [Les avantages pour l'utilisations de SSH](https://www.opportunites-digitales.com/ssh-tout-ce-que-vous-devez-savoir/](https://www.paessler.com/fr/it-explained/ssh) Consulté le 26/05/2023)
+- [4] [Se connecter avec PuTTy](https://kinsta.com/fr/blog/se-connecter-via-ssh/) Consulté le 25/05/2023
+- [5] [Comment se connecter avec la clé SSH](https://lecrabeinfo.net/se-connecter-en-ssh-par-echange-de-cles-ssh.html) Consulté le 25/05/2023
+- [6] [Les avantages pour l'utilisations de SSH](https://www.opportunites-digitales.com/ssh-tout-ce-que-vous-devez-savoir/) Consulté le 26/05/2023
 
  
