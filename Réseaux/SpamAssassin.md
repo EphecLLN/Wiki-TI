@@ -15,11 +15,13 @@ SpamAssassin est un logiciel de filtrage du courrier indésirable (spams) qui es
 - Il attribue des scores aux messages en fonction des règles et des analyses effectuées.
 
 Il peut être intégré avec des serveurs de messagerie utilisant les protocoles POP, IMAP et SMTP.
- 
+### Difference entre POP/IMAP et SMTP
+
 <b>POP/IMAP</b> : sont les protocoles de messagerie utilisés pour récupérer les e-mails à partir d'un serveur de messagerie.
 
 <b>SMTP</b> :  est un protocole standard utilisé pour l'envoi d'e-mails à travers les réseaux. Il est principalement utilisé pour l'envoi de mails à partir d'un client de messagerie vers un serveur de messagerie sortant.
 
+Afin de restreindre la propagation de spam, des filtres sont employés à divers niveaux comme : MUA, MTA, MDA ...
 ## Pourquoi utilisé le SpamAssassin
 
 Les principales raisons qui poussent à l'utilisation de SpamAssassin sont les suivantes:
