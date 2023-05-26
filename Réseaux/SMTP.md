@@ -85,7 +85,7 @@ Le premier est qu'il ne fournit pas de confirmation d'expédition consultable lo
 
 Le deuxième inconvénient du SMTP est l'absence d'authentification des utilisateurs lors de l'établissement d'une connexion, ce qui rend l'identité de l'expéditeur d'un email peu fiable. Les relais SMTP ouverts sont souvent utilisés de manière abusive pour l'envoi massif de spams. Les expéditeurs utilisent des adresses d'expéditeurs fictives, ce qui rend leur traçabilité impossible (spoofing d'email). Aujourd'hui, de nombreuses techniques de sécurité sont mises en œuvre pour prévenir une utilisation abusive des serveurs SMTP. Par exemple, les emails suspects sont rejetés ou placés en quarantaine (dossier spam). Le protocole d'identification DomainKeys, le Sender Policy Framework (SPF) et le Greylisting sont utilisés à cette fin. De plus, il est devenu courant de recevoir des emails non seulement via le port traditionnel 25/TCP, mais aussi via d'autres ports.
 
-  ## Qu'est-ce que l'Extended SMTP (ESMTP) ? [3][4]
+## Qu'est-ce que l'Extended SMTP (ESMTP) ? [3][4]
 
 L'ESMTP (Extended Simple Mail Transfer Protocol) est une version améliorée du protocole de transfert de courrier électronique, qui étend les fonctionnalités de la version initiale. Il permet notamment l'envoi de pièces jointes et l'utilisation du TLS, entre autres fonctionnalités. Contrairement au SMTP classique, la plupart des clients et services de messagerie utilisent l'ESMTP.
 
