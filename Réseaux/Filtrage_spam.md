@@ -100,13 +100,13 @@ Le MDA peut aussi interagir avec d'autres composants du système de messagerie d
  Lorsque le MRA récupère les e-mails du serveur de messagerie, il peut interagir avec le filtres de spam de la classification des e-mails en tant que spam ou non spam pour appliquer des règles de filtrage supplémentaires.
 
 
-# SpamAssassin pour Bind9
+# SpamAssassin pour Postfix
 SpamAssassin est un en gros un outil de filtrage spam qui est open-source. 
 Il utilise plusieurs techniques pour analyser les e-mails et déterminer s'ils sont du spam ou non. Dont des règles préconfigurées, des algorithmes d'apprentissage automatique et d'autres méthodes.
 
-## Intégration de SpamAssassin avec Bind9
-L'intégration de SpamAssassin avec Bind9 peut se faire en configurant Bind9 pour consulter la base de données de réputation de SpamAssassin quand il reçoit une demande de livraison d'un e-mail. 
-Si l'adresse IP de l'expéditeur est répertoriée comme étant associée à du spam dans la base de données de réputation, Bind9 peut refuser la livraison de l'e-mail, empêchant de cette manière l'e-mail spam d'atteindre le serveur de messagerie.
+## Intégration de SpamAssassin avec Postfix
+L'intégration de SpamAssassin avec Postfix peut se faire en configurant Postfix pour consulter la base de données de réputation de SpamAssassin quand il reçoit une demande de livraison d'un e-mail. 
+Si l'adresse IP de l'expéditeur est répertoriée comme étant associée à du spam dans la base de données de réputation, Postfix peut refuser la livraison de l'e-mail, empêchant de cette manière l'e-mail spam d'atteindre le serveur de messagerie.
 
 L'intégration se fait principalement au niveau du MTA et MDA. 
 
