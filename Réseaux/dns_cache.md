@@ -5,60 +5,60 @@ parent: Réseaux
 ---
 # Cache DNS
 
-## Pourquois?
+## Pourquoi?
 
-la nécécitée de cahe le DNS devient vit apparent quand on réfléchit en termes du nombre de querry qu'un resolveur doit faire pour obtenir la réponse voulue par l'utilisateur. Au minimum 2-3 et parfois bien plus de requète sont nécésaire entre les différents serveurs d'authoritée. ce qui devient fortement redondant si l'on prend l'exemple d'un utilisateur voyageant antre deux pages d'un même site ou deux service d'un même domaine. C'est donc pour aléger l'impact sur le réseau et accélérer les temps de réponces que les RR sont mis en cache a plusieurs étapes du processus.
+la nécessitée de cache le DNS devient vite apparente quand on réfléchit en terme de nombre de requêtes qu'un resolveur doit faire pour obtenir la réponse voulue par l'utilisateur. Au minimum 2-3 et parfois bien plus de requêtes sont nécessaires entre les différents serveurs d'authoritée. ce qui devient fortement redondant si l'on prend l'exemple d'un utilisateur voyageant antre deux pages d'un même site ou deux service d'un même domaine. C'est donc pour alléger l'impact sur le réseau et accélérer les temps de réponse que les RR sont mis en cache a plusieurs étapes du processus.
 
 ## Fonctionnement [^1][^2]
 
 ### Structure du cache
 
-le cache est généralement stoqué dans une structure de donée, plus particulièrement, un tableau de hash.
-dans un tableau de hash les noms de domaines ne sont pas écrit tels quels mais sont converti grace a un algorithme de hachage. L'avantage de procéder comme ca est que la lecture des resources se fait en temps constant au lieu de linéaire.
-les ressources stoquée sont les suivantes:
+le cache est généralement stockée dans une structure de données, plus particulièrement, un tableau de hash.
+dans un tableau de hash les noms de domaines ne sont pas écrit tels quels mais sont converti grace a un algorithme de hashage. L'avantage de procéder comme ça est que la lecture des resources se fait en temps constant au lieu de linéaire.
+les ressources stockées sont les suivantes:
 - le hash du nom de domaine, pour la récuperation en temps constant
-- le RR ressu lors de la résolution
-- l' IP du serveur d'authoritée, nécésaire pour la mise a jour des donée
+- le RR reçu lors de la résolution
+- l'IP du serveur d'authoritée, nécessaire pour la mise a jour des données
 - le TTL, nombre entier de seconde que la ressource est authorisée a vivre
 - le timecode, souvent également en seconde, c'est la date et heure a laquelle la ressource a été rajoutée.
 
 ### Gestion du TTL
 
-le TTL n'étant qu'un entier représentant le nombre de secondes durant laquelle la resource est considérée valide, il ne se suffit pas a lui même. lors du cache d'une nouvelle entrée, un timecode est stoqué avec le ttl et le reste des donée.
+le TTL n'étant qu'un entier représentant le nombre de secondes durant laquelle la resource est considérée valide, il ne se suffit pas a lui même. lors du cache d'une nouvelle entrée, un timecode est stoqué avec le TTL et le reste des données.
 
-puis, lors de la résolution, le TTL et le timecode sont comparé. on soustrait le timecode au temps actuel, si le résultat est plus grand que le TTL alor la ressource n'est plus valide.
+puis, lors de la résolution, le TTL et le timecode sont comparé. on soustrait le timecode au temps actuel, si le résultat est plus grand que le TTL alors la ressource n'est plus valide.
 
 si un TTL expire, deux comportements sont possibles:
-- le résolveur suprimme l'enter du cache. la requète suivante pour se domaine causera donc une résolution standard et une remise en cache des nouvelle donée.
+- le résolveur supprimme l'entrée du cache. la requête suivante pour ce domaine causera donc une résolution standard et une remise en cache des nouvelle données.
 
-- le résolveur tente de metre a jour ces donée. il envois une requète au serveur d'autoritée pour voir si une nouvelle version des donée est disponible. il met a jour l'entrée du cache et reset le TTL.
-cette aproche permet d'éviter de complètement refaire la résolution DNS si les information n'ont pas changé.
+- le résolveur tente de mettre à jour ces données. il envoie une requête au serveur d'autoritée pour voir si une nouvelle version des données est disponible. il met à jour l'entrée du cache et reset le TTL.
+cette approche permet d'éviter de complètement refaire la résolution DNS si les informations n'ont pas changé.
 
 ## Limitations [^1][^2]
 
-le TTL étant clairement définit comme une recomandation plus qu'une règle mène a certains problèmes. par exemple un résolveur peut choisir de ne pas suprimer ou mettre a jour une entrée de son cache malgré le TTL expiré. cela peut conduire a d'encienne ou obsolète informations en circulation. 
+le TTL étant clairement définit comme une reccomendation plus qu'une règle mène a certains problèmes. par exemple un résolveur peut choisir de ne pas supprimer ou mettre à jour une entrée de son cache malgré le TTL expiré. cela peut conduire a des informations obsolètes en circulation. 
 
-la documentation n'est également pas clair sur la marche a suivre pour mettre a jour les entrée du cache. en effet certain résolveur mettent a jour l'information dé l'expiration du TTL, alors que d'autres attendent qu'une requète arrive pour le RR en question.
+la documentation n'est également pas claire sur la marche a suivre pour mettre a jour les entrée du cache. en effet certain résolveurs mettent à jour l'information dès l'expiration du TTL, alors que d'autres attendent qu'une requête arrive pour le RR en question.
 
-le cache étant stoqué en mémoire et non sur dique, il est volatile et soumis a la limite de mémoire du support sur lequel le résolveur tourne. cela peut causer le résolveur a suprimer certaines entrée du cache pour faire de la place.
+le cache étant stockée en mémoire et non sur disque, il est volatile et soumis à la limite de mémoire du support sur lequel le résolveur tourne. cela peut mener le résolveur à supprimer certaines entrées du cache pour faire de la place.
 
 ## Negative Cache [^3][^1]
 
-jusque a présent nous avont vus le cas de réponces positives. c'est a dire que le résolver resoit bien la resource qu'il demande.
+jusqu'à présent nous avont vus le cas de réponses positives. c'est a dire que le résolveur reçoit bien la ressource qu'il demande.
 
-Il a été observé qu'une partie non négligeable du trafic DNS était des requètes résultant vers des réponces négatives. Pour éviter de demander plusieurs fois une ressource qui n'existe pas l'idée du 'Negative Cache' à été introduite. celui ci fonctionnerait comme le cache standard (a un ou deux détails près) et permet au résolveur de limiter les requète qu'il sait finiront par une erreur.
+Il a été observé qu'une partie non-négligeable du trafic DNS était des requêtes résultant vers des réponses négatives. Pour éviter de demander plusieurs fois une ressource qui n'existe pas l'idée du 'Negative Cache' à été introduite. celui-ci fonctionne comme le cache standard (à un ou deux détails près) et permet au résolveur de limiter les requête qui finiront par une erreur.
 
-A la différance du cache vu plus haut, le résolveur ne ressoit pas de TTL avec une réponce négative. Il doit donc déterminer lui même le TTL aproprié. Pour cela, il utilise a la place le TTL minimum fournit dans la section d'authoritée de la réponse.
+À la différance du cache vu plus haut, le résolveur ne reçoit pas de TTL avec une réponse négative. Il doit donc déterminer lui même le TTL approprié. Pour cela, il utilise à la place le TTL minimum fournit dans la section d'authoritée de la réponse.
 
-Dans le cas ou la réponce n'a pas de SOA l'erreur n'est pas mise en cache. Cela évite certaines boulces infinies de requètes.
+Dans le cas ou la réponse n'a pas de SOA, l'erreur n'est pas mise en cache. Cela évite certaines boucles infinies de requêtes.
 
 ## Bad Cache [^4]
 
-l'arivée de DNSSEC a introduite de nouveaux problèmes dans les infrastructures. Ceux qui nous intéressent ici sont ceut du type administratif, comme une horloge désychronisée ou une zone no signée. Ce genre de problème ne pouvant être résolu par un simple revoit de requète, il est nécésaire de les différencier.
+l'arrivée de DNSSEC a introduit de nouveaux problèmes dans les infrastructures. Ceux qui nous intéressent ici sont ceux de type administratifs, comme une horloge désynchronisée ou une zone non-signée. Ce genre de problème ne pouvant être résolu par un simple renvoit de requête, il est nécessaire de les différencier.
 
-Pour cela le bad cache contient les requètes qui n'on pu être validée. Mais étant donée des utilisation néfaste possible de ces informations, l'implémentation du bad cache vient avec des règles notament concernant les attaques DoS:
-- les TTL sont considèré non fiable et sont remplacé, de préférance par une petite valeur pour éviter de cacher les résulat d'une attaque.
-- le resolveur ne doit pas réponde au requète a partir du bad cache sauf dans certains cas précis de configurations.
+Pour cela le bad cache contient les requètes qui n'ont pu être validée. Mais étant donnée des utilisations néfastes possibles de ces informations, l'implémentation du bad cache vient avec des règles notamment concernant les attaques DoS:
+- les TTL sont considérés non fiable et sont remplacés, de préférence par une petite valeur pour éviter de cacher les résulats d'une attaque.
+- le résolveur ne doit pas répondre aux requêtes à partir du bad cache sauf dans certains cas précis de configurations.
 
 
 ## Bibliographie
