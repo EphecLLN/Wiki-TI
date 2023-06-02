@@ -25,7 +25,7 @@ Il existe 2 principales protocole SSH:
 - Transfert de fichiers sécurisé
 - Exécution de commandes à distance 
 
-## Utilisation du Sécure Shell
+## Utilisation du Secure Shell
 Le Secure Shell (SSH) est couramment utilisé pour accéder de manière sécurisée à des systèmes distants et exécuter des commandes à distance.
 L'utilisation de SSH peut se faire avec un logiciel PuTTY ou sur le terminal macOs ou linux
 
