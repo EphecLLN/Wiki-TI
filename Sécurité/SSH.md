@@ -50,22 +50,44 @@ Après avoir ouvert le terminal, il existe plusieur commandes à effectuer pour 
 ### Comment se connecter avec la clé SSH
 ![61c1b963247368113bbeef17_Secure Shell work](https://github.com/HaAymar/Wiki-TI/assets/71372488/bf0ed866-8e78-43eb-ad93-4301dffc07b2)
 
-Pour se connecter avec la clé ssh sur le serveur distant il faut creer la clé publique en suivant ces etapes:
-- Creation d'une nouvelle clé sur le terminale:
+Pour configurer l'authentification par clé SSH, vous devez prendre quelques étapes spécifiques. En premier lieu, vous avez besoin de générer une paire de clés publiques ou privées sur votre machine locale. Pour ce faire, il est possible d'utiliser l'utilitaire ssh-keygen en exécutant la commande suivante sur votre terminal:
+- Creation d'une nouvelle clé sur le terminal:
  ```
 ssh-keygen -t rsa
 ```
-En suite on suit les étapes en creant le passphrase par défaut le fichier pour la clé privé et publique doit se trouvé dans les fichiers.
-Pour la clé privé
+En suite on suit les étapes en creant le passphrase.  Vous devrez ensuite préciser un emplacement pour sauvegarder la clé privée. Par défaut, elle est généralement sauvegardée dans le répertoire ~/.ssh/ avec le nom "id_rsa". Cliquez sur "Entrée" pour accepter l'emplacement par défaut.
+
+Vous devrez aussi définir un mot de passe afin de protéger la clé privée. Il est conseillé de choisir un mot de passe solide pour une sécurité optimale.
+Pour la clé privéé
+La clé privée est un fichier crucial pour l'authentification par clé SSH. Elle est générée sur votre machine locale et doit être gardée en sécurité. Voici l'emplacement de la clé privée:
  ```
-.ssh/id_rsa
+cat ~/.ssh/id_rsa
 ```
 Pour la clé publique
- ```
-.ssh/id_rsa.pub
-```
-Enfin il faut copier cette clé publique dans le serveur distant.
+La clé publique est dérivée de la clé privée et doit être partagée avec les serveurs à distance auxquels vous voulez vous connecter. Voici comment obtenir la clé publique.
 
+Une fois que vous avez généré la clé privée avec la commande précédente avec "ssh-keygen", vous pouvez afficher la clé publique en exécutant la commande suivante avec ".pub" qui signifie "publique"
+ ```
+cat ~/.ssh/id_rsa.pub
+```
+La clé publique sera affichée dans votre terminal. Vous pouvez la copier intégralement.
+
+Après avoir généré votre clé privée et obtenu la clé publique, vous devez fournir la clé publique au serveur distant avec lequel vous souhaitez vous connecter. Généralement, le serveur SSH conserve la liste des clés publiques autorisées dans un fichier appelé "authorized_keys".
+
+Voici comment ajouter votre clé publique au fichier "authorized_keys"
+1. Connectez-vous au serveur distant via SSH 
+```
+ssh username@IP_ADDRESS
+```
+ Ensuite entrez votre mot de passe.</br>
+
+2. Une fois connecté, exécutez les commandes suivantes pour ajouter votre clé publique à l'authentification par clé
+```
+mkdir -p ~/.ssh
+echo "VOTRE_CLÉ_PUBLIQUE" >> ~/.ssh/authorized_keys
+```
+
+En suivant ces étapes, vous avez configuré SSH Key Authentication en utilisant les fichiers appropriés à l'emplacement correct.Ceci renforcera la sécurité de vos connexions SSH via une méthode d'authentification basée sur des clés asymétriques.
 ## Les avantages pour l'utilisations de SSH 
 - Protection contre des attaques de force brutale : SSH intègre des mécanismes pour protéger contre les attaques de force brutale. c'est-à-dire que si un attaquant essaie de deviner le mot de passe, le serveur SSH limite le nombre de tentatives de connexion et bloque automatiquement l'adresse IP source.
 
@@ -82,5 +104,6 @@ Enfin il faut copier cette clé publique dans le serveur distant.
 - [4] [Se connecter avec PuTTy](https://kinsta.com/fr/blog/se-connecter-via-ssh/) Consulté le 25/05/2023
 - [5] [Comment se connecter avec la clé SSH](https://lecrabeinfo.net/se-connecter-en-ssh-par-echange-de-cles-ssh.html) Consulté le 25/05/2023
 - [6] [Les avantages pour l'utilisations de SSH](https://www.opportunites-digitales.com/ssh-tout-ce-que-vous-devez-savoir/) Consulté le 26/05/2023
+- [7][Se connecter sur un serveur distant](https://www.hostinger.fr/tutoriels/generer-cle-ssh) Consulté le 02/06/2023
 
  
