@@ -84,6 +84,31 @@ Pour intégrer SpamAssassin dans les protocoles POP/IMAP, il faut suivre ces ét
 - Définissez des actions en fonction des résultats du filtrage (marquage, déplacement des e-mails indésirables).
 Il est possible de consulter la documaentation en suivant ce lien en cliquant [ici](https://doc.ubuntu-fr.org/serveur_mail_avec_postfix_et_courier-imap)
 
+Aprés avoir fait tous ces étapes, vous pouvez commencer à intégrer SpamAssassin dans POP/IMAP en suivant les étapes suivantes:
+1. À partir de votre serveur, ouvrez le fichier de configuration Dovecot sur votre serveur. Sur Ubuntu, le fichier de configuration principal de Dovecot se trouve généralement dans "/etc/dovecot/dovecot.conf" ou dans "/etc/dovecot/conf.d/10-mail.conf".
+2. Cherchez la section dans le fichier de configuration Dovecot qui définit le protocole POP ou IMAP, en fonction de celui que vous souhaitez intégrer à SpamAssassin.
+3. Ajouter les lignes de configuration suivantes dans la section correspondante afin de permettre le filtrage SpamAssassin :
+- Pour POP3
+```
+mail_plugins = $mail_plugins antispam
+pop3_uidl_format = %08Xu%08Xv
+pop3_client_workarounds = outlook-no-nuls oe-ns-eoh
+```
+- Pour IMAP:
+```
+mail_plugins = $mail_plugins antispam
+imap_client_workarounds = delay-newmail
+```
+4. Cherchez la section qui définit les plugins dans le fichier de configuration de Dovecot et ajoutez la ligne suivante pour permettre le plugin antispam:
+```
+mail_plugins = $mail_plugins antispam
+```
+5. Enregistrer les changements dans le fichier de configuration Dovecot et redémarrer le service Dovecot afin d'appliquer les changements :
+```
+service dovecot restart
+```
+6. Assurez-vous que SpamAssassin est correctement intégré en envoyant un email de spam à une adresse hébergée sur votre serveur POP/IMAP. L'e-mail doit être signalé en tant que spam dans le dossier approprié.
+
 Pour intégrer SpamAssassin dans SMTP, vous pouvez suivre les étapes suivantes : 
 Pour faire la configuration, il faut ouvrir le fichier sur le serveur SMTP qui se trouve dans `/etc/postfix/main.cf`
 On ajoute une ligne :
