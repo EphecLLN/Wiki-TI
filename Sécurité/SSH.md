@@ -55,16 +55,16 @@ Pour configurer l'authentification par clé SSH, vous devez prendre quelques ét
  ```
 ssh-keygen -t rsa
 ```
-En suite on suit les étapes en creant le passphrase.  Vous devrez ensuite préciser un emplacement pour sauvegarder la clé privée. Par défaut, elle est généralement sauvegardée dans le répertoire ~/.ssh/ avec le nom "id_rsa". Cliquez sur "Entrée" pour accepter l'emplacement par défaut.
+Ensuite, suivez les étapes. Vous devrez préciser un emplacement pour sauvegarder la clé privée. Par défaut, elle est généralement sauvegardée dans le répertoire ~/.ssh/ avec le nom "id_rsa". Cliquez sur "Entrée" pour accepter l'emplacement par défaut.
 
-Vous devrez aussi définir un mot de passe afin de protéger la clé privée. Il est conseillé de choisir un mot de passe solide pour une sécurité optimale.
-Pour la clé privéé
-La clé privée est un fichier crucial pour l'authentification par clé SSH. Elle est générée sur votre machine locale et doit être gardée en sécurité. Voici l'emplacement de la clé privée:
+Vous devrez aussi définir un mot de passe(passphrase) afin de protéger la clé privée. Il est conseillé de choisir un mot de passe solide pour une sécurité optimale.
+### Clé privée
+C'est un fichier crucial pour l'authentification par clé SSH. Elle est générée sur votre machine locale et doit être gardée en sécurité. Voici l'emplacement de la clé privée:
  ```
 cat ~/.ssh/id_rsa
 ```
-Pour la clé publique
-La clé publique est dérivée de la clé privée et doit être partagée avec les serveurs à distance auxquels vous voulez vous connecter. Voici comment obtenir la clé publique.
+### Clé publique
+Elle est dérivée de la clé privée et doit être partagée avec les serveurs à distance auxquels vous voulez vous connecter. Voici comment obtenir la clé publique.
 
 Une fois que vous avez généré la clé privée avec la commande précédente avec "ssh-keygen", vous pouvez afficher la clé publique en exécutant la commande suivante avec ".pub" qui signifie "publique"
  ```
