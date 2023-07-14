@@ -5,17 +5,31 @@ parent: Réseaux
 ---
 # installation d'un reverse proxy [^1]
 
-il y a beaucoup de proxy possibles. pour ce tutoriel nous allons nous concentrer sur Nginx. puisque c'est l'un des plus utilisé et qu'il a un grande versatilité. Pour la suite, nous supposeront également l'utilisation de Linux. Pour Windows voyez [ici](https://nginx.org/en/docs/windows.html)
+Il y a beaucoup de reverse proxy possibles. Pour ce tutoriel, nous allons nous concentrer sur Nginx, puisque c'est l'un des plus utilisés et qu'il a une grande versatilité. Pour la suite, nous supposerons également l'utilisation de Linux. Pour Windows voyez [ici](https://nginx.org/en/docs/windows.html)
+
+## 0. pourquois? [^5]
+
+La nécessité d'un reverse proxy tel que Nginx n'est pas toujours évidente. Mais si l'on prend l'exemple d'un serveur web contenant des pages statiques, voici les avantages que l'on peut observer :
+
+- **load balancig** : Avec Nginx, il est possible de rediriger les requêtes utilisateurs vers différents serveurs, par exemple un Docker Swarm, afin de répartir la charge de trafic. Ainsi, à partir d'une seule adresse, il est possible de gérer un trafic beaucoup plus important que si le serveur web était seul.
+
+- **cache** : Dans le scénario précédent, un trafic important de pages statiques peut grandement bénéficier d'un cache. Cependant, si le cache est géré au niveau des serveurs, il n'y a pas d'homogénéité entre les caches. Pour pallier cela, le cache est géré par Nginx.
+
+- **terminaison SSL** : Si vous avez un Docker Swarm, il est bien plus intéressant de configurer SSL une fois sur Nginx plutôt que de le faire individuellement sur chaque conteneur.
+
+- **sécuritée et controle d'accès**: Ceci regroupe un ensemble de fonctionnalités telles que le filtrage d'IP, un pare-feu et une détection de spam.
+
+- **CDN** ou *content delivery network* : Un réseau de reverse proxy situé à plusieurs endroits dans le monde permet d'optimiser la diffusion de contenu. L'avantage principal est que toutes les fonctionnalités de cache sont plus proches des utilisateurs finaux, ce qui réduit considérablement la latence des applications web.
 
 ## 1. installer Nginx [^2]
 
-Nginx supporte un grand nombre de distros [ici](https://nginx.org/en/linux_packages.html)
-il est donc possible de l'installer avec la plupart des package manager.
+Nginx supporte un grand nombre de distributions (distros). [ici](https://nginx.org/en/linux_packages.html)
+Il est donc possible de l'installer avec la plupart des gestionnaires. Ici, nous utiliserons Ubuntu.
 `sudo apt update`
 `sudo apt upgrade`
 `sudo apt install nginx`
 
-ensuite pour lancer ou arrêter voici les commandes
+Ensuite pour lancer ou arrêter voici les commandes
 - `nginx` pour démarrer (lancez l'exe)
 - `nginx -s stop` pour fermer tout de suite (à éviter)
 - `nginx -s quit` pour fermer correctement
@@ -23,9 +37,9 @@ ensuite pour lancer ou arrêter voici les commandes
 
 ## 2. configuration [^3]
 ### structure de base
-la configuration de nginx se fait par 'block' imbriqué. chaque block correspond a un contexte pour lequel les option écrite a l'intérieur seront appliqué. par exemple voici le contexte 'HTTP' peut être placé directement dans le fichier de config alors que 'server' doit être dans un contexte tel que 'http' ou 'mail' pour fonctionner.
+La configuration de Nginx se fait à travers des blocs imbriqués. Chaque bloc correspond à un contexte dans lequel les options spécifiées seront appliquées. Par exemple, le contexte 'http' peut être placé directement dans le fichier de configuration, tandis que le contexte 'server' doit être situé à l'intérieur d'un contexte tel que 'http' ou 'mail' pour fonctionner correctement.  
 
-la rédaction de la config se fait donc par la création de ces block de config chacun précisent le fonctionnement de leurs parent. voici un exemple:
+La rédaction de la configuration se fait donc par la création de ces blocs de configuration, chacun précisant le fonctionnement de son parent. voici un exemple:
 ```
 http {
     server {
@@ -39,11 +53,12 @@ http {
     }
 }
 ```
-ici on crée un serveur http qui aura deux comportements différent en fonction de la route de la requête.
-le premier définit que l'accès a la page racine doit rediriger vers le fichier se trouvant dans /data/www. alors que /images/, lui, revoie directement dans data.  
+Ici, on crée un serveur HTTP qui aura deux comportements différents en fonction de la route de la requête.
+Le premier définit que l'accès à la page racine et doit rediriger vers le fichier se trouvant dans "/data/www".
+Alors que "/images/" renvoie directement à "data".  
 
 ### les redirections
-précédemment, le serveur se contentait de servir des pages statiques en réponse. mais l’intérêt d'un proxy est de déléguer la tache de servir les pages a un ou même plusieurs autres serveurs. cela se fait avec `proxy_pass`, qui définit l'url ou ip et le port de destination voici un exemple:
+Précédemment, le serveur se contentait de servir des pages statiques en réponse. Cependant, l'intérêt d'un reverse proxy est de déléguer la tâche de servir les pages à un ou plusieurs autres serveurs. Cela se fait avec `proxy_pass`, qui définit l'URL ou l'adresse IP ainsi que le port de destination, voici un exemple:
 ```
 #contexte http
 server {
@@ -56,12 +71,12 @@ server {
     }
 }
 ```
-ici on définit que les accès a `/images/` seront géré par nginx alors que le reste des routes sera redirigé vers un autre serveur tournant sur la même machine. il est important de noté que le 'localhost' peut être remplacé par n'importe quel url ou ip. dans le cas des ip la notation ce fait comme suis `http://192.168.0.1:80`.
+Ici, on définit que les accès à `/images/` seront gérés par Nginx, tandis que le reste des routes sera redirigé vers un autre serveur tournant sur la même machine. Il est important de noter que "localhost" peut être remplacé par n'importe quelle URL ou adresse IP. Dans le cas des adresses IP, la notation se fait comme suit : `http://192.168.0.1:80`.
 
-Notez que dans les deux cas le préfixe 'http' est présent, il est nécessaire pour que nginx sache quel protocole employer.
+Notez que dans les deux cas, le préfixe "http" est présent. Il est nécessaire pour que Nginx sache quel protocole employer.
 
 ### filtre des entrée
-pour faciliter la sécurité, il est possible de choisir quel sont les ports écouté et même les ip autorisée. pour cela il suffi d'utiliser `listen`. come ceci:
+Pour faciliter la sécurité, il est possible de choisir quels sont les ports écoutés et même les adresses IP autorisées en utilisant la directive listen, come ceci:
 ```
 server {
     listen 127.0.0.1:8080;
@@ -69,19 +84,19 @@ server {
     # reste de la config
 }
 ```
-Il est important a savoir que pour utiliser le port 8080, il est obligatoire d'utiliser listen, au minimum avec `listen 8080;` qui écoute toutes les ip entrantes. sans cela, le port 80 sera utilisé par défaut.
+Il est important de savoir que pour utiliser le port 8080, il est obligatoire d'utiliser la directive `listen`, au minimum avec `listen 8080;`, qui écoute toutes les adresses IP entrantes. Sans cela, le port 80 sera utilisé par défaut.
 
 ### routes regex
-pour faciliter la séparation des routes vers différentes destinations, nginx supporte l'utilisation des regex. pour utiliser une route regex il suffit de la précéder d'un `~` ou `~*`. la différence est que le premier est 'case-sensitive' et le second non. voici un exemple:
+Pour faciliter la séparation des routes vers différentes destinations, Nginx supporte l'utilisation des expressions régulières (regex). Pour utiliser une route en regex, il suffit de la précéder d'un `~` ou `~*`. La différence est que le premier est sensible à la casse (case-sensitive), tandis que le second ne l'est pas, voici un exemple:
 ```
 location ~ \.html? {
     #...
 }
 ```
-ici toutes les requêtes se finissant par '.html' ou '.htm'. plus d'infos sur les regex [ici](https://regexr.com/)
+Ici toutes les requêtes se finissant par '.html' ou '.htm'. plus d'infos sur les regex [ici](https://regexr.com/)
 
 ### conservation de la requête initiale
-Dans tout les exemple précédents, les header des requêtes sont remplacé par nginx. C'est un problème sir le serveur de destination a besoin du header d'origine. pour le conserver deux options sont utilisable:
+Dans tous les exemples précédents, les en-têtes (headers) des requêtes sont remplacés par Nginx. Cela peut poser un problème si le serveur de destination a besoin de l'en-tête d'origine. Pour le conserver, deux options peuvent être utilisées:
 ```
 location / {
     proxy_set_header Host $host;
@@ -90,7 +105,7 @@ location / {
     # reste de la config
 }
 ```
-ici, 'host' se fait attribuer la variable `$host` qui désigne l'host d'origine a l'inverse de `$proxy_host` utilisé par défaut qui utilise le proxy. de la même manière, 'x-real-ip' rassoit l'ip du client faisant la requête.
+Ici, 'host' se voit attribuer la variable `$host`, qui désigne l'hôte d'origine, contrairement à `$proxy_host`, utilisé par défaut, qui utilise le reverse proxy. De la même manière, 'x-real-ip' reçoit l'IP du client effectuant la requête.
 
 ### exemple complet
 voici un exemple reprenant la plupart des techniques vue plus haut dans un fichier de configuration.
@@ -112,13 +127,13 @@ http {
 
 [^1]: non mentionné, [RFC 1034 - DOMAIN NAMES - CONCEPTS AND FACILITIES](https://www.wappalyzer.com/technologies/reverse-proxies/#:~:text=Reverse%20proxies%20technologies%20market%20share%20These%20are%20the,in%202023.%20Nginx%2094.6%25%20Envoy%205%25%20Other%200.4%25), 2023
     
-    **Résumé** : graph des parte de marché des différent reverse proxy sur le marché
+    **Résumé** : graph des parts de marché des différent reverse proxy
     **Avis sur la ressource** : manque de source mais un tour rapide sur Reddit corrobore la place de nginx comme plus populaire.
 
 [^2]: non mentionné, [guide débutant Nginx](https://nginx.org/en/docs/beginners_guide.html)
 
     **Résumé** : guide d'installation pour Nginx par Nginx
-    **Avis sur la ressource** : manque absolu de détails sur la configuration mais heureusement les autres articles remplisse ce manque.
+    **Avis sur la ressource** : manque absolu de détails sur la configuration mais heureusement les autres articles comblent ce manque.
 
 [^3]: non mentionné, [guide débutant Nginx](https://nginx.org/en/docs/http/ngx_http_proxy_module.html)
 
@@ -129,3 +144,8 @@ http {
 
     **Résumé** : guide de config pour proxy un site web
     **Avis sur la ressource** : très clair et concis
+
+[^5]: non mentionné, [wiki: reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy)
+
+    **Résumé** : page wiki sur les reverse proxy
+    **Avis sur la ressource** : manque de détails mais utile d'un point de vue informatif
