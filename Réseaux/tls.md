@@ -1,4 +1,4 @@
----
+A.J.jacquie MacLaine /Vinck, University of Duisburg-Essen
 layout: default
 title: TLS
 parent: Réseaux
@@ -66,7 +66,7 @@ Maintenant que nous avons vu les aspects de fonctionnement de TLS, il faut abord
 À partir d'ici, le client et le serveur peuvent utiliser Diffie-Hellman pour trouver la clé d'encryption symétrique.  
 L'encryption asymétrique est également utilisée pour les signatures des messages, ici avec RSA ou ECDSA.
 
-- **Diffie-Hellman**. Sans trop rentrer dans les détails mathématiques, cet algorithme permet à deux communicants de trouver une clé privée commune sans jamais la transmettre directement entre eux. Voici un diagramme grossièrement montrant son fonctionnement avec des couleurs :
+- **Diffie-Hellman**. Sans trop rentrer dans les détails mathématiques, cet algorithme permet à deux communicants de trouver une clé privée commune sans jamais la transmettre directement entre eux. Voici un diagramme grossièrement montrant son fonctionnement avec des couleurs [^2]:
 ![](https://cdn.discordapp.com/attachments/665314692549312513/1129346683449397348/image.png)  
 Notez que le mélange des couleurs est en fait une opération mathématique virtuellement irréversible. Il n'est donc pas possible pour quelqu'un qui intercepte la transmission de retrouver l'une ou l'autre clé privée.
 
@@ -80,4 +80,8 @@ Notez que le mélange des couleurs est en fait une opération mathématique virt
     
        **Résumé** : RFc décrivant les principes de TLS
        **Avis sur la ressource** : article d'authoritée
+[^2]: A.J. Han Vinck [intoduction to public key criptography](https://commons.m.wikimedia.org/wiki/File:Diffie-Hellman_Key_Exchange.svg#mw-jump-to-license)
+
+       **Résumé** : schéma explicatif de Diffie-Hellman avec des couleurs
+       **Avis sur la ressource** : suffisant pour une compréhension globale de l'algorithme
 
